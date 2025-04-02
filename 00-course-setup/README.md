@@ -35,11 +35,12 @@ Then select `Generate new token`.
 
 ![Generate Token](./images/generate-token.png)
 
-Instead of a token with no expiration date, we recommend creating one for limited days, e.g., 60 days (if done at the start of April 2025, conveniently coinciding with the duration of [AI Skills Fest](https://techcommunity.microsoft.com/blog/microsoftlearnblog/register-now-for-the-microsoft-ai-skills-fest/4292261?wt.mc_id=DT-MVP-500304)).
+Instead of a token with no expiration date, we  recommend creating one for limited days eg: 60 days [if done at the start of April 2025 conveniently coincides with the duration of [AI Skills fest](https://techcommunity.microsoft.com/blog/microsoftlearnblog/register-now-for-the-microsoft-ai-skills-fest/4292261?wt.mc_id=DT-MVP-500304)
 
 ![Expiry date of token](./images/token_with_expiry_date.png)
 
-Also, as an additional security measure, we can restrict the token to only be used for the `ai-agents-for-beginners` repository [Least Privilege Principle](https://en.wikipedia.org/wiki/Principle_of_least_privilege).
+Also, as an additional security measure, we can restrict the token to only be used for the `ai-agents-for-beginners` repository [[Least Privilege Principle](https://en.wikipedia.
+org/wiki/Principle_of_least_privilege)].
 
 ![Select GitHub repository](./images/token_select_repositories.png)
 
@@ -86,8 +87,15 @@ As a security best practice, we'll use [keyless authentication](https://learn.mi
 ### Step 1: Install Azure CLI
 Before proceeding, install the **Azure CLI** by following the [installation instructions](https://learn.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=academic-105485-koreyst) for your operating system.
 
-### Step 2: Login to Azure
-Open a terminal and run the following command to sign in to your Azure account:
+## Keyless Authentication
+
+Login with your Azure AI account used to provision the Azure resources.
+
+Open a new terminal and enter the following command and follow the instructions in the terminal:
+
+`az login --use-device-code`
+
+Once you've logged in, select your subscription in the terminal.
 
 ## Access the environment variables
 
