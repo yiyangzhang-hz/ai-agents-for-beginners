@@ -2,118 +2,114 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "76945069b52a49cd0432ae3e0b0ba22e",
-  "translation_date": "2025-06-17T08:37:08+00:00",
+  "translation_date": "2025-07-12T07:43:53+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "fa"
 }
 -->
 در حساب کاربری GitHub خود.
 
-گزینه‌ی `Fine-grained tokens` option on the left side of your screen.
+گزینه `Fine-grained tokens` را در سمت چپ صفحه انتخاب کنید.
 
-Then select `Generate new token`.
+سپس گزینه `Generate new token` را انتخاب کنید.
 
-![Generate Token](../../../00-course-setup/images/generate-token.png)
+![Generate Token](../../../translated_images/generate-token.9748d7585dd004cb4119b5aac724baff49c3a85791701b5e8ba3274b037c5b66.fa.png)
 
-You will be prompted to enter a name for your token, select the expiration date (Recommended: 30 Days), and select the scopes for your token (Public Repositories).
+از شما خواسته می‌شود نامی برای توکن خود وارد کنید، تاریخ انقضا را انتخاب کنید (توصیه شده: ۳۰ روز) و دامنه‌های دسترسی توکن را انتخاب کنید (مخازن عمومی).
 
-It's also necessary to edit the permissions of this token: Permissions -> Models -> Allows access to GitHub Models
+همچنین لازم است مجوزهای این توکن را ویرایش کنید: Permissions -> Models -> اجازه دسترسی به مدل‌های GitHub
 
-Copy your new token that you have just created. You will now add this to your `.env` file included in this course. 
+توکن جدیدی که ساخته‌اید را کپی کنید. اکنون باید این توکن را در فایل `.env` که در این دوره وجود دارد، اضافه کنید.
 
+### مرحله ۲: ایجاد فایل `.env`
 
-### Step 2: Create Your `.env` File
-
-To create your `.env` را انتخاب کنید و دستور زیر را در ترمینال خود اجرا نمایید.
-
-```bash
-cp .env.example .env
-```
-
-این کار فایل نمونه را کپی کرده و یک فایل `.env` in your directory and where you fill in the values for the environment variables.
-
-With your token copied, open the `.env` file in your favorite text editor and paste your token into the `GITHUB_TOKEN` field.
-
-You should now be able to run the code samples of this course.
-
-## Set Up for Samples using Azure AI Foundry and Azure AI Agent Service
-
-### Step 1: Retrieve Your Azure Project Endpoint
-
-
-Follow the steps to creating a hub and project in Azure AI Foundry found here: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
-
-
-Once you have created your project, you will need to retrieve the connection string for your project.
-
-This can be done by going to the **Overview** page of your project in the Azure AI Foundry portal.
-
-![Project Connection String](../../../00-course-setup/images/project-endpoint.png)
-
-### Step 2: Create Your `.env` File
-
-To create your `.env` ایجاد می‌کند. دستور زیر را در ترمینال خود اجرا کنید.
+برای ایجاد فایل `.env` دستور زیر را در ترمینال خود اجرا کنید.
 
 ```bash
 cp .env.example .env
 ```
 
-این کار فایل نمونه را کپی کرده و یک فایل `.env` in your directory and where you fill in the values for the environment variables.
+این دستور فایل نمونه را کپی کرده و یک فایل `.env` در دایرکتوری شما ایجاد می‌کند که در آن می‌توانید مقادیر متغیرهای محیطی را وارد کنید.
 
-With your token copied, open the `.env` file in your favorite text editor and paste your token into the `PROJECT_ENDPOINT` field.
+پس از کپی کردن توکن، فایل `.env` را در ویرایشگر متن مورد علاقه خود باز کرده و توکن را در فیلد `GITHUB_TOKEN` جای‌گذاری کنید.
 
-### Step 3: Sign in to Azure
+اکنون باید بتوانید نمونه‌های کد این دوره را اجرا کنید.
 
-As a security best practice, we'll use [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) to authenticate to Azure OpenAI with Microsoft Entra ID. Before you can do so, you'll first need to install the **Azure CLI** per the [installation instructions](https://learn.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=academic-105485-koreyst) for your operating system.
+## تنظیم نمونه‌ها با استفاده از Azure AI Foundry و Azure AI Agent Service
 
-Next, open a terminal and run `az login --use-device-code` to sign in to your Azure account.
+### مرحله ۱: دریافت Endpoint پروژه Azure خود
 
-Once you've logged in, select your subscription in the terminal.
+مراحل ایجاد هاب و پروژه در Azure AI Foundry را در اینجا دنبال کنید: [مرور منابع هاب](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
+پس از ایجاد پروژه، باید رشته اتصال پروژه خود را دریافت کنید.
 
-## Additional Environment Variables - Azure Search and Azure OpenAI 
+این کار با رفتن به صفحه **Overview** پروژه در پورتال Azure AI Foundry انجام می‌شود.
 
-For the Agentic RAG Lesson - Lesson 5 - there are samples that use Azure Search and Azure OpenAI.
+![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.fa.png)
 
-If you want to run these samples, you will need to add the following environment variables to your `.env` file:
+### مرحله ۲: ایجاد فایل `.env`
 
-### Overview Page (Project)
+برای ایجاد فایل `.env` دستور زیر را در ترمینال خود اجرا کنید.
 
-- `AZURE_SUBSCRIPTION_ID` - Check **Project details** on the **Overview** page of your project.
+```bash
+cp .env.example .env
+```
 
-- `AZURE_AI_PROJECT_NAME` - Look at the top of the **Overview** page for your project.
+این دستور فایل نمونه را کپی کرده و یک فایل `.env` در دایرکتوری شما ایجاد می‌کند که در آن می‌توانید مقادیر متغیرهای محیطی را وارد کنید.
 
-- `AZURE_OPENAI_SERVICE` - Find this in the **Included capabilities** tab for **Azure OpenAI Service** on the **Overview** page.
+پس از کپی کردن توکن، فایل `.env` را در ویرایشگر متن مورد علاقه خود باز کرده و توکن را در فیلد `PROJECT_ENDPOINT` جای‌گذاری کنید.
 
-### Management Center
+### مرحله ۳: ورود به Azure
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Go to **Project properties** on the **Overview** page of the **Management Center**.
+به عنوان یک بهترین روش امنیتی، از [احراز هویت بدون کلید](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) برای احراز هویت به Azure OpenAI با Microsoft Entra ID استفاده خواهیم کرد. قبل از انجام این کار، ابتدا باید **Azure CLI** را طبق [دستورالعمل نصب](https://learn.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=academic-105485-koreyst) برای سیستم عامل خود نصب کنید.
 
-- `GLOBAL_LLM_SERVICE` - Under **Connected resources**, find the **Azure AI Services** connection name. If not listed, check the **Azure portal** under your resource group for the AI Services resource name.
+سپس ترمینال را باز کرده و دستور `az login --use-device-code` را برای ورود به حساب Azure خود اجرا کنید.
 
-### Models + Endpoints Page
+پس از ورود، اشتراک خود را در ترمینال انتخاب کنید.
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Select your embedding model (e.g., `text-embedding-ada-002`) and note the **Deployment name** from the model details.
+## متغیرهای محیطی اضافی - Azure Search و Azure OpenAI
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Select your chat model (e.g., `gpt-4o-mini`) and note the **Deployment name** from the model details.
+برای درس Agentic RAG - درس ۵ - نمونه‌هایی وجود دارد که از Azure Search و Azure OpenAI استفاده می‌کنند.
 
-### Azure Portal
+اگر می‌خواهید این نمونه‌ها را اجرا کنید، باید متغیرهای محیطی زیر را به فایل `.env` خود اضافه کنید:
 
-- `AZURE_OPENAI_ENDPOINT` - Look for **Azure AI services**, click on it, then go to **Resource Management**, **Keys and Endpoint**, scroll down to the "Azure OpenAI endpoints", and copy the one that says "Language APIs".
+### صفحه Overview (پروژه)
 
-- `AZURE_OPENAI_API_KEY` - From the same screen, copy KEY 1 or KEY 2.
+- `AZURE_SUBSCRIPTION_ID` - در بخش **Project details** صفحه **Overview** پروژه خود بررسی کنید.
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Find your **Azure AI Search** resource, click it, and see **Overview**.
+- `AZURE_AI_PROJECT_NAME` - در بالای صفحه **Overview** پروژه خود مشاهده کنید.
 
-- `AZURE_SEARCH_API_KEY` - Then go to **Settings** and then **Keys** to copy the primary or secondary admin key.
+- `AZURE_OPENAI_SERVICE` - در تب **Included capabilities** برای **Azure OpenAI Service** در صفحه **Overview** پیدا کنید.
 
-### External Webpage
+### مرکز مدیریت
 
-- `AZURE_OPENAI_API_VERSION` - Visit the [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) page under **Latest GA API release**.
+- `AZURE_OPENAI_RESOURCE_GROUP` - در بخش **Project properties** صفحه **Overview** مرکز مدیریت.
 
-### Setup keyless authentication
+- `GLOBAL_LLM_SERVICE` - در بخش **Connected resources** نام اتصال **Azure AI Services** را پیدا کنید. اگر موجود نبود، در **Azure portal** در گروه منابع خود نام منبع AI Services را بررسی کنید.
 
-Rather than hardcode your credentials, we'll use a keyless connection with Azure OpenAI. To do so, we'll import `DefaultAzureCredential` and later call the `DefaultAzureCredential` ایجاد می‌کند. برای دریافت اعتبارنامه، از تابع `DefaultAzureCredential` استفاده کنید.
+### صفحه Models + Endpoints
+
+- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - مدل embedding خود (مثلاً `text-embedding-ada-002`) را انتخاب کرده و نام **Deployment** را از جزئیات مدل یادداشت کنید.
+
+- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - مدل چت خود (مثلاً `gpt-4o-mini`) را انتخاب کرده و نام **Deployment** را از جزئیات مدل یادداشت کنید.
+
+### پورتال Azure
+
+- `AZURE_OPENAI_ENDPOINT` - به بخش **Azure AI services** بروید، روی آن کلیک کنید، سپس به **Resource Management**، **Keys and Endpoint** بروید، به پایین صفحه "Azure OpenAI endpoints" اسکرول کنید و آن موردی که "Language APIs" نوشته شده را کپی کنید.
+
+- `AZURE_OPENAI_API_KEY` - از همان صفحه، کلید KEY 1 یا KEY 2 را کپی کنید.
+
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - منبع **Azure AI Search** خود را پیدا کرده، روی آن کلیک کنید و بخش **Overview** را ببینید.
+
+- `AZURE_SEARCH_API_KEY` - سپس به بخش **Settings** و بعد **Keys** بروید و کلید اصلی یا ثانویه مدیر را کپی کنید.
+
+### صفحه وب خارجی
+
+- `AZURE_OPENAI_API_VERSION` - صفحه [چرخه عمر نسخه API](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) را در بخش **Latest GA API release** مشاهده کنید.
+
+### راه‌اندازی احراز هویت بدون کلید
+
+به جای وارد کردن مستقیم اطلاعات ورود، از اتصال بدون کلید با Azure OpenAI استفاده خواهیم کرد. برای این کار، `DefaultAzureCredential` را وارد کرده و بعداً تابع `DefaultAzureCredential` را برای دریافت اعتبارنامه فراخوانی می‌کنیم.
 
 ```python
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
@@ -121,15 +117,19 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 ## گیر کرده‌اید؟
 
-اگر در اجرای این تنظیمات به مشکلی برخوردید، به انجمن ما مراجعه کنید یا
+اگر در اجرای این تنظیمات به مشکلی برخوردید، به کانال ما در
+
+یا
+
+مراجعه کنید.
 
 .
 
 ## درس بعدی
 
-اکنون آماده‌اید تا کدهای این دوره را اجرا کنید. یادگیری خوش بگذرد و دنیای عوامل هوش مصنوعی را بهتر بشناسید!
+اکنون آماده‌اید کدهای این دوره را اجرا کنید. یادگیری خوبی درباره دنیای عامل‌های هوش مصنوعی برای شما آرزو می‌کنیم!
 
-[مقدمه‌ای بر عوامل هوش مصنوعی و موارد استفاده از عوامل](../01-intro-to-ai-agents/README.md)
+[مقدمه‌ای بر عامل‌های هوش مصنوعی و موارد استفاده از عامل‌ها](../01-intro-to-ai-agents/README.md)
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه ماشینی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطا یا نادرستی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوء تفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.

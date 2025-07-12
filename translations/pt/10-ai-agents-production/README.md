@@ -2,83 +2,83 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1ad5de6a6388d02c145a92dd04358bab",
-  "translation_date": "2025-05-20T08:53:40+00:00",
+  "translation_date": "2025-07-12T13:37:50+00:00",
   "source_file": "10-ai-agents-production/README.md",
   "language_code": "pt"
 }
 -->
-[![AI Agents In Production](../../../translated_images/lesson-10-thumbnail.0b68f4240618b3d5b26693b78cf2cf0a8b36131b50bb08daf91d548cecc87424.pt.png)](https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV)
+[![AI Agents In Production](../../../translated_images/lesson-10-thumbnail.2b79a30773db093e0b4fb47aaa618069e0afb4745fad4836526cf51df87f9ac9.pt.png)](https://youtu.be/l4TP6IyJxmQ?si=IvCW3cbw0NJ2mUMV)
 
-> _(Clique na imagem acima para assistir ao vídeo desta aula)_
+> _(Clique na imagem acima para ver o vídeo desta lição)_
 # Agentes de IA em Produção
 
 ## Introdução
 
-Esta aula abordará:
+Esta lição irá abordar:
 
-- Como planejar a implantação do seu Agente de IA em produção de forma eficaz.
-- Erros comuns e problemas que você pode enfrentar ao implantar seu Agente de IA em produção.
-- Como gerenciar custos mantendo o desempenho do seu Agente de IA.
+- Como planear eficazmente a implementação do seu Agente de IA em produção.
+- Erros comuns e problemas que pode enfrentar ao implementar o seu Agente de IA em produção.
+- Como gerir os custos mantendo o desempenho do seu Agente de IA.
 
 ## Objetivos de Aprendizagem
 
-Após concluir esta aula, você saberá/entenderá:
+Após completar esta lição, saberá/compreenderá:
 
-- Técnicas para melhorar o desempenho, os custos e a eficácia de um sistema de Agentes de IA em produção.
-- O que e como avaliar seus Agentes de IA.
-- Como controlar os custos ao implantar Agentes de IA em produção.
+- Técnicas para melhorar o desempenho, custos e eficácia de um sistema de Agentes de IA em produção.
+- O que e como avaliar os seus Agentes de IA.
+- Como controlar os custos ao implementar Agentes de IA em produção.
 
-É importante implantar Agentes de IA confiáveis. Confira também a aula "Building Trustworthy AI Agents".
+É importante implementar Agentes de IA que sejam confiáveis. Consulte também a lição "Building Trustworthy AI Agents".
 
-## Avaliando Agentes de IA
+## Avaliação de Agentes de IA
 
-Antes, durante e após a implantação dos Agentes de IA, ter um sistema adequado para avaliá-los é fundamental. Isso garantirá que seu sistema esteja alinhado com os objetivos seus e dos seus usuários.
+Antes, durante e depois de implementar Agentes de IA, ter um sistema adequado para avaliar os seus Agentes é fundamental. Isto garante que o seu sistema está alinhado com os seus objetivos e os dos seus utilizadores.
 
-Para avaliar um Agente de IA, é importante poder avaliar não apenas a saída do agente, mas também todo o sistema em que ele opera. Isso inclui, mas não se limita a:
+Para avaliar um Agente de IA, é importante ter a capacidade de avaliar não só a saída do agente, mas também todo o sistema em que o seu Agente de IA está a operar. Isto inclui, mas não se limita a:
 
-- A solicitação inicial ao modelo.
-- A capacidade do agente de identificar a intenção do usuário.
-- A capacidade do agente de identificar a ferramenta certa para executar a tarefa.
-- A resposta da ferramenta à solicitação do agente.
+- O pedido inicial ao modelo.
+- A capacidade do agente de identificar a intenção do utilizador.
+- A capacidade do agente de identificar a ferramenta correta para realizar a tarefa.
+- A resposta da ferramenta ao pedido do agente.
 - A capacidade do agente de interpretar a resposta da ferramenta.
-- O feedback do usuário à resposta do agente.
+- O feedback do utilizador à resposta do agente.
 
-Isso permite identificar áreas para melhoria de forma mais modular. Você pode então monitorar o efeito das mudanças nos modelos, prompts, ferramentas e outros componentes com maior eficiência.
+Isto permite identificar áreas de melhoria de forma mais modular. Pode depois monitorizar o efeito das alterações a modelos, prompts, ferramentas e outros componentes com maior eficiência.
 
 ## Problemas Comuns e Soluções Potenciais com Agentes de IA
 
-| **Problema**                                  | **Solução Potencial**                                                                                                                                                                                                        |
-| --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Agente de IA não executa tarefas de forma consistente | - Refine o prompt dado ao Agente de IA; seja claro nos objetivos.<br>- Identifique onde dividir as tarefas em subtarefas e lidar com elas por meio de múltiplos agentes pode ajudar.                                          |
-| Agente de IA entrando em loops contínuos      | - Garanta termos e condições claros de término para que o Agente saiba quando parar o processo.<br>- Para tarefas complexas que exigem raciocínio e planejamento, use um modelo maior especializado em tarefas de raciocínio.  |
-| Chamadas de ferramentas do Agente de IA não estão funcionando bem | - Teste e valide a saída da ferramenta fora do sistema do agente.<br>- Refine os parâmetros definidos, prompts e nomes das ferramentas.                                                                                      |
-| Sistema Multi-Agente não está funcionando consistentemente | - Refine os prompts dados a cada agente para garantir que sejam específicos e distintos entre si.<br>- Construa um sistema hierárquico usando um agente "roteador" ou controlador para determinar qual agente é o correto.     |
+| **Problema**                                   | **Solução Potencial**                                                                                                                                                                                                     |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Agente de IA não executa tarefas de forma consistente | - Refine o prompt dado ao Agente de IA; seja claro nos objetivos.<br>- Identifique onde dividir as tarefas em subtarefas e delegá-las a vários agentes pode ajudar.                                                      |
+| Agente de IA entra em ciclos contínuos         | - Assegure que existem termos e condições claros de término para que o Agente saiba quando parar o processo.<br>- Para tarefas complexas que requerem raciocínio e planeamento, use um modelo maior especializado nestas tarefas. |
+| Chamadas a ferramentas do Agente de IA não funcionam bem | - Teste e valide a saída da ferramenta fora do sistema do agente.<br>- Refine os parâmetros definidos, prompts e nomes das ferramentas.                                                                                        |
+| Sistema Multi-Agente não funciona de forma consistente | - Refine os prompts dados a cada agente para garantir que são específicos e distintos entre si.<br>- Construa um sistema hierárquico usando um agente "roteador" ou controlador para determinar qual agente é o mais adequado.         |
 
-## Gerenciando Custos
+## Gestão de Custos
 
-Aqui estão algumas estratégias para gerenciar os custos de implantar Agentes de IA em produção:
+Aqui estão algumas estratégias para gerir os custos da implementação de Agentes de IA em produção:
 
-- **Cache de Respostas** - Identificar solicitações e tarefas comuns e fornecer as respostas antes que passem pelo seu sistema agentic é uma boa forma de reduzir o volume de solicitações semelhantes. Você pode até implementar um fluxo para identificar o quão semelhante uma solicitação é às suas respostas em cache usando modelos de IA mais básicos.
+- **Cache de Respostas** - Identificar pedidos e tarefas comuns e fornecer as respostas antes de passarem pelo seu sistema agentic é uma boa forma de reduzir o volume de pedidos semelhantes. Pode até implementar um fluxo para identificar o quão semelhante um pedido é aos pedidos em cache usando modelos de IA mais básicos.
 
-- **Uso de Modelos Menores** - Modelos de Linguagem Pequenos (SLMs) podem ter bom desempenho em certos casos de uso agentic e reduzirão os custos significativamente. Como mencionado anteriormente, construir um sistema de avaliação para determinar e comparar o desempenho em relação a modelos maiores é a melhor forma de entender quão bem um SLM funcionará no seu caso de uso.
+- **Uso de Modelos Menores** - Modelos de Linguagem Pequenos (SLMs) podem ter um bom desempenho em certos casos de uso agentic e reduzirão significativamente os custos. Como mencionado anteriormente, construir um sistema de avaliação para determinar e comparar o desempenho face a modelos maiores é a melhor forma de perceber quão bem um SLM irá funcionar no seu caso de uso.
 
-- **Uso de um Modelo Roteador** - Uma estratégia semelhante é usar uma diversidade de modelos e tamanhos. Você pode usar um LLM/SLM ou função serverless para direcionar as solicitações com base na complexidade para os modelos mais adequados. Isso também ajuda a reduzir custos, garantindo desempenho nas tarefas certas.
+- **Uso de um Modelo Roteador** - Uma estratégia semelhante é usar uma diversidade de modelos e tamanhos. Pode usar um LLM/SLM ou função serverless para encaminhar pedidos com base na complexidade para os modelos mais adequados. Isto também ajuda a reduzir custos, garantindo desempenho nas tarefas certas.
 
 ## Parabéns
 
-Esta é atualmente a última aula de "AI Agents for Beginners".
+Esta é atualmente a última lição de "AI Agents for Beginners".
 
-Planejamos continuar adicionando aulas com base no feedback e nas mudanças desta indústria em constante crescimento, então volte em breve.
+Planeamos continuar a adicionar lições com base no feedback e nas mudanças desta indústria em constante crescimento, por isso volte a visitar-nos em breve.
 
-Se você quer continuar aprendendo e construindo com Agentes de IA, junte-se ao <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a>.
+Se quiser continuar a aprender e a construir com Agentes de IA, junte-se ao <a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a>.
 
-Lá organizamos workshops, mesas redondas da comunidade e sessões de "pergunte-me qualquer coisa".
+Organizamos workshops, mesas redondas comunitárias e sessões de "pergunte-me qualquer coisa" lá.
 
-Também temos uma coleção Learn com materiais adicionais que podem ajudar você a começar a construir Agentes de IA em produção.
+Também temos uma coleção Learn com materiais adicionais que podem ajudar a começar a construir Agentes de IA em produção.
 
-## Aula Anterior
+## Lição Anterior
 
 [Metacognition Design Pattern](../09-metacognition/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em atenção que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e4e06d3b5d6207459a019c05fee5eb4b",
-  "translation_date": "2025-05-20T07:50:42+00:00",
+  "translation_date": "2025-07-12T10:34:53+00:00",
   "source_file": "07-planning-design/README.md",
   "language_code": "fr"
 }
 -->
-pour un aperçu rapide.
+for un aperçu rapide.
 
-L'extrait Python suivant montre un agent de planification simple qui décompose un objectif en sous-tâches et génère un plan structuré :
+Le snippet Python suivant illustre un agent de planification simple décomposant un objectif en sous-tâches et générant un plan structuré :
 
 ```python
 from pydantic import BaseModel
@@ -100,15 +100,14 @@ pprint(json.loads(response_content))
 
 ### Agent de planification avec orchestration multi-agent
 
-Dans cet exemple, un Semantic Router Agent reçoit une demande utilisateur (par exemple, "J'ai besoin d'un plan hôtelier pour mon voyage.").
+Dans cet exemple, un agent Semantic Router reçoit une demande utilisateur (par exemple, "J'ai besoin d'un plan hôtelier pour mon voyage.").
 
 Le planificateur :
 
-* Reçoit le plan hôtelier : le planificateur prend le message de l'utilisateur et, basé sur une invite système (incluant les détails des agents disponibles), génère un plan de voyage structuré.
-* Liste les agents et leurs outils : le registre des agents contient une liste d'agents (par exemple pour les vols, hôtels, location de voiture, et activités) ainsi que les fonctions ou outils qu'ils offrent.
-* Oriente le plan vers les agents respectifs : selon le nombre de sous-tâches, le planificateur envoie soit directement le message à un agent dédié (pour les scénarios à tâche unique), soit coordonne via un gestionnaire de chat de groupe pour la collaboration multi-agent.
-* Résume le résultat : enfin, le planificateur résume le plan généré pour plus de clarté.
-
+* Reçoit le plan hôtelier : Le planificateur prend le message de l'utilisateur et, basé sur une invite système (incluant les détails des agents disponibles), génère un plan de voyage structuré.
+* Liste les agents et leurs outils : Le registre des agents contient une liste d'agents (par exemple pour les vols, hôtels, location de voiture et activités) ainsi que les fonctions ou outils qu'ils proposent.
+* Oriente le plan vers les agents respectifs : Selon le nombre de sous-tâches, le planificateur envoie soit directement le message à un agent dédié (pour les scénarios à tâche unique), soit coordonne via un gestionnaire de chat de groupe pour une collaboration multi-agent.
+* Résume le résultat : Enfin, le planificateur résume le plan généré pour plus de clarté.
 Le code Python suivant illustre ces étapes :
 
 ```python
@@ -184,7 +183,7 @@ if response_content is None:
 pprint(json.loads(response_content))
 ```
 
-Ce qui suit est la sortie du code précédent et vous pouvez ensuite utiliser cette sortie structurée pour l'orienter vers `assigned_agent` et résumer le plan de voyage à l'utilisateur final.
+Ce qui suit est la sortie du code précédent, vous pouvez ensuite utiliser cette sortie structurée pour la diriger vers `assigned_agent` et résumer le plan de voyage à l'utilisateur final.
 
 ```json
 {
@@ -219,9 +218,9 @@ Un notebook d'exemple avec le code précédent est disponible [ici](../../../07-
 
 ### Planification itérative
 
-Certaines tâches nécessitent des allers-retours ou une re-planification, où le résultat d'une sous-tâche influence la suivante. Par exemple, si l'agent découvre un format de données inattendu lors de la réservation des vols, il peut devoir adapter sa stratégie avant de passer aux réservations d'hôtel.
+Certaines tâches nécessitent des allers-retours ou une re-planification, où le résultat d'une sous-tâche influence la suivante. Par exemple, si l'agent découvre un format de données inattendu lors de la réservation des vols, il pourrait devoir adapter sa stratégie avant de passer à la réservation d'hôtel.
 
-De plus, les retours utilisateurs (par exemple, un humain décidant qu'il préfère un vol plus tôt) peuvent déclencher une re-planification partielle. Cette approche dynamique et itérative garantit que la solution finale s'aligne sur les contraintes réelles et les préférences évolutives de l'utilisateur.
+De plus, les retours utilisateurs (par exemple, un humain décidant qu'il préfère un vol plus tôt) peuvent déclencher une re-planification partielle. Cette approche dynamique et itérative garantit que la solution finale s'aligne avec les contraintes réelles et les préférences évolutives de l'utilisateur.
 
 ex. code d'exemple
 
@@ -250,17 +249,17 @@ pour résoudre des tâches complexes.
 
 ## Résumé
 
-Dans cet article, nous avons vu un exemple de création d'un planificateur capable de sélectionner dynamiquement les agents disponibles définis. La sortie du planificateur décompose les tâches et assigne les agents pour qu'elles puissent être exécutées. On suppose que les agents ont accès aux fonctions/outils nécessaires pour accomplir la tâche. En plus des agents, vous pouvez inclure d'autres modèles comme la réflexion, le résumé, et le chat en tour de rôle pour personnaliser davantage.
+Dans cet article, nous avons examiné un exemple de création d'un planificateur capable de sélectionner dynamiquement les agents disponibles définis. La sortie du planificateur décompose les tâches et assigne les agents pour qu'elles puissent être exécutées. On suppose que les agents ont accès aux fonctions/outils nécessaires pour accomplir la tâche. En plus des agents, vous pouvez inclure d'autres modèles comme la réflexion, le résumé, et le chat en rotation pour personnaliser davantage.
 
 ## Ressources supplémentaires
 
-* AutoGen Magnetic One - Un système multi-agent généraliste pour résoudre des tâches complexes, ayant obtenu des résultats impressionnants sur plusieurs benchmarks agentiques exigeants. Référence :
+* AutoGen Magnetic One - Un système multi-agent généraliste pour résoudre des tâches complexes et qui a obtenu des résultats impressionnants sur plusieurs benchmarks agentiques difficiles. Référence :
 
-. Dans cette implémentation, l'orchestrateur crée un plan spécifique à la tâche et délègue ces tâches aux agents disponibles. En plus de la planification, l'orchestrateur utilise également un mécanisme de suivi pour surveiller l'avancement de la tâche et re-planifie si nécessaire.
+. Dans cette implémentation, l'orchestrateur crée un plan spécifique à la tâche et délègue ces tâches aux agents disponibles. En plus de la planification, l'orchestrateur utilise également un mécanisme de suivi pour surveiller l'avancement de la tâche et re-planifier si nécessaire.
 
 ## Leçon précédente
 
-[Créer des agents IA fiables](../06-building-trustworthy-agents/README.md)
+[Construire des agents IA fiables](../06-building-trustworthy-agents/README.md)
 
 ## Leçon suivante
 

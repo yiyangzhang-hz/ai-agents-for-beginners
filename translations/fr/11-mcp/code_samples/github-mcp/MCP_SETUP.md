@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4be907703b836d1a1c360db20da4de9",
-  "translation_date": "2025-05-21T08:15:00+00:00",
+  "translation_date": "2025-07-12T14:13:56+00:00",
   "source_file": "11-mcp/code_samples/github-mcp/MCP_SETUP.md",
   "language_code": "fr"
 }
@@ -30,7 +30,7 @@ CO_OP_TRANSLATOR_METADATA:
 3. **Vérifier la connexion**  
    - Recherchez l'icône de prise (🔌) dans votre interface Chainlit  
    - Un chiffre (1) doit apparaître à côté de l'icône indiquant une connexion réussie  
-   - La console doit afficher : "GitHub plugin setup completed successfully" (avec des lignes de statut supplémentaires)
+   - La console doit afficher : "GitHub plugin setup completed successfully" (avec d'autres lignes de statut)
 
 ## Dépannage
 
@@ -50,10 +50,10 @@ CO_OP_TRANSLATOR_METADATA:
    - Vérifiez que le fichier .env contient les tokens requis  
    - Confirmez l'accès à l'API GitHub
 
-3. **Échec de la connexion**  
-   - Vérifiez que le serveur fonctionne sur le port attendu  
+3. **Échec de connexion**  
+   - Vérifiez que le serveur tourne sur le port attendu  
    - Contrôlez les paramètres du pare-feu  
-   - Assurez-vous que l'environnement Python possède les packages nécessaires
+   - Assurez-vous que l'environnement Python possède les paquets nécessaires
 
 ## Vérification de la connexion
 
@@ -79,4 +79,4 @@ Show me the repositories for username: [GitHub Username]
 Une réponse réussie affichera les informations du dépôt.
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
