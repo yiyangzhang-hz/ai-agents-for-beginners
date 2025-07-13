@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b06f16d6944fab788df1db7638d0edaa",
-  "translation_date": "2025-07-12T08:43:50+00:00",
+  "original_hash": "6b07046397366e6f6f4524c9ddeba1e1",
+  "translation_date": "2025-07-12T14:57:15+00:00",
   "source_file": "README.md",
   "language_code": "tl"
 }
 -->
 # AI Agents para sa mga Baguhan - Isang Kurso
 
-![Generative AI For Beginners](../../translated_images/repo-thumbnail.083b24afed61b6dd27a7fc53798bebe9edf688a41031163a1fca9f61c64d63ec.tl.png)
+![Generative AI Para sa mga Baguhan](../../translated_images/repo-thumbnail.083b24afed61b6dd27a7fc53798bebe9edf688a41031163a1fca9f61c64d63ec.tl.png)
 
 ## 11 Aralin na nagtuturo ng lahat ng kailangan mong malaman para makapagsimula sa paggawa ng AI Agents
 
@@ -23,9 +23,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### Sinusuportahan sa pamamagitan ng GitHub Action (Awtomatiko at Palaging Napapanahon)
 
-[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](./README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
+[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](./README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md) | [Ukrainian](../uk/README.md) | [Burmese (Myanmar)](../my/README.md)
 
-**Kung nais mong magkaroon ng karagdagang mga suportadong wika, tingnan ang listahan [dito](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Kung nais mong magkaroon ng karagdagang mga sinusuportahang wika, tingnan ang listahan [dito](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 
 [![GitHub watchers](https://img.shields.io/github/watchers/microsoft/ai-agents-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/ai-agents-for-beginners/watchers/?WT.mc_id=academic-105485-koreyst)  
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/ai-agents-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/ai-agents-for-beginners/network/?WT.mc_id=academic-105485-koreyst)  
@@ -40,7 +40,7 @@ Ang kursong ito ay may 11 aralin na sumasaklaw sa mga pangunahing kaalaman sa pa
 
 May suporta ito sa maramihang wika. Pumunta sa aming [mga available na wika dito](../..).
 
-Kung ito ang unang beses mong gumawa gamit ang Generative AI models, tingnan ang aming [Generative AI For Beginners](https://aka.ms/genai-beginners) na kurso, na may 21 aralin tungkol sa paggawa gamit ang GenAI.
+Kung ito ang unang beses mong gumawa gamit ang Generative AI models, tingnan ang aming [Generative AI Para sa mga Baguhan](https://aka.ms/genai-beginners) na kurso, na may 21 aralin tungkol sa paggawa gamit ang GenAI.
 
 Huwag kalimutang [i-star (🌟) ang repo na ito](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) at [i-fork ang repo na ito](https://github.com/microsoft/ai-agents-for-beginners/fork) para mapatakbo ang code.
 
@@ -53,13 +53,13 @@ Ang mga halimbawa ng code sa mga pagsasanay na ito ay gumagamit ng Azure AI Foun
 - [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Libre / Limitado  
 - [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Kailangan ng Azure Account
 
-Ginagamit din ng kursong ito ang mga sumusunod na AI Agent frameworks at serbisyo mula sa Microsoft:
+Gumagamit din ang kursong ito ng mga sumusunod na AI Agent frameworks at serbisyo mula sa Microsoft:
 
 - [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)  
 - [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)  
 - [AutoGen](https://aka.ms/ai-agents/autogen)
 
-Para sa karagdagang impormasyon kung paano patakbuhin ang code para sa kursong ito, pumunta sa [Course Setup](./00-course-setup/README.md).
+Para sa karagdagang impormasyon sa pagpapatakbo ng code para sa kursong ito, pumunta sa [Course Setup](./00-course-setup/README.md).
 
 ## 🙏 Gusto mo bang tumulong?
 
@@ -93,9 +93,8 @@ Kung may feedback ka tungkol sa produkto o may mga error habang gumagawa, bisita
 
 ## 🎒 Iba Pang Mga Kurso
 
-Ang aming koponan ay gumagawa rin ng iba pang mga kurso! Tingnan ang:
-
-- [**BAGO** Model Context Protocol (MCP) Para sa mga Baguhan](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+Ang aming koponan ay gumagawa rin ng iba pang mga kurso! Tingnan:
+- [**BAGONG** Model Context Protocol (MCP) Para sa mga Baguhan](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Generative AI para sa mga Baguhan gamit ang .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 - [Generative AI para sa mga Baguhan](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [ML para sa mga Baguhan](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
@@ -113,15 +112,15 @@ Ang aming koponan ay gumagawa rin ng iba pang mga kurso! Tingnan ang:
 
 Salamat kay [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) sa pagbibigay ng mahahalagang halimbawa ng code na nagpapakita ng Agentic RAG.
 
-## Pagsali
+## Pagsali sa Proyekto
 
 Malugod na tinatanggap ng proyektong ito ang mga kontribusyon at suhestiyon. Karamihan sa mga kontribusyon ay nangangailangan na sumang-ayon ka sa isang
 Contributor License Agreement (CLA) na nagsasaad na may karapatan ka, at talagang binibigyan mo kami
-ng mga karapatan na gamitin ang iyong kontribusyon. Para sa mga detalye, bisitahin
+ng mga karapatan na gamitin ang iyong kontribusyon. Para sa mga detalye, bisitahin ang
 <https://cla.opensource.microsoft.com>.
 
-Kapag nagsumite ka ng pull request, awtomatikong titingnan ng CLA bot kung kailangan mong magbigay ng
-CLA at lalagyan ng angkop na palatandaan ang PR (hal., status check, komento). Sundin lamang ang mga tagubiling
+Kapag nagsumite ka ng pull request, awtomatikong malalaman ng CLA bot kung kailangan mong magbigay ng
+CLA at bibigyan ng angkop na marka ang PR (hal., status check, komento). Sundin lamang ang mga tagubiling
 ibinibigay ng bot. Isang beses mo lang ito kailangang gawin para sa lahat ng repos na gumagamit ng aming CLA.
 
 Inampon ng proyektong ito ang [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
@@ -136,4 +135,4 @@ Ang paggamit ng mga trademark o logo ng Microsoft sa mga binagong bersyon ng pro
 Anumang paggamit ng mga trademark o logo ng third-party ay napapailalim sa mga patakaran ng mga third-party na iyon.
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
