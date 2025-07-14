@@ -2,118 +2,114 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "76945069b52a49cd0432ae3e0b0ba22e",
-  "translation_date": "2025-06-17T08:37:23+00:00",
+  "translation_date": "2025-07-12T07:49:34+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "pl"
 }
 -->
 w swoim koncie GitHub.
 
-Wybierz `Fine-grained tokens` option on the left side of your screen.
+Wybierz opcję `Fine-grained tokens` po lewej stronie ekranu.
 
-Then select `Generate new token`.
+Następnie wybierz `Generate new token`.
 
-![Generate Token](../../../00-course-setup/images/generate-token.png)
+![Generate Token](../../../translated_images/generate-token.9748d7585dd004cb4119b5aac724baff49c3a85791701b5e8ba3274b037c5b66.pl.png)
 
-You will be prompted to enter a name for your token, select the expiration date (Recommended: 30 Days), and select the scopes for your token (Public Repositories).
+Zostaniesz poproszony o podanie nazwy tokenu, wybranie daty wygaśnięcia (zalecane: 30 dni) oraz zakresów dla tokenu (Public Repositories).
 
-It's also necessary to edit the permissions of this token: Permissions -> Models -> Allows access to GitHub Models
+Należy również edytować uprawnienia tego tokenu: Permissions -> Models -> Pozwala na dostęp do GitHub Models
 
-Copy your new token that you have just created. You will now add this to your `.env` file included in this course. 
+Skopiuj nowo utworzony token. Teraz dodasz go do pliku `.env` dołączonego do tego kursu.
 
+### Krok 2: Utwórz plik `.env`
 
-### Step 2: Create Your `.env` File
-
-To create your `.env`, a następnie uruchom następujące polecenie w terminalu.
-
-```bash
-cp .env.example .env
-```
-
-To skopiuje plik przykładowy i utworzy plik `.env` in your directory and where you fill in the values for the environment variables.
-
-With your token copied, open the `.env` file in your favorite text editor and paste your token into the `GITHUB_TOKEN` field.
-
-You should now be able to run the code samples of this course.
-
-## Set Up for Samples using Azure AI Foundry and Azure AI Agent Service
-
-### Step 1: Retrieve Your Azure Project Endpoint
-
-
-Follow the steps to creating a hub and project in Azure AI Foundry found here: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
-
-
-Once you have created your project, you will need to retrieve the connection string for your project.
-
-This can be done by going to the **Overview** page of your project in the Azure AI Foundry portal.
-
-![Project Connection String](../../../00-course-setup/images/project-endpoint.png)
-
-### Step 2: Create Your `.env` File
-
-To create your `.env`, uruchom następujące polecenie w terminalu.
+Aby utworzyć plik `.env`, uruchom następujące polecenie w terminalu.
 
 ```bash
 cp .env.example .env
 ```
 
-To skopiuje plik przykładowy i utworzy plik `.env` in your directory and where you fill in the values for the environment variables.
+Spowoduje to skopiowanie pliku przykładowego i utworzenie pliku `.env` w Twoim katalogu, gdzie wypełnisz wartości zmiennych środowiskowych.
 
-With your token copied, open the `.env` file in your favorite text editor and paste your token into the `PROJECT_ENDPOINT` field.
+Po skopiowaniu tokenu, otwórz plik `.env` w ulubionym edytorze tekstu i wklej token w pole `GITHUB_TOKEN`.
 
-### Step 3: Sign in to Azure
+Teraz powinieneś być w stanie uruchomić przykłady kodu z tego kursu.
 
-As a security best practice, we'll use [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) to authenticate to Azure OpenAI with Microsoft Entra ID. Before you can do so, you'll first need to install the **Azure CLI** per the [installation instructions](https://learn.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=academic-105485-koreyst) for your operating system.
+## Konfiguracja dla przykładów korzystających z Azure AI Foundry i Azure AI Agent Service
 
-Next, open a terminal and run `az login --use-device-code` to sign in to your Azure account.
+### Krok 1: Pobierz punkt końcowy projektu Azure
 
-Once you've logged in, select your subscription in the terminal.
+Postępuj zgodnie z instrukcjami tworzenia huba i projektu w Azure AI Foundry dostępnymi tutaj: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
+Po utworzeniu projektu, musisz pobrać łańcuch połączenia dla swojego projektu.
 
-## Additional Environment Variables - Azure Search and Azure OpenAI 
+Można to zrobić, przechodząc do strony **Overview** swojego projektu w portalu Azure AI Foundry.
 
-For the Agentic RAG Lesson - Lesson 5 - there are samples that use Azure Search and Azure OpenAI.
+![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.pl.png)
 
-If you want to run these samples, you will need to add the following environment variables to your `.env` file:
+### Krok 2: Utwórz plik `.env`
 
-### Overview Page (Project)
+Aby utworzyć plik `.env`, uruchom następujące polecenie w terminalu.
 
-- `AZURE_SUBSCRIPTION_ID` - Check **Project details** on the **Overview** page of your project.
+```bash
+cp .env.example .env
+```
 
-- `AZURE_AI_PROJECT_NAME` - Look at the top of the **Overview** page for your project.
+Spowoduje to skopiowanie pliku przykładowego i utworzenie pliku `.env` w Twoim katalogu, gdzie wypełnisz wartości zmiennych środowiskowych.
 
-- `AZURE_OPENAI_SERVICE` - Find this in the **Included capabilities** tab for **Azure OpenAI Service** on the **Overview** page.
+Po skopiowaniu tokenu, otwórz plik `.env` w ulubionym edytorze tekstu i wklej token w pole `PROJECT_ENDPOINT`.
 
-### Management Center
+### Krok 3: Zaloguj się do Azure
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Go to **Project properties** on the **Overview** page of the **Management Center**.
+Zgodnie z najlepszymi praktykami bezpieczeństwa, użyjemy [uwierzytelniania bezkluczowego](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) do uwierzytelnienia w Azure OpenAI za pomocą Microsoft Entra ID. Zanim to zrobisz, musisz najpierw zainstalować **Azure CLI** zgodnie z [instrukcjami instalacji](https://learn.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=academic-105485-koreyst) dla Twojego systemu operacyjnego.
 
-- `GLOBAL_LLM_SERVICE` - Under **Connected resources**, find the **Azure AI Services** connection name. If not listed, check the **Azure portal** under your resource group for the AI Services resource name.
+Następnie otwórz terminal i uruchom `az login --use-device-code`, aby zalogować się na swoje konto Azure.
 
-### Models + Endpoints Page
+Po zalogowaniu wybierz subskrypcję w terminalu.
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Select your embedding model (e.g., `text-embedding-ada-002`) and note the **Deployment name** from the model details.
+## Dodatkowe zmienne środowiskowe - Azure Search i Azure OpenAI
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Select your chat model (e.g., `gpt-4o-mini`) and note the **Deployment name** from the model details.
+W lekcji Agentic RAG - Lekcja 5 - znajdują się przykłady korzystające z Azure Search i Azure OpenAI.
 
-### Azure Portal
+Jeśli chcesz uruchomić te przykłady, musisz dodać następujące zmienne środowiskowe do pliku `.env`:
 
-- `AZURE_OPENAI_ENDPOINT` - Look for **Azure AI services**, click on it, then go to **Resource Management**, **Keys and Endpoint**, scroll down to the "Azure OpenAI endpoints", and copy the one that says "Language APIs".
+### Strona przeglądu (Projekt)
 
-- `AZURE_OPENAI_API_KEY` - From the same screen, copy KEY 1 or KEY 2.
+- `AZURE_SUBSCRIPTION_ID` - Sprawdź **Szczegóły projektu** na stronie **Overview** swojego projektu.
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Find your **Azure AI Search** resource, click it, and see **Overview**.
+- `AZURE_AI_PROJECT_NAME` - Znajdziesz na górze strony **Overview** swojego projektu.
 
-- `AZURE_SEARCH_API_KEY` - Then go to **Settings** and then **Keys** to copy the primary or secondary admin key.
+- `AZURE_OPENAI_SERVICE` - Znajdziesz w zakładce **Included capabilities** dla **Azure OpenAI Service** na stronie **Overview**.
 
-### External Webpage
+### Centrum zarządzania
 
-- `AZURE_OPENAI_API_VERSION` - Visit the [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) page under **Latest GA API release**.
+- `AZURE_OPENAI_RESOURCE_GROUP` - Przejdź do **Właściwości projektu** na stronie **Overview** w **Centrum zarządzania**.
 
-### Setup keyless authentication
+- `GLOBAL_LLM_SERVICE` - W sekcji **Connected resources** znajdź nazwę połączenia **Azure AI Services**. Jeśli nie jest widoczna, sprawdź w **Azure portal** w grupie zasobów nazwę zasobu AI Services.
 
-Rather than hardcode your credentials, we'll use a keyless connection with Azure OpenAI. To do so, we'll import `DefaultAzureCredential` and later call the `DefaultAzureCredential`, aby uzyskać poświadczenia.
+### Strona modeli i punktów końcowych
+
+- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Wybierz swój model embeddingu (np. `text-embedding-ada-002`) i zanotuj **Deployment name** z danych modelu.
+
+- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Wybierz swój model czatu (np. `gpt-4o-mini`) i zanotuj **Deployment name** z danych modelu.
+
+### Portal Azure
+
+- `AZURE_OPENAI_ENDPOINT` - Znajdź **Azure AI services**, kliknij, przejdź do **Resource Management**, **Keys and Endpoint**, przewiń do "Azure OpenAI endpoints" i skopiuj ten oznaczony jako "Language APIs".
+
+- `AZURE_OPENAI_API_KEY` - Z tego samego ekranu skopiuj KLUCZ 1 lub KLUCZ 2.
+
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - Znajdź swój zasób **Azure AI Search**, kliknij i przejdź do **Overview**.
+
+- `AZURE_SEARCH_API_KEY` - Następnie przejdź do **Settings**, a potem **Keys**, aby skopiować klucz administratora podstawowego lub zapasowego.
+
+### Strona zewnętrzna
+
+- `AZURE_OPENAI_API_VERSION` - Odwiedź stronę [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) pod sekcją **Latest GA API release**.
+
+### Konfiguracja uwierzytelniania bezkluczowego
+
+Zamiast wpisywać dane uwierzytelniające na stałe, użyjemy połączenia bezkluczowego z Azure OpenAI. W tym celu zaimportujemy `DefaultAzureCredential` i później wywołamy funkcję `DefaultAzureCredential`, aby uzyskać poświadczenia.
 
 ```python
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
@@ -121,7 +117,7 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 ## Utknąłeś gdzieś?
 
-Jeśli napotkasz jakiekolwiek problemy podczas tego procesu konfiguracji, dołącz do naszej
+Jeśli masz jakiekolwiek problemy z uruchomieniem tej konfiguracji, dołącz do naszej
 
 lub
 
@@ -129,9 +125,9 @@ lub
 
 ## Następna lekcja
 
-Jesteś teraz gotowy, aby uruchomić kod tego kursu. Powodzenia w dalszym poznawaniu świata Agentów AI!
+Jesteś teraz gotowy, aby uruchomić kod z tego kursu. Życzymy owocnej nauki i poznawania świata Agentów AI!
 
-[Wprowadzenie do Agentów AI i przypadków użycia Agentów](../01-intro-to-ai-agents/README.md)
+[Wprowadzenie do Agentów AI i przypadków użycia agentów](../01-intro-to-ai-agents/README.md)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym należy uważać za źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

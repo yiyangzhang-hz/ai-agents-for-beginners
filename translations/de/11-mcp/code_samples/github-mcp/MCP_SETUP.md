@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4be907703b836d1a1c360db20da4de9",
-  "translation_date": "2025-05-21T08:15:53+00:00",
+  "translation_date": "2025-07-12T14:14:09+00:00",
   "source_file": "11-mcp/code_samples/github-mcp/MCP_SETUP.md",
   "language_code": "de"
 }
@@ -47,19 +47,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 2. **Authentifizierungsprobleme**  
    - Stelle sicher, dass die GitHub-Zugangsdaten korrekt konfiguriert sind  
-   - Überprüfe, ob die .env-Datei die erforderlichen Tokens enthält  
-   - Verifiziere den Zugriff auf die GitHub API
+   - Prüfe, ob die .env-Datei die erforderlichen Tokens enthält  
+   - Überprüfe den Zugriff auf die GitHub API
 
 3. **Verbindung fehlgeschlagen**  
-   - Prüfe, ob der Server auf dem erwarteten Port läuft  
-   - Kontrolliere die Firewall-Einstellungen  
-   - Vergewissere dich, dass die Python-Umgebung die notwendigen Pakete enthält
+   - Vergewissere dich, dass der Server auf dem erwarteten Port läuft  
+   - Prüfe die Firewall-Einstellungen  
+   - Stelle sicher, dass die Python-Umgebung die benötigten Pakete installiert hat
 
-## Verbindungsprüfung
+## Verbindungsüberprüfung
 
 Dein MCP Server ist korrekt verbunden, wenn:  
-1. Die Konsole zeigt "GitHub plugin setup completed successfully"  
-2. Die Verbindungsprotokolle zeigen "✓ MCP Connection Status: Active"  
+1. Die Konsole "GitHub plugin setup completed successfully" anzeigt  
+2. Die Verbindungsprotokolle "✓ MCP Connection Status: Active" zeigen  
 3. GitHub-Befehle in der Chat-Oberfläche funktionieren
 
 ## Umgebungsvariablen

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f0ce2d470f3efad6f8c7df376f416a4b",
-  "translation_date": "2025-05-20T07:01:40+00:00",
+  "translation_date": "2025-07-12T07:34:03+00:00",
   "source_file": "00-course-setup/AzureSearch.md",
   "language_code": "zh"
 }
@@ -17,22 +17,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 - 一个 Azure 订阅。如果你还没有 Azure 订阅，可以在 [Azure 免费账户](https://azure.microsoft.com/free/?wt.mc_id=studentamb_258691) 创建一个免费账户。
 
-## 第 1 步：创建 Azure AI Search 服务
+## 第一步：创建 Azure AI Search 服务
 
 1. 登录到 [Azure 门户](https://portal.azure.com/?wt.mc_id=studentamb_258691)。
 2. 在左侧导航栏中，点击 **创建资源**。
 3. 在搜索框中输入 “Azure AI Search”，然后从结果列表中选择 **Azure AI Search**。
 4. 点击 **创建** 按钮。
-5. 在 **基础** 选项卡中填写以下信息：
+5. 在 **基础** 选项卡中，填写以下信息：
    - **订阅**：选择你的 Azure 订阅。
-   - **资源组**：新建资源组或选择已有资源组。
+   - **资源组**：创建新的资源组或选择已有的资源组。
    - **资源名称**：输入你的搜索服务的唯一名称。
-   - **区域**：选择最接近用户的区域。
-   - **定价层**：选择适合你需求的定价层。测试时可以选择免费层。
+   - **区域**：选择离你的用户最近的区域。
+   - **定价层**：选择适合你需求的定价层。你可以先选择免费层进行测试。
 6. 点击 **查看 + 创建**。
 7. 检查设置无误后，点击 **创建** 来创建搜索服务。
 
-## 第 2 步：开始使用 Azure AI Search
+## 第二步：开始使用 Azure AI Search
 
 1. 部署完成后，进入 Azure 门户中的搜索服务页面。
 2. 在搜索服务概览页，点击 **快速入门** 按钮。
@@ -41,13 +41,13 @@ CO_OP_TRANSLATOR_METADATA:
 ### 创建索引
 
 1. 在快速入门指南中，点击 **创建索引**。
-2. 通过指定字段及其属性（如数据类型、是否可搜索、是否可过滤）定义索引模式。
-3. 点击 **创建** 来生成索引。
+2. 定义索引架构，指定字段及其属性（例如，数据类型、是否可搜索、是否可筛选）。
+3. 点击 **创建** 来创建索引。
 
 ### 上传数据
 
 1. 在快速入门指南中，点击 **上传数据**。
-2. 选择数据源（如 Azure Blob 存储、Azure SQL 数据库），并提供必要的连接信息。
+2. 选择数据源（例如 Azure Blob 存储、Azure SQL 数据库），并提供必要的连接信息。
 3. 将数据源字段映射到索引字段。
 4. 点击 **提交** 将数据上传到索引。
 
@@ -55,11 +55,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在快速入门指南中，点击 **搜索资源管理器**。
 2. 在搜索框中输入查询语句，测试搜索功能。
-3. 查看搜索结果，根据需要调整索引模式或数据。
+3. 查看搜索结果，根据需要调整索引架构或数据。
 
-## 第 3 步：使用 Azure AI Search 工具
+## 第三步：使用 Azure AI Search 工具
 
-Azure AI Search 支持多种工具，帮助你提升搜索能力。你可以使用 Azure CLI、Python SDK 及其他工具进行高级配置和操作。
+Azure AI Search 支持多种工具，帮助你增强搜索功能。你可以使用 Azure CLI、Python SDK 以及其他工具进行高级配置和操作。
 
 ### 使用 Azure CLI
 
@@ -114,17 +114,17 @@ Azure AI Search 支持多种工具，帮助你提升搜索能力。你可以使�
    search_client.upload_documents(documents)
    ```
 
-更多详细信息，请参阅以下文档：
+更多详细信息，请参考以下文档：
 
 - [创建 Azure Cognitive Search 服务](https://learn.microsoft.com/en-us/azure/search/search-create-service-portal?wt.mc_id=studentamb_258691)
-- [快速开始使用 Azure Cognitive Search](https://learn.microsoft.com/en-us/azure/search/search-get-started-portal?wt.mc_id=studentamb_258691)
+- [开始使用 Azure Cognitive Search](https://learn.microsoft.com/en-us/azure/search/search-get-started-portal?wt.mc_id=studentamb_258691)
 - [Azure AI Search 工具](https://learn.microsoft.com/en-us/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=code-examples?wt.mc_id=studentamb_258691)
 
 ## 结论
 
-你已成功通过 Azure 门户及集成工具完成 Azure AI Search 的设置。现在可以探索 Azure AI Search 的更多高级功能，提升你的搜索解决方案。
+你已成功通过 Azure 门户及集成工具完成 Azure AI Search 的设置。现在可以进一步探索 Azure AI Search 的高级功能和能力，提升你的搜索解决方案。
 
-如需进一步帮助，请访问 [Azure Cognitive Search 文档](https://learn.microsoft.com/en-us/azure/search/?wt.mc_id=studentamb_258691)。
+如需更多帮助，请访问 [Azure Cognitive Search 文档](https://learn.microsoft.com/en-us/azure/search/?wt.mc_id=studentamb_258691)。
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意，自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

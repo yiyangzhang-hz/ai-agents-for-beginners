@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e4e06d3b5d6207459a019c05fee5eb4b",
-  "translation_date": "2025-05-20T08:48:31+00:00",
+  "translation_date": "2025-07-12T10:39:54+00:00",
   "source_file": "07-planning-design/README.md",
   "language_code": "pt"
 }
 -->
 para uma visão rápida.
 
-O trecho de código Python a seguir demonstra um agente de planejamento simples decompondo um objetivo em subtarefas e gerando um plano estruturado:
+O seguinte trecho de código Python demonstra um agente de planeamento simples que decompõe um objetivo em subtarefas e gera um plano estruturado:
 
 ```python
 from pydantic import BaseModel
@@ -98,17 +98,17 @@ pprint(json.loads(response_content))
 # TravelPlan.model_validate(json.loads(response_content))
 ```
 
-### Agente de Planejamento com Orquestração Multi-Agente
+### Agente de Planeamento com Orquestração Multi-Agente
 
-Neste exemplo, um Agente Roteador Semântico recebe uma solicitação do usuário (por exemplo, "Preciso de um plano de hotel para minha viagem.").
+Neste exemplo, um Agente de Roteamento Semântico recebe um pedido do utilizador (por exemplo, "Preciso de um plano de hotel para a minha viagem.").
 
-O planejador então:
+O planeador então:
 
-* Recebe o Plano de Hotel: O planejador pega a mensagem do usuário e, com base em um prompt do sistema (incluindo detalhes dos agentes disponíveis), gera um plano de viagem estruturado.
-* Lista Agentes e suas Ferramentas: O registro de agentes mantém uma lista de agentes (por exemplo, para voo, hotel, aluguel de carro e atividades) junto com as funções ou ferramentas que eles oferecem.
-* Encaminha o Plano para os Agentes Respectivos: Dependendo do número de subtarefas, o planejador envia a mensagem diretamente para um agente dedicado (em cenários de tarefa única) ou coordena via um gerente de chat em grupo para colaboração multiagente.
-* Resume o Resultado: Por fim, o planejador resume o plano gerado para maior clareza.
-O código Python a seguir ilustra esses passos:
+* Recebe o Plano de Hotel: O planeador pega na mensagem do utilizador e, com base num prompt do sistema (incluindo detalhes dos agentes disponíveis), gera um plano de viagem estruturado.
+* Lista os Agentes e as Suas Ferramentas: O registo de agentes contém uma lista de agentes (por exemplo, para voos, hotéis, aluguer de carros e atividades) juntamente com as funções ou ferramentas que oferecem.
+* Encaminha o Plano para os Agentes Respetivos: Dependendo do número de subtarefas, o planeador envia a mensagem diretamente para um agente dedicado (em cenários de tarefa única) ou coordena através de um gestor de chat em grupo para colaboração multi-agente.
+* Resume o Resultado: Finalmente, o planeador resume o plano gerado para maior clareza.
+O seguinte exemplo de código Python ilustra estes passos:
 
 ```python
 
@@ -183,7 +183,7 @@ if response_content is None:
 pprint(json.loads(response_content))
 ```
 
-O que segue é a saída do código anterior e você pode então usar essa saída estruturada para encaminhar para `assigned_agent` e resumir o plano de viagem para o usuário final.
+O que se segue é a saída do código anterior e pode então usar esta saída estruturada para encaminhar para o `assigned_agent` e resumir o plano de viagem para o utilizador final.
 
 ```json
 {
@@ -216,11 +216,11 @@ O que segue é a saída do código anterior e você pode então usar essa saída
 
 Um notebook de exemplo com o código anterior está disponível [aqui](../../../07-planning-design/07-autogen.ipynb).
 
-### Planejamento Iterativo
+### Planeamento Iterativo
 
-Algumas tarefas exigem um vai-e-volta ou replanejamento, onde o resultado de uma subtarefa influencia a próxima. Por exemplo, se o agente descobrir um formato de dado inesperado ao reservar voos, pode ser necessário adaptar sua estratégia antes de prosseguir para as reservas de hotel.
+Algumas tarefas requerem um vai-e-volta ou replaneamento, onde o resultado de uma subtarefa influencia a seguinte. Por exemplo, se o agente descobrir um formato de dados inesperado ao reservar voos, pode precisar de adaptar a sua estratégia antes de avançar para as reservas de hotel.
 
-Além disso, o feedback do usuário (por exemplo, um humano decidindo que prefere um voo mais cedo) pode disparar um replanejamento parcial. Essa abordagem dinâmica e iterativa garante que a solução final esteja alinhada com as restrições do mundo real e as preferências do usuário em evolução.
+Além disso, o feedback do utilizador (por exemplo, um humano decidir que prefere um voo mais cedo) pode desencadear um replaneamento parcial. Esta abordagem dinâmica e iterativa assegura que a solução final está alinhada com as restrições do mundo real e as preferências em evolução do utilizador.
 
 exemplo de código
 
@@ -243,27 +243,27 @@ messages = [
 # .. re-plan and send the tasks to respective agents
 ```
 
-Para um planejamento mais abrangente, confira o Magnetic One
+Para um planeamento mais abrangente, consulte Magnetic One
 
 para resolver tarefas complexas.
 
 ## Resumo
 
-Neste artigo, vimos um exemplo de como criar um planejador que pode selecionar dinamicamente os agentes disponíveis definidos. A saída do Planejador decompõe as tarefas e atribui os agentes para que possam ser executadas. Assume-se que os agentes tenham acesso às funções/ferramentas necessárias para realizar a tarefa. Além dos agentes, você pode incluir outros padrões como reflexão, resumidor e chat round robin para personalizar ainda mais.
+Neste artigo analisámos um exemplo de como podemos criar um planeador que pode selecionar dinamicamente os agentes disponíveis definidos. A saída do Planeador decompõe as tarefas e atribui os agentes para que possam ser executadas. Assume-se que os agentes têm acesso às funções/ferramentas necessárias para realizar a tarefa. Para além dos agentes, pode incluir outros padrões como reflexão, sumarizador e chat round robin para personalizar ainda mais.
 
 ## Recursos Adicionais
 
-* AutoGen Magnetic One - Um sistema multiagente generalista para resolver tarefas complexas que alcançou resultados impressionantes em múltiplos benchmarks desafiadores de agentes. Referência:
+* AutoGen Magnetic One - Um sistema multi-agente generalista para resolver tarefas complexas que alcançou resultados impressionantes em múltiplos benchmarks desafiantes de agentes. Referência:
 
-. Nesta implementação, o orquestrador cria um plano específico para a tarefa e delega essas tarefas aos agentes disponíveis. Além do planejamento, o orquestrador também emprega um mecanismo de monitoramento para acompanhar o progresso da tarefa e replaneja conforme necessário.
+. Nesta implementação, o orquestrador cria um plano específico para a tarefa e delega essas tarefas aos agentes disponíveis. Para além do planeamento, o orquestrador também emprega um mecanismo de acompanhamento para monitorizar o progresso da tarefa e replaneia conforme necessário.
 
 ## Aula Anterior
 
-[Construindo Agentes de IA Confiáveis](../06-building-trustworthy-agents/README.md)
+[Construir Agentes de IA Confiáveis](../06-building-trustworthy-agents/README.md)
 
 ## Próxima Aula
 
 [Padrão de Design Multi-Agente](../08-multi-agent/README.md)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

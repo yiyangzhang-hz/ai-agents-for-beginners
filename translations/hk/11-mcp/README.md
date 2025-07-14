@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bbce3572338711aeab758506379ab716",
-  "translation_date": "2025-05-21T09:30:10+00:00",
+  "translation_date": "2025-07-12T13:45:20+00:00",
   "source_file": "11-mcp/README.md",
   "language_code": "hk"
 }
@@ -11,29 +11,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Introduction to Model Context Protocol (MCP)
 
-Model Context Protocol (MCP) 係一個先進嘅框架，專門用嚟標準化 AI 模型同客戶端應用程式之間嘅互動。MCP 充當 AI 模型同應用程式之間嘅橋樑，無論底層模型點樣實現，都提供一個統一嘅介面。
+Model Context Protocol (MCP) 是一個先進的框架，旨在標準化 AI 模型與客戶端應用程式之間的互動。MCP 作為 AI 模型與使用它們的應用程式之間的橋樑，無論底層模型如何實現，都能提供一致的介面。
 
-MCP 嘅重點包括：
+MCP 的主要特點：
 
-- **標準化溝通**：MCP 建立咗一套共通語言，方便應用程式同 AI 模型溝通
-- **強化上下文管理**：可以有效地將上下文資訊傳遞畀 AI 模型
-- **跨平台兼容**：支援多種編程語言，包括 C#、Java、JavaScript、Python 同 TypeScript
-- **無縫整合**：令開發者容易將唔同 AI 模型整合入佢哋嘅應用程式
+- **標準化通訊**：MCP 建立了應用程式與 AI 模型溝通的共通語言
+- **強化上下文管理**：允許有效地將上下文資訊傳遞給 AI 模型
+- **跨平台相容性**：支援多種程式語言，包括 C#、Java、JavaScript、Python 和 TypeScript
+- **無縫整合**：讓開發者輕鬆將不同的 AI 模型整合到應用程式中
 
-MCP 喺 AI 代理開發特別有用，因為佢令代理可以透過統一協議同唔同系統同數據源互動，令代理更加靈活同強大。
+MCP 在 AI 代理開發中特別有價值，因為它讓代理能透過統一協議與各種系統和資料來源互動，使代理更具彈性和功能強大。
 
 ## Learning Objectives
-- 明白 MCP 係乜嘢同佢喺 AI 代理開發中嘅角色
-- 設置同配置 MCP 伺服器以作 GitHub 整合
-- 用 MCP 工具建立多代理系統
-- 實現結合 Azure Cognitive Search 嘅 RAG（Retrieval Augmented Generation）
+- 了解 MCP 是什麼以及它在 AI 代理開發中的角色
+- 設置並配置 MCP 伺服器以整合 GitHub
+- 使用 MCP 工具建立多代理系統
+- 實作結合 Azure Cognitive Search 的 RAG（檢索增強生成）
 
 ## Prerequisites
-- Python 3.8 或以上
-- Node.js 14 或以上
+- Python 3.8+
+- Node.js 14+
 - Azure 訂閱
-- GitHub 帳戶
-- 基本 Semantic Kernel 知識
+- GitHub 帳號
+- 基本的 Semantic Kernel 知識
 
 ## Setup Instructions
 
@@ -46,8 +46,8 @@ MCP 喺 AI 代理開發特別有用，因為佢令代理可以透過統一協議
 
 2. **配置 Azure 服務**
    - 建立 Azure Cognitive Search 資源
-   - 設置 Azure OpenAI 服務
-   - 喺 `.env` 配置環境變量
+   - 設定 Azure OpenAI 服務
+   - 在 `.env` 中配置環境變數
 
 3. **MCP 伺服器設置**
    ```bash
@@ -71,36 +71,36 @@ MCP 喺 AI 代理開發特別有用，因為佢令代理可以透過統一協議
 
 ### 1. 多代理系統
 - GitHub 代理：倉庫分析
-- Hackathon 代理：項目推薦
-- Events 代理：科技活動建議
+- Hackathon 代理：專案推薦
+- Events 代理：技術活動建議
 
 ### 2. Azure 整合
-- 用 Cognitive Search 做活動索引
-- Azure OpenAI 提供代理智能
-- 實現 RAG 模式
+- 使用 Cognitive Search 進行活動索引
+- Azure OpenAI 提供代理智慧
+- RAG 模式實作
 
 ### 3. MCP 工具
 - GitHub 倉庫分析
-- 代碼檢查
-- 元數據提取
+- 程式碼檢查
+- 元資料擷取
 
 ## Code Walkthrough
 
-示範內容包括：
+範例展示：
 1. MCP 伺服器整合
 2. 多代理協調
 3. Azure Cognitive Search 整合
-4. RAG 模式實現
+4. RAG 模式實作
 
 主要功能：
 - 即時 GitHub 倉庫分析
-- 智能項目推薦
-- 用 Azure Search 做活動匹配
-- Chainlit 流式回應
+- 智慧專案推薦
+- 使用 Azure Search 進行活動匹配
+- 透過 Chainlit 實現串流回應
 
 ## Running the Sample
 
-詳細設置指引同更多資料，請參考 [Github MCP Server Example README](./code_samples/github-mcp/README.md)。
+詳細的設置說明與更多資訊，請參考 [Github MCP Server Example README](./code_samples/github-mcp/README.md)。
 
 1. 啟動 MCP 伺服器：
    ```bash
@@ -119,22 +119,22 @@ MCP 喺 AI 代理開發特別有用，因為佢令代理可以透過統一協議
 
 ## Troubleshooting
 
-常見問題同解決方案：
-1. MCP 連接問題
-   - 確認伺服器有冇運行
-   - 檢查端口是否可用
-   - 確認 GitHub token 是否正確
+常見問題與解決方案：
+1. MCP 連線問題
+   - 確認伺服器是否運行中
+   - 檢查埠口是否可用
+   - 確認 GitHub 令牌有效
 
 2. Azure Search 問題
-   - 驗證連接字串
+   - 驗證連線字串
    - 檢查索引是否存在
-   - 確認文檔已上傳
+   - 確認文件是否已上傳
 
 ## Next Steps
 - 探索更多 MCP 工具
-- 實現自訂代理
+- 實作自訂代理
 - 強化 RAG 功能
-- 加入更多活動來源
+- 新增更多活動來源
 
 ## Resources
 - [MCP for Beginners](https://aka.ms/mcp-for-beginners)  
@@ -143,4 +143,4 @@ MCP 喺 AI 代理開發特別有用，因為佢令代理可以透過統一協議
 - [Semantic Kernel Guides](https://learn.microsoft.com/semantic-kernel/)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋努力追求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原文文件以其母語版本為準，係唯一具權威性嘅版本。對於重要資料，建議採用專業人手翻譯。本公司對因使用此翻譯而引致嘅任何誤解或誤釋概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

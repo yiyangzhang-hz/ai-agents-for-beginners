@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f57852cac3a86c4a5ef47f793cc12178",
-  "translation_date": "2025-05-20T09:00:07+00:00",
+  "translation_date": "2025-07-12T10:21:10+00:00",
   "source_file": "06-building-trustworthy-agents/README.md",
   "language_code": "es"
 }
 -->
-[![Trustworthy AI Agents](../../../translated_images/lesson-6-thumbnail.74ea485dbd9a9c3fb4c749f30f2b8130d025072b4d7d911c6f540eac5a78e6b8.es.png)](https://youtu.be/iZKkMEGBCUQ?si=Q-kEbcyHUMPoHp8L)
+[![Agentes de IA Confiables](../../../translated_images/lesson-6-thumbnail.a58ab36c099038d4f786c2b0d5d6e89f41f4c2ecc05ab10b67bced2695eeb218.es.png)](https://youtu.be/iZKkMEGBCUQ?si=Q-kEbcyHUMPoHp8L)
 
 > _(Haz clic en la imagen de arriba para ver el video de esta lección)_
 
@@ -19,33 +19,33 @@ Esta lección cubrirá:
 
 - Cómo construir y desplegar Agentes de IA seguros y efectivos.
 - Consideraciones importantes de seguridad al desarrollar Agentes de IA.
-- Cómo mantener la privacidad de los datos y de los usuarios al desarrollar Agentes de IA.
+- Cómo mantener la privacidad de los datos y usuarios al desarrollar Agentes de IA.
 
 ## Objetivos de Aprendizaje
 
 Después de completar esta lección, sabrás cómo:
 
 - Identificar y mitigar riesgos al crear Agentes de IA.
-- Implementar medidas de seguridad para asegurar que los datos y accesos se gestionen correctamente.
-- Crear Agentes de IA que mantengan la privacidad de los datos y brinden una experiencia de usuario de calidad.
+- Implementar medidas de seguridad para asegurar que los datos y accesos estén correctamente gestionados.
+- Crear Agentes de IA que mantengan la privacidad de los datos y ofrezcan una experiencia de usuario de calidad.
 
 ## Seguridad
 
-Primero, veamos cómo construir aplicaciones agenticas seguras. Seguridad significa que el agente de IA funciona según lo diseñado. Como desarrolladores de aplicaciones agenticas, contamos con métodos y herramientas para maximizar la seguridad:
+Primero, veamos cómo construir aplicaciones agenticas seguras. Seguridad significa que el agente de IA funciona según lo diseñado. Como creadores de aplicaciones agenticas, contamos con métodos y herramientas para maximizar la seguridad:
 
 ### Construyendo un Marco de Mensajes del Sistema
 
-Si alguna vez has construido una aplicación de IA usando Large Language Models (LLMs), sabes la importancia de diseñar un prompt o mensaje del sistema robusto. Estos prompts establecen las reglas meta, instrucciones y directrices sobre cómo el LLM interactuará con el usuario y los datos.
+Si alguna vez has creado una aplicación de IA usando Modelos de Lenguaje Grande (LLMs), sabes la importancia de diseñar un prompt o mensaje del sistema robusto. Estos prompts establecen las reglas meta, instrucciones y directrices sobre cómo el LLM interactuará con el usuario y los datos.
 
-Para los Agentes de IA, el prompt del sistema es aún más importante, ya que los agentes necesitarán instrucciones muy específicas para completar las tareas que hemos diseñado para ellos.
+Para los Agentes de IA, el prompt del sistema es aún más importante, ya que los Agentes de IA necesitarán instrucciones muy específicas para completar las tareas que hemos diseñado para ellos.
 
 Para crear prompts del sistema escalables, podemos usar un marco de mensajes del sistema para construir uno o más agentes en nuestra aplicación:
 
-![Building a System Message Framework](../../../translated_images/system-message-framework.9df67f3d863520cd48878f71a1289740d8cb46e9d63ee065090ccf3b9b6b82a1.es.png)
+![Construyendo un Marco de Mensajes del Sistema](../../../translated_images/system-message-framework.3a97368c92d11d6814577b03cd128ec8c71a5fd1e26f341835cfa5df59ae87ae.es.png)
 
 #### Paso 1: Crear un Mensaje Meta del Sistema
 
-El meta prompt será utilizado por un LLM para generar los prompts del sistema para los agentes que creemos. Lo diseñamos como una plantilla para poder crear múltiples agentes de manera eficiente si es necesario.
+El prompt meta será usado por un LLM para generar los prompts del sistema para los agentes que creemos. Lo diseñamos como una plantilla para poder crear múltiples agentes de manera eficiente si es necesario.
 
 Aquí hay un ejemplo de un mensaje meta del sistema que le daríamos al LLM:
 
@@ -124,49 +124,49 @@ This AI assistant is designed to streamline the flight booking process for custo
 
 #### Paso 4: Iterar y Mejorar
 
-El valor de este marco de mensajes del sistema es poder escalar la creación de mensajes para múltiples agentes más fácilmente, así como mejorar tus mensajes del sistema con el tiempo. Es raro que tengas un mensaje del sistema que funcione perfectamente la primera vez para tu caso de uso completo. Poder hacer pequeños ajustes y mejoras cambiando el mensaje básico y ejecutándolo a través del sistema te permitirá comparar y evaluar resultados.
+El valor de este marco de mensajes del sistema es poder escalar la creación de mensajes del sistema para múltiples agentes más fácilmente, así como mejorar tus mensajes del sistema con el tiempo. Es raro que tengas un mensaje del sistema que funcione a la perfección en el primer intento para tu caso de uso completo. Poder hacer pequeños ajustes y mejoras cambiando el mensaje básico y ejecutándolo a través del sistema te permitirá comparar y evaluar resultados.
 
 ## Entendiendo las Amenazas
 
-Para construir agentes de IA confiables, es importante entender y mitigar los riesgos y amenazas hacia tu agente de IA. Veamos algunas de las diferentes amenazas a los agentes de IA y cómo puedes planificar y prepararte mejor para ellas.
+Para construir agentes de IA confiables, es importante entender y mitigar los riesgos y amenazas a tu agente de IA. Veamos solo algunas de las diferentes amenazas a los agentes de IA y cómo puedes planificar y prepararte mejor para ellas.
 
-![Understanding Threats](../../../translated_images/understanding-threats.f8fbe6fe11e025b3085fc91e82d975937ad1d672260a2aeed40458aa41798d0e.es.png)
+![Entendiendo las Amenazas](../../../translated_images/understanding-threats.89edeada8a97fc0f7053558567d5dd27c0c333b74e47fffdde490fa6777a4c17.es.png)
 
 ### Tarea e Instrucción
 
 **Descripción:** Los atacantes intentan cambiar las instrucciones o metas del agente de IA mediante prompts o manipulando las entradas.
 
-**Mitigación:** Ejecuta verificaciones de validación y filtros de entrada para detectar prompts potencialmente peligrosos antes de que sean procesados por el Agente de IA. Dado que estos ataques generalmente requieren interacción frecuente con el Agente, limitar el número de turnos en una conversación es otra forma de prevenir este tipo de ataques.
+**Mitigación:** Ejecuta validaciones y filtros de entrada para detectar prompts potencialmente peligrosos antes de que sean procesados por el Agente de IA. Dado que estos ataques suelen requerir interacción frecuente con el agente, limitar el número de turnos en una conversación es otra forma de prevenir este tipo de ataques.
 
 ### Acceso a Sistemas Críticos
 
 **Descripción:** Si un agente de IA tiene acceso a sistemas y servicios que almacenan datos sensibles, los atacantes pueden comprometer la comunicación entre el agente y estos servicios. Estos pueden ser ataques directos o intentos indirectos de obtener información sobre estos sistemas a través del agente.
 
-**Mitigación:** Los agentes de IA deben tener acceso a sistemas solo cuando sea necesario para prevenir este tipo de ataques. La comunicación entre el agente y el sistema también debe ser segura. Implementar autenticación y control de acceso es otra forma de proteger esta información.
+**Mitigación:** Los agentes de IA deben tener acceso a los sistemas solo cuando sea necesario para prevenir este tipo de ataques. La comunicación entre el agente y el sistema también debe ser segura. Implementar autenticación y control de acceso es otra forma de proteger esta información.
 
 ### Sobrecarga de Recursos y Servicios
 
-**Descripción:** Los agentes de IA pueden acceder a diferentes herramientas y servicios para completar tareas. Los atacantes pueden usar esta capacidad para atacar estos servicios enviando un alto volumen de solicitudes a través del Agente de IA, lo que puede resultar en fallos del sistema o costos elevados.
+**Descripción:** Los agentes de IA pueden acceder a diferentes herramientas y servicios para completar tareas. Los atacantes pueden usar esta capacidad para atacar estos servicios enviando un alto volumen de solicitudes a través del Agente de IA, lo que puede causar fallos en el sistema o costos elevados.
 
-**Mitigación:** Implementa políticas para limitar el número de solicitudes que un agente de IA puede hacer a un servicio. Limitar el número de turnos en la conversación y solicitudes a tu agente de IA es otra forma de prevenir este tipo de ataques.
+**Mitigación:** Implementa políticas para limitar el número de solicitudes que un agente de IA puede hacer a un servicio. Limitar el número de turnos de conversación y solicitudes a tu agente de IA es otra forma de prevenir este tipo de ataques.
 
 ### Envenenamiento de la Base de Conocimiento
 
-**Descripción:** Este tipo de ataque no se dirige directamente al agente de IA, sino a la base de conocimiento y otros servicios que el agente usará. Esto podría implicar corromper los datos o la información que el agente usará para completar una tarea, lo que lleva a respuestas sesgadas o no deseadas para el usuario.
+**Descripción:** Este tipo de ataque no apunta directamente al agente de IA, sino a la base de conocimiento y otros servicios que el agente usará. Esto podría implicar corromper los datos o la información que el agente utilizará para completar una tarea, lo que lleva a respuestas sesgadas o no deseadas para el usuario.
 
-**Mitigación:** Realiza verificaciones regulares de los datos que el agente de IA usará en sus flujos de trabajo. Asegura que el acceso a estos datos sea seguro y que solo personas de confianza puedan modificarlos para evitar este tipo de ataque.
+**Mitigación:** Realiza verificaciones regulares de los datos que el agente de IA usará en sus flujos de trabajo. Asegura que el acceso a estos datos sea seguro y solo pueda ser modificado por personas de confianza para evitar este tipo de ataque.
 
 ### Errores en Cascada
 
-**Descripción:** Los agentes de IA acceden a varias herramientas y servicios para completar tareas. Errores causados por atacantes pueden provocar fallos en otros sistemas conectados al agente, haciendo que el ataque se extienda y sea más difícil de solucionar.
+**Descripción:** Los agentes de IA acceden a varias herramientas y servicios para completar tareas. Los errores causados por atacantes pueden provocar fallos en otros sistemas conectados al agente, haciendo que el ataque se extienda y sea más difícil de solucionar.
 
-**Mitigación:** Una forma de evitar esto es que el Agente de IA opere en un entorno limitado, como realizar tareas en un contenedor Docker, para prevenir ataques directos al sistema. Crear mecanismos de respaldo y lógica de reintentos cuando ciertos sistemas respondan con un error es otra manera de evitar fallos mayores en el sistema.
+**Mitigación:** Una forma de evitar esto es hacer que el Agente de IA opere en un entorno limitado, como realizar tareas en un contenedor Docker, para prevenir ataques directos al sistema. Crear mecanismos de respaldo y lógica de reintentos cuando ciertos sistemas respondan con error es otra forma de evitar fallos mayores.
 
 ## Humano en el Bucle
 
-Otra forma efectiva de construir sistemas confiables de Agentes de IA es usando un Humano en el Bucle. Esto crea un flujo donde los usuarios pueden proporcionar retroalimentación a los Agentes durante la ejecución. Los usuarios actúan esencialmente como agentes en un sistema multi-agente, aprobando o terminando el proceso en ejecución.
+Otra forma efectiva de construir sistemas de Agentes de IA confiables es usando un Humano en el bucle. Esto crea un flujo donde los usuarios pueden proporcionar retroalimentación a los agentes durante la ejecución. Los usuarios actúan esencialmente como agentes en un sistema multiagente, aprobando o terminando el proceso en ejecución.
 
-![Human in The Loop](../../../translated_images/human-in-the-loop.e9edbe8f6d42041b4213421410823250aa750fe8bdba5601d69ed46f3ff6489d.es.png)
+![Humano en el Bucle](../../../translated_images/human-in-the-loop.5f0068a678f62f4fc8373d5b78c4c22f35d9e4da35c93f66c3b634c1774eff34.es.png)
 
 Aquí hay un fragmento de código usando AutoGen para mostrar cómo se implementa este concepto:
 
@@ -192,7 +192,7 @@ await Console(stream)
 
 ## Conclusión
 
-Construir agentes de IA confiables requiere un diseño cuidadoso, medidas de seguridad robustas y una iteración continua. Al implementar sistemas estructurados de meta prompting, entender las amenazas potenciales y aplicar estrategias de mitigación, los desarrolladores pueden crear agentes de IA que sean seguros y efectivos. Además, incorporar un enfoque de humano en el bucle asegura que los agentes de IA permanezcan alineados con las necesidades del usuario mientras se minimizan los riesgos. A medida que la IA continúa evolucionando, mantener una postura proactiva en seguridad, privacidad y consideraciones éticas será clave para fomentar la confianza y confiabilidad en los sistemas impulsados por IA.
+Construir agentes de IA confiables requiere un diseño cuidadoso, medidas de seguridad robustas y una iteración continua. Al implementar sistemas estructurados de meta prompting, entender las amenazas potenciales y aplicar estrategias de mitigación, los desarrolladores pueden crear agentes de IA que sean seguros y efectivos. Además, incorporar un enfoque de humano en el bucle asegura que los agentes de IA se mantengan alineados con las necesidades del usuario mientras se minimizan los riesgos. A medida que la IA continúa evolucionando, mantener una postura proactiva en seguridad, privacidad y consideraciones éticas será clave para fomentar la confianza y la fiabilidad en los sistemas impulsados por IA.
 
 ## Recursos Adicionales
 
@@ -207,7 +207,7 @@ Construir agentes de IA confiables requiere un diseño cuidadoso, medidas de seg
 
 ## Próxima Lección
 
-[Planning Design Pattern](../07-planning-design/README.md)
+[Patrón de Diseño de Planificación](../07-planning-design/README.md)
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

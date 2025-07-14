@@ -2,126 +2,122 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "76945069b52a49cd0432ae3e0b0ba22e",
-  "translation_date": "2025-06-17T08:35:10+00:00",
+  "translation_date": "2025-07-12T07:45:52+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "tw"
 }
 -->
-在你的 GitHub 帳戶中。
+在您的 GitHub 帳戶中。
 
-選擇 `Fine-grained tokens` option on the left side of your screen.
+在畫面左側選擇 `Fine-grained tokens` 選項。
 
-Then select `Generate new token`.
+接著選擇 `Generate new token`。
 
-![Generate Token](../../../00-course-setup/images/generate-token.png)
+![Generate Token](../../../translated_images/generate-token.9748d7585dd004cb4119b5aac724baff49c3a85791701b5e8ba3274b037c5b66.tw.png)
 
-You will be prompted to enter a name for your token, select the expiration date (Recommended: 30 Days), and select the scopes for your token (Public Repositories).
+系統會提示您輸入此 token 的名稱，選擇過期日期（建議：30 天），並選擇 token 的權限範圍（Public Repositories）。
 
-It's also necessary to edit the permissions of this token: Permissions -> Models -> Allows access to GitHub Models
+同時，您需要編輯此 token 的權限：Permissions -> Models -> 允許存取 GitHub Models。
 
-Copy your new token that you have just created. You will now add this to your `.env` file included in this course. 
+複製您剛剛建立的新 token，接著將它加入本課程附帶的 `.env` 檔案中。
 
+### 步驟 2：建立您的 `.env` 檔案
 
-### Step 2: Create Your `.env` File
-
-To create your `.env` 檔案，然後在終端機中執行以下指令。
-
-```bash
-cp .env.example .env
-```
-
-這將複製範例檔案並建立一個 `.env` in your directory and where you fill in the values for the environment variables.
-
-With your token copied, open the `.env` file in your favorite text editor and paste your token into the `GITHUB_TOKEN` field.
-
-You should now be able to run the code samples of this course.
-
-## Set Up for Samples using Azure AI Foundry and Azure AI Agent Service
-
-### Step 1: Retrieve Your Azure Project Endpoint
-
-
-Follow the steps to creating a hub and project in Azure AI Foundry found here: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
-
-
-Once you have created your project, you will need to retrieve the connection string for your project.
-
-This can be done by going to the **Overview** page of your project in the Azure AI Foundry portal.
-
-![Project Connection String](../../../00-course-setup/images/project-endpoint.png)
-
-### Step 2: Create Your `.env` File
-
-To create your `.env` 檔案，接著在終端機中執行以下指令。
+在終端機中執行以下指令來建立 `.env` 檔案。
 
 ```bash
 cp .env.example .env
 ```
 
-這將複製範例檔案並建立一個 `.env` in your directory and where you fill in the values for the environment variables.
+此指令會複製範例檔案並在您的目錄中建立 `.env`，您可以在其中填入環境變數的值。
 
-With your token copied, open the `.env` file in your favorite text editor and paste your token into the `PROJECT_ENDPOINT` field.
+複製好 token 後，使用您喜愛的文字編輯器打開 `.env` 檔案，並將 token 貼到 `GITHUB_TOKEN` 欄位。
 
-### Step 3: Sign in to Azure
+現在您應該可以執行本課程的程式碼範例了。
 
-As a security best practice, we'll use [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) to authenticate to Azure OpenAI with Microsoft Entra ID. Before you can do so, you'll first need to install the **Azure CLI** per the [installation instructions](https://learn.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=academic-105485-koreyst) for your operating system.
+## 使用 Azure AI Foundry 和 Azure AI Agent Service 的範例設定
 
-Next, open a terminal and run `az login --use-device-code` to sign in to your Azure account.
+### 步驟 1：取得您的 Azure 專案端點
 
-Once you've logged in, select your subscription in the terminal.
+請依照此處說明建立 Azure AI Foundry 的 hub 和專案：[Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
+建立專案後，您需要取得專案的連接字串。
 
-## Additional Environment Variables - Azure Search and Azure OpenAI 
+可在 Azure AI Foundry 入口網站中，前往專案的 **Overview** 頁面取得。
 
-For the Agentic RAG Lesson - Lesson 5 - there are samples that use Azure Search and Azure OpenAI.
+![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.tw.png)
 
-If you want to run these samples, you will need to add the following environment variables to your `.env` file:
+### 步驟 2：建立您的 `.env` 檔案
 
-### Overview Page (Project)
+在終端機中執行以下指令來建立 `.env` 檔案。
 
-- `AZURE_SUBSCRIPTION_ID` - Check **Project details** on the **Overview** page of your project.
+```bash
+cp .env.example .env
+```
 
-- `AZURE_AI_PROJECT_NAME` - Look at the top of the **Overview** page for your project.
+此指令會複製範例檔案並在您的目錄中建立 `.env`，您可以在其中填入環境變數的值。
 
-- `AZURE_OPENAI_SERVICE` - Find this in the **Included capabilities** tab for **Azure OpenAI Service** on the **Overview** page.
+複製好連接字串後，使用您喜愛的文字編輯器打開 `.env` 檔案，並將連接字串貼到 `PROJECT_ENDPOINT` 欄位。
 
-### Management Center
+### 步驟 3：登入 Azure
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Go to **Project properties** on the **Overview** page of the **Management Center**.
+作為安全最佳實踐，我們將使用 [無金鑰認證](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) 透過 Microsoft Entra ID 來驗證 Azure OpenAI。您需要先依照您的作業系統，安裝 **Azure CLI**，詳細安裝說明請參考 [安裝指引](https://learn.microsoft.com/cli/azure/install-azure-cli?WT.mc_id=academic-105485-koreyst)。
 
-- `GLOBAL_LLM_SERVICE` - Under **Connected resources**, find the **Azure AI Services** connection name. If not listed, check the **Azure portal** under your resource group for the AI Services resource name.
+接著，打開終端機並執行 `az login --use-device-code` 以登入您的 Azure 帳戶。
 
-### Models + Endpoints Page
+登入後，在終端機中選擇您的訂閱。
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Select your embedding model (e.g., `text-embedding-ada-002`) and note the **Deployment name** from the model details.
+## 額外環境變數 - Azure Search 與 Azure OpenAI
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Select your chat model (e.g., `gpt-4o-mini`) and note the **Deployment name** from the model details.
+在 Agentic RAG 課程（第 5 課）中，有使用 Azure Search 與 Azure OpenAI 的範例。
 
-### Azure Portal
+若您想執行這些範例，需將以下環境變數加入您的 `.env` 檔案：
 
-- `AZURE_OPENAI_ENDPOINT` - Look for **Azure AI services**, click on it, then go to **Resource Management**, **Keys and Endpoint**, scroll down to the "Azure OpenAI endpoints", and copy the one that says "Language APIs".
+### 專案總覽頁面
 
-- `AZURE_OPENAI_API_KEY` - From the same screen, copy KEY 1 or KEY 2.
+- `AZURE_SUBSCRIPTION_ID` - 在專案的 **Overview** 頁面中查看 **Project details**。
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Find your **Azure AI Search** resource, click it, and see **Overview**.
+- `AZURE_AI_PROJECT_NAME` - 在專案 **Overview** 頁面頂端查看。
 
-- `AZURE_SEARCH_API_KEY` - Then go to **Settings** and then **Keys** to copy the primary or secondary admin key.
+- `AZURE_OPENAI_SERVICE` - 在 **Overview** 頁面的 **Included capabilities** 標籤中找到 **Azure OpenAI Service**。
 
-### External Webpage
+### 管理中心
 
-- `AZURE_OPENAI_API_VERSION` - Visit the [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) page under **Latest GA API release**.
+- `AZURE_OPENAI_RESOURCE_GROUP` - 在 **Management Center** 的 **Overview** 頁面中查看 **Project properties**。
 
-### Setup keyless authentication
+- `GLOBAL_LLM_SERVICE` - 在 **Connected resources** 中找到 **Azure AI Services** 連線名稱。若未列出，請至 Azure 入口網站中您的資源群組查看 AI Services 資源名稱。
 
-Rather than hardcode your credentials, we'll use a keyless connection with Azure OpenAI. To do so, we'll import `DefaultAzureCredential` and later call the `DefaultAzureCredential` 函數來取得認證。
+### 模型與端點頁面
+
+- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - 選擇您的嵌入模型（例如 `text-embedding-ada-002`），並記下模型詳細資訊中的 **Deployment name**。
+
+- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - 選擇您的聊天模型（例如 `gpt-4o-mini`），並記下模型詳細資訊中的 **Deployment name**。
+
+### Azure 入口網站
+
+- `AZURE_OPENAI_ENDPOINT` - 找到 **Azure AI services**，點擊後前往 **Resource Management** -> **Keys and Endpoint**，向下捲動至「Azure OpenAI endpoints」，複製標示為「Language APIs」的端點。
+
+- `AZURE_OPENAI_API_KEY` - 同一頁面複製 KEY 1 或 KEY 2。
+
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - 找到您的 **Azure AI Search** 資源，點擊後查看 **Overview**。
+
+- `AZURE_SEARCH_API_KEY` - 前往 **Settings** -> **Keys**，複製主要或次要管理金鑰。
+
+### 外部網頁
+
+- `AZURE_OPENAI_API_VERSION` - 參考 [API 版本生命週期](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) 頁面中的 **Latest GA API release**。
+
+### 設定無金鑰認證
+
+為避免硬編碼您的憑證，我們將使用 Azure OpenAI 的無金鑰連線。為此，我們會匯入 `DefaultAzureCredential`，並在稍後呼叫 `DefaultAzureCredential` 函式以取得憑證。
 
 ```python
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 ```
 
-## 遇到問題了嗎？
+## 卡關了嗎？
 
-如果在設定過程中有任何問題，歡迎加入我們的
+如果您在設定過程中遇到任何問題，歡迎加入我們的
 
 或
 
@@ -129,9 +125,9 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 ## 下一課
 
-你現在已經準備好執行本課程的程式碼了。祝你在 AI Agent 的世界中學習愉快！
+您現在已準備好執行本課程的程式碼。祝您在 AI Agents 的世界中學習愉快！
 
 [AI Agents 介紹與應用案例](../01-intro-to-ai-agents/README.md)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所引起之任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。

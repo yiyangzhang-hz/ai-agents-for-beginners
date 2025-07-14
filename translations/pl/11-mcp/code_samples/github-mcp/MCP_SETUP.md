@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4be907703b836d1a1c360db20da4de9",
-  "translation_date": "2025-05-21T08:16:24+00:00",
+  "translation_date": "2025-07-12T14:16:22+00:00",
   "source_file": "11-mcp/code_samples/github-mcp/MCP_SETUP.md",
   "language_code": "pl"
 }
 -->
-# MCP Server Integration Guide
+# Przewodnik Integracji Serwera MCP
 
 ## Wymagania wstępne
 - Zainstalowany Node.js (wersja 14 lub wyższa)
 - Menedżer pakietów npm
-- Środowisko Pythona z wymaganymi zależnościami
+- Środowisko Python z wymaganymi zależnościami
 
 ## Kroki konfiguracji
 
@@ -25,12 +25,12 @@ CO_OP_TRANSLATOR_METADATA:
    ```bash
    npx @modelcontextprotocol/server-github
    ```
-   Serwer powinien się uruchomić i wyświetlić URL połączenia.
+   Serwer powinien się uruchomić i wyświetlić adres URL połączenia.
 
 3. **Zweryfikuj połączenie**
-   - Poszukaj ikony wtyczki (🔌) w interfejsie Chainlit
+   - Sprawdź ikonę wtyczki (🔌) w interfejsie Chainlit
    - Obok ikony wtyczki powinien pojawić się numer (1), co oznacza udane połączenie
-   - W konsoli powinno pojawić się: "GitHub plugin setup completed successfully" (wraz z dodatkowymi liniami statusu)
+   - Konsola powinna wyświetlić: "GitHub plugin setup completed successfully" (wraz z dodatkowymi liniami statusu)
 
 ## Rozwiązywanie problemów
 
@@ -40,27 +40,27 @@ CO_OP_TRANSLATOR_METADATA:
    ```bash
    Error: listen EADDRINUSE: address already in use
    ```
-   Rozwiązanie: Zmień port używając:
+   Rozwiązanie: Zmień port za pomocą:
    ```bash
    npx @modelcontextprotocol/server-github --port 3001
    ```
 
 2. **Problemy z uwierzytelnianiem**
-   - Upewnij się, że dane uwierzytelniające GitHub są poprawnie skonfigurowane
+   - Upewnij się, że dane logowania do GitHub są poprawnie skonfigurowane
    - Sprawdź, czy plik .env zawiera wymagane tokeny
    - Zweryfikuj dostęp do API GitHub
 
 3. **Nieudane połączenie**
    - Potwierdź, że serwer działa na oczekiwanym porcie
    - Sprawdź ustawienia zapory sieciowej
-   - Zweryfikuj, czy środowisko Pythona ma wymagane pakiety
+   - Zweryfikuj, czy środowisko Python ma wymagane pakiety
 
 ## Weryfikacja połączenia
 
 Twój serwer MCP jest poprawnie połączony, gdy:
-1. Konsola pokazuje "GitHub plugin setup completed successfully"
+1. Konsola wyświetla "GitHub plugin setup completed successfully"
 2. Logi połączenia pokazują "✓ MCP Connection Status: Active"
-3. Polecenia GitHub działają w interfejsie czatu
+3. Komendy GitHub działają w interfejsie czatu
 
 ## Zmienne środowiskowe
 
@@ -76,7 +76,7 @@ Wyślij tę wiadomość testową na czacie:
 ```
 Show me the repositories for username: [GitHub Username]
 ```
-Poprawna odpowiedź wyświetli informacje o repozytorium.
+Pomyślna odpowiedź pokaże informacje o repozytorium.
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za wiarygodne źródło informacji. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

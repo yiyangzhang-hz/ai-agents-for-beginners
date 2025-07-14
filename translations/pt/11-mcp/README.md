@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bbce3572338711aeab758506379ab716",
-  "translation_date": "2025-05-21T09:34:22+00:00",
+  "translation_date": "2025-07-12T13:47:00+00:00",
   "source_file": "11-mcp/README.md",
   "language_code": "pt"
 }
@@ -11,29 +11,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Introdução ao Protocolo de Contexto do Modelo (MCP)
 
-O Protocolo de Contexto do Modelo (MCP) é uma estrutura avançada criada para padronizar as interações entre modelos de IA e aplicações clientes. O MCP funciona como uma ponte entre os modelos de IA e as aplicações que os utilizam, oferecendo uma interface consistente independentemente da implementação do modelo subjacente.
+O Protocolo de Contexto do Modelo (MCP) é uma estrutura inovadora criada para padronizar as interações entre modelos de IA e aplicações cliente. O MCP funciona como uma ponte entre os modelos de IA e as aplicações que os utilizam, oferecendo uma interface consistente independentemente da implementação subjacente do modelo.
 
 Aspectos principais do MCP:
 
-- **Comunicação Padronizada**: O MCP estabelece uma linguagem comum para que as aplicações se comuniquem com os modelos de IA
-- **Gerenciamento Aprimorado de Contexto**: Permite a passagem eficiente de informações contextuais para os modelos de IA
-- **Compatibilidade Multiplataforma**: Funciona com várias linguagens de programação, incluindo C#, Java, JavaScript, Python e TypeScript
-- **Integração Sem Esforço**: Permite que desenvolvedores integrem facilmente diferentes modelos de IA em suas aplicações
+- **Comunicação Padronizada**: O MCP estabelece uma linguagem comum para as aplicações comunicarem com os modelos de IA
+- **Gestão de Contexto Aprimorada**: Permite a passagem eficiente de informação contextual para os modelos de IA
+- **Compatibilidade Multiplataforma**: Funciona em várias linguagens de programação, incluindo C#, Java, JavaScript, Python e TypeScript
+- **Integração Simplificada**: Permite aos programadores integrar facilmente diferentes modelos de IA nas suas aplicações
 
-O MCP é especialmente valioso no desenvolvimento de agentes de IA, pois possibilita que agentes interajam com diversos sistemas e fontes de dados por meio de um protocolo unificado, tornando-os mais flexíveis e poderosos.
+O MCP é especialmente valioso no desenvolvimento de agentes de IA, pois permite que os agentes interajam com vários sistemas e fontes de dados através de um protocolo unificado, tornando-os mais flexíveis e poderosos.
 
 ## Objetivos de Aprendizagem
-- Compreender o que é o MCP e seu papel no desenvolvimento de agentes de IA
-- Configurar e ajustar um servidor MCP para integração com GitHub
-- Construir um sistema multiagente usando as ferramentas MCP
-- Implementar RAG (Retrieval Augmented Generation) com Azure Cognitive Search
+- Compreender o que é o MCP e o seu papel no desenvolvimento de agentes de IA
+- Configurar e preparar um servidor MCP para integração com o GitHub
+- Construir um sistema multi-agente usando as ferramentas MCP
+- Implementar RAG (Retrieval Augmented Generation) com o Azure Cognitive Search
 
 ## Pré-requisitos
 - Python 3.8+
 - Node.js 14+
-- Assinatura Azure
+- Subscrição Azure
 - Conta GitHub
-- Conhecimento básico de Semantic Kernel
+- Conhecimentos básicos de Semantic Kernel
 
 ## Instruções de Configuração
 
@@ -45,9 +45,9 @@ O MCP é especialmente valioso no desenvolvimento de agentes de IA, pois possibi
    ```
 
 2. **Configurar Serviços Azure**
-   - Crie um recurso Azure Cognitive Search
-   - Configure o serviço Azure OpenAI
-   - Ajuste as variáveis de ambiente no arquivo `.env`
+   - Criar um recurso Azure Cognitive Search
+   - Configurar o serviço Azure OpenAI
+   - Definir variáveis de ambiente no ficheiro `.env`
 
 3. **Configuração do Servidor MCP**
    ```bash
@@ -69,12 +69,12 @@ O MCP é especialmente valioso no desenvolvimento de agentes de IA, pois possibi
 
 ## Componentes Principais
 
-### 1. Sistema Multiagente
-- GitHub Agent: Análise de repositórios
-- Hackathon Agent: Recomendações de projetos
-- Events Agent: Sugestões de eventos tecnológicos
+### 1. Sistema Multi-Agente
+- Agente GitHub: Análise de repositórios
+- Agente Hackathon: Recomendações de projetos
+- Agente de Eventos: Sugestões de eventos tecnológicos
 
-### 2. Integração com Azure
+### 2. Integração Azure
 - Cognitive Search para indexação de eventos
 - Azure OpenAI para inteligência dos agentes
 - Implementação do padrão RAG
@@ -88,17 +88,17 @@ O MCP é especialmente valioso no desenvolvimento de agentes de IA, pois possibi
 
 O exemplo demonstra:
 1. Integração do servidor MCP
-2. Orquestração multiagente
+2. Orquestração multi-agente
 3. Integração com Azure Cognitive Search
 4. Implementação do padrão RAG
 
-Principais funcionalidades:
+Funcionalidades principais:
 - Análise em tempo real de repositórios GitHub
 - Recomendações inteligentes de projetos
 - Correspondência de eventos usando Azure Search
 - Respostas em streaming com Chainlit
 
-## Executando o Exemplo
+## Executar o Exemplo
 
 Para instruções detalhadas de configuração e mais informações, consulte o [Github MCP Server Example README](./code_samples/github-mcp/README.md).
 
@@ -107,7 +107,7 @@ Para instruções detalhadas de configuração e mais informações, consulte o 
    npx @modelcontextprotocol/server-github
    ```
 
-2. Inicie a aplicação:
+2. Lance a aplicação:
    ```bash
    chainlit run app.py -w
    ```
@@ -117,13 +117,13 @@ Para instruções detalhadas de configuração e mais informações, consulte o 
    Example query: "Analyze repositories for username: <github_username>"
    ```
 
-## Solução de Problemas
+## Resolução de Problemas
 
 Problemas comuns e soluções:
 1. Problemas de Conexão MCP
-   - Verifique se o servidor está rodando
-   - Confira a disponibilidade da porta
-   - Confirme os tokens do GitHub
+   - Verifique se o servidor está a correr
+   - Confirme a disponibilidade da porta
+   - Confirme os tokens GitHub
 
 2. Problemas com Azure Search
    - Valide as strings de conexão
@@ -131,10 +131,10 @@ Problemas comuns e soluções:
    - Confirme o upload dos documentos
 
 ## Próximos Passos
-- Explore ferramentas MCP adicionais
-- Implemente agentes personalizados
-- Aprimore as capacidades do RAG
-- Adicione mais fontes de eventos
+- Explorar ferramentas MCP adicionais
+- Implementar agentes personalizados
+- Melhorar as capacidades RAG
+- Adicionar mais fontes de eventos
 
 ## Recursos
 - [MCP para Iniciantes](https://aka.ms/mcp-for-beginners)  
@@ -143,4 +143,4 @@ Problemas comuns e soluções:
 - [Guias Semantic Kernel](https://learn.microsoft.com/semantic-kernel/)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

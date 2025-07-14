@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f0ce2d470f3efad6f8c7df376f416a4b",
-  "translation_date": "2025-05-20T07:45:30+00:00",
+  "translation_date": "2025-07-12T07:32:44+00:00",
   "source_file": "00-course-setup/AzureSearch.md",
   "language_code": "fr"
 }
@@ -20,46 +20,46 @@ Avant de commencer, assurez-vous de disposer des éléments suivants :
 ## Étape 1 : Créer un service Azure AI Search
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com/?wt.mc_id=studentamb_258691).
-2. Dans le panneau de navigation à gauche, cliquez sur **Créer une ressource**.
+2. Dans le volet de navigation à gauche, cliquez sur **Créer une ressource**.
 3. Dans la barre de recherche, tapez "Azure AI Search" et sélectionnez **Azure AI Search** dans la liste des résultats.
 4. Cliquez sur le bouton **Créer**.
 5. Dans l’onglet **Bases**, renseignez les informations suivantes :
    - **Abonnement** : Sélectionnez votre abonnement Azure.
    - **Groupe de ressources** : Créez un nouveau groupe de ressources ou sélectionnez-en un existant.
-   - **Nom de la ressource** : Saisissez un nom unique pour votre service de recherche.
+   - **Nom de la ressource** : Entrez un nom unique pour votre service de recherche.
    - **Région** : Choisissez la région la plus proche de vos utilisateurs.
-   - **Niveau tarifaire** : Choisissez un niveau tarifaire adapté à vos besoins. Vous pouvez commencer avec le niveau Gratuit pour les tests.
+   - **Niveau tarifaire** : Sélectionnez un niveau tarifaire adapté à vos besoins. Vous pouvez commencer avec le niveau Gratuit pour des tests.
 6. Cliquez sur **Vérifier + créer**.
-7. Vérifiez les paramètres, puis cliquez sur **Créer** pour lancer la création du service de recherche.
+7. Vérifiez les paramètres puis cliquez sur **Créer** pour lancer la création du service de recherche.
 
 ## Étape 2 : Premiers pas avec Azure AI Search
 
 1. Une fois le déploiement terminé, accédez à votre service de recherche dans le portail Azure.
-2. Sur la page de présentation du service de recherche, cliquez sur le bouton **Démarrage rapide**.
+2. Sur la page de présentation du service, cliquez sur le bouton **Démarrage rapide**.
 3. Suivez les étapes du guide Démarrage rapide pour créer un index, importer des données et effectuer une requête de recherche.
 
 ### Créer un index
 
 1. Dans le guide Démarrage rapide, cliquez sur **Créer un index**.
-2. Définissez le schéma de l’index en spécifiant les champs et leurs attributs (par exemple, type de données, recherche possible, filtrable).
-3. Cliquez sur **Créer** pour générer l’index.
+2. Définissez le schéma de l’index en précisant les champs et leurs attributs (par exemple, type de données, recherche possible, filtrable).
+3. Cliquez sur **Créer** pour créer l’index.
 
 ### Importer des données
 
 1. Dans le guide Démarrage rapide, cliquez sur **Importer des données**.
-2. Choisissez une source de données (par exemple, Azure Blob Storage, Azure SQL Database) et fournissez les détails de connexion nécessaires.
+2. Choisissez une source de données (par exemple, Azure Blob Storage, Azure SQL Database) et fournissez les informations de connexion nécessaires.
 3. Faites correspondre les champs de la source de données avec ceux de l’index.
 4. Cliquez sur **Soumettre** pour importer les données dans l’index.
 
 ### Effectuer une requête de recherche
 
 1. Dans le guide Démarrage rapide, cliquez sur **Explorateur de recherche**.
-2. Saisissez une requête de recherche dans la barre pour tester la fonctionnalité de recherche.
+2. Saisissez une requête dans la barre de recherche pour tester la fonctionnalité.
 3. Consultez les résultats et ajustez le schéma de l’index ou les données si nécessaire.
 
 ## Étape 3 : Utiliser les outils Azure AI Search
 
-Azure AI Search s’intègre à divers outils pour améliorer vos capacités de recherche. Vous pouvez utiliser Azure CLI, le SDK Python et d’autres outils pour des configurations et opérations avancées.
+Azure AI Search s’intègre à divers outils pour enrichir vos capacités de recherche. Vous pouvez utiliser Azure CLI, le SDK Python et d’autres outils pour des configurations et opérations avancées.
 
 ### Utilisation d’Azure CLI
 
@@ -68,7 +68,7 @@ Azure AI Search s’intègre à divers outils pour améliorer vos capacités de 
    ```bash
    az login
    ```
-3. Créez un nouveau service de recherche via Azure CLI :
+3. Créez un nouveau service de recherche avec Azure CLI :
    ```bash
    az search service create --resource-group <resource-group> --name <service-name> --sku Free
    ```
@@ -127,4 +127,4 @@ Vous avez configuré avec succès Azure AI Search via le portail Azure et les ou
 Pour toute aide supplémentaire, consultez la [documentation Azure Cognitive Search](https://learn.microsoft.com/en-us/azure/search/?wt.mc_id=studentamb_258691).
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous ne sommes pas responsables des malentendus ou des mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

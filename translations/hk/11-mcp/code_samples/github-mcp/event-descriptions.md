@@ -2,193 +2,193 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4d3b0e20122a974cc2fae7f889400bbc",
-  "translation_date": "2025-05-20T09:55:17+00:00",
+  "translation_date": "2025-07-12T13:59:44+00:00",
   "source_file": "11-mcp/code_samples/github-mcp/event-descriptions.md",
   "language_code": "hk"
 }
 -->
-## Event Name: 用 Azure AI Agent Service 建立你的 code-first 應用程式（EMEA/US 提供）
+## 活動名稱：使用 Azure AI Agent Service 建立您的程式碼優先應用程式（EMEA/美國方案）
 
-## Description
+## 說明
 
-Azure AI Agent Service 是一個結合服務和 SDK 的無縫平台，簡化了強大 AI 驅動解決方案的開發。這個環節會教你如何用 Azure 建立自己的 code-first AI agent，可以回答問題、進行數據分析，並整合外部數據來源。你亦會探索更複雜的架構，包括多個 agent 一同協作。
+Azure AI Agent Service 是服務與 SDK 的完美結合，簡化了強大 AI 解決方案的開發。在本次課程中，您將學習如何使用 Azure 建立自己的程式碼優先 AI 代理，能夠回答問題、執行資料分析並整合外部資料來源。您還將探索更複雜的架構，包括多個代理協同工作。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25325/>
 
 ---
 
-## Event Name: 利用 Semantic Kernel 用多代理 AI 轉型業務流程
+## 活動名稱：利用 Semantic Kernel 的多代理 AI 轉型業務流程
 
-## Description
+## 說明
 
-透過實時示範和實作學習，發掘多代理 AI 系統的威力，涵蓋群聊、反思、選擇器和蜂群等模式。利用 Semantic Kernel Process Framework，自動化及擴展關鍵業務流程，從客戶支援到專案管理，全部用 Python 實現。
+透過實況示範和實作學習，探索多代理 AI 系統的強大功能，涵蓋群組聊天、反思、選擇器和群體行為等模式。利用 Semantic Kernel 流程框架，自動化並擴展關鍵業務流程，從客戶支援到專案管理，使用 Python 實現。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25313/>
 
 ---
 
-## Event Name: 使用 AutoGen v0.4 建立 Agentic 應用程式
+## 活動名稱：使用 AutoGen v0.4 建立代理應用程式
 
-## Description
+## 說明
 
-開始使用 AutoGen v0.4 建立 agents 和多代理團隊。我們會介紹全新 AutoGen v0.4 架構概覽，並帶你一步步建立有網頁用戶介面的多代理團隊。
+開始使用 AutoGen v0.4 建立代理和多代理團隊。我們將介紹全新 AutoGen v0.4 架構概覽，並帶您一步步建立具備網頁使用者介面的多代理團隊。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25327/>
 
 ---
 
-## Event Name: 用 GitHub Models 快速原型 AI Agents
+## 活動名稱：使用 GitHub Models 快速原型 AI 代理
 
-## Description
+## 說明
 
-有了 GitHub Models，你只需要一個 GitHub 帳戶就能建立你的第一個 AI Agent！GitHub Models 包含強大的模型，如 OpenAI gpt-4o、DeepSeek-R1、Llama-3.1 等，隨時可在 playground 或程式碼中試用。
-本節會示範如何用 Python 連接 GitHub Models，然後用熱門 Python 套件如 PydanticAI、AutoGen 和 Semantic Kernel 建立 agents。
-你可以在 GitHub Codespaces 實時跟進，或在會後隨時試玩範例。
+多虧了 GitHub Models，您只需一個 GitHub 帳號就能建立第一個 AI 代理！GitHub Models 包含強大的模型，如 OpenAI gpt-4o、DeepSeek-R1、Llama-3.1 等，隨時可在 playground 或程式碼中試用。
+本次課程將示範如何從 Python 連接 GitHub Models，並使用 PydanticAI、AutoGen 和 Semantic Kernel 等熱門 Python 套件建立代理。
+您可以在 GitHub Codespaces 直播跟著操作，或在課後隨時嘗試範例。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25481/>
 
 ---
 
-## Event Name: 利用 Azure AI 模型目錄中的大量模型建立 agents
+## 活動名稱：利用 Azure AI 模型目錄中的多模型軍團建立代理
 
-## Description
+## 說明
 
-Azure AI 模型目錄提供多款具不同技能和能力的模型。初期可用現成模型快速上手，隨著開發者使用更複雜的工作流程，可利用專門模型配合自己喜歡的框架完成工作。這個講座會介紹模型目錄的內容，以及如何建立一支由多個模型組成的 agent 軍團，且不會花費過高。
+Azure AI 模型目錄提供多樣化的模型，具備不同技能與能力。開發者可先使用現成模型快速起步，隨著工作流程複雜度提升，能利用專門模型在喜愛的框架中完成任務。本次演講將介紹模型目錄的內容，以及如何建立基於多模型軍團的代理，同時控制成本。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25328/>
 
 ---
 
-## Event Name: 用 LangGraph 和 Azure Cosmos DB 打造多代理 API
+## 活動名稱：使用 LangGraph 與 Azure Cosmos DB 的多代理 API
 
-## Description
+## 說明
 
-多代理 AI 應用的興起正在改變我們構建智能系統的方式，但如何設計架構以應付真實世界的擴展性和效能？本節將深入介紹一個生產級多代理應用，採用 LangGraph 進行 agent 協調，FastAPI 作為 API 層，Azure Cosmos DB 作為狀態管理、向量存儲和交易數據的核心。
+多代理 AI 應用的興起正在改變我們建構智慧系統的方式，但如何設計架構以達到真實世界的可擴展性與效能？本次課程將深入介紹一個生產級多代理應用，使用 LangGraph 進行代理協調，FastAPI 作為 API 層，Azure Cosmos DB 作為狀態管理、向量儲存與交易資料的核心。
 
-透過詳細程式碼導覽，你會看到如何設計並實現一個 agent 驅動的工作流程，無縫整合檢索增強生成（RAG）、記憶持久化及動態狀態轉換。我們會涵蓋：
+透過詳細程式碼導覽，您將學會如何設計與實作代理驅動的工作流程，無縫整合檢索增強生成（RAG）、記憶持久化與動態狀態轉換。我們將涵蓋：
 
-- 使用 LangGraph 進行結構化推理的 agent 協作
-- 利用 Azure Cosmos DB 實時儲存聊天記錄——同一個支援 ChatGPT 聊天記錄的資料庫，史上增長最快的 AI agent 應用
-- 利用 Cosmos DB 原生嵌入支持的向量搜尋做知識檢索
-- FastAPI 的非同步能力保持互動流暢且具擴展性
+- 使用 LangGraph 進行代理協作與結構化推理
+- 使用 Azure Cosmos DB 實時儲存聊天歷史——同時也是 ChatGPT 聊天歷史的資料庫，這是史上成長最快的 AI 代理應用
+- 利用 Cosmos DB 原生嵌入支援的向量搜尋進行知識檢索
+- FastAPI 的非同步功能，保持互動的即時性與可擴展性
 
-完成本節後，你會掌握打造和部署可擴展、雲端原生多代理應用的清晰藍圖，善用現代 AI 和雲端基礎設施。不論你是 AI 工程師、雲端架構師還是 Python 開發者，這場講座都會帶給你實用見解和經過考驗的模式，助你打造下一代 AI 驅動應用。
+課程結束時，您將擁有清晰的藍圖，能建置並部署可擴展的雲端原生多代理應用，充分發揮現代 AI 與雲端基礎設施的威力。無論您是 AI 工程師、雲端架構師或 Python 開發者，本次演講都將提供實用見解與經驗豐富的模式，助您打造下一代 AI 應用。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25314/>
 
 ---
 
-## Event Name: 用 JavaScript SDK 在 Azure AI Agent Service 建立你的第一個 AI Agent
+## 活動名稱：使用 Azure AI Agent Service 在 JS 中建立您的第一個 AI 代理
 
-## Description
+## 說明
 
-學習如何使用 Azure AI Agent Service 的 JavaScript SDK 建立你的第一個 AI agent，這是一個全託管平台，令開發變得簡單。你會看到如何設定、連接 Azure AI Search 等工具，並部署一個簡單的問答 agent。透過現場示範，你會發現自動調用工具和管理狀態如何簡化流程。非常適合初學者，這節課提供實用步驟和技巧，助你自信踏上 AI agent 之路。
+學習如何使用 Azure AI Agent Service 的 JavaScript SDK 建立您的第一個 AI 代理，這是一個全方位管理的平台，讓開發變得輕鬆。您將看到如何設定、連接 Azure AI Search 等工具，並部署一個簡單的問答代理。透過實況示範，您將發現自動工具呼叫與管理狀態如何簡化流程。非常適合初學者，本課程提供實用步驟與技巧，助您自信踏出 AI 代理之路。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25381/>
 
 ---
 
-## Event Name: Prompting 是新腳本語言：認識 GenAIScript
+## 活動名稱：提示語是新的腳本語言：認識 GenAIScript
 
-## Description
+## 說明
 
-jQuery 曾令網頁開發更簡單，抽離複雜細節，讓開發者專注創作而非應付瀏覽器怪異行為。如今，AI 開發面臨類似挑戰。新模式不斷湧現，要跟上節奏相當吃力，特別是 agentic AI 工具越來越強大和複雜。如果你可以用簡單、熟悉的 JavaScript 抽象，利用最尖端 AI 功能自動化工作怎麼辦？GenAIScript 就是這樣一種方式，讓你把提示語當成可重用的程式碼片段，輕鬆將 AI 整合進工作流程。本講座會探討 GenAIScript 如何讓 AI 自動化 agent 感覺像寫 JavaScript 一樣直覺，幫你簡化重複工作，無需深厚 AI 專業知識。
+jQuery 曾透過抽象化複雜性，讓網頁開發更簡單，開發者能專注於建構而非對抗瀏覽器差異。如今，AI 開發面臨類似挑戰。新模式不斷湧現，跟上節奏令人吃力，尤其是當 AI 工具——特別是代理型工具——越來越強大且複雜。假如您能利用尖端 AI 功能，透過簡單且熟悉的 JavaScript 抽象化來自動化任務呢？這就是 GenAIScript——一種將 AI 融入工作流程的方式，將提示語視為可重用的程式碼片段。本次演講將探討 GenAIScript 如何讓 AI 自動化代理像寫 JavaScript 一樣直覺，幫助您簡化重複工作，無需深厚 AI 專業知識。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25441/>
 
 ---
 
-## Event Name: 用 LlamaIndex.TS 打造知識增強型 agents
+## 活動名稱：使用 LlamaIndex.TS 建立知識增強代理
 
-## Description
+## 說明
 
-LlamaIndex 以簡化構建檢索增強生成（RAG）聞名，我們的框架同樣讓建立 agents 和多代理系統變得容易！本節會介紹 Workflows，我們用來構建 agentic 系統的基本模組，並示範如何建立一個使用 RAG 和其他工具的 agent。
+LlamaIndex 以簡化建立檢索增強生成（RAG）聞名，但我們的框架同時也讓建立代理和多代理系統變得容易！本次課程將介紹 Workflows，這是建立代理系統的基本構件，並示範如何建立一個結合 RAG 與其他工具的代理。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25440/>
 
 ---
 
-## Event Name: 用 Azure AI Foundry 和 GitHub Copilot 為 Java 建立 AI Agents
+## 活動名稱：使用 Azure AI Foundry 與 GitHub Copilot 為 Java 建立 AI 代理
 
-## Description
+## 說明
 
-本節會展示如何在 Java 應用中嵌入先進 AI Agent 功能，利用 Azure AI Foundry 設定專案目標、試驗模型，並安全部署生產級解決方案。過程中你會學到 GitHub Copilot（支援 IntelliJ、VS Code 和 Eclipse）如何簡化編碼和提示創建，同時掌握模型選擇、微調及 agentic 工作流程的最佳實踐，確保開發負責且高效。無論你是 AI Agent 新手還是尋求進階技巧，這節都會幫你用熟悉工具打造更出色的體驗。
+本課程將示範如何將先進的 AI 代理功能嵌入您的 Java 應用程式，使用 Azure AI Foundry，包括設定專案目標、模型實驗，以及安全部署生產級解決方案。過程中，您將學習如何利用 GitHub Copilot（在 IntelliJ、VS Code 和 Eclipse 中）簡化程式碼撰寫與提示語創建，同時透過模型選擇、微調與代理工作流程的最佳實踐，確保負責任且高效的開發。無論您是 AI 代理新手或尋求進階代理建構技巧，本課程都將助您利用熟悉工具交付卓越體驗。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25336/>
 
 ---
 
-## Event Name: 用 LangChain4j 和動態會話建立 Java AI Agents
+## 活動名稱：使用 LangChain4j 與動態會話建立 Java AI 代理
 
-## Description
+## 說明
 
-結合 LangChain4j 與 Azure Container Apps (ACA) 的動態會話，連接 Azure AI 服務，釋放 Java 應用中 AI Agents 的潛力。本節展示一個實用範例，建立能與遠端環境互動（包括檔案管理）的 agent。學習如何定義自訂工具，將它們整合進 agent 工作流程，並利用 Azure 可擴展基礎設施部署智能且動態的解決方案。
+結合 LangChain4j 與 Azure Container Apps (ACA) 的動態會話，連接 Azure AI 服務，釋放 Java 應用中 AI 代理的潛力。本課程展示一個實用範例，建立能與遠端環境互動（包含檔案管理）的代理。學習如何定義自訂工具、整合至代理工作流程，並利用 Azure 可擴展基礎設施部署智慧且動態的解決方案。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25337/>
 
 ---
 
-## Event Name: 不負責任的 AI Agents
+## 活動名稱：不負責任的 AI 代理
 
-## Description
+## 說明
 
-加入我們，一起探討 AI agents 的潛在風險，並應對在對話式 AI 平台中嵌入可信 AI 實踐的挑戰！本節深入展示不負責任 AI agents 的案例——令人咋舌的模型失誤、對抗性越獄攻擊和其他侵蝕信任與合規的風險。
+加入我們，一起探討 AI 代理的潛在風險，並挑戰如何將可信任 AI 實踐嵌入對話式 AI 平台！本課程深入展示不負責任 AI 代理的案例——包括驚人的模型失效、對抗性越獄及其他侵蝕信任與合規性的風險。
 
-我們會介紹微軟尖端的可信 AI 工具，包括內容過濾器、紅隊策略和評估，並帶來 AI agents 負責任與不負責任行為的現場演示，讓你目睹難以置信的對比。
+我們將介紹微軟尖端的可信任 AI 工具，包括內容過濾、紅隊策略與評估，並現場示範 AI 代理如何負責任與不負責任地行為，讓您目睹難以置信的差異。
 
-🔥 你將收穫：
-✅ 如何識別並減輕 AI 風險，防止被利用
-✅ 如何部署 Azure AI Content Safety 來偵測和緩解風險行為
-✅ 打造可信 AI agents 的秘訣
+🔥 您將學到：
+✅ 如何在風險被利用前識別並減輕 AI 風險
+✅ 如何部署 Azure AI Content Safety 來偵測並緩解風險行為
+✅ 讓 AI 代理值得信賴的秘訣
 
-準備好迎接充滿熱度、高風險 AI 戲劇和必學策略的環節，讓你的 AI 不只會運作，更會成為有意義的 AI！
+準備好迎接充滿熱度、高風險 AI 劇情與必備策略的課程，讓您的 AI 走在正確的歷史一方。別只會打造 AI——打造有意義的 AI！
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25388/>
 
 ---
 
-## Event Name: 用 Azure AI Agent Service (.NET) 建立你的 code-first 應用程式
+## 活動名稱：使用 Azure AI Agent Service (.NET) 建立您的程式碼優先應用程式
 
-## Description
+## 說明
 
-Azure AI Agent Service 是結合服務與 SDK 的無縫平台，簡化強大 AI 驅動解決方案的開發。這節會教你如何用 Azure 和 C# 建立自己的 code-first AI agent，可以回答問題、進行數據分析，並整合外部數據來源。你亦會探索更複雜的架構，包括多個 agent 一同協作。
+Azure AI Agent Service 是服務與 SDK 的完美結合，簡化了強大 AI 解決方案的開發。在本次課程中，您將學習如何使用 Azure 與 C# 建立自己的程式碼優先 AI 代理，能夠回答問題、執行資料分析並整合外部資料來源。您還將探索更複雜的架構，包括多個代理協同工作。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25370/>
 
 ---
 
-## Event Name: AI Agents + .NET Aspire
+## 活動名稱：AI 代理 + .NET Aspire
 
-## Description
+## 說明
 
-本節會分享 .NET 平台上關於 Agents 的最新發展。了解 .NET 的現況，包括新功能和增強。探索強大的 AI Agent 能力，並進行 Agents 與 .NET Aspire 的現場編碼示範。
+本課程將分享 .NET 平台上關於代理的最新且最令人興奮的發展。了解 .NET 的現況，包括新功能與改進。探索強大的 AI 代理功能，並進行代理與 .NET Aspire 的實況編碼。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25332/>
 
 ---
 
-## Event Name: 用 C# 和 Semantic Kernel 建立由 Azure Cosmos 支援的多代理 AI 應用
+## 活動名稱：使用 C# 與 Semantic Kernel 建立由 Azure Cosmos 支援的多代理 AI 應用程式
 
-## Description
+## 說明
 
-我們會帶你了解一個基於 Semantic Kernel 框架的 C# 多代理應用。你會理解 agentic 應用背後的概念，掌握實作細節和要點，並學會如何整合 Azure Cosmos DB 作為多種使用場景的資料庫。
+我們將帶您了解基於 Semantic Kernel 框架的 C# 多代理應用程式。您將理解代理應用的概念、實作細節與細微差異，並學習如何整合 Azure Cosmos DB 作為多種使用情境的資料庫。
 
 ## URL
 <https://developer.microsoft.com/en-us/reactor/events/25455/>
 
 **免責聲明**：  
-本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原文文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們對因使用本翻譯而引起的任何誤解或誤釋概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bbce3572338711aeab758506379ab716",
-  "translation_date": "2025-05-21T09:38:23+00:00",
+  "translation_date": "2025-07-12T13:47:30+00:00",
   "source_file": "11-mcp/README.md",
   "language_code": "pl"
 }
@@ -11,22 +11,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Wprowadzenie do Model Context Protocol (MCP)
 
-Model Context Protocol (MCP) to nowoczesne rozwiązanie stworzone w celu ujednolicenia interakcji między modelami AI a aplikacjami klienckimi. MCP pełni rolę pomostu między modelami AI a aplikacjami, które z nich korzystają, zapewniając spójny interfejs niezależnie od implementacji modelu.
+Model Context Protocol (MCP) to nowoczesne rozwiązanie zaprojektowane w celu standaryzacji interakcji między modelami AI a aplikacjami klienckimi. MCP pełni rolę pomostu między modelami AI a aplikacjami, które z nich korzystają, zapewniając spójny interfejs niezależnie od implementacji modelu.
 
 Kluczowe cechy MCP:
 
-- **Ustandaryzowana komunikacja**: MCP ustanawia wspólny język dla aplikacji do komunikacji z modelami AI  
+- **Standaryzowana komunikacja**: MCP ustanawia wspólny język do komunikacji aplikacji z modelami AI  
 - **Ulepszone zarządzanie kontekstem**: Umożliwia efektywne przekazywanie informacji kontekstowych do modeli AI  
 - **Kompatybilność wieloplatformowa**: Działa w różnych językach programowania, w tym C#, Java, JavaScript, Python i TypeScript  
-- **Płynna integracja**: Ułatwia deweloperom integrację różnych modeli AI z ich aplikacjami  
+- **Bezproblemowa integracja**: Pozwala deweloperom łatwo integrować różne modele AI w swoich aplikacjach  
 
-MCP jest szczególnie cenny przy tworzeniu agentów AI, ponieważ pozwala agentom na interakcję z różnymi systemami i źródłami danych za pomocą zunifikowanego protokołu, co zwiększa ich elastyczność i możliwości.
+MCP jest szczególnie cenny w rozwoju agentów AI, ponieważ umożliwia agentom interakcję z różnymi systemami i źródłami danych za pomocą zunifikowanego protokołu, co czyni agentów bardziej elastycznymi i wydajnymi.
 
 ## Cele nauki
 - Zrozumieć, czym jest MCP i jaka jest jego rola w rozwoju agentów AI  
-- Skonfigurować serwer MCP do integracji z GitHub  
-- Zbudować system wieloagentowy z użyciem narzędzi MCP  
-- Zaimplementować RAG (Retrieval Augmented Generation) z Azure Cognitive Search  
+- Skonfigurować i uruchomić serwer MCP do integracji z GitHub  
+- Zbudować system wieloagentowy korzystając z narzędzi MCP  
+- Wdrożyć RAG (Retrieval Augmented Generation) z użyciem Azure Cognitive Search  
 
 ## Wymagania wstępne
 - Python 3.8+  
@@ -70,13 +70,13 @@ MCP jest szczególnie cenny przy tworzeniu agentów AI, ponieważ pozwala agento
 ## Główne komponenty
 
 ### 1. System wieloagentowy
-- GitHub Agent: analiza repozytoriów  
-- Hackathon Agent: rekomendacje projektów  
-- Events Agent: propozycje wydarzeń technologicznych  
+- Agent GitHub: analiza repozytoriów  
+- Agent Hackathon: rekomendacje projektów  
+- Agent Wydarzeń: sugestie wydarzeń technologicznych  
 
 ### 2. Integracja z Azure
 - Cognitive Search do indeksowania wydarzeń  
-- Azure OpenAI jako inteligencja agentów  
+- Azure OpenAI dla inteligencji agentów  
 - Implementacja wzorca RAG  
 
 ### 3. Narzędzia MCP
@@ -84,9 +84,9 @@ MCP jest szczególnie cenny przy tworzeniu agentów AI, ponieważ pozwala agento
 - Inspekcja kodu  
 - Ekstrakcja metadanych  
 
-## Omówienie kodu
+## Przegląd kodu
 
-Przykład pokazuje:  
+Przykład demonstruje:  
 1. Integrację serwera MCP  
 2. Orkiestrację systemu wieloagentowego  
 3. Integrację z Azure Cognitive Search  
@@ -96,11 +96,11 @@ Kluczowe funkcje:
 - Analiza repozytoriów GitHub w czasie rzeczywistym  
 - Inteligentne rekomendacje projektów  
 - Dopasowywanie wydarzeń z użyciem Azure Search  
-- Streaming odpowiedzi z Chainlit  
+- Strumieniowe odpowiedzi z Chainlit  
 
 ## Uruchamianie przykładu
 
-Szczegółowe instrukcje konfiguracji i więcej informacji znajdziesz w [Github MCP Server Example README](./code_samples/github-mcp/README.md).
+Szczegółowe instrukcje konfiguracji i dodatkowe informacje znajdziesz w [Github MCP Server Example README](./code_samples/github-mcp/README.md).
 
 1. Uruchom serwer MCP:  
    ```bash
@@ -128,19 +128,19 @@ Typowe problemy i ich rozwiązania:
 2. Problemy z Azure Search  
    - Sprawdź poprawność connection stringów  
    - Zweryfikuj istnienie indeksu  
-   - Sprawdź przesyłanie dokumentów  
+   - Upewnij się, że dokumenty zostały przesłane  
 
 ## Kolejne kroki
 - Poznaj dodatkowe narzędzia MCP  
-- Zaimplementuj własnych agentów  
-- Rozwiń możliwości RAG  
+- Stwórz własnych agentów  
+- Rozbuduj możliwości RAG  
 - Dodaj więcej źródeł wydarzeń  
 
 ## Zasoby
-- [MCP for Beginners](https://aka.ms/mcp-for-beginners)  
-- [MCP Documentation](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)  
-- [Azure Cognitive Search Docs](https://learn.microsoft.com/azure/search/)  
-- [Semantic Kernel Guides](https://learn.microsoft.com/semantic-kernel/)
+- [MCP dla początkujących](https://aka.ms/mcp-for-beginners)  
+- [Dokumentacja MCP](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)  
+- [Dokumentacja Azure Cognitive Search](https://learn.microsoft.com/azure/search/)  
+- [Przewodniki Semantic Kernel](https://learn.microsoft.com/semantic-kernel/)
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako autorytatywne źródło. W przypadku istotnych informacji zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
