@@ -54,6 +54,10 @@ MCP is particularly valuable in AI agent development as it allows agents to inte
 │       ├── app.py              # Main application
 │       ├── event-descriptions.md  # Event data
 │       └── MCP_SETUP.md        # Setup guide
+├── mcp-agents/                 # Agent-to-agent communication
+│   ├── client/                 # MCP client implementation
+│   ├── server/                 # MCP server with agents
+│   └── README.md               # Advanced agent examples
 ├── README.md
 └── requirements.txt
 ```
@@ -126,6 +130,7 @@ Common issues and solutions:
 - Implement custom agents
 - Enhance RAG capabilities
 - Add more event sources
+- **Advanced**: Check out [mcp-agents/](./mcp-agents/) for agent-to-agent communication examples
 
 ## Resources
 - [MCP for Beginners](https://aka.ms/mcp-for-beginners)  
