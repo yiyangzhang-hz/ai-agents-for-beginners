@@ -1,7 +1,5 @@
 # Building Agent-to-Agent Communication Systems with MCP
 
-Victor Dibia, Mike Kistler, Maria Naggaga Nakanwagi, Caitie Mccaffrey
-
 > TL;DR - Can You Build Agent2Agent Communication on MCP? Yes!
 
 MCP has evolved significantly beyond its original goal of "providing context to LLMs". With recent enhancements including [resumable streams](https://modelcontextprotocol.io/docs/concepts/transports#resumability-and-redelivery), [elicitation](https://modelcontextprotocol.io/specification/2025-06-18/client/elicitation), [sampling](https://modelcontextprotocol.io/specification/2025-06-18/client/sampling), and notifications ([progress](https://modelcontextprotocol.io/specification/2025-06-18/basic/utilities/progress) and [resources](https://modelcontextprotocol.io/specification/2025-06-18/schema#resourceupdatednotification)), MCP now provides a robust foundation for building complex agent-to-agent communication systems.
@@ -330,7 +328,7 @@ class SimpleEventStore(EventStore):
 # From server/server.py - Passing event store to session manager
 def create_server_app(event_store: Optional[EventStore] = None) -> Starlette:
     server = ResumableServer()
-    
+
     # Create session manager with event store for resumption
     session_manager = StreamableHTTPSessionManager(
         app=server,
@@ -338,7 +336,7 @@ def create_server_app(event_store: Optional[EventStore] = None) -> Starlette:
         json_response=False,
         security_settings=security_settings,
     )
-    
+
     return Starlette(routes=[Mount("/mcp", app=session_manager.handle_request)])
 
 # Usage: Initialize with event store
