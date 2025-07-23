@@ -186,8 +186,6 @@ sequenceDiagram
 
 As part of this article, we provide a [code repository](https://github.com/victordibia/ai-tutorials/tree/main/MCP%20Agents) that contains a complete implementation of long-running agents using the MCP Python SDK with StreamableHTTP transport for session resumption and message redelivery. The implementation demonstrates how MCP capabilities can be composed to enable sophisticated agent-like behaviors.
 
-![MCP Agent Demo](https://via.placeholder.com/600x300?text=MCP+Agent+Demo+Screenshot)
-
 Specifically, we implement a server with two primary agent tools:
 
 - **Travel Agent** - Simulates a travel booking service with price confirmation via elicitation
@@ -196,6 +194,54 @@ Specifically, we implement a server with two primary agent tools:
 Both agents demonstrate real-time progress updates, interactive confirmations, and full session resumption capabilities.
 
 ### Key Implementation Concepts
+
+The following sections show server-side agent implementation and client-side host handling for each capability:
+
+#### Streaming & Progress Updates - Real-time Task Status
+
+Streaming enables agents to provide real-time progress updates during long-running tasks, keeping users informed of task status and intermediate results.
+
+**Server Implementation (agent sends progress notifications):**
+
+```python
+# From server/server.py - Travel agent sending progress updates
+for i, step in enumerate(steps):
+    await ctx.session.send_progress_notification(
+        progress_token=ctx.request_id,
+        progress=i * 25,
+        total=100,
+        message=step,
+        related_request_id=str(ctx.request_id)
+    )
+    await anyio.sleep(2)  # Simulate work
+
+# Alternative: Log messages for detailed step-by-step updates
+await ctx.session.send_log_message(
+    level="info",
+    data=f"Processing step {current_step}/{steps} ({progress_percent}%)",
+    logger="long_running_agent",
+    related_request_id=ctx.request_id,
+)
+```
+
+**Client Implementation (host receives progress updates):**
+
+```python
+# From client/client.py - Client handling real-time notifications
+async def message_handler(message) -> None:
+    if isinstance(message, types.ServerNotification):
+        if isinstance(message.root, types.LoggingMessageNotification):
+            console.print(f"📡 [dim]{message.root.params.data}[/dim]")
+        elif isinstance(message.root, types.ProgressNotification):
+            progress = message.root.params
+            console.print(f"🔄 [yellow]{progress.message} ({progress.progress}/{progress.total})[/yellow]")
+
+# Register message handler when creating session
+async with ClientSession(
+    read_stream, write_stream,
+    message_handler=message_handler
+) as session:
+```
 
 #### Elicitation - Requesting User Input
 
