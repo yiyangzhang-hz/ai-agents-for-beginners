@@ -66,25 +66,34 @@ This can be done by going to your <a href="https://github.com/settings/personal-
 
 Please follow the [Principle of Least Privilege](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) when creating your token. This means you should only give the token the permissions it needs to run the code samples in this course.
 
-1. Select the `Fine-grained tokens` option on the left side of your screen.
+1. Select the `Fine-grained tokens` option on the left side of your screen by traversing to the **Developer settings**
+   ![](./images/profile_developer_settings.png)
 
     Then select `Generate new token`.
 
-    ![Generate Token](./images/generate-new-token.png)
+    ![Generate Token](./images/fga_new_token.png)
 
-1. Enter a descriptive name for your token that reflects its purpose, making it easy to identify later. Set an expiration date (recommended: 30 days; you can choose a shorter period like 7 days if you prefer a more secure posture.)
+2. Enter a descriptive name for your token that reflects its purpose, making it easy to identify later.
+
+
+    🔐 Token Duration Recommendation
+
+    Recommended duration: 30 days
+    For a more secure posture, you can opt for a shorter period—such as 7 days 🛡️
+    It’s a great way to set a personal target and complete the course while your learning momentum is high 🚀.
 
     ![Token Name and Expiration](./images/token-name-expiry-date.png)
 
-1. Limit the token's scope to your fork of this repository.
+3. Limit the token's scope to your fork of this repository.
 
-    ![Limit scope to fork repository](./images/select-fork-repository.png)
+    ![Limit scope to fork repository](./images/token_repository_limit.png)
 
-1. Restrict the token's permissions: Under **Permissions**, toggle **Account Permissions**, traverse to **Models** and enable only the read-access required for GitHub Models.
+4. Restrict the token's permissions: Under **Permissions**, click **Account** tab, and click the "+ Add permissions" button. A dropdown will appear. Please search for **Models** and check the box for it.
+    ![Add Models Permission](./images/add_models_permissions.png)
 
-    ![Account Permissions](./images/account-permissions.png)
+5. Verify the permissions required before generating the token. ![Verify Permissions](./images/verify_permissions.png)
 
-    ![Models Read Access](./images/models-read-access.png)
+6. Before generating the token, ensure you are ready to store the token in a secure place like a password manager vault, as it will not be shown again after you create it. ![Store Token Securely](./images/store_token_securely.png)
 
 Copy your new token that you have just created. You will now add this to your `.env` file included in this course.
 
@@ -100,6 +109,8 @@ cp .env.example .env
 This will copy the example file and create a `.env` in your directory and where you fill in the values for the environment variables.
 
 With your token copied, open the `.env` file in your favorite text editor and paste your token into the `GITHUB_TOKEN` field.
+![GitHub Token Field](./images/github_token_field.png)
+
 
 You should now be able to run the code samples of this course.
 
