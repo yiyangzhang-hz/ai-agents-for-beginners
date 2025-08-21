@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6a79c8f2b56a80370ff7e447765524f",
-  "translation_date": "2025-07-23T08:59:35+00:00",
+  "original_hash": "8693a24942b670e3cb8def77f92513f9",
+  "translation_date": "2025-08-21T13:32:17+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "id"
 }
 -->
 # Persiapan Kursus
 
-## Pendahuluan
+## Pengantar
 
 Pelajaran ini akan membahas cara menjalankan contoh kode dari kursus ini.
 
 ## Clone atau Fork Repo ini
 
-Untuk memulai, silakan clone atau fork Repository GitHub. Ini akan membuat versi materi kursus Anda sendiri sehingga Anda dapat menjalankan, menguji, dan menyesuaikan kode!
+Untuk memulai, silakan clone atau fork Repository GitHub. Ini akan membuat versi Anda sendiri dari materi kursus sehingga Anda dapat menjalankan, menguji, dan menyesuaikan kode!
 
 Ini dapat dilakukan dengan mengklik tautan ke
 
@@ -63,7 +63,7 @@ Pastikan Anda menggunakan versi Python yang benar di VSCode.
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
 
-## Pengaturan untuk Contoh Menggunakan GitHub Models 
+## Pengaturan untuk Contoh menggunakan GitHub Models 
 
 ### Langkah 1: Dapatkan GitHub Personal Access Token (PAT) Anda
 
@@ -71,31 +71,41 @@ Kursus ini memanfaatkan GitHub Models Marketplace, yang menyediakan akses gratis
 
 Untuk menggunakan GitHub Models, Anda perlu membuat [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
-Ini dapat dilakukan dengan masuk ke akun GitHub Anda.
+Ini dapat dilakukan dengan pergi ke akun GitHub Anda.
 
-Silakan ikuti [Prinsip Privilege Minimum](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) saat membuat token Anda. Ini berarti Anda hanya perlu memberikan token izin yang diperlukan untuk menjalankan contoh kode dalam kursus ini.
+Silakan ikuti [Prinsip Privilege Minimum](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) saat membuat token Anda. Ini berarti Anda hanya harus memberikan token izin yang diperlukan untuk menjalankan contoh kode dalam kursus ini.
 
-1. Pilih opsi `Fine-grained tokens` di sisi kiri layar Anda.
+1. Pilih opsi `Fine-grained tokens` di sisi kiri layar Anda dengan menuju ke **Developer settings**
+   ![](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.id.png)
 
     Kemudian pilih `Generate new token`.
 
-    ![Generate Token](../../../translated_images/generate-new-token.8772e24e8e2e067f2e6742500eaf68bb5c5f8999537bd79a040d2ecc09c7fdcb.id.png)
+    ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.id.png)
 
-1. Masukkan nama deskriptif untuk token Anda yang mencerminkan tujuannya, sehingga mudah diidentifikasi nanti. Tetapkan tanggal kedaluwarsa (disarankan: 30 hari; Anda dapat memilih periode yang lebih pendek seperti 7 hari jika Anda menginginkan keamanan lebih tinggi).
+2. Masukkan nama deskriptif untuk token Anda yang mencerminkan tujuannya, sehingga mudah diidentifikasi nanti.
+
+
+    🔐 Rekomendasi Durasi Token
+
+    Durasi yang direkomendasikan: 30 hari
+    Untuk keamanan yang lebih baik, Anda dapat memilih periode yang lebih pendek—seperti 7 hari 🛡️
+    Ini adalah cara yang bagus untuk menetapkan target pribadi dan menyelesaikan kursus sambil momentum belajar Anda tinggi 🚀.
 
     ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.id.png)
 
-1. Batasi cakupan token ke fork repository ini.
+3. Batasi cakupan token ke fork repository ini.
 
-    ![Limit scope to fork repository](../../../translated_images/select-fork-repository.4497f6bb05ccd6b474ed134493a815fc34f94f89db2b1630c494adff7b5b558a.id.png)
+    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.id.png)
 
-1. Batasi izin token: Di bawah **Permissions**, aktifkan **Account Permissions**, navigasikan ke **Models** dan aktifkan hanya akses baca yang diperlukan untuk GitHub Models.
+4. Batasi izin token: Di bawah **Permissions**, klik tab **Account**, dan klik tombol "+ Add permissions". Dropdown akan muncul. Silakan cari **Models** dan centang kotaknya.
+    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.id.png)
 
-    ![Account Permissions](../../../translated_images/account-permissions.de1806fad33a72c6194d2688cf2c10f2adb9ff7a5c1041a2329cbef46bffbba0.id.png)
+5. Verifikasi izin yang diperlukan sebelum membuat token. ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.id.png)
 
-    ![Models Read Access](../../../translated_images/models-read-access.c00bc44e28c40450a85542e19f8e8c68284c71861c076b7dbc078b4c7e51faa6.id.png)
+6. Sebelum membuat token, pastikan Anda siap menyimpan token di tempat yang aman seperti password manager vault, karena token tidak akan ditampilkan lagi setelah Anda membuatnya. ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.id.png)
 
-Salin token baru yang baru saja Anda buat. Anda sekarang akan menambahkannya ke file `.env` yang disertakan dalam kursus ini.
+Salin token baru yang baru saja Anda buat. Anda sekarang akan menambahkan ini ke file `.env` yang disertakan dalam kursus ini.
+
 
 ### Langkah 2: Buat File `.env` Anda
 
@@ -108,18 +118,22 @@ cp .env.example .env
 Ini akan menyalin file contoh dan membuat `.env` di direktori Anda di mana Anda mengisi nilai untuk variabel lingkungan.
 
 Dengan token Anda disalin, buka file `.env` di editor teks favorit Anda dan tempelkan token Anda ke bidang `GITHUB_TOKEN`.
+![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.id.png)
+
 
 Anda sekarang seharusnya dapat menjalankan contoh kode dari kursus ini.
 
-## Pengaturan untuk Contoh Menggunakan Azure AI Foundry dan Azure AI Agent Service
+## Pengaturan untuk Contoh menggunakan Azure AI Foundry dan Azure AI Agent Service
 
 ### Langkah 1: Dapatkan Endpoint Proyek Azure Anda
 
-Ikuti langkah-langkah untuk membuat hub dan proyek di Azure AI Foundry yang dapat ditemukan di sini: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+
+Ikuti langkah-langkah untuk membuat hub dan proyek di Azure AI Foundry yang ditemukan di sini: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+
 
 Setelah Anda membuat proyek Anda, Anda perlu mendapatkan string koneksi untuk proyek Anda.
 
-Ini dapat dilakukan dengan masuk ke halaman **Overview** proyek Anda di portal Azure AI Foundry.
+Ini dapat dilakukan dengan pergi ke halaman **Overview** dari proyek Anda di portal Azure AI Foundry.
 
 ![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.id.png)
 
@@ -137,15 +151,16 @@ Dengan token Anda disalin, buka file `.env` di editor teks favorit Anda dan temp
 
 ### Langkah 3: Masuk ke Azure
 
-Sebagai praktik keamanan terbaik, kita akan menggunakan [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) untuk autentikasi ke Azure OpenAI dengan Microsoft Entra ID.
+Sebagai praktik keamanan terbaik, kita akan menggunakan [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) untuk autentikasi ke Azure OpenAI dengan Microsoft Entra ID. 
 
 Selanjutnya, buka terminal dan jalankan `az login --use-device-code` untuk masuk ke akun Azure Anda.
 
 Setelah Anda masuk, pilih langganan Anda di terminal.
 
+
 ## Variabel Lingkungan Tambahan - Azure Search dan Azure OpenAI 
 
-Untuk pelajaran Agentic RAG - Pelajaran 5 - terdapat contoh yang menggunakan Azure Search dan Azure OpenAI.
+Untuk Pelajaran Agentic RAG - Pelajaran 5 - ada contoh yang menggunakan Azure Search dan Azure OpenAI.
 
 Jika Anda ingin menjalankan contoh ini, Anda perlu menambahkan variabel lingkungan berikut ke file `.env` Anda:
 
@@ -159,7 +174,7 @@ Jika Anda ingin menjalankan contoh ini, Anda perlu menambahkan variabel lingkung
 
 ### Management Center
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Pergi ke **Project properties** di halaman **Overview** di **Management Center**.
+- `AZURE_OPENAI_RESOURCE_GROUP` - Pergi ke **Project properties** di halaman **Overview** dari **Management Center**.
 
 - `GLOBAL_LLM_SERVICE` - Di bawah **Connected resources**, temukan nama koneksi **Azure AI Services**. Jika tidak terdaftar, periksa **Azure portal** di bawah grup sumber daya Anda untuk nama sumber daya AI Services.
 
@@ -171,11 +186,11 @@ Jika Anda ingin menjalankan contoh ini, Anda perlu menambahkan variabel lingkung
 
 ### Azure Portal
 
-- `AZURE_OPENAI_ENDPOINT` - Cari **Azure AI services**, klik, lalu pergi ke **Resource Management**, **Keys and Endpoint**, gulir ke bawah ke "Azure OpenAI endpoints", dan salin yang bertuliskan "Language APIs".
+- `AZURE_OPENAI_ENDPOINT` - Cari **Azure AI services**, klik di atasnya, lalu pergi ke **Resource Management**, **Keys and Endpoint**, gulir ke bawah ke "Azure OpenAI endpoints", dan salin yang mengatakan "Language APIs".
 
 - `AZURE_OPENAI_API_KEY` - Dari layar yang sama, salin KEY 1 atau KEY 2.
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Temukan sumber daya **Azure AI Search** Anda, klik, dan lihat **Overview**.
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - Temukan sumber daya **Azure AI Search** Anda, klik di atasnya, dan lihat **Overview**.
 
 - `AZURE_SEARCH_API_KEY` - Kemudian pergi ke **Settings** dan kemudian **Keys** untuk menyalin kunci admin utama atau sekunder.
 
@@ -185,7 +200,7 @@ Jika Anda ingin menjalankan contoh ini, Anda perlu menambahkan variabel lingkung
 
 ### Pengaturan keyless authentication
 
-Daripada menyimpan kredensial Anda secara langsung, kita akan menggunakan koneksi tanpa kunci dengan Azure OpenAI. Untuk melakukannya, kita akan mengimpor `DefaultAzureCredential` dan kemudian memanggil fungsi `DefaultAzureCredential` untuk mendapatkan kredensial.
+Daripada menyimpan kredensial Anda secara hardcode, kita akan menggunakan koneksi tanpa kunci dengan Azure OpenAI. Untuk melakukannya, kita akan mengimpor `DefaultAzureCredential` dan kemudian memanggil fungsi `DefaultAzureCredential` untuk mendapatkan kredensial.
 
 ```python
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
@@ -195,11 +210,13 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 Jika Anda mengalami masalah saat menjalankan pengaturan ini, bergabunglah dengan kami di
 
+atau.
+
 ## Pelajaran Selanjutnya
 
-Anda sekarang siap untuk menjalankan kode dari kursus ini. Selamat belajar lebih banyak tentang dunia AI Agents!
+Anda sekarang siap untuk menjalankan kode untuk kursus ini. Selamat belajar lebih banyak tentang dunia AI Agents! 
 
 [Introduction to AI Agents and Agent Use Cases](../01-intro-to-ai-agents/README.md)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

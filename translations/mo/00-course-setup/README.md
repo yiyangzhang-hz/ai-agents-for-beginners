@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6a79c8f2b56a80370ff7e447765524f",
-  "translation_date": "2025-07-23T08:17:51+00:00",
+  "original_hash": "8693a24942b670e3cb8def77f92513f9",
+  "translation_date": "2025-08-21T12:24:00+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "mo"
 }
@@ -17,13 +17,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 首先，請複製或分叉 GitHub 存儲庫。這將建立您自己的課程材料版本，方便您執行、測試和調整程式碼！
 
-您可以通過點擊以下連結完成此操作：
+您可以透過點擊以下連結完成操作：
 
 ![Forked Repo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.mo.png)
 
 ## 執行程式碼
 
-本課程提供一系列 Jupyter Notebooks，讓您能夠親自操作並學習如何建立 AI Agents。
+本課程提供一系列 Jupyter Notebook，讓您能夠親自操作並學習如何建立 AI Agents。
 
 程式碼範例使用以下方式：
 
@@ -42,14 +42,14 @@ CO_OP_TRANSLATOR_METADATA:
 ## 必要條件
 
 - Python 3.12+
-  - **注意**：如果您尚未安裝 Python 3.12，請確保安裝它。然後使用 python3.12 建立虛擬環境，以確保從 requirements.txt 文件中安裝正確的版本。
-- GitHub 帳戶 - 用於訪問 GitHub Models Marketplace
-- Azure 訂閱 - 用於訪問 Azure AI Foundry
-- Azure AI Foundry 帳戶 - 用於訪問 Azure AI Agent Service
+  - **注意**：如果您尚未安裝 Python 3.12，請確保安裝它。然後使用 python3.12 建立虛擬環境 (venv)，以確保從 requirements.txt 文件中安裝正確的版本。
+- GitHub 帳戶 - 用於存取 GitHub Models Marketplace
+- Azure 訂閱 - 用於存取 Azure AI Foundry
+- Azure AI Foundry 帳戶 - 用於存取 Azure AI Agent Service
 
 我們在存儲庫的根目錄中包含了一個 `requirements.txt` 文件，其中列出了執行程式碼範例所需的所有 Python 套件。
 
-您可以在存儲庫根目錄的終端中執行以下命令來安裝它們：
+您可以在終端機中於存儲庫根目錄執行以下命令來安裝它們：
 
 ```bash
 pip install -r requirements.txt
@@ -61,120 +61,127 @@ pip install -r requirements.txt
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
 
-## 使用 GitHub Models 的範例設定 
+## 使用 GitHub Models 的範例設定
 
-### 步驟 1：取得您的 GitHub 個人訪問令牌 (PAT)
+### 步驟 1：取得您的 GitHub 個人存取權杖 (PAT)
 
-本課程利用 GitHub Models Marketplace，提供免費訪問大型語言模型 (LLMs)，您將使用它們來建立 AI Agents。
+本課程使用 GitHub Models Marketplace，提供免費存取大型語言模型 (LLMs)，您將使用它們來建立 AI Agents。
 
-要使用 GitHub Models，您需要建立一個 [GitHub 個人訪問令牌](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)。
+要使用 GitHub Models，您需要建立 [GitHub 個人存取權杖](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)。
 
-您可以通過進入您的 GitHub 帳戶完成此操作。
+您可以透過以下步驟完成：
 
-請遵循 [最小權限原則](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) 建立令牌。這意味著您應僅授予令牌執行本課程程式碼範例所需的權限。
+1. 在 GitHub 帳戶中選擇 **開發者設定**，然後點擊左側的 `Fine-grained tokens` 選項。
+   ![](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.mo.png)
 
-1. 在螢幕左側選擇 `Fine-grained tokens` 選項。
+   接著選擇 `Generate new token`。
 
-    然後選擇 `Generate new token`。
+   ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.mo.png)
 
-    ![Generate Token](../../../translated_images/generate-new-token.8772e24e8e2e067f2e6742500eaf68bb5c5f8999537bd79a040d2ecc09c7fdcb.mo.png)
+2. 為您的權杖輸入一個描述性名稱，反映其用途，方便日後識別。
 
-1. 為您的令牌輸入一個描述性名稱，反映其用途，方便日後識別。設置過期日期（建議：30 天；如果您希望更安全，可以選擇更短的期限，例如 7 天）。
+    🔐 權杖有效期建議
+
+    建議有效期：30 天  
+    為了更安全，您可以選擇更短的期限，例如 7 天 🛡️  
+    這是一個很好的方式，幫助您在學習動力高漲時完成課程 🚀。
 
     ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.mo.png)
 
-1. 將令牌的範圍限制在您分叉的存儲庫。
+3. 將權杖的範圍限制在您分叉的存儲庫。
 
-    ![Limit scope to fork repository](../../../translated_images/select-fork-repository.4497f6bb05ccd6b474ed134493a815fc34f94f89db2b1630c494adff7b5b558a.mo.png)
+    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.mo.png)
 
-1. 限制令牌的權限：在 **Permissions** 下，切換 **Account Permissions**，找到 **Models** 並僅啟用 GitHub Models 所需的讀取權限。
+4. 限制權杖的權限：在 **Permissions** 下，點擊 **Account** 標籤，然後點擊 "+ Add permissions" 按鈕。下拉選單會出現，請搜尋 **Models** 並勾選它。
+    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.mo.png)
 
-    ![Account Permissions](../../../translated_images/account-permissions.de1806fad33a72c6194d2688cf2c10f2adb9ff7a5c1041a2329cbef46bffbba0.mo.png)
+5. 在生成權杖之前，請確認所需的權限。 ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.mo.png)
 
-    ![Models Read Access](../../../translated_images/models-read-access.c00bc44e28c40450a85542e19f8e8c68284c71861c076b7dbc078b4c7e51faa6.mo.png)
+6. 在生成權杖之前，請確保您準備好將權杖存放在安全的地方，例如密碼管理器，因為生成後將無法再次查看。 ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.mo.png)
 
-複製您剛剛建立的新令牌。接下來，您需要將此令牌添加到課程中包含的 `.env` 文件中。
+複製您剛剛建立的新權杖。接下來，您需要將它添加到課程中包含的 `.env` 文件中。
 
 ### 步驟 2：建立您的 `.env` 文件
 
-要建立 `.env` 文件，請在終端中執行以下命令：
+在終端機中執行以下命令以建立 `.env` 文件：
 
 ```bash
 cp .env.example .env
 ```
 
-這將複製示例文件並在您的目錄中建立 `.env` 文件，您需要在其中填寫環境變數的值。
+此命令將複製範例文件並在您的目錄中建立 `.env` 文件，您需要在其中填寫環境變數的值。
 
-複製您的令牌後，打開您喜愛的文字編輯器，將令牌粘貼到 `.env` 文件中的 `GITHUB_TOKEN` 欄位。
+複製您的權杖後，使用您喜愛的文字編輯器打開 `.env` 文件，並將權杖貼到 `GITHUB_TOKEN` 欄位中。
+![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.mo.png)
 
-現在，您應該能夠執行本課程的程式碼範例。
+現在，您應該可以執行本課程的程式碼範例。
 
 ## 使用 Azure AI Foundry 和 Azure AI Agent Service 的範例設定
 
 ### 步驟 1：取得您的 Azure 專案端點
 
-按照以下步驟在 Azure AI Foundry 中建立 hub 和專案：[Hub 資源概述](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+請按照以下步驟在 Azure AI Foundry 中建立 Hub 和專案：[Hub 資源概述](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
 建立專案後，您需要取得專案的連接字串。
 
-您可以通過進入 Azure AI Foundry 入口網站的 **概述** 頁面完成此操作。
+您可以在 Azure AI Foundry 入口網站的 **概述** 頁面找到它。
 
 ![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.mo.png)
 
 ### 步驟 2：建立您的 `.env` 文件
 
-要建立 `.env` 文件，請在終端中執行以下命令：
+在終端機中執行以下命令以建立 `.env` 文件：
 
 ```bash
 cp .env.example .env
 ```
 
-這將複製示例文件並在您的目錄中建立 `.env` 文件，您需要在其中填寫環境變數的值。
+此命令將複製範例文件並在您的目錄中建立 `.env` 文件，您需要在其中填寫環境變數的值。
 
-複製您的令牌後，打開您喜愛的文字編輯器，將令牌粘貼到 `.env` 文件中的 `PROJECT_ENDPOINT` 欄位。
+複製您的權杖後，使用您喜愛的文字編輯器打開 `.env` 文件，並將權杖貼到 `PROJECT_ENDPOINT` 欄位中。
 
 ### 步驟 3：登入 Azure
 
-作為安全最佳實踐，我們將使用 [無密鑰身份驗證](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) 通過 Microsoft Entra ID 驗證到 Azure OpenAI。
+作為安全最佳實踐，我們將使用 [無密鑰認證](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) 透過 Microsoft Entra ID 認證 Azure OpenAI。
 
-接下來，打開終端並執行 `az login --use-device-code` 登入您的 Azure 帳戶。
+接下來，打開終端機並執行 `az login --use-device-code` 登入您的 Azure 帳戶。
 
-登入後，在終端中選擇您的訂閱。
+登入後，請在終端機中選擇您的訂閱。
 
-## 額外的環境變數 - Azure Search 和 Azure OpenAI 
+## 額外的環境變數 - Azure Search 和 Azure OpenAI
 
-在 Agentic RAG 課程 - 第 5 課中，有使用 Azure Search 和 Azure OpenAI 的範例。
+在第 5 課的 Agentic RAG 範例中，使用了 Azure Search 和 Azure OpenAI。
 
-如果您希望執行這些範例，您需要在 `.env` 文件中添加以下環境變數：
+如果您想執行這些範例，您需要在 `.env` 文件中添加以下環境變數：
 
-### 概述頁面（專案）
+### 概述頁面 (專案)
 
-- `AZURE_SUBSCRIPTION_ID` - 在專案的 **概述** 頁面中檢查 **專案詳細信息**。
-- `AZURE_AI_PROJECT_NAME` - 在專案的 **概述** 頁面頂部查看。
+- `AZURE_SUBSCRIPTION_ID` - 在專案的 **概述** 頁面中檢查 **專案詳細資訊**。
+- `AZURE_AI_PROJECT_NAME` - 在專案的 **概述** 頁面頂部查看專案名稱。
 - `AZURE_OPENAI_SERVICE` - 在 **概述** 頁面的 **包含的功能** 標籤中找到 **Azure OpenAI Service**。
 
 ### 管理中心
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - 在 **管理中心** 的 **概述** 頁面中進入 **專案屬性**。
-- `GLOBAL_LLM_SERVICE` - 在 **連接的資源** 下找到 **Azure AI Services** 連接名稱。如果未列出，請檢查 **Azure 入口網站** 中資源組的 AI Services 資源名稱。
+- `AZURE_OPENAI_RESOURCE_GROUP` - 在 **管理中心** 的 **概述** 頁面中查看 **專案屬性**。
+- `GLOBAL_LLM_SERVICE` - 在 **連接的資源** 下找到 **Azure AI Services** 的連接名稱。如果未列出，請檢查 **Azure 入口網站** 中資源群組的 AI Services 資源名稱。
 
 ### 模型 + 端點頁面
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - 選擇您的嵌入模型（例如 `text-embedding-ada-002`），並記下模型詳細信息中的 **部署名稱**。
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - 選擇您的聊天模型（例如 `gpt-4o-mini`），並記下模型詳細信息中的 **部署名稱**。
+- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - 選擇您的嵌入模型（例如 `text-embedding-ada-002`），並記下模型詳細資訊中的 **部署名稱**。
+- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - 選擇您的聊天模型（例如 `gpt-4o-mini`），並記下模型詳細資訊中的 **部署名稱**。
 
 ### Azure 入口網站
 
-- `AZURE_OPENAI_ENDPOINT` - 找到 **Azure AI services**，點擊它，然後進入 **資源管理**，**密鑰和端點**，向下滾動到 "Azure OpenAI endpoints"，複製標記為 "Language APIs" 的端點。
-- `AZURE_OPENAI_API_KEY` - 從同一頁面複製 KEY 1 或 KEY 2。
+- `AZURE_OPENAI_ENDPOINT` - 找到 **Azure AI Services**，點擊它，然後進入 **資源管理**，選擇 **金鑰和端點**，向下滾動到 "Azure OpenAI endpoints"，複製標記為 "Language APIs" 的端點。
+- `AZURE_OPENAI_API_KEY` - 在同一頁面中，複製 KEY 1 或 KEY 2。
 - `AZURE_SEARCH_SERVICE_ENDPOINT` - 找到您的 **Azure AI Search** 資源，點擊它，然後查看 **概述**。
-- `AZURE_SEARCH_API_KEY` - 然後進入 **設置**，然後 **密鑰**，複製主要或次要管理密鑰。
+- `AZURE_SEARCH_API_KEY` - 接著進入 **設定**，然後選擇 **金鑰**，複製主要或次要管理金鑰。
 
 ### 外部網頁
 
-- `AZURE_OPENAI_API_VERSION` - 訪問 [API 版本生命週期](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) 頁面，查看 **最新 GA API 發佈**。
+- `AZURE_OPENAI_API_VERSION` - 訪問 [API 版本生命週期](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) 頁面，查看 **最新 GA API 發布**。
 
-### 設定無密鑰身份驗證
+### 設定無密鑰認證
 
 為避免硬編碼您的憑證，我們將使用 Azure OpenAI 的無密鑰連接。為此，我們將導入 `DefaultAzureCredential`，稍後調用 `DefaultAzureCredential` 函數以獲取憑證。
 
@@ -184,13 +191,13 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 ## 遇到問題？
 
-如果您在執行此設定時遇到任何問題，請加入我們的。
+如果您在執行此設定時遇到任何問題，請加入我們的
 
 ## 下一課
 
-您現在已準備好執行本課程的程式碼。祝您在學習 AI Agents 的世界中愉快！
+您現在已準備好執行本課程的程式碼。祝您在探索 AI Agents 的世界中學習愉快！
 
-[AI Agents 簡介及其應用案例](../01-intro-to-ai-agents/README.md)
+[AI Agents 簡介及應用案例](../01-intro-to-ai-agents/README.md)
 
 **免責聲明**：  
-本文檔使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始語言的文件應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋不承擔責任。
+本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件作為權威來源。對於關鍵資訊，建議尋求專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解讀概不負責。

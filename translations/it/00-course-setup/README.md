@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6a79c8f2b56a80370ff7e447765524f",
-  "translation_date": "2025-07-23T08:39:01+00:00",
+  "original_hash": "8693a24942b670e3cb8def77f92513f9",
+  "translation_date": "2025-08-21T12:58:26+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "it"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Introduzione
 
-Questa lezione spiegherà come eseguire gli esempi di codice di questo corso.
+Questa lezione coprirà come eseguire gli esempi di codice di questo corso.
 
-## Clonare o Forkare questo Repository
+## Clona o Fai un Fork di questo Repository
 
-Per iniziare, clona o fork il repository GitHub. Questo ti permetterà di avere una tua versione del materiale del corso, così potrai eseguire, testare e modificare il codice!
+Per iniziare, clona o fai un fork del repository GitHub. Questo ti permetterà di avere una tua versione del materiale del corso per eseguire, testare e modificare il codice!
 
-Puoi farlo cliccando sul link per
+Puoi farlo cliccando sul link.
 
 Dovresti ora avere la tua versione forkata di questo corso al seguente link:
 
@@ -25,79 +25,87 @@ Dovresti ora avere la tua versione forkata di questo corso al seguente link:
 
 ## Esecuzione del Codice
 
-Questo corso offre una serie di Jupyter Notebook che puoi eseguire per fare pratica nella creazione di Agenti AI.
+Questo corso offre una serie di Jupyter Notebook che puoi eseguire per ottenere esperienza pratica nella costruzione di Agenti AI.
 
 Gli esempi di codice utilizzano:
 
-**Richiede un Account GitHub - Gratuito**:
+**Richiede un account GitHub - Gratuito**:
 
-1) Semantic Kernel Agent Framework + GitHub Models Marketplace. Etichettato come (semantic-kernel.ipynb)  
-2) AutoGen Framework + GitHub Models Marketplace. Etichettato come (autogen.ipynb)  
+1) Semantic Kernel Agent Framework + GitHub Models Marketplace. Etichettato come (semantic-kernel.ipynb)
+2) AutoGen Framework + GitHub Models Marketplace. Etichettato come (autogen.ipynb)
 
-**Richiede un Abbonamento Azure**:  
-3) Azure AI Foundry + Azure AI Agent Service. Etichettato come (azureaiagent.ipynb)  
+**Richiede un abbonamento Azure**:
+3) Azure AI Foundry + Azure AI Agent Service. Etichettato come (azureaiagent.ipynb)
 
 Ti incoraggiamo a provare tutti e tre i tipi di esempi per vedere quale funziona meglio per te.
 
-Qualunque opzione tu scelga, determinerà quali passaggi di configurazione seguire di seguito:
+Qualunque opzione tu scelga, determinerà i passaggi di configurazione che devi seguire di seguito:
 
 ## Requisiti
 
-- Python 3.12+  
-  - **NOTA**: Se non hai Python 3.12 installato, assicurati di installarlo. Poi crea il tuo ambiente virtuale usando python3.12 per garantire che vengano installate le versioni corrette dal file requirements.txt.  
-- Un Account GitHub - Per accedere al GitHub Models Marketplace  
-- Abbonamento Azure - Per accedere ad Azure AI Foundry  
-- Account Azure AI Foundry - Per accedere al servizio Azure AI Agent  
+- Python 3.12+
+  - **NOTA**: Se non hai Python 3.12 installato, assicurati di installarlo. Poi crea il tuo venv usando python3.12 per garantire che le versioni corrette siano installate dal file requirements.txt.
+- Un account GitHub - Per accedere al GitHub Models Marketplace
+- Abbonamento Azure - Per accedere a Azure AI Foundry
+- Account Azure AI Foundry - Per accedere al servizio Azure AI Agent
 
-Abbiamo incluso un file `requirements.txt` nella radice di questo repository che contiene tutti i pacchetti Python necessari per eseguire gli esempi di codice.
+Abbiamo incluso un file `requirements.txt` nella radice di questo repository che contiene tutti i pacchetti Python richiesti per eseguire gli esempi di codice.
 
-Puoi installarli eseguendo il seguente comando nel terminale nella radice del repository:
+Puoi installarli eseguendo il seguente comando nel terminale alla radice del repository:
 
 ```bash
 pip install -r requirements.txt
-```  
-Ti consigliamo di creare un ambiente virtuale Python per evitare conflitti e problemi.
+```
+Consigliamo di creare un ambiente virtuale Python per evitare conflitti e problemi.
 
-## Configurare VSCode
+## Configurazione di VSCode
 Assicurati di utilizzare la versione corretta di Python in VSCode.
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
 
-## Configurazione per gli Esempi con i Modelli GitHub 
+## Configurazione per gli esempi che utilizzano i modelli GitHub 
 
 ### Passaggio 1: Recupera il tuo GitHub Personal Access Token (PAT)
 
-Questo corso utilizza il GitHub Models Marketplace, che offre accesso gratuito a Modelli di Linguaggio di Grandi Dimensioni (LLM) che userai per creare Agenti AI.
+Questo corso utilizza il GitHub Models Marketplace, che offre accesso gratuito a modelli di linguaggio avanzati (LLM) che utilizzerai per costruire Agenti AI.
 
-Per utilizzare i Modelli GitHub, dovrai creare un [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+Per utilizzare i modelli GitHub, dovrai creare un [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
-Puoi farlo accedendo al tuo Account GitHub.
+Puoi farlo accedendo al tuo account GitHub.
 
 Segui il [Principio del Minimo Privilegio](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) quando crei il tuo token. Questo significa che dovresti assegnare al token solo i permessi necessari per eseguire gli esempi di codice di questo corso.
 
-1. Seleziona l'opzione `Fine-grained tokens` sul lato sinistro dello schermo.
+1. Seleziona l'opzione `Fine-grained tokens` sul lato sinistro dello schermo accedendo a **Developer settings**.
+   ![](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.it.png)
 
     Poi seleziona `Generate new token`.
 
-    ![Generate Token](../../../translated_images/generate-new-token.8772e24e8e2e067f2e6742500eaf68bb5c5f8999537bd79a040d2ecc09c7fdcb.it.png)
+    ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.it.png)
 
-1. Inserisci un nome descrittivo per il tuo token che rifletta il suo scopo, rendendolo facile da identificare in seguito. Imposta una data di scadenza (consigliato: 30 giorni; puoi scegliere un periodo più breve, come 7 giorni, se preferisci una maggiore sicurezza).
+2. Inserisci un nome descrittivo per il tuo token che rifletta il suo scopo, rendendolo facile da identificare in seguito.
+
+    🔐 Raccomandazione sulla durata del token
+
+    Durata raccomandata: 30 giorni  
+    Per una maggiore sicurezza, puoi optare per un periodo più breve, come 7 giorni 🛡️  
+    È un ottimo modo per fissare un obiettivo personale e completare il corso mentre il tuo slancio di apprendimento è alto 🚀.
 
     ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.it.png)
 
-1. Limita l'ambito del token al tuo fork di questo repository.
+3. Limita l'ambito del token al tuo fork di questo repository.
 
-    ![Limit scope to fork repository](../../../translated_images/select-fork-repository.4497f6bb05ccd6b474ed134493a815fc34f94f89db2b1630c494adff7b5b558a.it.png)
+    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.it.png)
 
-1. Restringi i permessi del token: Sotto **Permissions**, attiva **Account Permissions**, vai a **Models** e abilita solo l'accesso in lettura richiesto per i Modelli GitHub.
+4. Restringi i permessi del token: Sotto **Permissions**, clicca sulla scheda **Account** e premi il pulsante "+ Add permissions". Apparirà un menu a tendina. Cerca **Models** e seleziona la casella corrispondente.
+    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.it.png)
 
-    ![Account Permissions](../../../translated_images/account-permissions.de1806fad33a72c6194d2688cf2c10f2adb9ff7a5c1041a2329cbef46bffbba0.it.png)
+5. Verifica i permessi richiesti prima di generare il token. ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.it.png)
 
-    ![Models Read Access](../../../translated_images/models-read-access.c00bc44e28c40450a85542e19f8e8c68284c71861c076b7dbc078b4c7e51faa6.it.png)
+6. Prima di generare il token, assicurati di essere pronto a conservarlo in un luogo sicuro come un gestore di password, poiché non sarà più visibile dopo la sua creazione. ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.it.png)
 
 Copia il nuovo token che hai appena creato. Ora lo aggiungerai al file `.env` incluso in questo corso.
 
-### Passaggio 2: Crea il tuo File `.env`
+### Passaggio 2: Crea il tuo file `.env`
 
 Per creare il file `.env`, esegui il seguente comando nel terminale.
 
@@ -108,22 +116,23 @@ cp .env.example .env
 Questo copierà il file di esempio e creerà un `.env` nella tua directory, dove potrai inserire i valori per le variabili di ambiente.
 
 Con il tuo token copiato, apri il file `.env` nel tuo editor di testo preferito e incolla il token nel campo `GITHUB_TOKEN`.
+![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.it.png)
 
 Ora dovresti essere in grado di eseguire gli esempi di codice di questo corso.
 
-## Configurazione per gli Esempi con Azure AI Foundry e Azure AI Agent Service
+## Configurazione per gli esempi che utilizzano Azure AI Foundry e Azure AI Agent Service
 
-### Passaggio 1: Recupera l'Endpoint del tuo Progetto Azure
+### Passaggio 1: Recupera il tuo Endpoint del Progetto Azure
 
-Segui i passaggi per creare un hub e un progetto in Azure AI Foundry qui: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+Segui i passaggi per creare un hub e un progetto in Azure AI Foundry descritti qui: [Panoramica delle risorse Hub](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
-Una volta creato il tuo progetto, dovrai recuperare la stringa di connessione per il tuo progetto.
+Una volta creato il tuo progetto, dovrai recuperare la stringa di connessione per il progetto.
 
 Puoi farlo accedendo alla pagina **Overview** del tuo progetto nel portale Azure AI Foundry.
 
 ![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.it.png)
 
-### Passaggio 2: Crea il tuo File `.env`
+### Passaggio 2: Crea il tuo file `.env`
 
 Per creare il file `.env`, esegui il seguente comando nel terminale.
 
@@ -147,23 +156,23 @@ Una volta effettuato l'accesso, seleziona il tuo abbonamento nel terminale.
 
 Per la lezione Agentic RAG - Lezione 5 - ci sono esempi che utilizzano Azure Search e Azure OpenAI.
 
-Se vuoi eseguire questi esempi, dovrai aggiungere le seguenti variabili di ambiente al tuo file `.env`:
+Se desideri eseguire questi esempi, dovrai aggiungere le seguenti variabili di ambiente al tuo file `.env`:
 
-### Pagina Overview (Progetto)
+### Pagina Panoramica (Progetto)
 
 - `AZURE_SUBSCRIPTION_ID` - Controlla **Project details** nella pagina **Overview** del tuo progetto.
 
 - `AZURE_AI_PROJECT_NAME` - Guarda in alto nella pagina **Overview** del tuo progetto.
 
-- `AZURE_OPENAI_SERVICE` - Trova questo nella scheda **Included capabilities** per **Azure OpenAI Service** nella pagina **Overview**.
+- `AZURE_OPENAI_SERVICE` - Trova questa informazione nella scheda **Included capabilities** per **Azure OpenAI Service** nella pagina **Overview**.
 
-### Management Center
+### Centro di Gestione
 
 - `AZURE_OPENAI_RESOURCE_GROUP` - Vai a **Project properties** nella pagina **Overview** del **Management Center**.
 
-- `GLOBAL_LLM_SERVICE` - Sotto **Connected resources**, trova il nome della connessione **Azure AI Services**. Se non è elencato, controlla il **portale Azure** sotto il tuo gruppo di risorse per il nome della risorsa AI Services.
+- `GLOBAL_LLM_SERVICE` - Sotto **Connected resources**, trova il nome della connessione **Azure AI Services**. Se non elencato, controlla il **portale Azure** sotto il tuo gruppo di risorse per il nome della risorsa AI Services.
 
-### Pagina Models + Endpoints
+### Pagina Modelli + Endpoint
 
 - `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Seleziona il tuo modello di embedding (es. `text-embedding-ada-002`) e annota il **Deployment name** dai dettagli del modello.
 
@@ -171,21 +180,21 @@ Se vuoi eseguire questi esempi, dovrai aggiungere le seguenti variabili di ambie
 
 ### Portale Azure
 
-- `AZURE_OPENAI_ENDPOINT` - Cerca **Azure AI services**, cliccaci sopra, poi vai a **Resource Management**, **Keys and Endpoint**, scorri fino agli "Azure OpenAI endpoints" e copia quello che dice "Language APIs".
+- `AZURE_OPENAI_ENDPOINT` - Cerca **Azure AI services**, clicca su di esso, poi vai a **Resource Management**, **Keys and Endpoint**, scorri verso il basso fino agli "Azure OpenAI endpoints" e copia quello che dice "Language APIs".
 
 - `AZURE_OPENAI_API_KEY` - Dalla stessa schermata, copia KEY 1 o KEY 2.
 
 - `AZURE_SEARCH_SERVICE_ENDPOINT` - Trova la tua risorsa **Azure AI Search**, cliccaci sopra e guarda **Overview**.
 
-- `AZURE_SEARCH_API_KEY` - Poi vai a **Settings** e poi **Keys** per copiare la chiave primaria o secondaria dell'amministratore.
+- `AZURE_SEARCH_API_KEY` - Poi vai a **Settings** e poi **Keys** per copiare la chiave amministrativa primaria o secondaria.
 
 ### Pagina Esterna
 
 - `AZURE_OPENAI_API_VERSION` - Visita la pagina [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) sotto **Latest GA API release**.
 
-### Configurare l'autenticazione senza chiavi
+### Configurazione dell'autenticazione senza chiavi
 
-Invece di codificare le tue credenziali, utilizzeremo una connessione senza chiavi con Azure OpenAI. Per farlo, importeremo `DefaultAzureCredential` e successivamente chiameremo la funzione `DefaultAzureCredential` per ottenere le credenziali.
+Piuttosto che codificare le tue credenziali, utilizzeremo una connessione senza chiavi con Azure OpenAI. Per farlo, importeremo `DefaultAzureCredential` e successivamente chiameremo la funzione `DefaultAzureCredential` per ottenere la credenziale.
 
 ```python
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
@@ -202,4 +211,4 @@ Ora sei pronto per eseguire il codice di questo corso. Buon apprendimento sul mo
 [Introduzione agli Agenti AI e ai Casi d'Uso degli Agenti](../01-intro-to-ai-agents/README.md)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un traduttore umano. Non siamo responsabili per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Sebbene ci impegniamo per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa dovrebbe essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale eseguita da un traduttore umano. Non siamo responsabili per eventuali fraintendimenti o interpretazioni errate derivanti dall'uso di questa traduzione.

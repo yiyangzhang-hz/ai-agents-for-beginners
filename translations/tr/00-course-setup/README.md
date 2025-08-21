@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6a79c8f2b56a80370ff7e447765524f",
-  "translation_date": "2025-07-23T08:42:07+00:00",
+  "original_hash": "8693a24942b670e3cb8def77f92513f9",
+  "translation_date": "2025-08-21T13:04:05+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "tr"
 }
@@ -11,21 +11,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Giriş
 
-Bu derste, kursun kod örneklerini nasıl çalıştıracağınızı öğreneceksiniz.
+Bu ders, kursun kod örneklerini nasıl çalıştıracağınızı ele alacaktır.
 
 ## Bu Depoyu Klonlayın veya Çatallayın
 
-Başlamak için lütfen GitHub Deposunu klonlayın veya çatallayın. Bu, kurs materyallerinin kendi versiyonunu oluşturmanızı sağlar, böylece kodu çalıştırabilir, test edebilir ve üzerinde değişiklik yapabilirsiniz!
+Başlamak için lütfen GitHub deposunu klonlayın veya çatallayın. Bu, kurs materyallerinin kendi versiyonunu oluşturmanızı sağlar, böylece kodu çalıştırabilir, test edebilir ve üzerinde değişiklik yapabilirsiniz!
 
-Bunu yapmak için bağlantıya tıklayabilirsiniz:
+Bunu yapmak için bağlantıya tıklayın.
 
 ![Çatallanmış Depo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.tr.png)
 
-## Kodu Çalıştırma
+## Kodun Çalıştırılması
 
-Bu kurs, yapay zeka ajanları oluşturmayı deneyimlemeniz için çalıştırabileceğiniz bir dizi Jupyter Notebook sunar.
+Bu kurs, AI Ajanları oluşturma konusunda pratik deneyim kazanmanız için çalıştırabileceğiniz bir dizi Jupyter Notebook sunar.
 
-Kod örnekleri şu araçları kullanır:
+Kod örnekleri şu seçenekleri kullanır:
 
 **GitHub Hesabı Gerektirir - Ücretsiz**:
 
@@ -35,19 +35,21 @@ Kod örnekleri şu araçları kullanır:
 **Azure Aboneliği Gerektirir**:
 3) Azure AI Foundry + Azure AI Agent Service. (azureaiagent.ipynb olarak etiketlenmiştir)
 
-Hangi seçeneği tercih ederseniz edin, aşağıdaki kurulum adımlarını takip etmeniz gerekecek:
+Üç tür örneği de denemenizi ve hangisinin sizin için en iyi çalıştığını görmenizi öneririz.
+
+Hangi seçeneği seçerseniz seçin, aşağıdaki kurulum adımlarını belirleyecektir:
 
 ## Gereksinimler
 
 - Python 3.12+
-  - **NOT**: Python 3.12 yüklü değilse, yüklediğinizden emin olun. Daha sonra requirements.txt dosyasından doğru sürümlerin yüklendiğinden emin olmak için python3.12 kullanarak sanal bir ortam oluşturun.
+  - **NOT**: Python3.12 yüklü değilse, yüklediğinizden emin olun. Ardından requirements.txt dosyasından doğru sürümlerin yüklendiğinden emin olmak için python3.12 kullanarak sanal ortamınızı oluşturun.
 - GitHub Hesabı - GitHub Models Marketplace'e erişim için
 - Azure Aboneliği - Azure AI Foundry'e erişim için
 - Azure AI Foundry Hesabı - Azure AI Agent Service'e erişim için
 
-Bu depoda, kod örneklerini çalıştırmak için gerekli tüm Python paketlerini içeren bir `requirements.txt` dosyası bulunmaktadır.
+Bu depoda, kod örneklerini çalıştırmak için gereken tüm Python paketlerini içeren bir `requirements.txt` dosyası bulunmaktadır.
 
-Bu paketleri, terminalinizde depo kök dizininde aşağıdaki komutu çalıştırarak yükleyebilirsiniz:
+Bunları, depo kökünde terminalinizde aşağıdaki komutu çalıştırarak yükleyebilirsiniz:
 
 ```bash
 pip install -r requirements.txt
@@ -63,35 +65,43 @@ VSCode'da doğru Python sürümünü kullandığınızdan emin olun.
 
 ### Adım 1: GitHub Kişisel Erişim Jetonunuzu (PAT) Alın
 
-Bu kurs, GitHub Models Marketplace'i kullanır ve bu, yapay zeka ajanları oluşturmak için kullanacağınız Büyük Dil Modellerine (LLM'ler) ücretsiz erişim sağlar.
+Bu kurs, GitHub Models Marketplace'i kullanır ve AI Ajanları oluşturmak için kullanacağınız Büyük Dil Modellerine (LLM'ler) ücretsiz erişim sağlar.
 
 GitHub Modellerini kullanmak için bir [GitHub Kişisel Erişim Jetonu](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) oluşturmanız gerekecek.
 
-Bunu GitHub hesabınızda yapabilirsiniz.
+Bunu GitHub hesabınıza giderek yapabilirsiniz.
 
-Lütfen jeton oluştururken [En Az Ayrıcalık İlkesi](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) ilkesini izleyin. Bu, jetona yalnızca bu kurstaki kod örneklerini çalıştırmak için gereken izinleri vermeniz gerektiği anlamına gelir.
+Lütfen jetonunuzu oluştururken [En Az Ayrıcalık İlkesi](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) ilkesini takip edin. Bu, jetona yalnızca bu kurstaki kod örneklerini çalıştırmak için gereken izinleri vermeniz gerektiği anlamına gelir.
 
-1. Ekranınızın sol tarafında `Fine-grained tokens` seçeneğini seçin.
+1. **Geliştirici ayarları**na giderek ekranın sol tarafında `Hassas jetonlar` seçeneğini seçin.
+   ![](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.tr.png)
 
-    Ardından `Generate new token` seçeneğini seçin.
+    Ardından `Yeni jeton oluştur` seçeneğini seçin.
 
-    ![Jeton Oluştur](../../../translated_images/generate-new-token.8772e24e8e2e067f2e6742500eaf68bb5c5f8999537bd79a040d2ecc09c7fdcb.tr.png)
+    ![Jeton Oluştur](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.tr.png)
 
-1. Jetonunuz için amacını yansıtan açıklayıcı bir ad girin, böylece daha sonra kolayca tanımlayabilirsiniz. Bir son kullanma tarihi belirleyin (önerilen: 30 gün; daha güvenli bir yaklaşım için 7 gün gibi daha kısa bir süre seçebilirsiniz).
+2. Jetonun amacını yansıtan açıklayıcı bir ad girin, böylece daha sonra kolayca tanımlayabilirsiniz.
 
-    ![Jeton Adı ve Son Kullanma Tarihi](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.tr.png)
+    🔐 Jeton Süresi Önerisi
 
-1. Jetonun kapsamını bu deponun çatallanmış versiyonuyla sınırlayın.
+    Önerilen süre: 30 gün  
+    Daha güvenli bir yaklaşım için daha kısa bir süre seçebilirsiniz—örneğin 7 gün 🛡️  
+    Bu, kişisel bir hedef belirlemek ve öğrenme ivmenizi yüksek tutarak kursu tamamlamak için harika bir yöntem 🚀.
 
-    ![Kapsamı Çatallanmış Depoyla Sınırlayın](../../../translated_images/select-fork-repository.4497f6bb05ccd6b474ed134493a815fc34f94f89db2b1630c494adff7b5b558a.tr.png)
+    ![Jeton Adı ve Süresi](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.tr.png)
 
-1. Jetonun izinlerini kısıtlayın: **Permissions** altında, **Account Permissions**'ı açın, **Models**'a gidin ve yalnızca GitHub Modelleri için gereken okuma erişimini etkinleştirin.
+3. Jetonun kapsamını bu deponun çatallanmış versiyonuyla sınırlayın.
 
-    ![Hesap İzinleri](../../../translated_images/account-permissions.de1806fad33a72c6194d2688cf2c10f2adb9ff7a5c1041a2329cbef46bffbba0.tr.png)
+    ![Kapsamı Çatallanmış Depoya Sınırla](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.tr.png)
 
-    ![Modeller Okuma Erişimi](../../../translated_images/models-read-access.c00bc44e28c40450a85542e19f8e8c68284c71861c076b7dbc078b4c7e51faa6.tr.png)
+4. Jetonun izinlerini kısıtlayın: **İzinler** altında **Hesap** sekmesine tıklayın ve "+ İzin ekle" düğmesine tıklayın. Bir açılır menü görünecektir. Lütfen **Modeller**i arayın ve kutuyu işaretleyin.
+    ![Modeller İzni Ekle](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.tr.png)
 
-Yeni oluşturduğunuz jetonu kopyalayın. Şimdi bu jetonu, bu kursa dahil edilen `.env` dosyanıza ekleyeceksiniz.
+5. Jetonu oluşturmadan önce gereken izinleri doğrulayın. ![İzinleri Doğrula](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.tr.png)
+
+6. Jetonu oluşturmadan önce, jetonu bir şifre yöneticisi kasası gibi güvenli bir yerde saklamaya hazır olduğunuzdan emin olun, çünkü oluşturduktan sonra tekrar gösterilmeyecektir. ![Jetonu Güvenli Bir Şekilde Sakla](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.tr.png)
+
+Yeni oluşturduğunuz jetonu kopyalayın. Şimdi bunu bu kursa dahil edilen `.env` dosyasına ekleyeceksiniz.
 
 ### Adım 2: `.env` Dosyanızı Oluşturun
 
@@ -101,9 +111,10 @@ Yeni oluşturduğunuz jetonu kopyalayın. Şimdi bu jetonu, bu kursa dahil edile
 cp .env.example .env
 ```
 
-Bu, örnek dosyayı kopyalayacak ve dizininizde bir `.env` dosyası oluşturacaktır. Bu dosyada ortam değişkenleri için değerleri doldurabilirsiniz.
+Bu, örnek dosyayı kopyalayacak ve dizininizde bir `.env` dosyası oluşturacaktır. Çevre değişkenleri için değerleri buraya doldurabilirsiniz.
 
-Kopyaladığınız jetonla, favori metin düzenleyicinizi kullanarak `.env` dosyasını açın ve jetonunuzu `GITHUB_TOKEN` alanına yapıştırın.
+Jetonunuzu kopyaladıktan sonra, `.env` dosyasını favori metin düzenleyicinizde açın ve jetonunuzu `GITHUB_TOKEN` alanına yapıştırın.  
+![GitHub Jeton Alanı](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.tr.png)
 
 Artık bu kursun kod örneklerini çalıştırabilirsiniz.
 
@@ -111,11 +122,11 @@ Artık bu kursun kod örneklerini çalıştırabilirsiniz.
 
 ### Adım 1: Azure Proje Uç Noktanızı Alın
 
-Azure AI Foundry'de bir hub ve proje oluşturma adımlarını buradan takip edin: [Hub kaynaklarına genel bakış](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+Azure AI Foundry'de bir hub ve proje oluşturma adımlarını takip edin: [Hub kaynakları genel bakış](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
 Projenizi oluşturduktan sonra, projeniz için bağlantı dizesini almanız gerekecek.
 
-Bu, Azure AI Foundry portalındaki projenizin **Genel Bakış** sayfasına giderek yapılabilir.
+Bunu, Azure AI Foundry portalındaki projenizin **Genel Bakış** sayfasına giderek yapabilirsiniz.
 
 ![Proje Bağlantı Dizesi](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.tr.png)
 
@@ -127,9 +138,9 @@ Bu, Azure AI Foundry portalındaki projenizin **Genel Bakış** sayfasına gider
 cp .env.example .env
 ```
 
-Bu, örnek dosyayı kopyalayacak ve dizininizde bir `.env` dosyası oluşturacaktır. Bu dosyada ortam değişkenleri için değerleri doldurabilirsiniz.
+Bu, örnek dosyayı kopyalayacak ve dizininizde bir `.env` dosyası oluşturacaktır. Çevre değişkenleri için değerleri buraya doldurabilirsiniz.
 
-Kopyaladığınız jetonla, favori metin düzenleyicinizi kullanarak `.env` dosyasını açın ve jetonunuzu `PROJECT_ENDPOINT` alanına yapıştırın.
+Jetonunuzu kopyaladıktan sonra, `.env` dosyasını favori metin düzenleyicinizde açın ve jetonunuzu `PROJECT_ENDPOINT` alanına yapıştırın.
 
 ### Adım 3: Azure'a Giriş Yapın
 
@@ -139,41 +150,41 @@ Sonraki adımda, bir terminal açın ve Azure hesabınıza giriş yapmak için `
 
 Giriş yaptıktan sonra, terminalde aboneliğinizi seçin.
 
-## Ek Ortam Değişkenleri - Azure Search ve Azure OpenAI 
+## Ek Çevre Değişkenleri - Azure Search ve Azure OpenAI 
 
-Agentic RAG Dersi - Ders 5 - için Azure Search ve Azure OpenAI kullanan örnekler bulunmaktadır.
+Agentic RAG Dersi - Ders 5 - Azure Search ve Azure OpenAI kullanan örnekler içerir.
 
-Bu örnekleri çalıştırmak istiyorsanız, `.env` dosyanıza aşağıdaki ortam değişkenlerini eklemeniz gerekecek:
+Bu örnekleri çalıştırmak istiyorsanız, `.env` dosyanıza aşağıdaki çevre değişkenlerini eklemeniz gerekecek:
 
 ### Genel Bakış Sayfası (Proje)
 
-- `AZURE_SUBSCRIPTION_ID` - Projenizin **Genel Bakış** sayfasındaki **Proje detayları** bölümünü kontrol edin.
+- `AZURE_SUBSCRIPTION_ID` - Projenizin **Genel Bakış** sayfasındaki **Proje detayları**na bakın.
 
 - `AZURE_AI_PROJECT_NAME` - Projenizin **Genel Bakış** sayfasının üst kısmına bakın.
 
-- `AZURE_OPENAI_SERVICE` - **Genel Bakış** sayfasındaki **Dahil edilen yetenekler** sekmesinde **Azure OpenAI Service**'i bulun.
+- `AZURE_OPENAI_SERVICE` - **Genel Bakış** sayfasındaki **Azure OpenAI Service** için **Dahil edilen yetenekler** sekmesinde bulun.
 
 ### Yönetim Merkezi
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - **Yönetim Merkezi**'nin **Genel Bakış** sayfasındaki **Proje özellikleri** bölümüne gidin.
+- `AZURE_OPENAI_RESOURCE_GROUP` - **Yönetim Merkezi**ndeki **Genel Bakış** sayfasında **Proje özellikleri**ne gidin.
 
-- `GLOBAL_LLM_SERVICE` - **Bağlı kaynaklar** altında **Azure AI Services** bağlantı adını bulun. Listelenmemişse, kaynak grubunuzdaki AI Services kaynak adını kontrol etmek için **Azure portalı**na bakın.
+- `GLOBAL_LLM_SERVICE` - **Bağlı kaynaklar** altında **Azure AI Services** bağlantı adını bulun. Listelenmemişse, kaynak grubunuzdaki AI Services kaynak adını **Azure portalı**nda kontrol edin.
 
 ### Modeller + Uç Noktalar Sayfası
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Gömme modelinizi seçin (ör. `text-embedding-ada-002`) ve model detaylarından **Dağıtım adını** not edin.
+- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Gömme modelinizi seçin (ör. `text-embedding-ada-002`) ve model detaylarından **Dağıtım adını** not alın.
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Sohbet modelinizi seçin (ör. `gpt-4o-mini`) ve model detaylarından **Dağıtım adını** not edin.
+- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Sohbet modelinizi seçin (ör. `gpt-4o-mini`) ve model detaylarından **Dağıtım adını** not alın.
 
 ### Azure Portalı
 
-- `AZURE_OPENAI_ENDPOINT` - **Azure AI hizmetleri**ni bulun, üzerine tıklayın, ardından **Kaynak Yönetimi**, **Anahtarlar ve Uç Nokta**ya gidin, "Azure OpenAI uç noktaları"na kadar aşağı kaydırın ve "Dil API'leri" yazanını kopyalayın.
+- `AZURE_OPENAI_ENDPOINT` - **Azure AI services** bölümüne gidin, üzerine tıklayın, ardından **Kaynak Yönetimi**, **Anahtarlar ve Uç Nokta**ya gidin, "Azure OpenAI endpoints" bölümüne kadar aşağı kaydırın ve "Dil API'leri" yazan uç noktayı kopyalayın.
 
 - `AZURE_OPENAI_API_KEY` - Aynı ekrandan, ANAHTAR 1 veya ANAHTAR 2'yi kopyalayın.
 
 - `AZURE_SEARCH_SERVICE_ENDPOINT` - **Azure AI Search** kaynağınızı bulun, üzerine tıklayın ve **Genel Bakış** bölümünü kontrol edin.
 
-- `AZURE_SEARCH_API_KEY` - Ardından **Ayarlar** ve ardından **Anahtarlar**a giderek birincil veya ikincil yönetici anahtarını kopyalayın.
+- `AZURE_SEARCH_API_KEY` - Ardından **Ayarlar** ve **Anahtarlar** bölümüne giderek birincil veya ikincil yönetici anahtarını kopyalayın.
 
 ### Harici Web Sayfası
 
@@ -181,7 +192,7 @@ Bu örnekleri çalıştırmak istiyorsanız, `.env` dosyanıza aşağıdaki orta
 
 ### Anahtarsız Kimlik Doğrulama Kurulumu
 
-Kimlik bilgilerinizi kodda sabitlemek yerine, Azure OpenAI ile anahtarsız bir bağlantı kullanacağız. Bunu yapmak için, `DefaultAzureCredential`'ı içe aktaracağız ve daha sonra kimlik bilgilerini almak için `DefaultAzureCredential` fonksiyonunu çağıracağız.
+Kimlik bilgilerinizi kodda sabitlemek yerine, Azure OpenAI ile anahtarsız bir bağlantı kullanacağız. Bunu yapmak için `DefaultAzureCredential`'ı içe aktaracağız ve daha sonra kimlik bilgilerini almak için `DefaultAzureCredential` fonksiyonunu çağıracağız.
 
 ```python
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
@@ -189,13 +200,13 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 ## Bir Yerde Takıldınız mı?
 
-Bu kurulumu çalıştırırken herhangi bir sorun yaşarsanız, bizimle iletişime geçebilirsiniz.
+Bu kurulumu çalıştırırken herhangi bir sorun yaşarsanız, bizimle iletişime geçin.
 
 ## Sonraki Ders
 
-Artık bu kursun kodlarını çalıştırmaya hazırsınız. Yapay zeka ajanları dünyası hakkında daha fazla şey öğrenirken iyi eğlenceler!
+Artık bu kursun kodunu çalıştırmaya hazırsınız. AI Ajanları dünyası hakkında daha fazla şey öğrenirken iyi eğlenceler!
 
 [AI Ajanlarına Giriş ve Ajan Kullanım Durumları](../01-intro-to-ai-agents/README.md)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belgenin kendi dilindeki hali yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlama durumunda sorumluluk kabul etmiyoruz.
