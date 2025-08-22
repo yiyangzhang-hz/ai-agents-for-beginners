@@ -4,6 +4,10 @@
 
 This lesson will cover how to run the code samples of this course.
 
+## Join Other Learners and Get Help
+
+Before you begin cloning your repo, join the [AI Agents For Beginners Discord channel](https://aka.ms/ai-agents/discord) to get any help with setup, any questions about the course, or to connect with other learners.
+
 ## Clone or Fork this Repo
 
 To begin, please clone or fork the GitHub Repository. This will make your own version of the course material so that you can run, test, and tweak the code!

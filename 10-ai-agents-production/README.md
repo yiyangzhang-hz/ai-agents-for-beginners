@@ -150,11 +150,15 @@ Here are some strategies to manage the costs of deploying AI agents to productio
 
 In the [example notebook of this section](./code_samples/10_autogen_evaluation.ipynb), we’ll see examples of how we can use observability tools to monitor and evaluate our agent.
 
+
+### Got More Questions about AI Agents in Production?
+
+Join the [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to meet with other learners, attend office hours and get your AI Agents questions answered.
+
 ## Previous Lesson
 
 [Metacognition Design Pattern](../09-metacognition/README.md)
 
 ## Next Lesson
 
-[MCP](../11-mcp/README.md)
-
+[Agentic Protocols](../11-agentic-protocols/README.md)
