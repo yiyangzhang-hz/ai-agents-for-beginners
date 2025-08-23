@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6a79c8f2b56a80370ff7e447765524f",
-  "translation_date": "2025-07-23T09:08:02+00:00",
+  "original_hash": "8693a24942b670e3cb8def77f92513f9",
+  "translation_date": "2025-08-21T13:47:17+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "cs"
 }
@@ -13,9 +13,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Tato lekce se zaměřuje na to, jak spustit ukázky kódu z tohoto kurzu.
 
-## Naklonování nebo forknutí tohoto repozitáře
+## Klonování nebo forkování tohoto repozitáře
 
-Nejprve si prosím naklonujte nebo forkněte GitHub repozitář. Tím získáte vlastní verzi materiálů kurzu, abyste mohli spouštět, testovat a upravovat kód!
+Nejprve si prosím naklonujte nebo forkněte GitHub repozitář. Tím získáte vlastní verzi materiálů kurzu, abyste mohli kód spouštět, testovat a upravovat!
 
 To lze provést kliknutím na odkaz na
 
@@ -44,10 +44,10 @@ Podle toho, kterou možnost si vyberete, budete muset postupovat podle příslu�
 ## Požadavky
 
 - Python 3.12+  
-  - **POZNÁMKA**: Pokud nemáte nainstalovaný Python 3.12, ujistěte se, že jej nainstalujete. Poté vytvořte svůj virtuální prostředí (venv) pomocí python3.12, aby byly správné verze nainstalovány ze souboru requirements.txt.  
-- GitHub účet - pro přístup k GitHub Models Marketplace  
-- Předplatné Azure - pro přístup k Azure AI Foundry  
-- Azure AI Foundry účet - pro přístup k Azure AI Agent Service  
+  - **POZNÁMKA**: Pokud nemáte nainstalovaný Python 3.12, ujistěte se, že jej nainstalujete. Poté vytvořte svůj virtuální prostředí (venv) pomocí python3.12, aby byly správné verze nainstalovány ze souboru requirements.txt.
+- GitHub účet - pro přístup k GitHub Models Marketplace
+- Předplatné Azure - pro přístup k Azure AI Foundry
+- Účet Azure AI Foundry - pro přístup k Azure AI Agent Service
 
 V kořenovém adresáři tohoto repozitáře jsme zahrnuli soubor `requirements.txt`, který obsahuje všechny potřebné Python balíčky pro spuštění ukázek kódu.
 
@@ -59,7 +59,7 @@ pip install -r requirements.txt
 Doporučujeme vytvořit Python virtuální prostředí, abyste předešli konfliktům a problémům.
 
 ## Nastavení VSCode
-Ujistěte se, že používáte správnou verzi Pythonu v prostředí VSCode.
+Ujistěte se, že ve VSCode používáte správnou verzi Pythonu.
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
 
@@ -75,27 +75,37 @@ To lze provést přechodem na váš
 
 GitHub účet.
 
-Postupujte podle [Principu minimálních oprávnění](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) při vytváření tokenu. To znamená, že byste měli tokenu přidělit pouze ta oprávnění, která jsou nezbytná pro spuštění ukázek kódu v tomto kurzu.
+Postupujte podle [Principu nejmenších oprávnění](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) při vytváření tokenu. To znamená, že byste měli tokenu přidělit pouze ta oprávnění, která jsou nezbytná pro spuštění ukázek kódu v tomto kurzu.
 
-1. Na levé straně obrazovky vyberte možnost `Fine-grained tokens`.
+1. Na levé straně obrazovky vyberte možnost `Fine-grained tokens` v sekci **Developer settings**.  
+   ![](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.cs.png)
 
-    Poté vyberte `Generate new token`.
+   Poté vyberte `Generate new token`.
 
-    ![Generate Token](../../../translated_images/generate-new-token.8772e24e8e2e067f2e6742500eaf68bb5c5f8999537bd79a040d2ecc09c7fdcb.cs.png)
+   ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.cs.png)
 
-1. Zadejte popisný název pro váš token, který odráží jeho účel, aby bylo později snadné jej identifikovat. Nastavte datum vypršení platnosti (doporučeno: 30 dní; můžete zvolit kratší období, například 7 dní, pokud preferujete vyšší úroveň zabezpečení).
+2. Zadejte popisný název pro váš token, který odráží jeho účel, aby byl později snadno identifikovatelný.
+
+    🔐 Doporučení pro dobu platnosti tokenu
+
+    Doporučená doba platnosti: 30 dní  
+    Pro větší bezpečnost můžete zvolit kratší období, například 7 dní 🛡️  
+    Je to skvělý způsob, jak si stanovit osobní cíl a dokončit kurz, zatímco máte vysokou motivaci k učení 🚀.
 
     ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.cs.png)
 
-1. Omezte rozsah tokenu na váš fork tohoto repozitáře.
+3. Omezte rozsah tokenu na váš fork tohoto repozitáře.
 
-    ![Limit scope to fork repository](../../../translated_images/select-fork-repository.4497f6bb05ccd6b474ed134493a815fc34f94f89db2b1630c494adff7b5b558a.cs.png)
+    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.cs.png)
 
-1. Omezte oprávnění tokenu: V části **Permissions** přepněte na **Account Permissions**, přejděte na **Models** a povolte pouze přístup pro čtení potřebný pro GitHub Models.
+4. Omezte oprávnění tokenu: V sekci **Permissions** klikněte na záložku **Account** a poté na tlačítko "+ Add permissions". Zobrazí se rozbalovací nabídka. Vyhledejte **Models** a zaškrtněte příslušné políčko.  
+    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.cs.png)
 
-    ![Account Permissions](../../../translated_images/account-permissions.de1806fad33a72c6194d2688cf2c10f2adb9ff7a5c1041a2329cbef46bffbba0.cs.png)
+5. Ověřte požadovaná oprávnění před vygenerováním tokenu.  
+    ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.cs.png)
 
-    ![Models Read Access](../../../translated_images/models-read-access.c00bc44e28c40450a85542e19f8e8c68284c71861c076b7dbc078b4c7e51faa6.cs.png)
+6. Před vygenerováním tokenu se ujistěte, že jste připraveni token uložit na bezpečné místo, například do trezoru správce hesel, protože po vytvoření již nebude zobrazen.  
+    ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.cs.png)
 
 Zkopírujte svůj nový token, který jste právě vytvořili. Nyní jej přidáte do souboru `.env` zahrnutého v tomto kurzu.
 
@@ -109,7 +119,8 @@ cp .env.example .env
 
 Tím zkopírujete příkladový soubor a vytvoříte `.env` ve vašem adresáři, kde vyplníte hodnoty pro proměnné prostředí.
 
-Se zkopírovaným tokenem otevřete soubor `.env` ve svém oblíbeném textovém editoru a vložte svůj token do pole `GITHUB_TOKEN`.
+Se zkopírovaným tokenem otevřete soubor `.env` ve svém oblíbeném textovém editoru a vložte svůj token do pole `GITHUB_TOKEN`.  
+![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.cs.png)
 
 Nyní byste měli být schopni spustit ukázky kódu z tohoto kurzu.
 
@@ -139,15 +150,15 @@ Se zkopírovaným tokenem otevřete soubor `.env` ve svém oblíbeném textovém
 
 ### Krok 3: Přihlášení do Azure
 
-Jako bezpečnostní nejlepší praxi použijeme [autentizaci bez klíče](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) pro autentizaci do Azure OpenAI pomocí Microsoft Entra ID.
+Jako bezpečnostní nejlepší praxi použijeme [autentizaci bez klíče](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) pro přihlášení do Azure OpenAI pomocí Microsoft Entra ID.
 
-Dále otevřete terminál a spusťte `az login --use-device-code` pro přihlášení do svého Azure účtu.
+Otevřete terminál a spusťte `az login --use-device-code`, abyste se přihlásili ke svému Azure účtu.
 
-Jakmile se přihlásíte, vyberte své předplatné v terminálu.
+Po přihlášení vyberte své předplatné v terminálu.
 
 ## Další proměnné prostředí - Azure Search a Azure OpenAI 
 
-Pro lekci Agentic RAG - Lekce 5 - existují ukázky, které využívají Azure Search a Azure OpenAI.
+Pro lekci Agentic RAG - Lekce 5 - jsou zde ukázky, které využívají Azure Search a Azure OpenAI.
 
 Pokud chcete tyto ukázky spustit, budete muset přidat následující proměnné prostředí do svého souboru `.env`:
 
@@ -157,23 +168,23 @@ Pokud chcete tyto ukázky spustit, budete muset přidat následující proměnn�
 
 - `AZURE_AI_PROJECT_NAME` - Podívejte se na horní část stránky **Přehled** vašeho projektu.
 
-- `AZURE_OPENAI_SERVICE` - Najděte to na kartě **Zahrnuté schopnosti** pro **Azure OpenAI Service** na stránce **Přehled**.
+- `AZURE_OPENAI_SERVICE` - Najděte to na záložce **Zahrnuté schopnosti** pro **Azure OpenAI Service** na stránce **Přehled**.
 
 ### Centrum správy
 
 - `AZURE_OPENAI_RESOURCE_GROUP` - Přejděte na **Vlastnosti projektu** na stránce **Přehled** v **Centru správy**.
 
-- `GLOBAL_LLM_SERVICE` - V části **Připojené zdroje** najděte název připojení **Azure AI Services**. Pokud není uveden, zkontrolujte **Azure portal** ve své skupině zdrojů pro název zdroje AI Services.
+- `GLOBAL_LLM_SERVICE` - V sekci **Připojené zdroje** najděte název připojení **Azure AI Services**. Pokud není uveden, zkontrolujte **Azure portal** ve své skupině zdrojů pro název zdroje AI Services.
 
 ### Stránka Modely + Koncové body
 
-- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Vyberte svůj model pro vkládání (např. `text-embedding-ada-002`) a poznamenejte si **Název nasazení** z podrobností modelu.
+- `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Vyberte svůj embedding model (např. `text-embedding-ada-002`) a poznamenejte si **Název nasazení** z podrobností modelu.
 
-- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Vyberte svůj chatovací model (např. `gpt-4o-mini`) a poznamenejte si **Název nasazení** z podrobností modelu.
+- `AZURE_OPENAI_CHAT_DEPLOYMENT_NAME` - Vyberte svůj chat model (např. `gpt-4o-mini`) a poznamenejte si **Název nasazení** z podrobností modelu.
 
 ### Azure Portal
 
-- `AZURE_OPENAI_ENDPOINT` - Vyhledejte **Azure AI services**, klikněte na něj, poté přejděte na **Správa zdrojů**, **Klíče a koncový bod**, sjeďte dolů na "Azure OpenAI endpoints" a zkopírujte ten, který říká "Language APIs".
+- `AZURE_OPENAI_ENDPOINT` - Vyhledejte **Azure AI services**, klikněte na něj, poté přejděte na **Správa zdrojů**, **Klíče a koncové body**, sjeďte dolů na "Azure OpenAI endpoints" a zkopírujte ten, který říká "Language APIs".
 
 - `AZURE_OPENAI_API_KEY` - Na stejné obrazovce zkopírujte KLÍČ 1 nebo KLÍČ 2.
 
@@ -187,21 +198,21 @@ Pokud chcete tyto ukázky spustit, budete muset přidat následující proměnn�
 
 ### Nastavení autentizace bez klíče
 
-Místo pevného zakódování vašich přihlašovacích údajů použijeme připojení bez klíče s Azure OpenAI. K tomu importujeme `DefaultAzureCredential` a později zavoláme funkci `DefaultAzureCredential` pro získání přihlašovacích údajů.
+Místo pevného zakódování vašich přihlašovacích údajů použijeme připojení bez klíče s Azure OpenAI. K tomu importujeme `DefaultAzureCredential` a později zavoláme funkci `DefaultAzureCredential`, abychom získali přihlašovací údaje.
 
 ```python
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 ```
 
-## Nějaký problém?
+## Zasekli jste se?
 
-Pokud narazíte na jakékoli problémy při nastavování, připojte se do našeho
+Pokud máte jakékoli problémy s tímto nastavením, připojte se do naší
 
 ## Další lekce
 
-Nyní jste připraveni spustit kód pro tento kurz. Přejeme vám příjemné učení o světě AI agentů!
+Nyní jste připraveni spustit kód pro tento kurz. Přejeme vám hodně zábavy při objevování světa AI agentů!
 
 [Úvod do AI agentů a jejich využití](../01-intro-to-ai-agents/README.md)
 
 **Prohlášení:**  
-Tento dokument byl přeložen pomocí služby pro automatizovaný překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace doporučujeme profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí služby pro automatizovaný překlad [Co-op Translator](https://github.com/Azure/co-op-translator). Ačkoli se snažíme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Neodpovídáme za žádná nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.

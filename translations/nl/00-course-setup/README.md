@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6a79c8f2b56a80370ff7e447765524f",
-  "translation_date": "2025-07-23T08:55:00+00:00",
+  "original_hash": "8693a24942b670e3cb8def77f92513f9",
+  "translation_date": "2025-08-21T13:24:32+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "nl"
 }
@@ -37,7 +37,7 @@ De codevoorbeelden maken gebruik van:
 **Vereist een Azure-abonnement**:
 3) Azure AI Foundry + Azure AI Agent Service. Gelabeld als (azureaiagent.ipynb)
 
-We raden je aan om alle drie de soorten voorbeelden uit te proberen om te zien welke het beste bij je past.
+We moedigen je aan om alle drie de soorten voorbeelden uit te proberen om te zien welke het beste voor jou werkt.
 
 Welke optie je ook kiest, dit bepaalt welke instellingsstappen je hieronder moet volgen:
 
@@ -75,27 +75,35 @@ Dit kan worden gedaan door naar je GitHub-account te gaan.
 
 Volg het [Principe van Minimale Toegang](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) bij het aanmaken van je token. Dit betekent dat je het token alleen de rechten moet geven die nodig zijn om de codevoorbeelden in deze cursus uit te voeren.
 
-1. Selecteer de optie `Fine-grained tokens` aan de linkerkant van je scherm.
+1. Selecteer de optie `Fine-grained tokens` aan de linkerkant van je scherm door naar **Developer settings** te gaan.
+   ![](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.nl.png)
 
     Selecteer vervolgens `Generate new token`.
 
-    ![Generate Token](../../../translated_images/generate-new-token.8772e24e8e2e067f2e6742500eaf68bb5c5f8999537bd79a040d2ecc09c7fdcb.nl.png)
+    ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.nl.png)
 
-1. Geef je token een beschrijvende naam die het doel ervan weerspiegelt, zodat je het later gemakkelijk kunt identificeren. Stel een vervaldatum in (aanbevolen: 30 dagen; je kunt een kortere periode kiezen, zoals 7 dagen, als je een veiliger aanpak wilt).
+2. Voer een beschrijvende naam in voor je token die het doel ervan weerspiegelt, zodat je het later gemakkelijk kunt identificeren.
+
+    🔐 Aanbevolen tokenduur
+
+    Aanbevolen duur: 30 dagen
+    Voor een veiliger aanpak kun je kiezen voor een kortere periode, zoals 7 dagen 🛡️
+    Het is een geweldige manier om jezelf een persoonlijk doel te stellen en de cursus te voltooien terwijl je leerdrang hoog is 🚀.
 
     ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.nl.png)
 
-1. Beperk de reikwijdte van het token tot je fork van deze repository.
+3. Beperk de scope van het token tot je fork van deze repository.
 
-    ![Limit scope to fork repository](../../../translated_images/select-fork-repository.4497f6bb05ccd6b474ed134493a815fc34f94f89db2b1630c494adff7b5b558a.nl.png)
+    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.nl.png)
 
-1. Beperk de rechten van het token: Onder **Permissions**, schakel **Account Permissions** in, ga naar **Models** en schakel alleen de leesrechten in die nodig zijn voor GitHub Models.
+4. Beperk de rechten van het token: Onder **Permissions**, klik op het tabblad **Account** en klik op de knop "+ Add permissions". Er verschijnt een dropdown. Zoek naar **Models** en vink het vakje aan.
+    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.nl.png)
 
-    ![Account Permissions](../../../translated_images/account-permissions.de1806fad33a72c6194d2688cf2c10f2adb9ff7a5c1041a2329cbef46bffbba0.nl.png)
+5. Controleer de vereiste rechten voordat je het token genereert. ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.nl.png)
 
-    ![Models Read Access](../../../translated_images/models-read-access.c00bc44e28c40450a85542e19f8e8c68284c71861c076b7dbc078b4c7e51faa6.nl.png)
+6. Zorg ervoor dat je het token op een veilige plek opslaat, zoals een wachtwoordmanager, aangezien het niet opnieuw wordt weergegeven nadat je het hebt aangemaakt. ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.nl.png)
 
-Kopieer je nieuwe token dat je zojuist hebt aangemaakt. Je zult dit nu toevoegen aan je `.env`-bestand dat bij deze cursus is inbegrepen.
+Kopieer je nieuwe token dat je zojuist hebt aangemaakt. Je voegt dit nu toe aan je `.env`-bestand dat bij deze cursus is inbegrepen.
 
 ### Stap 2: Maak je `.env`-bestand
 
@@ -107,7 +115,8 @@ cp .env.example .env
 
 Dit kopieert het voorbeeldbestand en maakt een `.env` in je directory waar je de waarden voor de omgevingsvariabelen invult.
 
-Met je token gekopieerd, open je het `.env`-bestand in je favoriete teksteditor en plak je je token in het `GITHUB_TOKEN`-veld.
+Met je gekopieerde token open je het `.env`-bestand in je favoriete teksteditor en plak je je token in het `GITHUB_TOKEN`-veld.
+![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.nl.png)
 
 Je zou nu de codevoorbeelden van deze cursus moeten kunnen uitvoeren.
 
@@ -115,11 +124,11 @@ Je zou nu de codevoorbeelden van deze cursus moeten kunnen uitvoeren.
 
 ### Stap 1: Haal je Azure Project Endpoint op
 
-Volg de stappen om een hub en project te maken in Azure AI Foundry, te vinden hier: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+Volg de stappen om een hub en project te maken in Azure AI Foundry via: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
 Zodra je je project hebt aangemaakt, moet je de verbindingsstring voor je project ophalen.
 
-Dit kan worden gedaan door naar de **Overzicht**-pagina van je project te gaan in het Azure AI Foundry-portaal.
+Dit kan worden gedaan door naar de **Overview**-pagina van je project te gaan in het Azure AI Foundry-portaal.
 
 ![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.nl.png)
 
@@ -133,7 +142,7 @@ cp .env.example .env
 
 Dit kopieert het voorbeeldbestand en maakt een `.env` in je directory waar je de waarden voor de omgevingsvariabelen invult.
 
-Met je token gekopieerd, open je het `.env`-bestand in je favoriete teksteditor en plak je je token in het `PROJECT_ENDPOINT`-veld.
+Met je gekopieerde token open je het `.env`-bestand in je favoriete teksteditor en plak je je token in het `PROJECT_ENDPOINT`-veld.
 
 ### Stap 3: Inloggen bij Azure
 
@@ -151,17 +160,17 @@ Als je deze voorbeelden wilt uitvoeren, moet je de volgende omgevingsvariabelen 
 
 ### Overzichtspagina (Project)
 
-- `AZURE_SUBSCRIPTION_ID` - Controleer **Projectdetails** op de **Overzicht**-pagina van je project.
+- `AZURE_SUBSCRIPTION_ID` - Controleer **Project details** op de **Overview**-pagina van je project.
 
-- `AZURE_AI_PROJECT_NAME` - Kijk bovenaan de **Overzicht**-pagina van je project.
+- `AZURE_AI_PROJECT_NAME` - Kijk bovenaan de **Overview**-pagina van je project.
 
-- `AZURE_OPENAI_SERVICE` - Vind dit in het tabblad **Included capabilities** voor **Azure OpenAI Service** op de **Overzicht**-pagina.
+- `AZURE_OPENAI_SERVICE` - Vind dit in het tabblad **Included capabilities** voor **Azure OpenAI Service** op de **Overview**-pagina.
 
 ### Management Center
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Ga naar **Projecteigenschappen** op de **Overzicht**-pagina van het **Management Center**.
+- `AZURE_OPENAI_RESOURCE_GROUP` - Ga naar **Project properties** op de **Overview**-pagina van het **Management Center**.
 
-- `GLOBAL_LLM_SERVICE` - Onder **Connected resources**, vind de **Azure AI Services**-verbinding. Als deze niet wordt vermeld, controleer dan de **Azure portal** onder je resourcegroep voor de naam van de AI Services-resource.
+- `GLOBAL_LLM_SERVICE` - Onder **Connected resources**, vind de **Azure AI Services**-verbindingnaam. Als deze niet wordt vermeld, controleer dan de **Azure portal** onder je resourcegroep voor de AI Services-resource naam.
 
 ### Models + Endpoints-pagina
 
@@ -171,13 +180,13 @@ Als je deze voorbeelden wilt uitvoeren, moet je de volgende omgevingsvariabelen 
 
 ### Azure Portal
 
-- `AZURE_OPENAI_ENDPOINT` - Zoek naar **Azure AI services**, klik erop, ga naar **Resource Management**, **Keys and Endpoint**, scroll naar beneden naar de "Azure OpenAI endpoints", en kopieer degene die "Language APIs" zegt.
+- `AZURE_OPENAI_ENDPOINT` - Zoek naar **Azure AI services**, klik erop, ga naar **Resource Management**, **Keys and Endpoint**, scroll naar beneden naar de "Azure OpenAI endpoints" en kopieer degene die "Language APIs" zegt.
 
 - `AZURE_OPENAI_API_KEY` - Kopieer vanaf hetzelfde scherm KEY 1 of KEY 2.
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Vind je **Azure AI Search**-resource, klik erop en bekijk **Overzicht**.
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - Vind je **Azure AI Search**-resource, klik erop en bekijk **Overview**.
 
-- `AZURE_SEARCH_API_KEY` - Ga vervolgens naar **Instellingen** en daarna **Keys** om de primaire of secundaire beheersleutel te kopiëren.
+- `AZURE_SEARCH_API_KEY` - Ga vervolgens naar **Settings** en daarna **Keys** om de primaire of secundaire admin-sleutel te kopiëren.
 
 ### Externe webpagina
 
@@ -191,9 +200,9 @@ In plaats van je inloggegevens hard te coderen, gebruiken we een keyless verbind
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 ```
 
-## Vastgelopen?
+## Problemen?
 
-Als je problemen hebt met het uitvoeren van deze setup, spring dan in onze
+Als je problemen hebt met het uitvoeren van deze setup, ga dan naar onze
 
 ## Volgende les
 
@@ -201,5 +210,5 @@ Je bent nu klaar om de code voor deze cursus uit te voeren. Veel plezier met het
 
 [Introductie tot AI Agents en Agent Use Cases](../01-intro-to-ai-agents/README.md)
 
-**Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+**Disclaimer (Vrijwaring)**:  
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

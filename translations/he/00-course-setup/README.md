@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6a79c8f2b56a80370ff7e447765524f",
-  "translation_date": "2025-07-23T08:56:30+00:00",
+  "original_hash": "8693a24942b670e3cb8def77f92513f9",
+  "translation_date": "2025-08-21T13:27:04+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "he"
 }
 -->
 # הגדרת הקורס
 
-## מבוא
+## הקדמה
 
 בשיעור זה נלמד כיצד להפעיל את דוגמאות הקוד של הקורס.
 
 ## שיבוט או יצירת Fork למאגר זה
 
-כדי להתחיל, יש לשבט או ליצור Fork למאגר GitHub. פעולה זו תיצור גרסה משלכם של חומרי הקורס, כך שתוכלו להפעיל, לבדוק ולשנות את הקוד!
+כדי להתחיל, יש לשבט או ליצור Fork למאגר ה-GitHub. פעולה זו תיצור גרסה משלכם של חומרי הקורס, כך שתוכלו להפעיל, לבדוק ולשנות את הקוד!
 
-ניתן לעשות זאת על ידי לחיצה על הקישור ל
+ניתן לעשות זאת על ידי לחיצה על הקישור ל-
 
 ![Forked Repo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.he.png)
 
 ## הפעלת הקוד
 
-הקורס מציע סדרת מחברות Jupyter שתוכלו להפעיל כדי להתנסות בבניית סוכני AI.
+הקורס מציע סדרת מחברות Jupyter שתוכלו להפעיל כדי לקבל ניסיון מעשי בבניית סוכני AI.
 
 דוגמאות הקוד משתמשות באחת מהאפשרויות הבאות:
 
@@ -35,14 +35,14 @@ CO_OP_TRANSLATOR_METADATA:
 **דורש מנוי Azure**:
 3) Azure AI Foundry + Azure AI Agent Service. מסומן כ-(azureaiagent.ipynb)
 
-אנו ממליצים לנסות את כל שלושת סוגי הדוגמאות כדי לראות מה עובד הכי טוב עבורכם.
+אנו ממליצים לנסות את כל שלושת סוגי הדוגמאות כדי לראות איזו מהן מתאימה לכם ביותר.
 
 האפשרות שתבחרו תקבע אילו שלבי הגדרה תצטרכו לבצע בהמשך:
 
 ## דרישות
 
 - Python 3.12+
-  - **NOTE**: אם אין לכם Python3.12 מותקן, ודאו שאתם מתקינים אותו. לאחר מכן צרו את הסביבה הווירטואלית שלכם באמצעות python3.12 כדי להבטיח שהגרסאות הנכונות יותקנו מקובץ requirements.txt.
+  - **NOTE**: אם אין לכם Python3.12 מותקן, ודאו שאתם מתקינים אותו. לאחר מכן צרו את ה-venv שלכם באמצעות python3.12 כדי להבטיח שהגרסאות הנכונות יותקנו מקובץ requirements.txt.
 - חשבון GitHub - לגישה ל-GitHub Models Marketplace
 - מנוי Azure - לגישה ל-Azure AI Foundry
 - חשבון Azure AI Foundry - לגישה ל-Azure AI Agent Service
@@ -69,37 +69,38 @@ pip install -r requirements.txt
 
 כדי להשתמש ב-GitHub Models, תצטרכו ליצור [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
-ניתן לעשות זאת על ידי מעבר ל
+ניתן לעשות זאת על ידי מעבר ל-
 
-בחשבון GitHub שלכם.
+![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.he.png)
 
-אנא עקבו אחר [Principle of Least Privilege](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) בעת יצירת הטוקן. משמעות הדבר היא שעליכם להעניק לטוקן רק את ההרשאות הנדרשות להפעלת דוגמאות הקוד בקורס זה.
+1. בחרו באפשרות `Fine-grained tokens` בצד שמאל של המסך תחת **Developer settings**.
 
-1. בחרו באפשרות `Fine-grained tokens` בצד שמאל של המסך.
+2. הזינו שם תיאורי עבור הטוקן שלכם שמשקף את מטרתו, כך שיהיה קל לזהות אותו מאוחר יותר.
 
-    לאחר מכן בחרו `Generate new token`.
+    🔐 המלצה על משך הטוקן
 
-    ![Generate Token](../../../translated_images/generate-new-token.8772e24e8e2e067f2e6742500eaf68bb5c5f8999537bd79a040d2ecc09c7fdcb.he.png)
-
-1. הזינו שם תיאורי לטוקן שמשקף את מטרתו, כך שיהיה קל לזהות אותו מאוחר יותר. הגדירו תאריך תפוגה (מומלץ: 30 ימים; ניתן לבחור תקופה קצרה יותר כמו 7 ימים אם אתם מעדיפים גישה מאובטחת יותר).
+    משך מומלץ: 30 ימים  
+    למען אבטחה גבוהה יותר, ניתן לבחור תקופה קצרה יותר—כמו 7 ימים 🛡️  
+    זו דרך מצוינת להציב יעד אישי ולהשלים את הקורס בזמן שהמומנטום הלימודי שלכם גבוה 🚀.
 
     ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.he.png)
 
-1. הגבילו את טווח הטוקן ל-Fork שלכם של מאגר זה.
+3. הגבילו את תחום הטוקן ל-Fork של מאגר זה.
 
-    ![Limit scope to fork repository](../../../translated_images/select-fork-repository.4497f6bb05ccd6b474ed134493a815fc34f94f89db2b1630c494adff7b5b558a.he.png)
+    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.he.png)
 
-1. הגבלות הרשאות הטוקן: תחת **Permissions**, הפעילו **Account Permissions**, עברו ל-**Models** ואפשרו רק את גישת הקריאה הנדרשת ל-GitHub Models.
+4. הגבלות הרשאות הטוקן: תחת **Permissions**, לחצו על לשונית **Account**, ואז לחצו על כפתור "+ Add permissions". יופיע תפריט נפתח. חפשו **Models** וסמנו את התיבה עבורו.
+    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.he.png)
 
-    ![Account Permissions](../../../translated_images/account-permissions.de1806fad33a72c6194d2688cf2c10f2adb9ff7a5c1041a2329cbef46bffbba0.he.png)
+5. ודאו את ההרשאות הנדרשות לפני יצירת הטוקן. ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.he.png)
 
-    ![Models Read Access](../../../translated_images/models-read-access.c00bc44e28c40450a85542e19f8e8c68284c71861c076b7dbc078b4c7e51faa6.he.png)
+6. לפני יצירת הטוקן, ודאו שאתם מוכנים לשמור את הטוקן במקום מאובטח כמו כספת מנהל סיסמאות, שכן הוא לא יוצג שוב לאחר יצירתו. ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.he.png)
 
 העתיקו את הטוקן החדש שיצרתם. כעת תוסיפו אותו לקובץ `.env` הכלול בקורס זה.
 
 ### שלב 2: יצירת קובץ `.env`
 
-כדי ליצור קובץ `.env`, הריצו את הפקודה הבאה בטרמינל.
+כדי ליצור את קובץ `.env`, הריצו את הפקודה הבאה בטרמינל.
 
 ```bash
 cp .env.example .env
@@ -108,6 +109,7 @@ cp .env.example .env
 פעולה זו תעתיק את קובץ הדוגמה ותיצור `.env` בתיקייה שלכם, שם תמלאו את הערכים עבור משתני הסביבה.
 
 עם הטוקן שהעתקתם, פתחו את קובץ `.env` בעורך הטקסט המועדף עליכם והדביקו את הטוקן בשדה `GITHUB_TOKEN`.
+![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.he.png)
 
 כעת תוכלו להפעיל את דוגמאות הקוד של הקורס.
 
@@ -117,7 +119,7 @@ cp .env.example .env
 
 עקבו אחר השלבים ליצירת hub ופרויקט ב-Azure AI Foundry כאן: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
-לאחר שיצרתם את הפרויקט שלכם, תצטרכו לקבל את מחרוזת החיבור לפרויקט שלכם.
+לאחר שיצרתם את הפרויקט שלכם, תצטרכו לקבל את מחרוזת החיבור עבור הפרויקט.
 
 ניתן לעשות זאת על ידי מעבר לדף **Overview** של הפרויקט שלכם בפורטל Azure AI Foundry.
 
@@ -125,7 +127,7 @@ cp .env.example .env
 
 ### שלב 2: יצירת קובץ `.env`
 
-כדי ליצור קובץ `.env`, הריצו את הפקודה הבאה בטרמינל.
+כדי ליצור את קובץ `.env`, הריצו את הפקודה הבאה בטרמינל.
 
 ```bash
 cp .env.example .env
@@ -145,7 +147,7 @@ cp .env.example .env
 
 ## משתני סביבה נוספים - Azure Search ו-Azure OpenAI 
 
-לשיעור Agentic RAG - שיעור 5 - יש דוגמאות שמשתמשות ב-Azure Search ו-Azure OpenAI.
+לשיעור Agentic RAG - שיעור 5 - יש דוגמאות שמשתמשות ב-Azure Search וב-Azure OpenAI.
 
 אם תרצו להפעיל את הדוגמאות הללו, תצטרכו להוסיף את משתני הסביבה הבאים לקובץ `.env` שלכם:
 
@@ -177,7 +179,7 @@ cp .env.example .env
 
 - `AZURE_SEARCH_SERVICE_ENDPOINT` - מצאו את משאב **Azure AI Search** שלכם, לחצו עליו, וראו **Overview**.
 
-- `AZURE_SEARCH_API_KEY` - לאחר מכן עברו ל-**Settings** ואז ל-**Keys** כדי להעתיק את המפתח הראשי או המשני.
+- `AZURE_SEARCH_API_KEY` - לאחר מכן עברו ל-**Settings** ואז ל-**Keys** כדי להעתיק את המפתח הראשי או המשני של המנהל.
 
 ### דף חיצוני
 
@@ -193,13 +195,13 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 ## נתקעתם איפשהו?
 
-אם יש לכם בעיות בהפעלת ההגדרה, הצטרפו ל
+אם יש לכם בעיות בהפעלת ההגדרה, הצטרפו ל-
 
 ## השיעור הבא
 
-כעת אתם מוכנים להפעיל את הקוד של הקורס הזה. למידה מהנה על עולם סוכני ה-AI!
+כעת אתם מוכנים להפעיל את הקוד של הקורס. למידה מהנה על עולם סוכני ה-AI!
 
-[מבוא לסוכני AI ושימושים](../01-intro-to-ai-agents/README.md)
+[מבוא לסוכני AI ושימושים בסוכנים](../01-intro-to-ai-agents/README.md)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתרגומים אוטומטיים עשויים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב כמקור הסמכותי. עבור מידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי אדם. איננו נושאים באחריות לאי הבנות או לפרשנויות שגויות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). בעוד שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עשויים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפתו המקורית נחשב למקור הסמכותי. למידע קריטי, מומלץ להשתמש בתרגום מקצועי על ידי בני אדם. איננו נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

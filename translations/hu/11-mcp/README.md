@@ -1,146 +1,151 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "bbce3572338711aeab758506379ab716",
-  "translation_date": "2025-07-12T13:50:07+00:00",
+  "original_hash": "e255edb8423b34b4bba20263ef38f208",
+  "translation_date": "2025-08-21T13:41:31+00:00",
   "source_file": "11-mcp/README.md",
   "language_code": "hu"
 }
 -->
 # 11. Lecke: Model Context Protocol (MCP) Integráció
 
-## Bevezetés a Model Context Protocol (MCP) témakörébe
+## Bevezetés a Model Context Protocol (MCP) keretrendszerbe
 
-A Model Context Protocol (MCP) egy korszerű keretrendszer, amely az AI modellek és a kliensalkalmazások közötti interakciók szabványosítására szolgál. Az MCP hidat képez az AI modellek és az azokat használó alkalmazások között, egységes felületet biztosítva a mögöttes modell megvalósításától függetlenül.
+A Model Context Protocol (MCP) egy korszerű keretrendszer, amely az AI modellek és kliensalkalmazások közötti interakciók szabványosítására lett kifejlesztve. Az MCP hidat képez az AI modellek és az őket használó alkalmazások között, egységes interfészt biztosítva, függetlenül a mögöttes modell implementációjától.
 
 Az MCP főbb jellemzői:
 
 - **Szabványosított kommunikáció**: Az MCP közös nyelvet teremt az alkalmazások és az AI modellek közötti kommunikációhoz
-- **Fejlett kontextuskezelés**: Hatékony módot kínál a kontextuális információk átadására az AI modelleknek
-- **Platformok közötti kompatibilitás**: Több programozási nyelven működik, többek között C#, Java, JavaScript, Python és TypeScript
-- **Zökkenőmentes integráció**: Lehetővé teszi a fejlesztők számára, hogy könnyedén integráljanak különböző AI modelleket alkalmazásaikba
+- **Fejlett kontextuskezelés**: Hatékonyan teszi lehetővé a kontextuális információk átadását az AI modelleknek
+- **Platformfüggetlen kompatibilitás**: Különböző programozási nyelveken működik, mint például C#, Java, JavaScript, Python és TypeScript
+- **Zökkenőmentes integráció**: Lehetővé teszi a fejlesztők számára, hogy könnyen integrálják az AI modelleket az alkalmazásaikba
 
-Az MCP különösen hasznos az AI ügynökök fejlesztésében, mivel lehetővé teszi, hogy az ügynökök egységes protokollon keresztül kommunikáljanak különböző rendszerekkel és adatforrásokkal, így rugalmasabbá és hatékonyabbá téve őket.
+Az MCP különösen értékes az AI ügynökök fejlesztésében, mivel lehetővé teszi az ügynökök számára, hogy különböző rendszerekkel és adatforrásokkal egységes protokollon keresztül kommunikáljanak, így rugalmasabbá és hatékonyabbá téve őket.
 
 ## Tanulási célok
-- Megérteni, mi az MCP és milyen szerepet tölt be az AI ügynökök fejlesztésében
+- Megérteni, mi az MCP és milyen szerepet játszik az AI ügynökök fejlesztésében
 - MCP szerver beállítása és konfigurálása GitHub integrációhoz
-- Többügynökös rendszer építése MCP eszközökkel
+- Több ügynökből álló rendszer építése MCP eszközökkel
 - RAG (Retrieval Augmented Generation) megvalósítása Azure Cognitive Search segítségével
 
 ## Előfeltételek
-- Python 3.8 vagy újabb
-- Node.js 14 vagy újabb
+- Python 3.8+
+- Node.js 14+
 - Azure előfizetés
 - GitHub fiók
 - Alapvető ismeretek a Semantic Kernelről
 
 ## Beállítási útmutató
 
-1. **Környezet beállítása**  
+1. **Környezet beállítása**
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    pip install -r requirements.txt
    ```
 
-2. **Azure szolgáltatások konfigurálása**  
-   - Hozz létre egy Azure Cognitive Search erőforrást  
-   - Állítsd be az Azure OpenAI szolgáltatást  
+2. **Azure szolgáltatások konfigurálása**
+   - Hozz létre egy Azure Cognitive Search erőforrást
+   - Állítsd be az Azure OpenAI szolgáltatást
    - Konfiguráld a környezeti változókat a `.env` fájlban
 
-3. **MCP szerver beállítása**  
+3. **MCP szerver beállítása**
    ```bash
    npm install -g @modelcontextprotocol/server-github
    ```
 
-## Projekt struktúrája
+## Projektstruktúra
 
 ```
 11-mcp/
 ├── code_samples/
-│   └── github-mcp/
-│       ├── app.py              # Main application
-│       ├── event-descriptions.md  # Event data
-│       └── MCP_SETUP.md        # Setup guide
+│   ├── github-mcp/
+│   │   ├── app.py              # Main application
+│   │   ├── event-descriptions.md  # Event data
+│   │   └── MCP_SETUP.md        # Setup guide
+│   └── mcp-agents/             # Agent-to-agent communication
+│       ├── client/             # MCP client implementation
+│       ├── server/             # MCP server with agents
+│       └── README.md           # Advanced agent examples
 ├── README.md
 └── requirements.txt
 ```
 
 ## Főbb komponensek
 
-### 1. Többügynökös rendszer
-- GitHub Agent: Tárolóelemzés  
-- Hackathon Agent: Projektajánlások  
-- Events Agent: Technológiai események ajánlása
+### 1. Több ügynökből álló rendszer
+- GitHub ügynök: Repository elemzés
+- Hackathon ügynök: Projektajánlások
+- Események ügynök: Technológiai események ajánlása
 
 ### 2. Azure integráció
-- Cognitive Search az események indexeléséhez  
-- Azure OpenAI az ügynök intelligenciájához  
+- Cognitive Search események indexeléséhez
+- Azure OpenAI az ügynökök intelligenciájához
 - RAG minta megvalósítása
 
 ### 3. MCP eszközök
-- GitHub tárolóelemzés  
-- Kódellenőrzés  
-- Metaadat kinyerés
+- GitHub repository elemzés
+- Kódellenőrzés
+- Metaadatok kinyerése
 
-## Kód bemutató
+## Kódismertetés
 
-A példa bemutatja:  
-1. MCP szerver integrációját  
-2. Többügynökös koordinációt  
-3. Azure Cognitive Search integrációt  
+A példa bemutatja:
+1. MCP szerver integrációját
+2. Több ügynök összehangolását
+3. Azure Cognitive Search integrációját
 4. RAG minta megvalósítását
 
-Főbb jellemzők:  
-- Valós idejű GitHub tárolóelemzés  
-- Intelligens projektajánlások  
-- Események párosítása Azure Search segítségével  
+Főbb funkciók:
+- Valós idejű GitHub repository elemzés
+- Intelligens projektajánlások
+- Események párosítása Azure Search segítségével
 - Streaming válaszok Chainlit használatával
 
-## A minta futtatása
+## A példa futtatása
 
-Részletes beállítási útmutatóért és további információkért lásd a [Github MCP Server Example README](./code_samples/github-mcp/README.md) fájlt.
+Részletes beállítási útmutatóért és további információkért lásd: [Github MCP Server Example README](./code_samples/github-mcp/README.md).
 
-1. Indítsd el az MCP szervert:  
+1. Indítsd el az MCP szervert:
    ```bash
    npx @modelcontextprotocol/server-github
    ```
 
-2. Indítsd el az alkalmazást:  
+2. Indítsd el az alkalmazást:
    ```bash
    chainlit run app.py -w
    ```
 
-3. Teszteld az integrációt:  
+3. Teszteld az integrációt:
    ```
    Example query: "Analyze repositories for username: <github_username>"
    ```
 
 ## Hibakeresés
 
-Gyakori problémák és megoldások:  
-1. MCP kapcsolódási problémák  
-   - Ellenőrizd, hogy a szerver fut-e  
-   - Nézd meg, hogy a port szabad-e  
-   - Ellenőrizd a GitHub tokeneket
+Gyakori problémák és megoldások:
+1. MCP kapcsolódási problémák
+   - Ellenőrizd, hogy a szerver fut-e
+   - Ellenőrizd a port elérhetőségét
+   - Győződj meg a GitHub tokenek helyességéről
 
-2. Azure Search problémák  
-   - Érvényesítsd a kapcsolati karakterláncokat  
-   - Ellenőrizd, hogy az index létezik-e  
-   - Győződj meg a dokumentum feltöltéséről
+2. Azure Search problémák
+   - Ellenőrizd a kapcsolat karakterláncokat
+   - Győződj meg az index létezéséről
+   - Ellenőrizd a dokumentumok feltöltését
 
 ## Következő lépések
-- Fedezd fel az MCP további eszközeit  
-- Valósíts meg egyedi ügynököket  
-- Fejleszd tovább a RAG képességeket  
+- Fedezd fel az MCP további eszközeit
+- Valósíts meg egyedi ügynököket
+- Fejleszd tovább a RAG képességeket
 - Adj hozzá több eseményforrást
+- **Haladó**: Nézd meg [mcp-agents/](../../../11-mcp/code_samples/mcp-agents) példákat ügynökök közötti kommunikációra
 
 ## Források
 - [MCP kezdőknek](https://aka.ms/mcp-for-beginners)  
-- [MCP dokumentáció](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)  
-- [Azure Cognitive Search dokumentáció](https://learn.microsoft.com/azure/search/)  
+- [MCP dokumentáció](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)
+- [Azure Cognitive Search dokumentáció](https://learn.microsoft.com/azure/search/)
 - [Semantic Kernel útmutatók](https://learn.microsoft.com/semantic-kernel/)
 
-**Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Felelősségkizárás**:  
+Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c6a79c8f2b56a80370ff7e447765524f",
-  "translation_date": "2025-07-23T08:03:39+00:00",
+  "original_hash": "8693a24942b670e3cb8def77f92513f9",
+  "translation_date": "2025-08-21T12:00:24+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Next Lesson
 
-You are now ready to run the code for this course. Enjoy exploring the fascinating world of AI Agents!
+You are now ready to execute the code for this course. Enjoy diving deeper into the fascinating world of AI Agents!
 
 [Introduction to AI Agents and Agent Use Cases](../01-intro-to-ai-agents/README.md)
 
