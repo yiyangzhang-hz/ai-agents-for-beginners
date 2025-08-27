@@ -1,6 +1,6 @@
 # AI Agents for Beginners - A Course
 
-![Generative AI For Beginners](./images/repo-thumbnail.png)
+![Generative AI For Beginners](./images/repo-thumbnailv2.png)
 
 ## 11 Lessons teaching everything you need to know to start building AI Agents
 
@@ -81,7 +81,7 @@ If you have product feedback or errors whilst building visit our [Azure AI Found
 | Multi-Agent Design Pattern                   | [Link](./08-multi-agent/README.md)                 | [Video](https://youtu.be/V6HpE9hZEx0?si=rMgDhEu7wXo2uo6g)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Metacognition Design Pattern                 | [Link](./09-metacognition/README.md)               | [Video](https://youtu.be/His9R6gw6Ec?si=8gck6vvdSNCt6OcF)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | AI Agents in Production                      | [Link](./10-ai-agents-production/README.md)        | [Video](https://youtu.be/l4TP6IyJxmQ?si=31dnhexRo6yLRJDl)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
-| Using Agentic Protocols (MCP, A2A and NLWeb) | [Link](./11-agentic-protocols/README.md)           | Video - Coming August 27th                                 | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Using Agentic Protocols (MCP, A2A and NLWeb) | [Link](./11-agentic-protocols/README.md)           | [Video](https://youtu.be/X-Dh9R3Opn8)                                 | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Context Engineering for AI Agents            | Coming - September 3rd                             |                                                            |                                                                                        |
 | Managing Agentic Memory                      | Coming - September 10th                            |                                                            |                                                                                        |
 | Evaluating AI Agents                         | Coming - September 17th                            |                                                            |                                                                                        |
