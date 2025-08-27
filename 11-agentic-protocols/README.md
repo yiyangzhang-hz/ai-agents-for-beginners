@@ -1,4 +1,6 @@
-# Lesson 11 -  Using Agentic Protocols (MCP, A2A and NLWeb)
+# Using Agentic Protocols (MCP, A2A and NLWeb)
+
+[![Agentic Protocols](./images/lesson-11-thumbnail.png)](https://youtu.be/X-Dh9R3Opn8)
 
 As the use of AI agents grows, so does the need for protocols that ensure standardization, security, and support open innovation. In this lesson, we will cover 3 protocols looking to meet this need - Model Context Protocol (MCP), Agent to Agent (A2A) and Natural Language Web (NLWeb).
 
@@ -56,6 +58,8 @@ MCP offers significant advantages for AI Agents:
 
 ### MCP Example
 
+![MCP Diagram](./images/mcp-diagram.png)
+
 Imagine a user wants to book a flight using an AI assistant powered by MCP.
 
 1. **Connection**: The AI assistant (the MCP client) connects to an MCP server provided by an airline.
@@ -109,6 +113,8 @@ This component is used for **handling updates and passing messages**. It is part
 
 ### A2A Example
 
+![A2A Diagram](./images/A2A-diagram.png)
+
 Let's expand on our travel booking scenario, but this time using A2A.
 
 1. **User Request to Multi-Agent**: A user interacts with a "Travel Agent" A2A client/agent, perhaps by saying, "Please book an entire trip to Honolulu for next week, including flights, a hotel, and a rental car".
@@ -141,6 +147,8 @@ Let us look at the different components of NLWeb, the benefits of NLWeb and an e
 
 ### NLWeb by Example
 
+![NLWeb](./images/nlweb-diagram.png)
+
 Consider our travel booking website again, but this time, it's powered by NLWeb.
 
 1. **Data Ingestion**: The travel website's existing product catalogs (e.g., flight listings, hotel descriptions, tour packages) are formatted using Schema.org or loaded via RSS feeds. NLWeb's tools ingest this structured data, create embeddings, and store them in a local or remote vector database.
@@ -161,5 +169,5 @@ Join the [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) to meet wi
 
 - [MCP for Beginners](https://aka.ms/mcp-for-beginners)  
 - [MCP Documentation](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)
-- [Azure Cognitive Search Docs](https://learn.microsoft.com/azure/search/)
+- [NLWeb Repo](https://github.com/nlweb-ai/NLWeb)
 - [Semantic Kernel Guides](https://learn.microsoft.com/semantic-kernel/)
