@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7d24f735b3c326b2e515f049a0330e54",
-  "translation_date": "2025-08-21T12:01:28+00:00",
+  "original_hash": "4a5ccc4ad1dba85fbc2087cf3b986544",
+  "translation_date": "2025-08-28T09:43:37+00:00",
   "source_file": "04-tool-use/README.md",
   "language_code": "fr"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 # Modèle de conception pour l'utilisation d'outils
 
-Les outils sont intéressants car ils permettent aux agents IA d'avoir une gamme de capacités plus large. Au lieu que l'agent ait un ensemble limité d'actions qu'il peut effectuer, l'ajout d'un outil lui permet désormais d'exécuter une grande variété d'actions. Dans ce chapitre, nous examinerons le modèle de conception pour l'utilisation d'outils, qui décrit comment les agents IA peuvent utiliser des outils spécifiques pour atteindre leurs objectifs.
+Les outils sont intéressants car ils permettent aux agents IA d'avoir une gamme de capacités plus large. Au lieu d'avoir un ensemble limité d'actions qu'un agent peut effectuer, l'ajout d'un outil permet à l'agent d'exécuter une grande variété d'actions. Dans ce chapitre, nous examinerons le modèle de conception pour l'utilisation d'outils, qui décrit comment les agents IA peuvent utiliser des outils spécifiques pour atteindre leurs objectifs.
 
 ## Introduction
 
@@ -22,7 +22,7 @@ Dans cette leçon, nous cherchons à répondre aux questions suivantes :
 - Qu'est-ce que le modèle de conception pour l'utilisation d'outils ?
 - À quels cas d'utilisation peut-il être appliqué ?
 - Quels sont les éléments nécessaires pour implémenter ce modèle de conception ?
-- Quelles sont les considérations particulières pour utiliser ce modèle afin de créer des agents IA fiables ?
+- Quelles sont les considérations particulières pour utiliser ce modèle afin de construire des agents IA fiables ?
 
 ## Objectifs d'apprentissage
 
@@ -35,7 +35,7 @@ Après avoir terminé cette leçon, vous serez capable de :
 
 ## Qu'est-ce que le modèle de conception pour l'utilisation d'outils ?
 
-Le **modèle de conception pour l'utilisation d'outils** se concentre sur la capacité des LLMs à interagir avec des outils externes pour atteindre des objectifs spécifiques. Les outils sont des morceaux de code qui peuvent être exécutés par un agent pour effectuer des actions. Un outil peut être une fonction simple comme une calculatrice ou un appel API à un service tiers tel que la recherche de prix d'actions ou les prévisions météorologiques. Dans le contexte des agents IA, les outils sont conçus pour être exécutés par les agents en réponse à des **appels de fonction générés par le modèle**.
+Le **modèle de conception pour l'utilisation d'outils** se concentre sur la capacité des LLMs à interagir avec des outils externes pour atteindre des objectifs spécifiques. Les outils sont des morceaux de code exécutables par un agent pour effectuer des actions. Un outil peut être une fonction simple comme une calculatrice ou un appel API à un service tiers, tel qu'une recherche de prix d'actions ou une prévision météorologique. Dans le contexte des agents IA, les outils sont conçus pour être exécutés par les agents en réponse à des **appels de fonctions générés par le modèle**.
 
 ## À quels cas d'utilisation peut-il être appliqué ?
 
@@ -45,7 +45,7 @@ Les agents IA peuvent utiliser des outils pour accomplir des tâches complexes, 
 - **Exécution et interprétation de code** : Les agents peuvent exécuter du code ou des scripts pour résoudre des problèmes mathématiques, générer des rapports ou effectuer des simulations.
 - **Automatisation des workflows** : Automatiser des workflows répétitifs ou multi-étapes en intégrant des outils comme des planificateurs de tâches, des services de messagerie ou des pipelines de données.
 - **Support client** : Les agents peuvent interagir avec des systèmes CRM, des plateformes de tickets ou des bases de connaissances pour répondre aux questions des utilisateurs.
-- **Création et édition de contenu** : Les agents peuvent utiliser des outils comme des correcteurs grammaticaux, des résumeurs de texte ou des évaluateurs de sécurité de contenu pour aider dans les tâches de création de contenu.
+- **Création et édition de contenu** : Les agents peuvent utiliser des outils comme des correcteurs grammaticaux, des résumeurs de texte ou des évaluateurs de sécurité de contenu pour aider à des tâches de création de contenu.
 
 ## Quels sont les éléments nécessaires pour implémenter le modèle de conception pour l'utilisation d'outils ?
 
@@ -67,7 +67,7 @@ Passons maintenant à un examen plus détaillé des appels de fonctions/outils.
 
 ### Appels de fonctions/outils
 
-L'appel de fonctions est le principal moyen permettant aux modèles de langage (LLMs) d'interagir avec des outils. Vous verrez souvent les termes "fonction" et "outil" utilisés de manière interchangeable, car les "fonctions" (blocs de code réutilisables) sont les "outils" que les agents utilisent pour accomplir des tâches. Pour qu'un code de fonction soit invoqué, un LLM doit comparer la requête de l'utilisateur à la description de la fonction. Pour ce faire, un schéma contenant les descriptions de toutes les fonctions disponibles est envoyé au LLM. Le LLM sélectionne ensuite la fonction la plus appropriée pour la tâche et retourne son nom et ses arguments. La fonction sélectionnée est invoquée, sa réponse est renvoyée au LLM, qui utilise les informations pour répondre à la requête de l'utilisateur.
+L'appel de fonctions est le principal moyen permettant aux modèles de langage (LLMs) d'interagir avec des outils. Vous verrez souvent les termes "fonction" et "outil" utilisés de manière interchangeable, car les "fonctions" (blocs de code réutilisables) sont les "outils" qu'utilisent les agents pour accomplir des tâches. Pour qu'un code de fonction soit invoqué, un LLM doit comparer la requête de l'utilisateur à la description de la fonction. Pour ce faire, un schéma contenant les descriptions de toutes les fonctions disponibles est envoyé au LLM. Le LLM sélectionne ensuite la fonction la plus appropriée pour la tâche et retourne son nom et ses arguments. La fonction sélectionnée est invoquée, sa réponse est renvoyée au LLM, qui utilise l'information pour répondre à la requête de l'utilisateur.
 
 Pour que les développeurs implémentent l'appel de fonctions pour les agents, vous aurez besoin de :
 
@@ -75,7 +75,7 @@ Pour que les développeurs implémentent l'appel de fonctions pour les agents, v
 2. Un schéma contenant les descriptions des fonctions
 3. Le code de chaque fonction décrite
 
-Prenons l'exemple de l'obtention de l'heure actuelle dans une ville pour illustrer :
+Prenons l'exemple de la récupération de l'heure actuelle dans une ville pour illustrer :
 
 1. **Initialiser un LLM qui prend en charge l'appel de fonctions :**
 
@@ -92,7 +92,7 @@ Prenons l'exemple de l'obtention de l'heure actuelle dans une ville pour illustr
 
 1. **Créer un schéma de fonction** :
 
-    Ensuite, nous définirons un schéma JSON contenant le nom de la fonction, une description de ce que fait la fonction, ainsi que les noms et descriptions des paramètres de la fonction. Nous passerons ensuite ce schéma au client créé précédemment, avec la requête de l'utilisateur pour trouver l'heure à San Francisco. Il est important de noter qu'un **appel d'outil** est ce qui est retourné, **pas** la réponse finale à la question. Comme mentionné précédemment, le LLM retourne le nom de la fonction qu'il a sélectionnée pour la tâche et les arguments qui lui seront passés.
+    Ensuite, nous définirons un schéma JSON contenant le nom de la fonction, une description de ce que fait la fonction, ainsi que les noms et descriptions des paramètres de la fonction. Nous passerons ensuite ce schéma au client créé précédemment, avec la requête de l'utilisateur pour trouver l'heure à San Francisco. Il est important de noter qu'un **appel d'outil** est ce qui est retourné, **pas** la réponse finale à la question. Comme mentionné précédemment, le LLM retourne le nom de la fonction qu'il a sélectionnée pour la tâche, ainsi que les arguments qui lui seront passés.
 
     ```python
     # Function description for the model to read
@@ -212,13 +212,13 @@ Voici quelques exemples de mise en œuvre du modèle de conception pour l'utilis
 
 ### Semantic Kernel
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a> est un cadre IA open-source pour les développeurs .NET, Python et Java travaillant avec des modèles de langage (LLMs). Il simplifie le processus d'utilisation de l'appel de fonctions en décrivant automatiquement vos fonctions et leurs paramètres au modèle via un processus appelé <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">serialization</a>. Il gère également la communication entre le modèle et votre code. Un autre avantage de l'utilisation d'un cadre agentique comme Semantic Kernel est qu'il vous permet d'accéder à des outils préconstruits tels que <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">File Search</a> et <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Code Interpreter</a>.
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a> est un cadre IA open-source pour les développeurs .NET, Python et Java travaillant avec des modèles de langage (LLMs). Il simplifie le processus d'utilisation des appels de fonctions en décrivant automatiquement vos fonctions et leurs paramètres au modèle via un processus appelé <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">serialization</a>. Il gère également la communication entre le modèle et votre code. Un autre avantage de l'utilisation d'un cadre agentique comme Semantic Kernel est qu'il permet d'accéder à des outils préconstruits tels que <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">File Search</a> et <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Code Interpreter</a>.
 
 Le diagramme suivant illustre le processus d'appel de fonctions avec Semantic Kernel :
 
 ![appel de fonctions](../../../translated_images/functioncalling-diagram.a84006fc287f60140cc0a484ff399acd25f69553ea05186981ac4d5155f9c2f6.fr.png)
 
-Dans Semantic Kernel, les fonctions/outils sont appelés <a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">Plugins</a>. Nous pouvons convertir la fonction `get_current_time` que nous avons vue précédemment en plugin en la transformant en classe contenant la fonction. Nous pouvons également importer le décorateur `kernel_function`, qui prend en entrée la description de la fonction. Lorsque vous créez un kernel avec le GetCurrentTimePlugin, le kernel sérialise automatiquement la fonction et ses paramètres, créant ainsi le schéma à envoyer au LLM.
+Dans Semantic Kernel, les fonctions/outils sont appelés <a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">Plugins</a>. Nous pouvons convertir la fonction `get_current_time` que nous avons vue précédemment en un plugin en la transformant en une classe contenant la fonction. Nous pouvons également importer le décorateur `kernel_function`, qui prend en entrée la description de la fonction. Lorsque vous créez un kernel avec le GetCurrentTimePlugin, le kernel sérialise automatiquement la fonction et ses paramètres, créant ainsi le schéma à envoyer au LLM.
 
 ```python
 from semantic_kernel.functions import kernel_function
@@ -254,7 +254,7 @@ kernel.add_plugin(get_current_time_plugin)
 
 Comparé au développement avec l'API LLM directement, Azure AI Agent Service offre certains avantages, notamment :
 
-- Appels d'outils automatiques – pas besoin d'analyser un appel d'outil, d'invoquer l'outil et de gérer la réponse ; tout cela est désormais fait côté serveur.
+- Appels d'outils automatiques – pas besoin de parser un appel d'outil, d'invoquer l'outil et de gérer la réponse ; tout cela est désormais fait côté serveur.
 - Gestion sécurisée des données – au lieu de gérer votre propre état de conversation, vous pouvez compter sur les threads pour stocker toutes les informations nécessaires.
 - Outils prêts à l'emploi – Outils que vous pouvez utiliser pour interagir avec vos sources de données, comme Bing, Azure AI Search et Azure Functions.
 
@@ -266,8 +266,8 @@ Les outils disponibles dans Azure AI Agent Service peuvent être divisés en deu
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI Search</a>
 
 2. Outils d'action :
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">Appel de fonctions</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">Interpréteur de code</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">Appels de fonctions</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">Interprète de code</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">Outils définis par OpenAI</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview" target="_blank">Azure Functions</a>
 
@@ -279,7 +279,7 @@ L'image suivante illustre comment vous pourriez utiliser Azure AI Agent Service 
 
 ![Service Agent en action](../../../translated_images/agent-service-in-action.34fb465c9a84659edd3003f8cb62d6b366b310a09b37c44e32535021fbb5c93f.fr.jpg)
 
-Pour utiliser l'un de ces outils avec le service, nous pouvons créer un client et définir un outil ou un ensemble d'outils. Pour implémenter cela de manière pratique, nous pouvons utiliser le code Python suivant. Le LLM pourra examiner l'ensemble d'outils et décider d'utiliser la fonction créée par l'utilisateur, `fetch_sales_data_using_sqlite_query`, ou l'interpréteur de code préconstruit en fonction de la requête de l'utilisateur.
+Pour utiliser l'un de ces outils avec le service, nous pouvons créer un client et définir un outil ou un ensemble d'outils. Pour implémenter cela de manière pratique, nous pouvons utiliser le code Python suivant. Le LLM pourra examiner l'ensemble d'outils et décider d'utiliser la fonction créée par l'utilisateur, `fetch_sales_data_using_sqlite_query`, ou l'interprète de code préconstruit en fonction de la requête de l'utilisateur.
 
 ```python 
 import os
@@ -309,29 +309,26 @@ agent = project_client.agents.create_agent(
 )
 ```
 
-## Quelles sont les considérations particulières pour utiliser le modèle de conception pour l'utilisation d'outils afin de créer des agents IA fiables ?
+## Quelles sont les considérations particulières pour utiliser le modèle de conception pour l'utilisation d'outils afin de construire des agents IA fiables ?
 
 Une préoccupation courante avec le SQL généré dynamiquement par les LLMs est la sécurité, en particulier le risque d'injection SQL ou d'actions malveillantes, telles que la suppression ou la modification de la base de données. Bien que ces préoccupations soient valides, elles peuvent être efficacement atténuées en configurant correctement les permissions d'accès à la base de données. Pour la plupart des bases de données, cela implique de les configurer en lecture seule. Pour des services de bases de données comme PostgreSQL ou Azure SQL, l'application doit se voir attribuer un rôle en lecture seule (SELECT).
 
 Exécuter l'application dans un environnement sécurisé améliore encore la protection. Dans les scénarios d'entreprise, les données sont généralement extraites et transformées à partir de systèmes opérationnels dans une base de données en lecture seule ou un entrepôt de données avec un schéma convivial. Cette approche garantit que les données sont sécurisées, optimisées pour la performance et l'accessibilité, et que l'application a un accès restreint en lecture seule.
 
+### Vous avez d'autres questions sur le modèle de conception pour l'utilisation d'outils ?
+Rejoignez le [Discord Azure AI Foundry](https://aka.ms/ai-agents/discord) pour rencontrer d'autres apprenants, assister à des permanences et obtenir des réponses à vos questions sur les agents IA.
+
 ## Ressources supplémentaires
 
--
-<a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">
-Atelier sur le service Azure AI Agents  
-- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Atelier multi-agents Contoso Creative Writer</a>  
-- <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">Tutoriel sur l'appel de fonctions dans Semantic Kernel</a>  
-- <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Interpréteur de code Semantic Kernel</a>  
-- <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Outils Autogen</a>  
+## Leçon précédente
 
-## Leçon précédente  
+[Comprendre les modèles de conception agentique](../03-agentic-design-patterns/README.md)
 
-[Comprendre les modèles de conception agentique](../03-agentic-design-patterns/README.md)  
+## Leçon suivante
 
-## Leçon suivante  
+[Agentic RAG](../05-agentic-rag/README.md)
 
-[Agentic RAG](../05-agentic-rag/README.md)  
+---
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
