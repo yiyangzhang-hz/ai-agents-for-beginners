@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7d24f735b3c326b2e515f049a0330e54",
-  "translation_date": "2025-08-21T12:25:34+00:00",
+  "original_hash": "4a5ccc4ad1dba85fbc2087cf3b986544",
+  "translation_date": "2025-08-28T09:32:04+00:00",
   "source_file": "04-tool-use/README.md",
   "language_code": "hk"
 }
 -->
-[![如何設計優質的 AI 代理](../../../translated_images/lesson-4-thumbnail.546162853cb3daffd64edd92014f274103f76360dfb39fc6e6ee399494da38fd.hk.png)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
+[![如何設計優質 AI 代理](../../../translated_images/lesson-4-thumbnail.546162853cb3daffd64edd92014f274103f76360dfb39fc6e6ee399494da38fd.hk.png)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
 
-> _(點擊上方圖片觀看本課程的影片)_
+> _(點擊上方圖片觀看本課程影片)_
 
 # 工具使用設計模式
 
-工具的有趣之處在於它們能讓 AI 代理擁有更廣泛的能力範圍。透過添加工具，代理不再僅限於執行有限的動作，而是能執行多種操作。在本章中，我們將探討工具使用設計模式，該模式描述了 AI 代理如何使用特定工具來達成目標。
+工具的有趣之處在於它們能讓 AI 代理擁有更廣泛的能力範圍。透過添加工具，代理不再僅限於執行有限的動作，而是能執行多種操作。在本章中，我們將探討工具使用設計模式，描述 AI 代理如何使用特定工具來達成目標。
 
 ## 簡介
 
@@ -21,8 +21,8 @@ CO_OP_TRANSLATOR_METADATA:
 
 - 什麼是工具使用設計模式？
 - 它可以應用於哪些使用場景？
-- 實現該設計模式需要哪些元素/構建模塊？
-- 使用工具使用設計模式來構建可信賴的 AI 代理需要注意哪些特別事項？
+- 實現此設計模式需要哪些元素/構建模塊？
+- 使用工具使用設計模式構建可信賴的 AI 代理需要注意哪些特別事項？
 
 ## 學習目標
 
@@ -30,29 +30,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 - 定義工具使用設計模式及其目的。
 - 識別適用工具使用設計模式的使用場景。
-- 理解實現該設計模式所需的關鍵元素。
-- 認識使用該設計模式的 AI 代理在可信度方面的考量。
+- 理解實現此設計模式所需的關鍵元素。
+- 認識使用此設計模式構建可信賴 AI 代理的注意事項。
 
 ## 什麼是工具使用設計模式？
 
-**工具使用設計模式**的核心是賦予大型語言模型（LLMs）與外部工具互動的能力，以達成特定目標。工具是代理可以執行的程式碼，可能是簡單的函數（例如計算器），或是第三方服務的 API 呼叫（例如股票價格查詢或天氣預報）。在 AI 代理的背景下，工具被設計為代理在回應**模型生成的函數呼叫**時執行的操作。
+**工具使用設計模式**專注於賦予大型語言模型（LLMs）與外部工具互動的能力，以達成特定目標。工具是代理可執行的程式碼，用於執行操作。工具可以是簡單的函數，例如計算器，或是第三方服務的 API 呼叫，例如股票價格查詢或天氣預報。在 AI 代理的背景下，工具設計為能夠根據**模型生成的函數呼叫**由代理執行。
 
 ## 它可以應用於哪些使用場景？
 
-AI 代理可以利用工具完成複雜任務、檢索資訊或做出決策。工具使用設計模式通常應用於需要與外部系統（如資料庫、網絡服務或程式碼解釋器）進行動態互動的場景。這種能力適用於多種使用場景，包括：
+AI 代理可以利用工具完成複雜任務、檢索資訊或做出決策。工具使用設計模式通常用於需要與外部系統動態互動的場景，例如資料庫、網絡服務或程式碼解釋器。此能力適用於多種使用場景，包括：
 
-- **動態資訊檢索**：代理可以查詢外部 API 或資料庫以獲取最新數據（例如查詢 SQLite 資料庫進行數據分析、獲取股票價格或天氣資訊）。
-- **程式碼執行與解釋**：代理可以執行程式碼或腳本來解決數學問題、生成報告或進行模擬。
-- **工作流程自動化**：透過整合工具（如任務排程器、電子郵件服務或數據管道）來自動化重複或多步驟的工作流程。
+- **動態資訊檢索**：代理可以查詢外部 API 或資料庫以獲取最新數據（例如，查詢 SQLite 資料庫進行數據分析、獲取股票價格或天氣資訊）。
+- **程式碼執行與解釋**：代理可以執行程式碼或腳本以解決數學問題、生成報告或進行模擬。
+- **工作流程自動化**：透過整合工具如任務排程器、電子郵件服務或數據管道，自動化重複或多步驟的工作流程。
 - **客戶支持**：代理可以與 CRM 系統、工單平台或知識庫互動以解決用戶問題。
-- **內容生成與編輯**：代理可以利用工具（如語法檢查器、文本摘要生成器或內容安全評估器）協助完成內容創作任務。
+- **內容生成與編輯**：代理可以利用工具如語法檢查器、文本摘要器或內容安全評估器來協助完成內容創建任務。
 
 ## 實現工具使用設計模式需要哪些元素/構建模塊？
 
 這些構建模塊使 AI 代理能夠執行多種任務。以下是實現工具使用設計模式所需的關鍵元素：
 
 - **函數/工具架構**：詳細定義可用工具，包括函數名稱、用途、所需參數及預期輸出。這些架構使 LLM 能夠理解可用工具及如何構建有效請求。
-- **函數執行邏輯**：管理工具的調用方式和時機，基於用戶意圖和對話上下文。這可能包括規劃模塊、路由機制或動態決定工具使用的條件流程。
+- **函數執行邏輯**：管理工具根據用戶意圖和對話上下文的調用方式和時機。這可能包括規劃模塊、路由機制或動態決定工具使用的條件流程。
 - **消息處理系統**：管理用戶輸入、LLM 回應、工具調用及工具輸出的對話流程的組件。
 - **工具整合框架**：連接代理與各種工具的基礎設施，無論是簡單函數還是複雜的外部服務。
 - **錯誤處理與驗證**：處理工具執行失敗、驗證參數及管理意外回應的機制。
@@ -62,19 +62,19 @@ AI 代理可以利用工具完成複雜任務、檢索資訊或做出決策。�
 
 ### 函數/工具調用
 
-函數調用是讓大型語言模型（LLMs）與工具互動的主要方式。您會經常看到“函數”和“工具”交替使用，因為“函數”（可重用的程式碼塊）是代理用來執行任務的“工具”。為了調用函數的程式碼，LLM 必須將用戶的請求與函數的描述進行比較。為此，包含所有可用函數描述的架構會被發送到 LLM。LLM 然後選擇最適合任務的函數並返回其名稱及參數。選定的函數被調用，其回應被發送回 LLM，LLM 使用該資訊回應用戶的請求。
+函數調用是使大型語言模型（LLMs）能夠與工具互動的主要方式。您會經常看到「函數」和「工具」交替使用，因為「函數」（可重用的程式碼塊）是代理用來執行任務的「工具」。為了調用函數的程式碼，LLM 必須將用戶的請求與函數的描述進行比較。為此，包含所有可用函數描述的架構會被發送到 LLM。LLM 然後選擇最適合任務的函數並返回其名稱及參數。選定的函數被調用，其回應被發送回 LLM，LLM 使用該資訊回應用戶的請求。
 
 開發者要為代理實現函數調用，需要：
 
-1. 支援函數調用的 LLM 模型
+1. 支持函數調用的 LLM 模型
 2. 包含函數描述的架構
 3. 每個描述函數的程式碼
 
 以下用獲取城市當前時間的例子來說明：
 
-1. **初始化支援函數調用的 LLM：**
+1. **初始化支持函數調用的 LLM：**
 
-    並非所有模型都支援函數調用，因此需要確認所使用的 LLM 是否支援。<a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> 支援函數調用。我們可以從初始化 Azure OpenAI 客戶端開始。
+    並非所有模型都支持函數調用，因此需要確認所使用的 LLM 是否支持。<a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> 支持函數調用。我們可以從初始化 Azure OpenAI 客戶端開始。
 
     ```python
     # Initialize the Azure OpenAI client
@@ -85,7 +85,7 @@ AI 代理可以利用工具完成複雜任務、檢索資訊或做出決策。�
     )
     ```
 
-1. **創建函數架構：**
+1. **創建函數架構**：
 
     接下來，我們將定義一個 JSON 架構，其中包含函數名稱、函數用途的描述，以及函數參數的名稱和描述。
     然後，我們將此架構與用戶請求（例如查詢舊金山的時間）一起傳遞給之前創建的客戶端。需要注意的是，返回的是**工具調用**，而**不是**問題的最終答案。如前所述，LLM 返回其為任務選擇的函數名稱及將傳遞給它的參數。
@@ -144,7 +144,7 @@ AI 代理可以利用工具完成複雜任務、檢索資訊或做出決策。�
 1. **執行任務所需的函數程式碼：**
 
     現在 LLM 已選擇需要執行的函數，接下來需要實現並執行完成任務的程式碼。
-    我們可以用 Python 實現獲取當前時間的程式碼。同時需要編寫程式碼以從 response_message 中提取函數名稱及參數以獲得最終結果。
+    我們可以用 Python 實現獲取當前時間的程式碼。同時需要編寫程式碼以從 response_message 中提取名稱和參數以獲得最終結果。
 
     ```python
       def get_current_time(location):
@@ -202,7 +202,7 @@ AI 代理可以利用工具完成複雜任務、檢索資訊或做出決策。�
      ```
 
 函數調用是大多數代理工具使用設計的核心，然而從零開始實現它有時可能具有挑戰性。
-正如我們在[課程 2](../../../02-explore-agentic-frameworks)中學到的，代理框架為我們提供了實現工具使用的預構建模塊。
+正如我們在[課程 2](../../../02-explore-agentic-frameworks)中所學，代理框架為我們提供了預構建的模塊來實現工具使用。
 
 ## 使用代理框架的工具使用範例
 
@@ -210,13 +210,13 @@ AI 代理可以利用工具完成複雜任務、檢索資訊或做出決策。�
 
 ### Semantic Kernel
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a> 是一個開源 AI 框架，適用於使用大型語言模型（LLMs）的 .NET、Python 和 Java 開發者。它透過一個稱為<a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">序列化</a>的過程，簡化了函數調用的使用，並自動向模型描述您的函數及其參數。它還處理模型與程式碼之間的來回通信。使用像 Semantic Kernel 這樣的代理框架的另一個優勢是，它允許您訪問預構建工具，例如<a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">文件搜索</a>和<a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">程式碼解釋器</a>。
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a> 是一個開源 AI 框架，適用於使用大型語言模型（LLMs）的 .NET、Python 和 Java 開發者。它透過一個稱為<a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">序列化</a>的過程，簡化了函數調用的使用，能自動向模型描述您的函數及其參數。它還處理模型與程式碼之間的往返通信。使用像 Semantic Kernel 這樣的代理框架的另一個優勢是，它允許您訪問預構建工具，例如<a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">文件搜索</a>和<a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">程式碼解釋器</a>。
 
 以下圖表展示了使用 Semantic Kernel 進行函數調用的過程：
 
 ![函數調用](../../../translated_images/functioncalling-diagram.a84006fc287f60140cc0a484ff399acd25f69553ea05186981ac4d5155f9c2f6.hk.png)
 
-在 Semantic Kernel 中，函數/工具被稱為<a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">插件</a>。我們可以將之前看到的 `get_current_time` 函數轉換為插件，方法是將其轉換為包含該函數的類。我們還可以導入 `kernel_function` 裝飾器，該裝飾器接收函數的描述。當您使用 GetCurrentTimePlugin 創建內核時，內核會自動序列化函數及其參數，並在此過程中創建要發送到 LLM 的架構。
+在 Semantic Kernel 中，函數/工具被稱為<a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">插件</a>。我們可以將之前看到的 `get_current_time` 函數轉換為插件，方法是將其轉換為包含該函數的類。我們還可以導入 `kernel_function` 裝飾器，該裝飾器接收函數的描述。當您使用 GetCurrentTimePlugin 創建內核時，內核會自動序列化函數及其參數，並在此過程中創建要發送給 LLM 的架構。
 
 ```python
 from semantic_kernel.functions import kernel_function
@@ -248,25 +248,25 @@ kernel.add_plugin(get_current_time_plugin)
   
 ### Azure AI Agent Service
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> 是一個較新的代理框架，旨在幫助開發者安全地構建、部署和擴展高質量且可擴展的 AI 代理，而無需管理底層的計算和存儲資源。它特別適合企業應用，因為它是一個具有企業級安全性的完全托管服務。
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> 是一個較新的代理框架，旨在幫助開發者安全地構建、部署和擴展高質量且可擴展的 AI 代理，而無需管理底層的計算和存儲資源。它特別適用於企業應用，因為它是一個完全托管的服務，具有企業級安全性。
 
 與直接使用 LLM API 開發相比，Azure AI Agent Service 提供了一些優勢，包括：
 
 - 自動工具調用——無需解析工具調用、調用工具及處理回應；所有這些現在都在伺服器端完成。
-- 安全管理數據——不需要管理自己的對話狀態，您可以依賴線程存儲所需的所有資訊。
+- 安全管理數據——無需管理自己的對話狀態，您可以依賴線程存儲所需的所有資訊。
 - 開箱即用的工具——可用於與數據源互動的工具，例如 Bing、Azure AI 搜索和 Azure 函數。
 
 Azure AI Agent Service 中的工具可分為兩類：
 
 1. 知識工具：
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">使用 Bing 搜索進行基礎查詢</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">使用 Bing 搜索進行基礎化</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">文件搜索</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI 搜索</a>
 
 2. 行動工具：
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">函數調用</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">程式碼解釋器</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">OpenAI 定義的工具</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">OpenAI 定義工具</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview" target="_blank">Azure 函數</a>
 
 Agent Service 允許我們將這些工具一起使用作為 `toolset`。它還利用 `threads` 來追蹤特定對話的消息歷史。
@@ -277,7 +277,7 @@ Agent Service 允許我們將這些工具一起使用作為 `toolset`。它還�
 
 ![代理服務運作示意圖](../../../translated_images/agent-service-in-action.34fb465c9a84659edd3003f8cb62d6b366b310a09b37c44e32535021fbb5c93f.hk.jpg)
 
-要使用該服務的任何工具，我們可以創建一個客戶端並定義工具或工具集。以下 Python 程式碼展示了如何實際實現這一點。LLM 將能夠查看工具集並根據用戶請求決定使用用戶創建的函數 `fetch_sales_data_using_sqlite_query` 或預構建的程式碼解釋器。
+要使用此服務的任何工具，我們可以創建一個客戶端並定義一個工具或工具集。實際實現時，我們可以使用以下 Python 程式碼。LLM 將能夠查看工具集並根據用戶請求決定使用用戶創建的函數 `fetch_sales_data_using_sqlite_query` 或預構建的程式碼解釋器。
 
 ```python 
 import os
@@ -307,29 +307,26 @@ agent = project_client.agents.create_agent(
 )
 ```
 
-## 使用工具使用設計模式構建可信賴 AI 代理的特別考量是什麼？
+## 使用工具使用設計模式構建可信賴 AI 代理需要注意哪些特別事項？
 
 LLM 動態生成的 SQL 的常見問題是安全性，特別是 SQL 注入或惡意操作（例如刪除或篡改資料庫）的風險。雖然這些問題是合理的，但可以透過正確配置資料庫訪問權限有效減輕。對於大多數資料庫，這涉及將資料庫配置為只讀。對於像 PostgreSQL 或 Azure SQL 這樣的資料庫服務，應為應用程式分配只讀（SELECT）角色。
 
 在安全環境中運行應用程式進一步增強了保護。在企業場景中，數據通常從運營系統中提取並轉換為只讀資料庫或數據倉庫，並具有用戶友好的架構。此方法確保數據安全、性能和可訪問性得到優化，並且應用程式具有受限的只讀訪問權限。
 
-## 其他資源
+### 對工具使用設計模式有更多問題嗎？
+加入 [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord)，與其他學員交流、參加辦公時間，並解答有關 AI Agents 的問題。
 
--
-<a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">
-Azure AI Agents Service 工作坊  
-- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Contoso Creative Writer 多代理工作坊</a>  
-- <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">Semantic Kernel 函數調用教學</a>  
-- <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Semantic Kernel 代碼解釋器</a>  
-- <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Autogen 工具</a>  
+## 額外資源
 
-## 上一課  
+## 上一課
 
-[理解代理設計模式](../03-agentic-design-patterns/README.md)  
+[了解代理設計模式](../03-agentic-design-patterns/README.md)
 
-## 下一課  
+## 下一課
 
-[代理 RAG](../05-agentic-rag/README.md)  
+[代理式 RAG](../05-agentic-rag/README.md)
+
+---
 
 **免責聲明**：  
-本文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文文件作為權威來源。對於關鍵資訊，建議尋求專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解讀概不負責。
+本文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。

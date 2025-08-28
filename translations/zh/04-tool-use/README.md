@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7d24f735b3c326b2e515f049a0330e54",
-  "translation_date": "2025-08-21T12:20:54+00:00",
+  "original_hash": "4a5ccc4ad1dba85fbc2087cf3b986544",
+  "translation_date": "2025-08-28T09:07:55+00:00",
   "source_file": "04-tool-use/README.md",
   "language_code": "zh"
 }
@@ -13,9 +13,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 # 工具使用设计模式
 
-工具的有趣之处在于它们可以扩展AI代理的能力范围。通过添加工具，代理可以执行更多种类的操作，而不仅仅局限于有限的动作集合。在本章中，我们将探讨工具使用设计模式，该模式描述了AI代理如何使用特定工具来实现其目标。
+工具的有趣之处在于，它们使AI代理能够拥有更广泛的能力。通过添加工具，代理不再局限于一组有限的操作，而是可以执行各种操作。在本章中，我们将探讨工具使用设计模式，该模式描述了AI代理如何使用特定工具来实现其目标。
 
-## 简介
+## 介绍
 
 在本课中，我们将回答以下问题：
 
@@ -35,42 +35,42 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 什么是工具使用设计模式？
 
-**工具使用设计模式**的核心是赋予LLM与外部工具交互的能力，以实现特定目标。工具是代理可以执行的代码，例如计算器函数或第三方服务的API调用（如股票价格查询或天气预报）。在AI代理的上下文中，工具设计为响应**模型生成的函数调用**而被代理执行。
+**工具使用设计模式**的核心是赋予大型语言模型（LLMs）与外部工具交互的能力，以实现特定目标。工具是代理可以执行的代码，例如一个简单的函数（如计算器）或调用第三方服务的API（如股票价格查询或天气预报）。在AI代理的上下文中，工具被设计为响应**模型生成的函数调用**而执行。
 
 ## 它可以应用于哪些使用场景？
 
-AI代理可以利用工具完成复杂任务、检索信息或做出决策。工具使用设计模式通常用于需要动态与外部系统交互的场景，例如数据库、网络服务或代码解释器。这种能力适用于多种使用场景，包括：
+AI代理可以利用工具完成复杂任务、检索信息或做出决策。工具使用设计模式通常用于需要与外部系统（如数据库、网络服务或代码解释器）动态交互的场景。这种能力适用于多种使用场景，包括：
 
-- **动态信息检索**：代理可以查询外部API或数据库以获取最新数据（例如查询SQLite数据库进行数据分析、获取股票价格或天气信息）。
+- **动态信息检索**：代理可以查询外部API或数据库以获取最新数据（例如，查询SQLite数据库进行数据分析、获取股票价格或天气信息）。
 - **代码执行与解释**：代理可以执行代码或脚本以解决数学问题、生成报告或进行模拟。
-- **工作流自动化**：通过集成任务调度器、电子邮件服务或数据管道等工具，自动化重复或多步骤的工作流。
-- **客户支持**：代理可以与CRM系统、工单平台或知识库交互以解决用户问题。
-- **内容生成与编辑**：代理可以利用语法检查器、文本摘要工具或内容安全评估器等工具协助完成内容创建任务。
+- **工作流自动化**：通过集成任务调度器、邮件服务或数据管道等工具，自动化重复或多步骤的工作流。
+- **客户支持**：代理可以与CRM系统、工单平台或知识库交互，以解决用户问题。
+- **内容生成与编辑**：代理可以利用语法检查器、文本摘要工具或内容安全评估器等工具，协助完成内容创作任务。
 
 ## 实现工具使用设计模式需要哪些元素/构建模块？
 
 这些构建模块使AI代理能够执行广泛的任务。以下是实现工具使用设计模式所需的关键元素：
 
-- **函数/工具模式**：详细定义可用工具，包括函数名称、用途、所需参数和预期输出。这些模式使LLM能够理解可用工具及如何构造有效请求。
-- **函数执行逻辑**：管理工具的调用时机和方式，基于用户意图和对话上下文。这可能包括规划模块、路由机制或动态决定工具使用的条件流程。
-- **消息处理系统**：管理用户输入、LLM响应、工具调用和工具输出之间的对话流程的组件。
+- **函数/工具模式**：对可用工具的详细定义，包括函数名称、用途、所需参数和预期输出。这些模式使LLM能够理解可用工具及如何构造有效请求。
+- **函数执行逻辑**：根据用户意图和对话上下文，管理工具调用的方式和时机。这可能包括规划模块、路由机制或动态确定工具使用的条件流。
+- **消息处理系统**：管理用户输入、LLM响应、工具调用和工具输出之间的对话流的组件。
 - **工具集成框架**：连接代理与各种工具的基础设施，无论是简单函数还是复杂的外部服务。
-- **错误处理与验证**：处理工具执行失败、验证参数以及管理意外响应的机制。
-- **状态管理**：跟踪对话上下文、之前的工具交互以及持久数据，以确保多轮交互的一致性。
+- **错误处理与验证**：处理工具执行中的失败、验证参数并管理意外响应的机制。
+- **状态管理**：跟踪对话上下文、先前的工具交互和持久数据，以确保多轮交互中的一致性。
 
 接下来，我们将更详细地探讨函数/工具调用。
 
 ### 函数/工具调用
 
-函数调用是使大型语言模型（LLM）与工具交互的主要方式。“函数”和“工具”通常可以互换使用，因为“函数”（可重用代码块）是代理用来完成任务的“工具”。为了调用函数代码，LLM需要将用户请求与函数描述进行比较。为此，会将包含所有可用函数描述的模式发送给LLM。LLM选择最适合任务的函数，并返回其名称和参数。选定的函数被调用，其响应返回给LLM，LLM使用这些信息来回应用户请求。
+函数调用是使大型语言模型（LLMs）与工具交互的主要方式。“函数”和“工具”通常可以互换使用，因为“函数”（可重用代码块）是代理用来完成任务的“工具”。为了调用函数代码，LLM需要将用户请求与函数描述进行比较。为此，会将包含所有可用函数描述的模式发送给LLM。LLM随后选择最适合任务的函数，并返回其名称和参数。选定的函数被调用，其响应返回给LLM，LLM使用这些信息来回应用户请求。
 
-开发者要为代理实现函数调用，需要：
+开发者要为代理实现函数调用，需要以下内容：
 
 1. 支持函数调用的LLM模型
 2. 包含函数描述的模式
 3. 每个描述函数的代码
 
-以下是一个获取城市当前时间的示例：
+以下通过获取某城市当前时间的示例来说明：
 
 1. **初始化支持函数调用的LLM：**
 
@@ -85,9 +85,9 @@ AI代理可以利用工具完成复杂任务、检索信息或做出决策。工
     )
     ```
 
-1. **创建函数模式**：
+2. **创建函数模式**：
 
-    接下来，我们将定义一个JSON模式，其中包含函数名称、函数用途的描述以及函数参数的名称和描述。然后将此模式与用户请求（例如查找旧金山的时间）一起传递给之前创建的客户端。需要注意的是，返回的是一个**工具调用**，而不是问题的最终答案。如前所述，LLM返回为任务选择的函数名称以及将传递给它的参数。
+    接下来，我们将定义一个JSON模式，其中包含函数名称、函数用途的描述以及函数参数的名称和描述。然后将此模式与用户请求（例如查找旧金山的时间）一起传递给之前创建的客户端。需要注意的是，返回的是一个**工具调用**，而**不是**问题的最终答案。如前所述，LLM返回的是为任务选择的函数名称及其参数。
 
     ```python
     # Function description for the model to read
@@ -140,7 +140,7 @@ AI代理可以利用工具完成复杂任务、检索信息或做出决策。工
     ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_pOsKdUlqvdyttYB67MOj434b', function=Function(arguments='{"location":"San Francisco"}', name='get_current_time'), type='function')])
     ```
   
-1. **执行任务所需的函数代码**：
+3. **执行任务所需的函数代码**：
 
     现在LLM已经选择了需要运行的函数，接下来需要实现并执行完成任务的代码。我们可以用Python实现获取当前时间的代码，同时编写代码从response_message中提取函数名称和参数以获得最终结果。
 
@@ -163,7 +163,7 @@ AI代理可以利用工具完成复杂任务、检索信息或做出决策。工
         return json.dumps({"location": location, "current_time": "unknown"})
     ```
 
-     ```python
+    ```python
      # Handle function calls
       if response_message.tool_calls:
           for tool_call in response_message.tool_calls:
@@ -193,13 +193,13 @@ AI代理可以利用工具完成复杂任务、检索信息或做出决策。工
       return final_response.choices[0].message.content
      ```
 
-     ```bash
+    ```bash
       get_current_time called with location: San Francisco
       Timezone found for san francisco
       The current time in San Francisco is 09:24 AM.
      ```
 
-函数调用是大多数代理工具使用设计的核心，但从头开始实现可能会有一定挑战。正如我们在[第2课](../../../02-explore-agentic-frameworks)中所学，代理框架为我们提供了预构建的模块来实现工具使用。
+函数调用是大多数代理工具使用设计的核心，但从头开始实现它有时可能具有挑战性。正如我们在[第2课](../../../02-explore-agentic-frameworks)中所学，代理框架为我们提供了实现工具使用的预构建模块。
 
 ## 使用代理框架的工具使用示例
 
@@ -207,13 +207,13 @@ AI代理可以利用工具完成复杂任务、检索信息或做出决策。工
 
 ### Semantic Kernel
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a>是一个开源AI框架，适用于使用大型语言模型（LLM）的.NET、Python和Java开发者。它通过一种称为<a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">序列化</a>的过程，自动向模型描述您的函数及其参数，从而简化了函数调用的过程。它还处理模型与代码之间的交互。使用像Semantic Kernel这样的代理框架的另一个优势是，它允许您访问预构建工具，例如<a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">文件搜索</a>和<a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">代码解释器</a>。
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a>是一个面向使用大型语言模型（LLMs）的.NET、Python和Java开发者的开源AI框架。它通过一种称为<a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">序列化</a>的过程，自动向模型描述函数及其参数，从而简化了函数调用的过程。它还处理模型与代码之间的交互。使用Semantic Kernel等代理框架的另一个优势是，它允许您访问预构建工具，例如<a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">文件搜索</a>和<a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">代码解释器</a>。
 
 以下图表展示了使用Semantic Kernel进行函数调用的过程：
 
 ![函数调用](../../../translated_images/functioncalling-diagram.a84006fc287f60140cc0a484ff399acd25f69553ea05186981ac4d5155f9c2f6.zh.png)
 
-在Semantic Kernel中，函数/工具被称为<a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">插件</a>。我们可以将之前的`get_current_time`函数转换为一个插件，将其变成一个包含该函数的类。我们还可以导入`kernel_function`装饰器，该装饰器接收函数的描述。当您创建一个包含GetCurrentTimePlugin的内核时，内核会自动序列化函数及其参数，并在此过程中创建发送给LLM的模式。
+在Semantic Kernel中，函数/工具被称为<a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">插件</a>。我们可以将之前的`get_current_time`函数转换为一个插件，将其封装为一个包含该函数的类。我们还可以导入`kernel_function`装饰器，该装饰器接收函数的描述。当您创建一个包含GetCurrentTimePlugin的内核时，内核会自动序列化函数及其参数，并在此过程中创建发送给LLM的模式。
 
 ```python
 from semantic_kernel.functions import kernel_function
@@ -249,16 +249,16 @@ kernel.add_plugin(get_current_time_plugin)
 
 与直接使用LLM API开发相比，Azure AI Agent Service提供了一些优势，包括：
 
-- 自动工具调用——无需解析工具调用、调用工具和处理响应；所有这些现在都在服务器端完成。
+- 自动工具调用——无需解析工具调用、调用工具并处理响应；所有这些都在服务器端完成。
 - 安全管理数据——无需管理自己的对话状态，可以依赖线程存储所需的所有信息。
-- 开箱即用的工具——可用于与数据源交互的工具，例如Bing、Azure AI Search和Azure Functions。
+- 开箱即用的工具——可用于与数据源交互的工具，例如Bing、Azure AI搜索和Azure Functions。
 
-Azure AI Agent Service中的工具可以分为两类：
+Azure AI Agent Service中的工具分为两类：
 
 1. 知识工具：
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">使用Bing搜索进行基础查询</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">Bing搜索基础</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">文件搜索</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI Search</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI搜索</a>
 
 2. 动作工具：
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">函数调用</a>
@@ -268,13 +268,13 @@ Azure AI Agent Service中的工具可以分为两类：
 
 Agent Service允许我们将这些工具组合为一个`工具集`。它还利用`线程`来跟踪特定对话的消息历史。
 
-假设您是Contoso公司的一名销售代理，您希望开发一个可以回答有关销售数据问题的对话代理。
+假设您是Contoso公司的一名销售代理，您希望开发一个能够回答有关销售数据问题的对话代理。
 
-以下图片展示了如何使用Azure AI Agent Service分析您的销售数据：
+以下图片展示了如何使用Azure AI Agent Service分析销售数据：
 
-![Agentic Service In Action](../../../translated_images/agent-service-in-action.34fb465c9a84659edd3003f8cb62d6b366b310a09b37c44e32535021fbb5c93f.zh.jpg)
+![代理服务示例](../../../translated_images/agent-service-in-action.34fb465c9a84659edd3003f8cb62d6b366b310a09b37c44e32535021fbb5c93f.zh.jpg)
 
-要使用服务中的任何工具，我们可以创建一个客户端并定义一个工具或工具集。以下Python代码展示了如何实际实现这一点。LLM将能够查看工具集，并根据用户请求决定使用用户创建的函数`fetch_sales_data_using_sqlite_query`还是预构建的代码解释器。
+要使用服务中的任何工具，我们可以创建一个客户端并定义一个工具或工具集。以下Python代码展示了如何实际实现这一点。LLM将能够查看工具集，并根据用户请求决定是使用用户创建的函数`fetch_sales_data_using_sqlite_query`还是预构建的代码解释器。
 
 ```python 
 import os
@@ -306,27 +306,24 @@ agent = project_client.agents.create_agent(
 
 ## 使用工具使用设计模式构建可信赖AI代理需要注意哪些特殊事项？
 
-使用LLM动态生成SQL时，一个常见的担忧是安全性，特别是SQL注入或恶意操作（如删除或篡改数据库）的风险。虽然这些担忧是合理的，但可以通过正确配置数据库访问权限有效缓解。对于大多数数据库，这涉及将数据库配置为只读。对于像PostgreSQL或Azure SQL这样的数据库服务，应用程序应被分配只读（SELECT）角色。
+使用LLM动态生成SQL时，一个常见的担忧是安全性，特别是SQL注入或恶意操作（如删除或篡改数据库）的风险。虽然这些担忧是合理的，但可以通过正确配置数据库访问权限有效缓解。对于大多数数据库，这涉及将数据库配置为只读模式。对于像PostgreSQL或Azure SQL这样的数据库服务，应用程序应被分配只读（SELECT）角色。
 
-在安全环境中运行应用程序进一步增强了保护。在企业场景中，数据通常从操作系统中提取并转换为只读数据库或数据仓库，并具有用户友好的模式。这种方法确保数据安全、性能优化且易于访问，同时应用程序具有受限的只读访问权限。
+在安全环境中运行应用程序进一步增强了保护。在企业场景中，数据通常从操作系统中提取并转换到只读数据库或数据仓库中，并具有用户友好的模式。这种方法确保了数据的安全性、性能和可访问性，同时应用程序的访问权限受到限制，仅限于只读。
 
-## 其他资源
+### 对工具使用设计模式还有疑问吗？
+加入 [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord)，与其他学习者交流，参加答疑活动，并获取有关 AI Agents 的问题解答。
 
--
-<a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">
-Azure AI Agents 服务工作坊  
-- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Contoso 创意写作多代理工作坊</a>  
-- <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">语义内核函数调用教程</a>  
-- <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">语义内核代码解释器</a>  
-- <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Autogen 工具</a>  
+## 额外资源
 
-## 上一课  
+## 上一课
 
-[理解代理设计模式](../03-agentic-design-patterns/README.md)  
+[理解代理设计模式](../03-agentic-design-patterns/README.md)
 
-## 下一课  
+## 下一课
 
-[代理式 RAG](../05-agentic-rag/README.md)  
+[代理式 RAG](../05-agentic-rag/README.md)
+
+---
 
 **免责声明**：  
-本文档使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们努力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议使用专业人工翻译。对于因使用本翻译而引起的任何误解或误读，我们概不负责。
+本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。
