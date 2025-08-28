@@ -35,6 +35,10 @@ If this is your first time building with Generative AI models, check out our [Ge
 
 Don't forget to [star (🌟) this repo](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) and [fork this repo](https://github.com/microsoft/ai-agents-for-beginners/fork) to run the code.
 
+### Meet Other Learners, Get Your Questions Answered
+
+If you get stuck or have any questions about building AI Agents, join our dedicated Discord Channel in the [Azure AI Foundry Community Discord](https://aka.ms/ai-agents/discord)
+
 ### What You Need 
 
 Each lesson in this course includes code examples, which can be found in the code_samples folder. You can [fork this repo](https://github.com/microsoft/ai-agents-for-beginners/fork) to create your own copy.  
@@ -56,9 +60,7 @@ For more information on running the code for this course, go to the [Course Setu
 
 Do you have suggestions or found spelling or code errors? [Raise an issue](https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst) or [Create a pull request](https://github.com/microsoft/ai-agents-for-beginners/pulls?WT.mc_id=academic-105485-koreyst)
 
-If you get stuck or have any questions about building AI Agents, join our [Azure AI Foundry Community Discord](https://discord.gg/kzRShWzttr) 
 
-If you have product feedback or errors whilst building visit our [Azure AI Foundry Developer Forum](https://aka.ms/azureaifoundry/forum)
 
 ## 📂 Each lesson includes
 

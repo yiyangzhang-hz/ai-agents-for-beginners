@@ -113,7 +113,7 @@ This component is used for **handling updates and passing messages**. It is part
 
 ### A2A Example
 
-![A2A Diagram](./images/A2A-diagram.png)
+![A2A Diagram](./images/A2A-Diagram.png)
 
 Let's expand on our travel booking scenario, but this time using A2A.
 
