@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7d24f735b3c326b2e515f049a0330e54",
-  "translation_date": "2025-08-21T13:23:41+00:00",
+  "original_hash": "4a5ccc4ad1dba85fbc2087cf3b986544",
+  "translation_date": "2025-08-29T17:26:12+00:00",
   "source_file": "04-tool-use/README.md",
   "language_code": "nl"
 }
@@ -13,14 +13,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 # Tool Use Design Pattern
 
-Tools zijn interessant omdat ze AI-agenten in staat stellen een breder scala aan mogelijkheden te hebben. In plaats van dat de agent een beperkte set acties kan uitvoeren, kan de agent door een tool toe te voegen nu een breed scala aan acties uitvoeren. In dit hoofdstuk bekijken we het Tool Use Design Pattern, dat beschrijft hoe AI-agenten specifieke tools kunnen gebruiken om hun doelen te bereiken.
+Tools zijn interessant omdat ze AI-agenten in staat stellen een breder scala aan mogelijkheden te hebben. In plaats van dat de agent een beperkte set acties kan uitvoeren, kan de agent met een tool nu een breed scala aan acties uitvoeren. In dit hoofdstuk bekijken we het Tool Use Design Pattern, dat beschrijft hoe AI-agenten specifieke tools kunnen gebruiken om hun doelen te bereiken.
 
 ## Introductie
 
 In deze les proberen we de volgende vragen te beantwoorden:
 
 - Wat is het Tool Use Design Pattern?
-- Voor welke use cases kan het worden toegepast?
+- Voor welke toepassingen kan het worden gebruikt?
 - Wat zijn de elementen/bouwstenen die nodig zijn om het design pattern te implementeren?
 - Welke speciale overwegingen zijn er bij het gebruik van het Tool Use Design Pattern om betrouwbare AI-agenten te bouwen?
 
@@ -29,7 +29,7 @@ In deze les proberen we de volgende vragen te beantwoorden:
 Na het voltooien van deze les kun je:
 
 - Het Tool Use Design Pattern definiëren en het doel ervan uitleggen.
-- Use cases identificeren waarin het Tool Use Design Pattern toepasbaar is.
+- Toepassingen identificeren waar het Tool Use Design Pattern van toepassing is.
 - De belangrijkste elementen begrijpen die nodig zijn om het design pattern te implementeren.
 - Overwegingen herkennen om betrouwbaarheid te waarborgen in AI-agenten die dit design pattern gebruiken.
 
@@ -37,19 +37,19 @@ Na het voltooien van deze les kun je:
 
 Het **Tool Use Design Pattern** richt zich op het geven van LLMs de mogelijkheid om te communiceren met externe tools om specifieke doelen te bereiken. Tools zijn code die door een agent kan worden uitgevoerd om acties uit te voeren. Een tool kan een eenvoudige functie zijn, zoals een rekenmachine, of een API-aanroep naar een externe service, zoals het opzoeken van aandelenkoersen of weersvoorspellingen. In de context van AI-agenten zijn tools ontworpen om door agenten te worden uitgevoerd als reactie op **modelgegenereerde functieaanroepen**.
 
-## Voor welke use cases kan het worden toegepast?
+## Voor welke toepassingen kan het worden gebruikt?
 
-AI-agenten kunnen tools gebruiken om complexe taken uit te voeren, informatie op te halen of beslissingen te nemen. Het Tool Use Design Pattern wordt vaak gebruikt in scenario's die dynamische interactie met externe systemen vereisen, zoals databases, webservices of code-interpreters. Deze mogelijkheid is nuttig voor verschillende use cases, waaronder:
+AI-agenten kunnen tools gebruiken om complexe taken uit te voeren, informatie op te halen of beslissingen te nemen. Het Tool Use Design Pattern wordt vaak gebruikt in scenario's die dynamische interactie met externe systemen vereisen, zoals databases, webservices of code-interpreters. Deze mogelijkheid is nuttig voor verschillende toepassingen, waaronder:
 
-- **Dynamische informatieophaling:** Agenten kunnen externe API's of databases raadplegen om actuele gegevens op te halen (bijv. het opvragen van een SQLite-database voor data-analyse, het ophalen van aandelenkoersen of weersinformatie).
+- **Dynamische Informatieophaling:** Agenten kunnen externe API's of databases raadplegen om actuele gegevens op te halen (bijv. een SQLite-database raadplegen voor data-analyse, aandelenkoersen of weersinformatie ophalen).
 - **Code-uitvoering en interpretatie:** Agenten kunnen code of scripts uitvoeren om wiskundige problemen op te lossen, rapporten te genereren of simulaties uit te voeren.
-- **Workflow-automatisering:** Het automatiseren van repetitieve of meerstaps-workflows door tools zoals taakplanners, e-mailservices of datastromen te integreren.
+- **Workflowautomatisering:** Het automatiseren van repetitieve of meerstaps-workflows door tools zoals taakplanners, e-mailservices of datastromen te integreren.
 - **Klantenservice:** Agenten kunnen communiceren met CRM-systemen, ticketplatforms of kennisbanken om gebruikersvragen op te lossen.
-- **Contentcreatie en -bewerking:** Agenten kunnen tools zoals grammaticacontrole, tekstsamenvatting of contentveiligheidsevaluators gebruiken om te helpen bij contentcreatietaken.
+- **Contentcreatie en -bewerking:** Agenten kunnen tools zoals grammaticacontrole, tekstsamenvatting of inhoudsveiligheidsevaluators gebruiken om te helpen bij contentcreatietaken.
 
 ## Wat zijn de elementen/bouwstenen die nodig zijn om het Tool Use Design Pattern te implementeren?
 
-Deze bouwstenen stellen de AI-agent in staat om een breed scala aan taken uit te voeren. Laten we de belangrijkste elementen bekijken die nodig zijn om het Tool Use Design Pattern te implementeren:
+Deze bouwstenen stellen de AI-agent in staat een breed scala aan taken uit te voeren. Laten we de belangrijkste elementen bekijken die nodig zijn om het Tool Use Design Pattern te implementeren:
 
 - **Functie-/Toolschema's**: Gedetailleerde definities van beschikbare tools, inclusief functienaam, doel, vereiste parameters en verwachte outputs. Deze schema's stellen de LLM in staat te begrijpen welke tools beschikbaar zijn en hoe geldige verzoeken te construeren.
 
@@ -61,7 +61,7 @@ Deze bouwstenen stellen de AI-agent in staat om een breed scala aan taken uit te
 
 - **Foutafhandeling en validatie**: Mechanismen om fouten in tooluitvoering af te handelen, parameters te valideren en onverwachte reacties te beheren.
 
-- **State Management**: Houdt de context van het gesprek, eerdere toolinteracties en persistente gegevens bij om consistentie te waarborgen bij interacties met meerdere beurten.
+- **Staatbeheer**: Houdt de context van het gesprek, eerdere toolinteracties en persistente gegevens bij om consistentie te waarborgen bij interacties met meerdere beurten.
 
 Laten we nu Function/Tool Calling in meer detail bekijken.
 
@@ -79,7 +79,7 @@ Laten we het voorbeeld gebruiken van het verkrijgen van de huidige tijd in een s
 
 1. **Initialiseer een LLM die functieaanroepen ondersteunt:**
 
-    Niet alle modellen ondersteunen functieaanroepen, dus het is belangrijk om te controleren of de LLM die je gebruikt dit doet. <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> ondersteunt functieaanroepen. We kunnen beginnen met het initiëren van de Azure OpenAI-client.
+    Niet alle modellen ondersteunen functieaanroepen, dus het is belangrijk om te controleren of het LLM dat je gebruikt dit doet. <a href="https://learn.microsoft.com/azure/ai-services/openai/how-to/function-calling" target="_blank">Azure OpenAI</a> ondersteunt functieaanroepen. We kunnen beginnen met het initiëren van de Azure OpenAI-client.
 
     ```python
     # Initialize the Azure OpenAI client
@@ -92,7 +92,7 @@ Laten we het voorbeeld gebruiken van het verkrijgen van de huidige tijd in een s
 
 1. **Maak een Functieschema**:
 
-    Vervolgens definiëren we een JSON-schema dat de functienaam, beschrijving van wat de functie doet, en de namen en beschrijvingen van de functieparameters bevat. We nemen dit schema en geven het door aan de eerder gemaakte client, samen met het verzoek van de gebruiker om de tijd in San Francisco te vinden. Wat belangrijk is om op te merken, is dat een **toolaanroep** wordt geretourneerd, **niet** het uiteindelijke antwoord op de vraag. Zoals eerder vermeld, retourneert de LLM de naam van de functie die is geselecteerd voor de taak en de argumenten die eraan worden doorgegeven.
+    Vervolgens definiëren we een JSON-schema dat de functienaam, beschrijving van wat de functie doet, en de namen en beschrijvingen van de functieparameters bevat. We nemen dit schema en geven het door aan de eerder gemaakte client, samen met het verzoek van de gebruiker om de tijd in San Francisco te vinden. Wat belangrijk is om op te merken, is dat een **toolaanroep** wordt geretourneerd, **niet** het definitieve antwoord op de vraag. Zoals eerder vermeld, retourneert de LLM de naam van de functie die is geselecteerd voor de taak en de argumenten die eraan worden doorgegeven.
 
     ```python
     # Function description for the model to read
@@ -147,7 +147,7 @@ Laten we het voorbeeld gebruiken van het verkrijgen van de huidige tijd in een s
   
 1. **De functiecode die nodig is om de taak uit te voeren:**
 
-    Nu de LLM heeft gekozen welke functie moet worden uitgevoerd, moet de code die de taak uitvoert worden geïmplementeerd en uitgevoerd. We kunnen de code implementeren om de huidige tijd in Python te verkrijgen. We moeten ook de code schrijven om de naam en argumenten uit het response_message te halen om het uiteindelijke resultaat te krijgen.
+    Nu de LLM heeft gekozen welke functie moet worden uitgevoerd, moet de code die de taak uitvoert worden geïmplementeerd en uitgevoerd. We kunnen de code implementeren om de huidige tijd in Python te verkrijgen. We moeten ook de code schrijven om de naam en argumenten uit het response_message te halen om het definitieve resultaat te krijgen.
 
     ```python
       def get_current_time(location):
@@ -250,12 +250,12 @@ kernel.add_plugin(get_current_time_plugin)
   
 ### Azure AI Agent Service
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> is een nieuwer agentic framework dat is ontworpen om ontwikkelaars in staat te stellen veilig hoogwaardige en uitbreidbare AI-agenten te bouwen, implementeren en schalen zonder dat ze de onderliggende compute- en opslagresources hoeven te beheren. Het is vooral nuttig voor zakelijke toepassingen, omdat het een volledig beheerde service is met beveiliging van ondernemingsniveau.
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> is een nieuwer agentic framework dat is ontworpen om ontwikkelaars in staat te stellen veilig hoogwaardige en uitbreidbare AI-agenten te bouwen, implementeren en schalen zonder dat ze de onderliggende compute- en opslagbronnen hoeven te beheren. Het is vooral nuttig voor zakelijke toepassingen, omdat het een volledig beheerde service is met beveiliging van ondernemingsklasse.
 
 In vergelijking met ontwikkelen met de LLM API rechtstreeks biedt Azure AI Agent Service enkele voordelen, waaronder:
 
-- Automatische toolaanroepen – geen noodzaak om een toolaanroep te parseren, de tool aan te roepen en de reactie af te handelen; dit alles wordt nu server-side gedaan
-- Veilig beheerde gegevens – in plaats van je eigen conversatiestate te beheren, kun je vertrouwen op threads om alle informatie op te slaan die je nodig hebt
+- Automatische toolaanroepen – geen noodzaak om een toolaanroep te parseren, de tool aan te roepen en de reactie af te handelen; dit alles wordt nu server-side gedaan.
+- Veilig beheerde gegevens – in plaats van je eigen gespreksstatus te beheren, kun je vertrouwen op threads om alle informatie op te slaan die je nodig hebt.
 - Kant-en-klare tools – Tools die je kunt gebruiken om te communiceren met je gegevensbronnen, zoals Bing, Azure AI Search en Azure Functions.
 
 De tools die beschikbaar zijn in Azure AI Agent Service kunnen worden onderverdeeld in twee categorieën:
@@ -309,29 +309,26 @@ agent = project_client.agents.create_agent(
 )
 ```
 
-## Wat zijn de speciale overwegingen voor het gebruik van het Tool Use Design Pattern om betrouwbare AI-agenten te bouwen?
+## Welke speciale overwegingen zijn er bij het gebruik van het Tool Use Design Pattern om betrouwbare AI-agenten te bouwen?
 
 Een veelvoorkomende zorg bij SQL die dynamisch wordt gegenereerd door LLMs is beveiliging, met name het risico van SQL-injectie of kwaadaardige acties, zoals het verwijderen of manipuleren van de database. Hoewel deze zorgen geldig zijn, kunnen ze effectief worden gemitigeerd door de toegangsrechten van de database correct te configureren. Voor de meeste databases houdt dit in dat de database wordt geconfigureerd als alleen-lezen. Voor databaseservices zoals PostgreSQL of Azure SQL moet de app een alleen-lezen (SELECT) rol krijgen.
 
 Het draaien van de app in een veilige omgeving biedt extra bescherming. In zakelijke scenario's worden gegevens meestal geëxtraheerd en getransformeerd van operationele systemen naar een alleen-lezen database of datawarehouse met een gebruiksvriendelijke schema. Deze aanpak zorgt ervoor dat de gegevens veilig zijn, geoptimaliseerd voor prestaties en toegankelijkheid, en dat de app beperkte, alleen-lezen toegang heeft.
 
+### Heb je meer vragen over het Tool Use Design Pattern?
+Word lid van de [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) om andere leerlingen te ontmoeten, spreekuren bij te wonen en je vragen over AI Agents beantwoord te krijgen.
+
 ## Aanvullende bronnen
 
--
-<a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">
-Azure AI Agents Service Workshop</a>
-- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Contoso Creative Writer Multi-Agent Workshop</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">Semantic Kernel Function Calling Tutorial</a>
-- <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Semantic Kernel Code Interpreter</a>
-- <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Autogen Tools</a>
+## Vorige les
 
-## Vorige Les
+[Begrip van Agentic Design Patterns](../03-agentic-design-patterns/README.md)
 
-[Begrip van Agentische Ontwerpprincipes](../03-agentic-design-patterns/README.md)
+## Volgende les
 
-## Volgende Les
+[Agentic RAG](../05-agentic-rag/README.md)
 
-[Agentische RAG](../05-agentic-rag/README.md)
+---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8693a24942b670e3cb8def77f92513f9",
-  "translation_date": "2025-08-21T13:24:32+00:00",
+  "original_hash": "c55b973b1562abf5aadf6a4028265ac5",
+  "translation_date": "2025-08-29T17:25:42+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "nl"
 }
@@ -13,9 +13,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Deze les behandelt hoe je de codevoorbeelden van deze cursus kunt uitvoeren.
 
-## Clone of Fork deze Repo
+## Sluit je aan bij andere cursisten en krijg hulp
 
-Om te beginnen, clone of fork de GitHub-repository. Hiermee maak je je eigen versie van het cursusmateriaal, zodat je de code kunt uitvoeren, testen en aanpassen!
+Voordat je begint met het klonen van je repository, sluit je aan bij het [AI Agents For Beginners Discord-kanaal](https://aka.ms/ai-agents/discord) om hulp te krijgen bij de installatie, vragen over de cursus te stellen of om in contact te komen met andere cursisten.
+
+## Clone of Fork deze Repository
+
+Om te beginnen, clone of fork de GitHub Repository. Hiermee maak je je eigen versie van het cursusmateriaal zodat je de code kunt uitvoeren, testen en aanpassen!
 
 Dit kan worden gedaan door op de link te klikken naar
 
@@ -23,7 +27,7 @@ Je zou nu je eigen geforkte versie van deze cursus moeten hebben via de volgende
 
 ![Forked Repo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.nl.png)
 
-## Code uitvoeren
+## De code uitvoeren
 
 Deze cursus biedt een reeks Jupyter Notebooks waarmee je praktische ervaring kunt opdoen in het bouwen van AI Agents.
 
@@ -37,9 +41,9 @@ De codevoorbeelden maken gebruik van:
 **Vereist een Azure-abonnement**:
 3) Azure AI Foundry + Azure AI Agent Service. Gelabeld als (azureaiagent.ipynb)
 
-We moedigen je aan om alle drie de soorten voorbeelden uit te proberen om te zien welke het beste voor jou werkt.
+We moedigen je aan om alle drie de soorten voorbeelden uit te proberen om te zien welke het beste bij je past.
 
-Welke optie je ook kiest, dit bepaalt welke instellingsstappen je hieronder moet volgen:
+Welke optie je ook kiest, dit bepaalt welke installatie-instructies je hieronder moet volgen:
 
 ## Vereisten
 
@@ -56,9 +60,9 @@ Je kunt ze installeren door het volgende commando in je terminal uit te voeren i
 ```bash
 pip install -r requirements.txt
 ```
-We raden aan om een Python-virtuele omgeving te maken om conflicten en problemen te voorkomen.
+We raden aan om een Python virtual environment te maken om conflicten en problemen te voorkomen.
 
-## Instellen van VSCode
+## VSCode instellen
 Zorg ervoor dat je de juiste versie van Python gebruikt in VSCode.
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
@@ -82,17 +86,17 @@ Volg het [Principe van Minimale Toegang](https://docs.github.com/en/get-started/
 
     ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.nl.png)
 
-2. Voer een beschrijvende naam in voor je token die het doel ervan weerspiegelt, zodat je het later gemakkelijk kunt identificeren.
+2. Geef je token een beschrijvende naam die het doel ervan weerspiegelt, zodat je het later gemakkelijk kunt identificeren.
 
     🔐 Aanbevolen tokenduur
 
     Aanbevolen duur: 30 dagen
     Voor een veiliger aanpak kun je kiezen voor een kortere periode, zoals 7 dagen 🛡️
-    Het is een geweldige manier om jezelf een persoonlijk doel te stellen en de cursus te voltooien terwijl je leerdrang hoog is 🚀.
+    Dit is een geweldige manier om jezelf een persoonlijk doel te stellen en de cursus te voltooien terwijl je leerdrang hoog is 🚀.
 
     ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.nl.png)
 
-3. Beperk de scope van het token tot je fork van deze repository.
+3. Beperk de reikwijdte van het token tot je fork van deze repository.
 
     ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.nl.png)
 
@@ -124,11 +128,11 @@ Je zou nu de codevoorbeelden van deze cursus moeten kunnen uitvoeren.
 
 ### Stap 1: Haal je Azure Project Endpoint op
 
-Volg de stappen om een hub en project te maken in Azure AI Foundry via: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+Volg de stappen om een hub en project te maken in Azure AI Foundry die hier te vinden zijn: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
-Zodra je je project hebt aangemaakt, moet je de verbindingsstring voor je project ophalen.
+Zodra je je project hebt aangemaakt, moet je de verbindingsreeks voor je project ophalen.
 
-Dit kan worden gedaan door naar de **Overview**-pagina van je project te gaan in het Azure AI Foundry-portaal.
+Dit kan worden gedaan door naar de **Overview**-pagina van je project in de Azure AI Foundry-portal te gaan.
 
 ![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.nl.png)
 
@@ -144,7 +148,7 @@ Dit kopieert het voorbeeldbestand en maakt een `.env` in je directory waar je de
 
 Met je gekopieerde token open je het `.env`-bestand in je favoriete teksteditor en plak je je token in het `PROJECT_ENDPOINT`-veld.
 
-### Stap 3: Inloggen bij Azure
+### Stap 3: Log in bij Azure
 
 Als een beveiligingsmaatregel gebruiken we [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) om te authenticeren bij Azure OpenAI met Microsoft Entra ID.
 
@@ -170,7 +174,7 @@ Als je deze voorbeelden wilt uitvoeren, moet je de volgende omgevingsvariabelen 
 
 - `AZURE_OPENAI_RESOURCE_GROUP` - Ga naar **Project properties** op de **Overview**-pagina van het **Management Center**.
 
-- `GLOBAL_LLM_SERVICE` - Onder **Connected resources**, vind de **Azure AI Services**-verbindingnaam. Als deze niet wordt vermeld, controleer dan de **Azure portal** onder je resourcegroep voor de AI Services-resource naam.
+- `GLOBAL_LLM_SERVICE` - Onder **Connected resources**, vind de **Azure AI Services**-verbinding. Als deze niet wordt vermeld, controleer dan de **Azure portal** onder je resourcegroep voor de AI Services-resource.
 
 ### Models + Endpoints-pagina
 
@@ -180,19 +184,19 @@ Als je deze voorbeelden wilt uitvoeren, moet je de volgende omgevingsvariabelen 
 
 ### Azure Portal
 
-- `AZURE_OPENAI_ENDPOINT` - Zoek naar **Azure AI services**, klik erop, ga naar **Resource Management**, **Keys and Endpoint**, scroll naar beneden naar de "Azure OpenAI endpoints" en kopieer degene die "Language APIs" zegt.
+- `AZURE_OPENAI_ENDPOINT` - Zoek naar **Azure AI services**, klik erop, ga naar **Resource Management**, **Keys and Endpoint**, scroll naar beneden naar "Azure OpenAI endpoints" en kopieer degene die "Language APIs" zegt.
 
 - `AZURE_OPENAI_API_KEY` - Kopieer vanaf hetzelfde scherm KEY 1 of KEY 2.
 
 - `AZURE_SEARCH_SERVICE_ENDPOINT` - Vind je **Azure AI Search**-resource, klik erop en bekijk **Overview**.
 
-- `AZURE_SEARCH_API_KEY` - Ga vervolgens naar **Settings** en daarna **Keys** om de primaire of secundaire admin-sleutel te kopiëren.
+- `AZURE_SEARCH_API_KEY` - Ga vervolgens naar **Settings** en daarna **Keys** om de primaire of secundaire beheerderssleutel te kopiëren.
 
 ### Externe webpagina
 
 - `AZURE_OPENAI_API_VERSION` - Bezoek de [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release)-pagina onder **Latest GA API release**.
 
-### Instellen van keyless authentication
+### Keyless authentication instellen
 
 In plaats van je inloggegevens hard te coderen, gebruiken we een keyless verbinding met Azure OpenAI. Hiervoor importeren we `DefaultAzureCredential` en roepen we later de functie `DefaultAzureCredential` aan om de inloggegevens te verkrijgen.
 
@@ -200,9 +204,9 @@ In plaats van je inloggegevens hard te coderen, gebruiken we een keyless verbind
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 ```
 
-## Problemen?
+## Vastgelopen?
 
-Als je problemen hebt met het uitvoeren van deze setup, ga dan naar onze
+Als je problemen hebt met deze installatie, spring dan in onze
 
 ## Volgende les
 
@@ -210,5 +214,7 @@ Je bent nu klaar om de code voor deze cursus uit te voeren. Veel plezier met het
 
 [Introductie tot AI Agents en Agent Use Cases](../01-intro-to-ai-agents/README.md)
 
-**Disclaimer (Vrijwaring)**:  
+---
+
+**Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

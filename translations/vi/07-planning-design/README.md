@@ -1,15 +1,64 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e4e06d3b5d6207459a019c05fee5eb4b",
-  "translation_date": "2025-07-12T10:44:07+00:00",
+  "original_hash": "a28d30590704ea13b6a08d4793cf9c2b",
+  "translation_date": "2025-08-29T17:57:31+00:00",
   "source_file": "07-planning-design/README.md",
   "language_code": "vi"
 }
 -->
-cho một cái nhìn tổng quan nhanh.
+[![Mẫu Thiết Kế Lập Kế Hoạch](../../../translated_images/lesson-7-thumbnail.f7163ac557bea1236242cc86b178c3f1bbf5eb07b87f9cd7c256b366e32bcbb6.vi.png)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
 
-Đoạn mã Python dưới đây minh họa một agent lập kế hoạch đơn giản phân tách một mục tiêu thành các nhiệm vụ con và tạo ra một kế hoạch có cấu trúc:
+> _(Nhấp vào hình ảnh trên để xem video của bài học này)_
+
+# Lập Kế Hoạch Thiết Kế
+
+## Giới Thiệu
+
+Bài học này sẽ đề cập đến:
+
+* Xác định mục tiêu tổng thể rõ ràng và chia một nhiệm vụ phức tạp thành các nhiệm vụ dễ quản lý hơn.
+* Tận dụng đầu ra có cấu trúc để có các phản hồi đáng tin cậy và dễ đọc bởi máy móc hơn.
+* Áp dụng cách tiếp cận dựa trên sự kiện để xử lý các nhiệm vụ động và đầu vào không mong đợi.
+
+## Mục Tiêu Học Tập
+
+Sau khi hoàn thành bài học này, bạn sẽ hiểu về:
+
+* Xác định và đặt mục tiêu tổng thể cho một tác nhân AI, đảm bảo nó biết rõ cần đạt được điều gì.
+* Phân chia một nhiệm vụ phức tạp thành các nhiệm vụ nhỏ hơn và sắp xếp chúng theo trình tự logic.
+* Trang bị cho các tác nhân các công cụ phù hợp (ví dụ: công cụ tìm kiếm hoặc công cụ phân tích dữ liệu), quyết định khi nào và cách sử dụng chúng, và xử lý các tình huống không mong đợi phát sinh.
+* Đánh giá kết quả của các nhiệm vụ nhỏ, đo lường hiệu suất, và lặp lại các hành động để cải thiện đầu ra cuối cùng.
+
+## Xác Định Mục Tiêu Tổng Thể và Phân Chia Nhiệm Vụ
+
+![Xác Định Mục Tiêu và Nhiệm Vụ](../../../translated_images/defining-goals-tasks.d70439e19e37c47ac76c48b209a4eb515bea5b8a5207f6b2e7b5e597f09ccf6a.vi.png)
+
+Hầu hết các nhiệm vụ trong thực tế đều quá phức tạp để giải quyết trong một bước duy nhất. Một tác nhân AI cần một mục tiêu ngắn gọn để hướng dẫn việc lập kế hoạch và hành động của nó. Ví dụ, hãy xem xét mục tiêu:
+
+    "Tạo lịch trình du lịch 3 ngày."
+
+Mặc dù mục tiêu này đơn giản để nêu ra, nhưng vẫn cần được tinh chỉnh. Mục tiêu càng rõ ràng, tác nhân (và bất kỳ cộng tác viên con người nào) càng có thể tập trung vào việc đạt được kết quả đúng, chẳng hạn như tạo một lịch trình toàn diện với các tùy chọn chuyến bay, gợi ý khách sạn, và các hoạt động.
+
+### Phân Chia Nhiệm Vụ
+
+Các nhiệm vụ lớn hoặc phức tạp trở nên dễ quản lý hơn khi được chia thành các nhiệm vụ nhỏ hơn, tập trung vào mục tiêu.
+Đối với ví dụ về lịch trình du lịch, bạn có thể phân chia mục tiêu thành:
+
+* Đặt vé máy bay
+* Đặt khách sạn
+* Thuê xe
+* Cá nhân hóa
+
+Mỗi nhiệm vụ nhỏ sau đó có thể được xử lý bởi các tác nhân hoặc quy trình chuyên biệt. Một tác nhân có thể chuyên tìm kiếm các ưu đãi vé máy bay tốt nhất, một tác nhân khác tập trung vào việc đặt khách sạn, v.v. Một tác nhân điều phối hoặc “xuôi dòng” sau đó có thể tổng hợp các kết quả này thành một lịch trình thống nhất cho người dùng cuối.
+
+Cách tiếp cận theo mô-đun này cũng cho phép cải tiến từng bước. Ví dụ, bạn có thể thêm các tác nhân chuyên biệt cho Gợi Ý Đồ Ăn hoặc Gợi Ý Hoạt Động Địa Phương và tinh chỉnh lịch trình theo thời gian.
+
+### Đầu Ra Có Cấu Trúc
+
+Các Mô Hình Ngôn Ngữ Lớn (LLMs) có thể tạo ra đầu ra có cấu trúc (ví dụ: JSON) dễ dàng hơn cho các tác nhân hoặc dịch vụ xuôi dòng để phân tích và xử lý. Điều này đặc biệt hữu ích trong bối cảnh đa tác nhân, nơi chúng ta có thể thực hiện các nhiệm vụ này sau khi nhận được đầu ra từ việc lập kế hoạch. Xem tiếp để có cái nhìn tổng quan nhanh.
+
+Đoạn mã Python sau đây minh họa một tác nhân lập kế hoạch đơn giản phân chia mục tiêu thành các nhiệm vụ nhỏ và tạo ra một kế hoạch có cấu trúc:
 
 ```python
 from pydantic import BaseModel
@@ -98,17 +147,17 @@ pprint(json.loads(response_content))
 # TravelPlan.model_validate(json.loads(response_content))
 ```
 
-### Agent Lập Kế Hoạch với Điều Phối Đa Agent
+### Tác Nhân Lập Kế Hoạch với Điều Phối Đa Tác Nhân
 
-Trong ví dụ này, một Semantic Router Agent nhận yêu cầu từ người dùng (ví dụ: "Tôi cần một kế hoạch khách sạn cho chuyến đi của mình.").
+Trong ví dụ này, một Tác Nhân Bộ Định Tuyến Ngữ Nghĩa nhận yêu cầu từ người dùng (ví dụ: "Tôi cần kế hoạch khách sạn cho chuyến đi của mình.").
 
-Người lập kế hoạch sau đó:
+Tác nhân lập kế hoạch sau đó:
 
-* Nhận Kế Hoạch Khách Sạn: Người lập kế hoạch lấy tin nhắn của người dùng và, dựa trên một lời nhắc hệ thống (bao gồm thông tin các agent có sẵn), tạo ra một kế hoạch du lịch có cấu trúc.
-* Liệt Kê Các Agent và Công Cụ Của Họ: Đăng ký agent giữ danh sách các agent (ví dụ, cho vé máy bay, khách sạn, thuê xe và hoạt động) cùng với các chức năng hoặc công cụ mà họ cung cấp.
-* Chuyển Kế Hoạch Đến Các Agent Tương Ứng: Tùy thuộc vào số lượng nhiệm vụ con, người lập kế hoạch sẽ gửi tin nhắn trực tiếp đến một agent chuyên trách (trong trường hợp nhiệm vụ đơn lẻ) hoặc điều phối qua một quản lý nhóm chat để hợp tác đa agent.
-* Tóm Tắt Kết Quả: Cuối cùng, người lập kế hoạch tóm tắt kế hoạch đã tạo để làm rõ.
-Đoạn mã Python dưới đây minh họa các bước này:
+* Nhận Kế Hoạch Khách Sạn: Tác nhân lập kế hoạch nhận thông điệp của người dùng và, dựa trên một hệ thống nhắc nhở (bao gồm chi tiết về các tác nhân có sẵn), tạo ra một kế hoạch du lịch có cấu trúc.
+* Liệt Kê Các Tác Nhân và Công Cụ Của Họ: Sổ đăng ký tác nhân giữ danh sách các tác nhân (ví dụ: cho chuyến bay, khách sạn, thuê xe, và hoạt động) cùng với các chức năng hoặc công cụ mà họ cung cấp.
+* Định Tuyến Kế Hoạch Đến Các Tác Nhân Tương Ứng: Tùy thuộc vào số lượng nhiệm vụ nhỏ, tác nhân lập kế hoạch hoặc gửi thông điệp trực tiếp đến một tác nhân chuyên biệt (trong các tình huống nhiệm vụ đơn lẻ) hoặc điều phối thông qua một trình quản lý trò chuyện nhóm cho sự hợp tác đa tác nhân.
+* Tóm Tắt Kết Quả: Cuối cùng, tác nhân lập kế hoạch tóm tắt kế hoạch đã tạo để rõ ràng hơn.
+Đoạn mã Python sau đây minh họa các bước này:
 
 ```python
 
@@ -183,7 +232,7 @@ if response_content is None:
 pprint(json.loads(response_content))
 ```
 
-Phần tiếp theo là kết quả từ đoạn mã trên và bạn có thể sử dụng kết quả có cấu trúc này để chuyển đến `assigned_agent` và tóm tắt kế hoạch du lịch cho người dùng cuối.
+Kết quả từ đoạn mã trước đó sẽ được sử dụng để định tuyến đến `assigned_agent` và tóm tắt kế hoạch du lịch cho người dùng cuối.
 
 ```json
 {
@@ -214,15 +263,15 @@ Phần tiếp theo là kết quả từ đoạn mã trên và bạn có thể s�
 }
 ```
 
-Một notebook ví dụ với đoạn mã trên có sẵn [tại đây](../../../07-planning-design/07-autogen.ipynb).
+Một notebook ví dụ với đoạn mã trên có sẵn [tại đây](07-autogen.ipynb).
 
-### Lập Kế Hoạch Lặp Đi Lặp Lại
+### Lập Kế Hoạch Lặp
 
-Một số nhiệm vụ yêu cầu sự trao đổi qua lại hoặc lập kế hoạch lại, trong đó kết quả của một nhiệm vụ con ảnh hưởng đến nhiệm vụ tiếp theo. Ví dụ, nếu agent phát hiện định dạng dữ liệu không mong đợi khi đặt vé máy bay, nó có thể cần điều chỉnh chiến lược trước khi tiếp tục đặt khách sạn.
+Một số nhiệm vụ yêu cầu sự trao đổi qua lại hoặc lập kế hoạch lại, nơi kết quả của một nhiệm vụ nhỏ ảnh hưởng đến nhiệm vụ tiếp theo. Ví dụ, nếu tác nhân phát hiện một định dạng dữ liệu không mong đợi khi đặt vé máy bay, nó có thể cần điều chỉnh chiến lược của mình trước khi chuyển sang đặt khách sạn.
 
-Ngoài ra, phản hồi từ người dùng (ví dụ: một người dùng quyết định họ muốn chuyến bay sớm hơn) có thể kích hoạt việc lập kế hoạch lại một phần. Cách tiếp cận động và lặp đi lặp lại này đảm bảo giải pháp cuối cùng phù hợp với các ràng buộc thực tế và sở thích thay đổi của người dùng.
+Ngoài ra, phản hồi từ người dùng (ví dụ: một người quyết định họ thích chuyến bay sớm hơn) có thể kích hoạt việc lập kế hoạch lại một phần. Cách tiếp cận động, lặp lại này đảm bảo rằng giải pháp cuối cùng phù hợp với các ràng buộc thực tế và sở thích người dùng đang thay đổi.
 
-ví dụ mã
+Ví dụ mã:
 
 ```python
 from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
@@ -243,27 +292,31 @@ messages = [
 # .. re-plan and send the tasks to respective agents
 ```
 
-Để lập kế hoạch toàn diện hơn, hãy tham khảo Magnetic One
-
-cho việc giải quyết các nhiệm vụ phức tạp.
+Để lập kế hoạch toàn diện hơn, hãy xem Magnetic One để giải quyết các nhiệm vụ phức tạp.
 
 ## Tóm Tắt
 
-Trong bài viết này, chúng ta đã xem xét một ví dụ về cách tạo ra một người lập kế hoạch có thể chọn động các agent có sẵn được định nghĩa. Kết quả của người lập kế hoạch phân tách các nhiệm vụ và phân công các agent để họ có thể thực hiện. Giả định rằng các agent có quyền truy cập vào các chức năng/công cụ cần thiết để thực hiện nhiệm vụ. Ngoài các agent, bạn có thể bao gồm các mẫu khác như phản chiếu, tóm tắt và chat vòng tròn để tùy chỉnh thêm.
+Trong bài viết này, chúng ta đã xem xét một ví dụ về cách tạo một tác nhân lập kế hoạch có thể chọn động các tác nhân có sẵn được định nghĩa. Đầu ra của Tác Nhân Lập Kế Hoạch phân chia các nhiệm vụ và gán các tác nhân để chúng có thể được thực hiện. Giả định rằng các tác nhân có quyền truy cập vào các chức năng/công cụ cần thiết để thực hiện nhiệm vụ. Ngoài các tác nhân, bạn có thể bao gồm các mẫu khác như phản ánh, tóm tắt, và trò chuyện vòng tròn để tùy chỉnh thêm.
 
 ## Tài Nguyên Bổ Sung
 
-* AutoGen Magnetic One - Một hệ thống đa agent tổng quát để giải quyết các nhiệm vụ phức tạp và đã đạt được kết quả ấn tượng trên nhiều bài kiểm tra agentic thách thức. Tham khảo:
+* AutoGen Magnetic One - Một hệ thống đa tác nhân tổng quát để giải quyết các nhiệm vụ phức tạp và đã đạt được kết quả ấn tượng trên nhiều tiêu chuẩn đánh giá tác nhân đầy thách thức. Tham khảo:
 
-. Trong triển khai này, người điều phối tạo kế hoạch cụ thể cho từng nhiệm vụ và phân công các nhiệm vụ này cho các agent có sẵn. Ngoài việc lập kế hoạch, người điều phối còn sử dụng cơ chế theo dõi để giám sát tiến độ nhiệm vụ và lập kế hoạch lại khi cần thiết.
+. Trong triển khai này, bộ điều phối tạo kế hoạch cụ thể cho từng nhiệm vụ và phân công các nhiệm vụ này cho các tác nhân có sẵn. Ngoài việc lập kế hoạch, bộ điều phối cũng sử dụng một cơ chế theo dõi để giám sát tiến độ của nhiệm vụ và lập kế hoạch lại khi cần thiết.
+
+### Có Thắc Mắc Về Mẫu Thiết Kế Lập Kế Hoạch?
+
+Tham gia [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) để gặp gỡ các học viên khác, tham dự giờ làm việc và nhận giải đáp cho các câu hỏi về Tác Nhân AI của bạn.
 
 ## Bài Học Trước
 
-[Building Trustworthy AI Agents](../06-building-trustworthy-agents/README.md)
+[Xây Dựng Tác Nhân AI Đáng Tin Cậy](../06-building-trustworthy-agents/README.md)
 
 ## Bài Học Tiếp Theo
 
-[Multi-Agent Design Pattern](../08-multi-agent/README.md)
+[Mẫu Thiết Kế Đa Tác Nhân](../08-multi-agent/README.md)
 
-**Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+---
+
+**Tuyên bố miễn trừ trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính thức. Đối với các thông tin quan trọng, khuyến nghị sử dụng dịch vụ dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm cho bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
