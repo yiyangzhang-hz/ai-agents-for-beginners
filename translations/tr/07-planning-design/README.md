@@ -1,15 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e4e06d3b5d6207459a019c05fee5eb4b",
-  "translation_date": "2025-07-12T10:41:10+00:00",
+  "original_hash": "a28d30590704ea13b6a08d4793cf9c2b",
+  "translation_date": "2025-08-29T13:19:00+00:00",
   "source_file": "07-planning-design/README.md",
   "language_code": "tr"
 }
 -->
-hızlı bir genel bakış için.
+[![Planlama Tasarım Deseni](../../../translated_images/lesson-7-thumbnail.f7163ac557bea1236242cc86b178c3f1bbf5eb07b87f9cd7c256b366e32bcbb6.tr.png)](https://youtu.be/kPfJ2BrBCMY?si=9pYpPXp0sSbK91Dr)
 
-Aşağıdaki Python kodu, bir hedefi alt görevlere ayıran ve yapılandırılmış bir plan oluşturan basit bir planlama ajanını göstermektedir:
+> _(Bu dersin videosunu izlemek için yukarıdaki görsele tıklayın)_
+
+# Planlama Tasarımı
+
+## Giriş
+
+Bu derste şunlar ele alınacaktır:
+
+* Net bir genel hedef tanımlama ve karmaşık bir görevi yönetilebilir görevlere bölme.
+* Daha güvenilir ve makine tarafından okunabilir yanıtlar için yapılandırılmış çıktılardan yararlanma.
+* Dinamik görevleri ve beklenmedik girdileri ele almak için olay odaklı bir yaklaşım uygulama.
+
+## Öğrenme Hedefleri
+
+Bu dersi tamamladıktan sonra şunları anlayabileceksiniz:
+
+* Bir yapay zeka ajanı için genel bir hedef belirlemek ve bu hedefin net bir şekilde neyi başarması gerektiğini tanımlamak.
+* Karmaşık bir görevi yönetilebilir alt görevlere ayırmak ve bunları mantıklı bir sıraya organize etmek.
+* Ajanları doğru araçlarla donatmak (ör. arama araçları veya veri analitik araçları), bu araçların ne zaman ve nasıl kullanılacağını belirlemek ve ortaya çıkan beklenmedik durumları ele almak.
+* Alt görev sonuçlarını değerlendirmek, performansı ölçmek ve nihai çıktıyı iyileştirmek için eylemleri yinelemek.
+
+## Genel Hedefi Tanımlama ve Görevi Parçalara Ayırma
+
+![Hedefleri ve Görevleri Tanımlama](../../../translated_images/defining-goals-tasks.d70439e19e37c47ac76c48b209a4eb515bea5b8a5207f6b2e7b5e597f09ccf6a.tr.png)
+
+Gerçek dünyadaki çoğu görev, tek bir adımda ele alınamayacak kadar karmaşıktır. Bir yapay zeka ajanının, planlamasını ve eylemlerini yönlendirecek net bir hedefe ihtiyacı vardır. Örneğin, şu hedefi ele alalım:
+
+    "3 günlük bir seyahat planı oluştur."
+
+Bu hedef ifade edilmesi kolay olsa da, yine de daha fazla netleştirilmesi gerekir. Hedef ne kadar net olursa, ajan (ve varsa insan işbirlikçileri) doğru sonucu elde etmeye o kadar iyi odaklanabilir. Örneğin, uçuş seçenekleri, otel önerileri ve etkinlik önerileri içeren kapsamlı bir seyahat planı oluşturmak gibi.
+
+### Görev Parçalama
+
+Büyük veya karmaşık görevler, daha küçük ve hedef odaklı alt görevlere bölündüğünde daha yönetilebilir hale gelir. Seyahat planı örneği için hedef şu şekilde parçalanabilir:
+
+* Uçuş Rezervasyonu
+* Otel Rezervasyonu
+* Araç Kiralama
+* Kişiselleştirme
+
+Her bir alt görev, özel ajanlar veya süreçler tarafından ele alınabilir. Bir ajan en iyi uçuş fırsatlarını aramada uzmanlaşırken, bir diğeri otel rezervasyonlarına odaklanabilir. Daha sonra bir koordinatör veya “aşağı akış” ajanı, bu sonuçları bir araya getirerek son kullanıcıya sunulan bütüncül bir seyahat planı oluşturabilir.
+
+Bu modüler yaklaşım, kademeli iyileştirmelere de olanak tanır. Örneğin, Yemek Önerileri veya Yerel Etkinlik Önerileri için özel ajanlar ekleyebilir ve zamanla seyahat planını daha da geliştirebilirsiniz.
+
+### Yapılandırılmış Çıktı
+
+Büyük Dil Modelleri (LLM'ler), aşağı akış ajanlarının veya hizmetlerinin daha kolay ayrıştırıp işleyebileceği yapılandırılmış çıktılar (ör. JSON) üretebilir. Bu, özellikle planlama çıktısı alındıktan sonra bu görevleri harekete geçirebileceğimiz çoklu ajan bağlamında faydalıdır. Kısa bir genel bakış için şuraya bakın:
+
+Aşağıdaki Python kodu, bir planlama ajanının bir hedefi alt görevlere ayırmasını ve yapılandırılmış bir plan oluşturmasını gösterir:
 
 ```python
 from pydantic import BaseModel
@@ -98,17 +146,16 @@ pprint(json.loads(response_content))
 # TravelPlan.model_validate(json.loads(response_content))
 ```
 
-### Çoklu Ajan Orkestrasyonlu Planlama Ajanı
+### Çoklu Ajan Orkestrasyonu ile Planlama Ajanı
 
-Bu örnekte, bir Semantik Yönlendirici Ajan kullanıcı isteği alır (örneğin, "Seyahatim için bir otel planına ihtiyacım var.").
+Bu örnekte, bir Semantik Yönlendirici Ajan, bir kullanıcı isteğini alır (ör. "Seyahatim için bir otel planına ihtiyacım var.").
 
-Planlayıcı şu adımları izler:
+Planlayıcı daha sonra:
 
-* Otel Planını Alır: Planlayıcı, kullanıcının mesajını alır ve sistem istemi (mevcut ajan detayları dahil) temelinde yapılandırılmış bir seyahat planı oluşturur.
-* Ajanları ve Araçlarını Listeler: Ajan kaydı, işlevleri veya sundukları araçlarla birlikte ajanların (örneğin uçuş, otel, araç kiralama ve aktiviteler için) bir listesini tutar.
-* Planı İlgili Ajanlara Yönlendirir: Alt görev sayısına bağlı olarak, planlayıcı mesajı doğrudan ilgili ajana (tek görev senaryoları için) gönderir veya çoklu ajan işbirliği için bir grup sohbet yöneticisi aracılığıyla koordine eder.
-* Sonucu Özetler: Son olarak, planlayıcı oluşturulan planı açıklık için özetler.
-Aşağıdaki Python kod örneği bu adımları göstermektedir:
+* Otel Planını Alır: Planlayıcı, kullanıcının mesajını alır ve bir sistem istemine (mevcut ajan detaylarını içeren) dayanarak yapılandırılmış bir seyahat planı oluşturur.
+* Ajanları ve Araçlarını Listeler: Ajan kaydı, uçuş, otel, araç kiralama ve etkinlikler gibi görevler için ajanların bir listesini ve sundukları işlevleri veya araçları içerir.
+* Planı İlgili Ajanlara Yönlendirir: Alt görevlerin sayısına bağlı olarak, planlayıcı mesajı ya doğrudan özel bir ajana (tek görevli senaryolar için) gönderir ya da çoklu ajan iş birliği için bir grup sohbet yöneticisi aracılığıyla koordine eder.
+* Sonucu Özetler: Son olarak, planlayıcı oluşturulan planı netlik için özetler. Aşağıdaki Python kodu bu adımları göstermektedir:
 
 ```python
 
@@ -183,7 +230,7 @@ if response_content is None:
 pprint(json.loads(response_content))
 ```
 
-Aşağıda önceki kodun çıktısı yer almakta olup, bu yapılandırılmış çıktıyı `assigned_agent`'a yönlendirebilir ve seyahat planını son kullanıcıya özetleyebilirsiniz.
+Yukarıdaki kodun çıktısı aşağıda verilmiştir ve bu yapılandırılmış çıktıyı `assigned_agent`'a yönlendirebilir ve seyahat planını son kullanıcıya özetleyebilirsiniz.
 
 ```json
 {
@@ -214,15 +261,15 @@ Aşağıda önceki kodun çıktısı yer almakta olup, bu yapılandırılmış �
 }
 ```
 
-Önceki kod örneği içeren bir örnek defter [burada](../../../07-planning-design/07-autogen.ipynb) mevcuttur.
+Önceki kod örneğiyle ilgili bir örnek defter [burada](07-autogen.ipynb) mevcuttur.
 
 ### Yinelemeli Planlama
 
-Bazı görevler, bir alt görevin sonucu diğerini etkilediğinde karşılıklı etkileşim veya yeniden planlama gerektirir. Örneğin, ajan uçuş rezervasyonu yaparken beklenmedik bir veri formatı keşfederse, otel rezervasyonlarına geçmeden önce stratejisini uyarlaması gerekebilir.
+Bazı görevler, bir alt görevin sonucu diğerini etkilediğinde ileri geri veya yeniden planlama gerektirir. Örneğin, bir ajan uçuş rezervasyonu yaparken beklenmedik bir veri formatı keşfederse, otel rezervasyonlarına geçmeden önce stratejisini uyarlaması gerekebilir.
 
-Ayrıca, kullanıcı geri bildirimi (örneğin, bir insanın daha erken bir uçuşu tercih etmesi) kısmi bir yeniden planlamayı tetikleyebilir. Bu dinamik, yinelemeli yaklaşım, nihai çözümün gerçek dünya kısıtlamalarına ve değişen kullanıcı tercihlerine uyum sağlamasını garanti eder.
+Ayrıca, kullanıcı geri bildirimi (ör. bir insanın daha erken bir uçuşu tercih etmesi) kısmi bir yeniden planlamayı tetikleyebilir. Bu dinamik, yinelemeli yaklaşım, nihai çözümün gerçek dünya kısıtlamalarına ve gelişen kullanıcı tercihlerine uygun olmasını sağlar.
 
-örnek kod
+Örneğin, örnek kod:
 
 ```python
 from autogen_core.models import UserMessage, SystemMessage, AssistantMessage
@@ -247,13 +294,17 @@ Daha kapsamlı planlama için Magnetic One'a göz atabilirsiniz.
 
 ## Özet
 
-Bu makalede, tanımlı mevcut ajanları dinamik olarak seçebilen bir planlayıcı oluşturma örneğine baktık. Planlayıcının çıktısı görevleri alt görevlere ayırır ve ajanlara atar, böylece görevler yürütülebilir. Ajanların görevi yerine getirmek için gerekli işlevlere/araçlara erişimi olduğu varsayılır. Ajanlara ek olarak, yansıtma, özetleyici ve round robin sohbet gibi diğer desenleri de dahil ederek daha fazla özelleştirme yapabilirsiniz.
+Bu makalede, tanımlanmış ajanları dinamik olarak seçebilen bir planlayıcı oluşturma örneğini inceledik. Planlayıcının çıktısı, görevleri parçalar ve ajanlara atar, böylece bu görevler yerine getirilebilir. Ajanların, görevi gerçekleştirmek için gereken işlevlere/araçlara erişimi olduğu varsayılmaktadır. Ajanlara ek olarak, yansıtma, özetleyici ve döngüsel sohbet gibi diğer desenleri de ekleyerek özelleştirme yapabilirsiniz.
 
 ## Ek Kaynaklar
 
-* AutoGen Magnetic One - Karmaşık görevleri çözmek için genel amaçlı çoklu ajan sistemi ve birçok zorlu ajanik kıyaslamada etkileyici sonuçlar elde etmiştir. Referans:
+* AutoGen Magnetic One - Karmaşık görevleri çözmek için genel bir çoklu ajan sistemi olup, birçok zorlu ajanlık ölçütünde etkileyici sonuçlar elde etmiştir. Referans:
 
-. Bu uygulamada orkestratör, görev bazlı plan oluşturur ve bu görevleri mevcut ajanlara devreder. Planlamaya ek olarak orkestratör, görevin ilerlemesini izlemek ve gerektiğinde yeniden planlama yapmak için bir takip mekanizması da kullanır.
+Bu uygulamada, orkestratör görev odaklı bir plan oluşturur ve bu görevleri mevcut ajanlara devreder. Planlamanın yanı sıra, orkestratör bir izleme mekanizması kullanarak görevin ilerlemesini takip eder ve gerektiğinde yeniden planlama yapar.
+
+### Planlama Tasarım Deseni Hakkında Daha Fazla Sorunuz mu Var?
+
+[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) topluluğuna katılarak diğer öğrenenlerle tanışabilir, ofis saatlerine katılabilir ve AI Ajanları hakkındaki sorularınıza yanıt alabilirsiniz.
 
 ## Önceki Ders
 
@@ -263,5 +314,7 @@ Bu makalede, tanımlı mevcut ajanları dinamik olarak seçebilen bir planlayıc
 
 [Çoklu Ajan Tasarım Deseni](../08-multi-agent/README.md)
 
+---
+
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul etmiyoruz.

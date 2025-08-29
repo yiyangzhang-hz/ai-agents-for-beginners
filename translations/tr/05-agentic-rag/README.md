@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7622aa72f9e676e593339f5f694ecd7d",
-  "translation_date": "2025-07-12T10:01:54+00:00",
+  "original_hash": "d2f04b783b9e1253100329afd698f8ff",
+  "translation_date": "2025-08-29T13:15:44+00:00",
   "source_file": "05-agentic-rag/README.md",
   "language_code": "tr"
 }
@@ -13,111 +13,109 @@ CO_OP_TRANSLATOR_METADATA:
 
 # Agentic RAG
 
-Bu ders, büyük dil modellerinin (LLM’ler) dış kaynaklardan bilgi çekerken kendi sonraki adımlarını özerk şekilde planladığı yeni bir yapay zeka paradigması olan Agentic Retrieval-Augmented Generation (Agentic RAG) hakkında kapsamlı bir genel bakış sunar. Statik retrieval-then-read (getir-okuma) kalıplarının aksine, Agentic RAG, araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrılarından oluşur. Sistem sonuçları değerlendirir, sorguları iyileştirir, gerekirse ek araçlar çağırır ve tatmin edici bir çözüm elde edilene kadar bu döngüyü sürdürür.
+Bu ders, büyük dil modellerinin (LLM'ler) dış kaynaklardan bilgi çekerken bir sonraki adımlarını bağımsız olarak planladığı yeni bir yapay zeka paradigması olan Agentic Retrieval-Augmented Generation (Agentic RAG) hakkında kapsamlı bir genel bakış sunar. Statik "bilgi getir-sonra oku" desenlerinden farklı olarak, Agentic RAG, araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrılarını içerir. Sistem sonuçları değerlendirir, sorguları iyileştirir, gerekirse ek araçlar çağırır ve tatmin edici bir çözüme ulaşana kadar bu döngüye devam eder.
 
 ## Giriş
 
-Bu derste şunlar ele alınacak:
+Bu derste şunlar ele alınacaktır:
 
-- **Agentic RAG’i Anlamak:** Büyük dil modellerinin (LLM’ler) dış veri kaynaklarından bilgi çekerken kendi sonraki adımlarını özerk şekilde planladığı yeni yapay zeka paradigmasını öğrenin.
-- **Yinelemeli Maker-Checker Tarzını Kavramak:** Doğruluğu artırmak ve hatalı sorguları yönetmek için araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrılarından oluşan döngüyü anlayın.
-- **Pratik Uygulamaları Keşfetmek:** Agentic RAG’in doğruluk öncelikli ortamlar, karmaşık veritabanı etkileşimleri ve uzun iş akışları gibi senaryolarda nasıl öne çıktığını belirleyin.
+- **Agentic RAG'ı Anlamak:** Büyük dil modellerinin (LLM'ler) dış veri kaynaklarından bilgi çekerken bir sonraki adımlarını bağımsız olarak planladığı yeni yapay zeka paradigmasını öğrenin.
+- **Yinelemeli Maker-Checker Stili:** Doğruluğu artırmak ve hatalı sorguları ele almak için tasarlanmış, araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrıları döngüsünü kavrayın.
+- **Pratik Uygulamaları Keşfetmek:** Doğruluk öncelikli ortamlar, karmaşık veri tabanı etkileşimleri ve uzun iş akışları gibi Agentic RAG'ın öne çıktığı senaryoları belirleyin.
 
 ## Öğrenme Hedefleri
 
 Bu dersi tamamladıktan sonra şunları bilecek/anlayacaksınız:
 
-- **Agentic RAG’i Anlamak:** Büyük dil modellerinin (LLM’ler) dış veri kaynaklarından bilgi çekerken kendi sonraki adımlarını özerk şekilde planladığı yeni yapay zeka paradigmasını öğrenmek.
-- **Yinelemeli Maker-Checker Tarzı:** Doğruluğu artırmak ve hatalı sorguları yönetmek için araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrılarından oluşan döngü kavramını kavramak.
-- **Akıl Yürütme Sürecine Sahip Olmak:** Sistemin önceden tanımlanmış yollar yerine problemleri nasıl ele alacağına karar verme yeteneğini anlamak.
-- **İş Akışı:** Agentic modelin piyasa trend raporlarını bağımsız şekilde nasıl getirdiğini, rakip verileri tanımladığını, dahili satış metriklerini ilişkilendirdiğini, bulguları sentezlediğini ve stratejiyi değerlendirdiğini anlamak.
-- **Yinelemeli Döngüler, Araç Entegrasyonu ve Bellek:** Sistemin durum ve belleği adımlar arasında koruyarak tekrarlayan döngülerden kaçınmasını ve bilinçli kararlar vermesini sağlayan döngüsel etkileşim modelini öğrenmek.
-- **Başarısızlık Modları ve Öz-Düzeltme:** Sistemin, yineleme ve yeniden sorgulama, tanı araçları kullanma ve insan denetimine başvurma gibi sağlam öz-düzeltme mekanizmalarını keşfetmek.
-- **Ajansın Sınırları:** Agentic RAG’in alan spesifik özerkliği, altyapı bağımlılığı ve koruyucu sınırların önemi gibi sınırlamalarını anlamak.
-- **Pratik Kullanım Alanları ve Değeri:** Agentic RAG’in doğruluk öncelikli ortamlar, karmaşık veritabanı etkileşimleri ve uzun iş akışları gibi senaryolarda nasıl öne çıktığını belirlemek.
-- **Yönetim, Şeffaflık ve Güven:** Açıklanabilir akıl yürütme, önyargı kontrolü ve insan denetimi dahil olmak üzere yönetim ve şeffaflığın önemini öğrenmek.
+- **Agentic RAG'ı Anlamak:** Büyük dil modellerinin (LLM'ler) dış veri kaynaklarından bilgi çekerken bir sonraki adımlarını bağımsız olarak planladığı yeni yapay zeka paradigmasını öğrenin.
+- **Yinelemeli Maker-Checker Stili:** Doğruluğu artırmak ve hatalı sorguları ele almak için tasarlanmış, araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrıları döngüsünü kavrayın.
+- **Akıl Yürütme Sürecine Sahip Olmak:** Sistemin, önceden tanımlanmış yollar olmadan sorunlara nasıl yaklaşacağına karar verme yeteneğini anlayın.
+- **İş Akışı:** Agentic bir modelin, pazar trend raporlarını bağımsız olarak getirme, rakip verilerini belirleme, iç satış metriklerini ilişkilendirme, bulguları sentezleme ve stratejiyi değerlendirme kararlarını nasıl verdiğini öğrenin.
+- **Yinelemeli Döngüler, Araç Entegrasyonu ve Bellek:** Sistemin, tekrarlayan döngülerden kaçınmak ve bilinçli kararlar almak için adımlar arasında durumu ve belleği koruyarak döngüsel bir etkileşim modeline nasıl güvendiğini öğrenin.
+- **Hata Modlarını Ele Alma ve Kendini Düzeltme:** Yineleme ve yeniden sorgulama, tanı araçlarını kullanma ve insan gözetimine başvurma gibi sistemin sağlam kendini düzeltme mekanizmalarını keşfedin.
+- **Ajansın Sınırları:** Alan spesifik özerklik, altyapı bağımlılığı ve güvenlik sınırlarına saygı odaklanarak Agentic RAG'ın sınırlamalarını anlayın.
+- **Pratik Kullanım Durumları ve Değer:** Doğruluk öncelikli ortamlar, karmaşık veri tabanı etkileşimleri ve uzun iş akışları gibi Agentic RAG'ın öne çıktığı senaryoları belirleyin.
+- **Yönetim, Şeffaflık ve Güven:** Açıklanabilir akıl yürütme, önyargı kontrolü ve insan gözetimi dahil olmak üzere yönetim ve şeffaflığın önemini öğrenin.
 
 ## Agentic RAG Nedir?
 
-Agentic Retrieval-Augmented Generation (Agentic RAG), büyük dil modellerinin (LLM’ler) dış kaynaklardan bilgi çekerken kendi sonraki adımlarını özerk şekilde planladığı yeni bir yapay zeka paradigmasıdır. Statik retrieval-then-read kalıplarının aksine, Agentic RAG, araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrılarından oluşur. Sistem sonuçları değerlendirir, sorguları iyileştirir, gerekirse ek araçlar çağırır ve tatmin edici bir çözüm elde edilene kadar bu döngüyü sürdürür. Bu yinelemeli “maker-checker” tarzı, doğruluğu artırır, hatalı sorguları yönetir ve yüksek kaliteli sonuçlar sağlar.
+Agentic Retrieval-Augmented Generation (Agentic RAG), büyük dil modellerinin (LLM'ler) dış kaynaklardan bilgi çekerken bir sonraki adımlarını bağımsız olarak planladığı yeni bir yapay zeka paradigmasıdır. Statik "bilgi getir-sonra oku" desenlerinden farklı olarak, Agentic RAG, araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrılarını içerir. Sistem sonuçları değerlendirir, sorguları iyileştirir, gerekirse ek araçlar çağırır ve tatmin edici bir çözüme ulaşana kadar bu döngüye devam eder. Bu yinelemeli “maker-checker” stili, doğruluğu artırır, hatalı sorguları ele alır ve yüksek kaliteli sonuçlar sağlar.
 
-Sistem akıl yürütme sürecine aktif olarak sahip çıkar; başarısız sorguları yeniden yazar, farklı retrieval yöntemleri seçer ve Azure AI Search’te vektör araması, SQL veritabanları veya özel API’ler gibi birden fazla aracı entegre eder. Agentic sistemin ayırt edici özelliği, akıl yürütme sürecine sahip olabilmesidir. Geleneksel RAG uygulamaları önceden tanımlanmış yollara dayanırken, agentic sistem bulduğu bilginin kalitesine göre adımların sırasını özerk şekilde belirler.
+Sistem, başarısız sorguları yeniden yazarak, farklı bilgi getirme yöntemleri seçerek ve yanıtını tamamlamadan önce Azure AI Search'teki vektör arama, SQL veri tabanları veya özel API'ler gibi birden fazla aracı entegre ederek akıl yürütme sürecine aktif olarak sahip çıkar. Agentic bir sistemin ayırt edici özelliği, akıl yürütme sürecine sahip olma yeteneğidir. Geleneksel RAG uygulamaları önceden tanımlanmış yollara dayanırken, agentic bir sistem, bulduğu bilginin kalitesine dayalı olarak adımların sırasını bağımsız olarak belirler.
 
 ## Agentic Retrieval-Augmented Generation (Agentic RAG) Tanımı
 
-Agentic Retrieval-Augmented Generation (Agentic RAG), LLM’lerin sadece dış veri kaynaklarından bilgi çekmekle kalmayıp aynı zamanda sonraki adımlarını özerk şekilde planladığı yeni bir yapay zeka geliştirme paradigmasıdır. Statik retrieval-then-read kalıplarından veya dikkatlice yazılmış prompt dizilerinden farklı olarak, Agentic RAG, araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrılarından oluşan bir döngü içerir. Sistem her adımda elde ettiği sonuçları değerlendirir, sorgularını iyileştirip iyileştirmemeye karar verir, gerekirse ek araçlar çağırır ve tatmin edici bir çözüme ulaşana kadar bu döngüyü sürdürür.
+Agentic Retrieval-Augmented Generation (Agentic RAG), büyük dil modellerinin (LLM'ler) yalnızca dış veri kaynaklarından bilgi çekmekle kalmayıp, aynı zamanda bir sonraki adımlarını bağımsız olarak planladığı bir yapay zeka geliştirme paradigmasıdır. Statik "bilgi getir-sonra oku" desenlerinden veya dikkatlice yazılmış istem dizilerinden farklı olarak, Agentic RAG, araç veya fonksiyon çağrıları ve yapılandırılmış çıktılarla kesintiye uğrayan yinelemeli LLM çağrıları döngüsünü içerir. Her adımda, sistem elde ettiği sonuçları değerlendirir, sorgularını iyileştirip iyileştirmeyeceğine karar verir, gerekirse ek araçlar çağırır ve tatmin edici bir çözüme ulaşana kadar bu döngüye devam eder.
 
-Bu yinelemeli “maker-checker” çalışma tarzı, doğruluğu artırmak, yapısal veritabanlarına yönelik hatalı sorguları (örneğin NL2SQL) yönetmek ve dengeli, yüksek kaliteli sonuçlar sağlamak için tasarlanmıştır. Sadece dikkatlice hazırlanmış prompt zincirlerine güvenmek yerine, sistem akıl yürütme sürecine aktif olarak sahip çıkar. Başarısız olan sorguları yeniden yazabilir, farklı retrieval yöntemleri seçebilir ve Azure AI Search’te vektör araması, SQL veritabanları veya özel API’ler gibi birden fazla aracı entegre edebilir. Bu, aşırı karmaşık orkestrasyon çerçevelerine olan ihtiyacı ortadan kaldırır. Bunun yerine, nispeten basit bir “LLM çağrısı → araç kullanımı → LLM çağrısı → …” döngüsü sofistike ve sağlam çıktılar üretebilir.
+Bu yinelemeli “maker-checker” çalışma stili, doğruluğu artırmak, yapılandırılmış veri tabanlarına yönelik hatalı sorguları ele almak (ör. NL2SQL) ve dengeli, yüksek kaliteli sonuçlar sağlamak için tasarlanmıştır. Sadece dikkatlice tasarlanmış istem zincirlerine güvenmek yerine, sistem akıl yürütme sürecine aktif olarak sahip çıkar. Başarısız olan sorguları yeniden yazabilir, farklı bilgi getirme yöntemleri seçebilir ve yanıtını tamamlamadan önce Azure AI Search'teki vektör arama, SQL veri tabanları veya özel API'ler gibi birden fazla aracı entegre edebilir. Bu, aşırı karmaşık orkestrasyon çerçevelerine olan ihtiyacı ortadan kaldırır. Bunun yerine, nispeten basit bir “LLM çağrısı → araç kullanımı → LLM çağrısı → …” döngüsü, sofistike ve iyi temellendirilmiş çıktılar sağlayabilir.
 
 ![Agentic RAG Core Loop](../../../translated_images/agentic-rag-core-loop.c8f4b85c26920f71ed181ebb14001ac7aae47c0b0af237edcf71898645a62db3.tr.png)
 
 ## Akıl Yürütme Sürecine Sahip Olmak
 
-Bir sistemi “agentic” yapan ayırt edici özellik, akıl yürütme sürecine sahip olabilmesidir. Geleneksel RAG uygulamaları genellikle model için ne zaman ve neyi getireceğini belirten bir düşünce zincirini insanın önceden tanımlamasına dayanır. Ancak gerçek anlamda agentic bir sistem, problemi nasıl ele alacağına içsel olarak karar verir. Sadece bir betiği çalıştırmaz; bulduğu bilginin kalitesine göre adımların sırasını özerk şekilde belirler.
+Bir sistemi “agentic” yapan ayırt edici özellik, akıl yürütme sürecine sahip olma yeteneğidir. Geleneksel RAG uygulamaları genellikle model için bir yol önceden tanımlayan insanlara dayanır: neyin ne zaman getirileceğini özetleyen bir düşünce zinciri.
+Ancak bir sistem gerçekten agentic olduğunda, problemi nasıl ele alacağına içsel olarak karar verir. Sadece bir komut dosyasını çalıştırmaz; bulduğu bilginin kalitesine dayalı olarak adımların sırasını bağımsız olarak belirler.
+Örneğin, bir ürün lansman stratejisi oluşturması istendiğinde, tüm araştırma ve karar verme iş akışını açıklayan bir isteme tamamen güvenmez. Bunun yerine, agentic model bağımsız olarak şu kararları verir:
 
-Örneğin, bir ürün lansman stratejisi oluşturması istendiğinde, tüm araştırma ve karar verme iş akışını açıklayan bir prompt’a tamamen bağlı kalmaz. Bunun yerine agentic model bağımsız olarak şunları yapmaya karar verir:
-
-1. Bing Web Grounding kullanarak güncel piyasa trend raporlarını getirir.
-2. Azure AI Search kullanarak ilgili rakip verilerini tanımlar.
+1. Bing Web Grounding kullanarak mevcut pazar trend raporlarını getirir.
+2. Azure AI Search kullanarak ilgili rakip verilerini belirler.
 3. Azure SQL Database kullanarak geçmiş iç satış metriklerini ilişkilendirir.
-4. Azure OpenAI Service aracılığıyla bulguları bütünleşik bir stratejiye dönüştürür.
-5. Stratejiyi boşluklar veya tutarsızlıklar açısından değerlendirir ve gerekirse başka bir retrieval turu başlatır.
-
-Tüm bu adımlar — sorguları iyileştirmek, kaynakları seçmek, cevaptan “memnun” olana kadar yinelemek — model tarafından kararlaştırılır, insan tarafından önceden yazılmaz.
+4. Azure OpenAI Service aracılığıyla koordine edilen bulguları bütüncül bir stratejiye sentezler.
+5. Stratejiyi boşluklar veya tutarsızlıklar açısından değerlendirir ve gerekirse başka bir bilgi getirme turunu başlatır.
+Tüm bu adımlar—sorguları iyileştirme, kaynakları seçme, yanıttan “memnun” olana kadar yineleme—model tarafından kararlaştırılır, bir insan tarafından önceden yazılmış değildir.
 
 ## Yinelemeli Döngüler, Araç Entegrasyonu ve Bellek
 
 ![Tool Integration Architecture](../../../translated_images/tool-integration.0f569710b5c17c106757adba082f6c4be025ca0721bff7d1ee4b929a3617a600.tr.png)
 
-Agentic sistem, döngüsel bir etkileşim modeline dayanır:
+Agentic bir sistem, döngüsel bir etkileşim modeline dayanır:
 
-- **İlk Çağrı:** Kullanıcının hedefi (yani kullanıcı prompt’u) LLM’ye sunulur.
-- **Araç Çağrısı:** Model eksik bilgi veya belirsiz talimatlar tespit ederse, daha fazla bağlam toplamak için bir araç veya retrieval yöntemi seçer — örneğin vektör veritabanı sorgusu (Azure AI Search Hybrid search gibi) veya yapılandırılmış SQL çağrısı.
-- **Değerlendirme ve İyileştirme:** Dönen veriyi inceledikten sonra model, bilginin yeterli olup olmadığına karar verir. Değilse, sorguyu iyileştirir, farklı bir araç dener veya yaklaşımını ayarlar.
-- **Tatmin Olana Kadar Tekrarla:** Model, netlik ve kanıt elde ettiğine karar verene kadar bu döngü devam eder.
-- **Bellek ve Durum:** Sistem adımlar arasında durum ve belleği koruduğu için önceki denemeleri ve sonuçlarını hatırlayabilir, tekrarlayan döngülerden kaçınır ve ilerledikçe daha bilinçli kararlar verir.
+- **İlk Çağrı:** Kullanıcının hedefi (ör. kullanıcı istemi) LLM'ye sunulur.
+- **Araç Çağırma:** Model, eksik bilgi veya belirsiz talimatlar tespit ederse, daha fazla bağlam toplamak için bir araç veya bilgi getirme yöntemi seçer—örneğin, bir vektör veri tabanı sorgusu (ör. özel veriler üzerinde Azure AI Search Hibrit arama) veya yapılandırılmış bir SQL çağrısı.
+- **Değerlendirme ve İyileştirme:** Dönen verileri gözden geçirdikten sonra, model bilginin yeterli olup olmadığına karar verir. Değilse, sorguyu iyileştirir, farklı bir araç dener veya yaklaşımını ayarlar.
+- **Tatmin Olana Kadar Tekrarla:** Bu döngü, modelin nihai, iyi temellendirilmiş bir yanıt sunmak için yeterli netlik ve kanıta sahip olduğuna karar verene kadar devam eder.
+- **Bellek ve Durum:** Sistem, adımlar arasında durumu ve belleği koruduğu için, önceki girişimleri ve sonuçlarını hatırlayabilir, tekrarlayan döngülerden kaçınabilir ve ilerledikçe daha bilinçli kararlar alabilir.
 
-Zamanla bu, modelin karmaşık, çok adımlı görevlerde insan müdahalesi veya prompt yeniden şekillendirmesi olmadan gelişen bir anlayışa sahip olmasını sağlar.
+Zamanla, bu, modelin karmaşık, çok adımlı görevleri insanın sürekli müdahalesine veya istemi yeniden şekillendirmesine gerek kalmadan yönlendirmesini sağlayan bir gelişen anlayış hissi yaratır.
 
-## Başarısızlık Modları ve Öz-Düzeltme
+## Hata Modlarını Ele Alma ve Kendini Düzeltme
 
-Agentic RAG’in özerkliği aynı zamanda sağlam öz-düzeltme mekanizmalarını içerir. Sistem çıkmazlara girdiğinde — örneğin alakasız belgeler getirdiğinde veya hatalı sorgularla karşılaştığında — şunları yapabilir:
+Agentic RAG’ın özerkliği, aynı zamanda sağlam kendini düzeltme mekanizmalarını da içerir. Sistem çıkmaza girdiğinde—örneğin, alakasız belgeler getirildiğinde veya hatalı sorgularla karşılaşıldığında—şunları yapabilir:
 
-- **Yineleme ve Yeniden Sorgulama:** Düşük değerli yanıtlar vermek yerine, model yeni arama stratejileri dener, veritabanı sorgularını yeniden yazar veya alternatif veri setlerine bakar.
-- **Tanı Araçları Kullanımı:** Sistem, akıl yürütme adımlarını hata ayıklamaya veya getirilen verinin doğruluğunu onaylamaya yardımcı olacak ek fonksiyonları çağırabilir. Azure AI Tracing gibi araçlar sağlam gözlemlenebilirlik ve izleme için önemli olacaktır.
-- **İnsan Denetimine Başvurma:** Yüksek riskli veya tekrar eden başarısız senaryolarda model belirsizliği işaretleyip insan rehberliği isteyebilir. İnsan düzeltici geri bildirim sağladıktan sonra model bu dersi ileride kullanabilir.
+- **Yineleme ve Yeniden Sorgulama:** Düşük değerli yanıtlar döndürmek yerine, model yeni arama stratejileri dener, veri tabanı sorgularını yeniden yazar veya alternatif veri setlerine bakar.
+- **Tanı Araçlarını Kullanma:** Sistem, akıl yürütme adımlarını hata ayıklamasına veya getirilen verilerin doğruluğunu doğrulamasına yardımcı olacak ek işlevler çağırabilir. Azure AI Tracing gibi araçlar, sağlam gözlemlenebilirlik ve izleme sağlamak için önemli olacaktır.
+- **İnsan Gözetimine Başvurma:** Yüksek riskli veya tekrar tekrar başarısız olan senaryolar için model, belirsizliği işaretleyebilir ve insan rehberliği talep edebilir. İnsan düzeltici geri bildirim sağladıktan sonra, model bu dersi ileriye dönük olarak dahil edebilir.
 
-Bu yinelemeli ve dinamik yaklaşım, modelin sürekli gelişmesini sağlar; böylece sadece tek seferlik değil, oturum boyunca hatalarından öğrenen bir sistem olur.
+Bu yinelemeli ve dinamik yaklaşım, modelin sürekli olarak gelişmesini sağlar ve yalnızca tek seferlik bir sistem değil, belirli bir oturum sırasında hatalarından öğrenen bir sistem olmasını sağlar.
 
 ![Self Correction Mechanism](../../../translated_images/self-correction.da87f3783b7f174bdc592c754b352884dd283814758bfeb7a68f5fd910272f3b.tr.png)
 
 ## Ajansın Sınırları
 
-Bir görev içindeki özerkliğine rağmen, Agentic RAG Yapay Genel Zekâ ile eşdeğer değildir. “Agentic” yetenekleri, insan geliştiriciler tarafından sağlanan araçlar, veri kaynakları ve politikalara bağlıdır. Kendi araçlarını icat edemez veya belirlenen alan sınırlarının dışına çıkamaz. Bunun yerine, mevcut kaynakları dinamik şekilde organize etmede başarılıdır.
+Bir görev içinde özerkliğine rağmen, Agentic RAG, Genel Yapay Zeka ile eşdeğer değildir. “Agentic” yetenekleri, insan geliştiriciler tarafından sağlanan araçlar, veri kaynakları ve politikalarla sınırlıdır. Kendi araçlarını icat edemez veya belirlenen alan sınırlarının dışına çıkamaz. Bunun yerine, elindeki kaynakları dinamik olarak düzenlemede mükemmeldir.
+Daha gelişmiş yapay zeka biçimlerinden temel farklar şunlardır:
 
-Daha gelişmiş yapay zekâ formlarından temel farkları şunlardır:
+1. **Alan Spesifik Özerklik:** Agentic RAG sistemleri, kullanıcı tanımlı hedeflere bilinen bir alan içinde ulaşmaya odaklanır ve sonuçları iyileştirmek için sorgu yeniden yazma veya araç seçimi gibi stratejiler uygular.
+2. **Altyapıya Bağımlılık:** Sistemin yetenekleri, geliştiriciler tarafından entegre edilen araçlara ve verilere bağlıdır. İnsan müdahalesi olmadan bu sınırları aşamaz.
+3. **Güvenlik Sınırlarına Saygı:** Etik kurallar, uyumluluk kuralları ve iş politikaları çok önemlidir. Ajanın özgürlüğü her zaman güvenlik önlemleri ve gözetim mekanizmalarıyla sınırlıdır (umarız?).
 
-1. **Alan Spesifik Özerklik:** Agentic RAG sistemleri, bilinen bir alan içinde kullanıcı tanımlı hedeflere ulaşmaya odaklanır; sorgu yeniden yazma veya araç seçimi gibi stratejilerle sonuçları iyileştirir.
-2. **Altyapıya Bağımlılık:** Sistemin yetenekleri geliştiriciler tarafından entegre edilen araçlar ve verilere bağlıdır. İnsan müdahalesi olmadan bu sınırları aşamaz.
-3. **Koruyucu Sınırlara Saygı:** Etik kurallar, uyumluluk gereksinimleri ve iş politikaları çok önemlidir. Agent’in özgürlüğü her zaman güvenlik önlemleri ve denetim mekanizmalarıyla sınırlandırılır (umarız).
-
-## Pratik Kullanım Alanları ve Değeri
+## Pratik Kullanım Durumları ve Değer
 
 Agentic RAG, yinelemeli iyileştirme ve hassasiyet gerektiren senaryolarda öne çıkar:
 
-1. **Doğruluk Öncelikli Ortamlar:** Uyumluluk kontrolleri, düzenleyici analizler veya hukuki araştırmalarda agentic model, gerçekleri tekrar tekrar doğrulayabilir, birden fazla kaynağa danışabilir ve sorguları yeniden yazarak kapsamlıca denetlenmiş bir yanıt üretebilir.
-2. **Karmaşık Veritabanı Etkileşimleri:** Sorguların sık sık başarısız olabileceği veya ayarlanması gereken yapılandırılmış verilerle çalışırken, sistem Azure SQL veya Microsoft Fabric OneLake kullanarak sorgularını özerk şekilde iyileştirebilir ve nihai retrieval’ın kullanıcı niyetiyle uyumlu olmasını sağlar.
-3. **Uzun Süreli İş Akışları:** Daha uzun oturumlar yeni bilgiler ortaya çıktıkça evrilebilir. Agentic RAG, yeni verileri sürekli entegre ederek problem alanı hakkında daha fazla öğrendikçe stratejilerini değiştirebilir.
+1. **Doğruluk Öncelikli Ortamlar:** Uyum kontrolleri, düzenleyici analiz veya hukuki araştırmalarda, agentic model tekrar tekrar gerçekleri doğrulayabilir, birden fazla kaynağa başvurabilir ve tamamen doğrulanmış bir yanıt üretene kadar sorguları yeniden yazabilir.
+2. **Karmaşık Veri Tabanı Etkileşimleri:** Sorguların genellikle başarısız olduğu veya ayarlama gerektirdiği yapılandırılmış verilerle çalışırken, sistem, Azure SQL veya Microsoft Fabric OneLake kullanarak sorgularını bağımsız olarak iyileştirebilir ve nihai getirinin kullanıcının niyetiyle uyumlu olmasını sağlayabilir.
+3. **Uzun Süreli İş Akışları:** Yeni bilgiler ortaya çıktıkça daha uzun süren oturumlar gelişebilir. Agentic RAG, sürekli olarak yeni verileri dahil edebilir ve problem alanı hakkında daha fazla bilgi edindikçe stratejileri değiştirebilir.
 
 ## Yönetim, Şeffaflık ve Güven
 
-Bu sistemler akıl yürütmede daha özerk hale geldikçe, yönetim ve şeffaflık kritik hale gelir:
+Bu sistemler akıl yürütmede daha özerk hale geldikçe, yönetim ve şeffaflık çok önemlidir:
 
-- **Açıklanabilir Akıl Yürütme:** Model, yaptığı sorguların, danıştığı kaynakların ve sonuca ulaşmak için izlediği akıl yürütme adımlarının denetim izini sağlayabilir. Azure AI Content Safety ve Azure AI Tracing / GenAIOps gibi araçlar şeffaflığı korumaya ve riskleri azaltmaya yardımcı olur.
-- **Önyargı Kontrolü ve Dengeli Retrieval:** Geliştiriciler retrieval stratejilerini dengeli ve temsil edici veri kaynakları dikkate alacak şekilde ayarlayabilir, Azure Machine Learning kullanan gelişmiş veri bilimi organizasyonları için özel modellerle çıktıları düzenli olarak denetleyerek önyargı veya çarpıklık tespiti yapabilir.
-- **İnsan Denetimi ve Uyumluluk:** Hassas görevlerde insan incelemesi hâlâ gereklidir. Agentic RAG, yüksek riskli kararlarda insan yargısını değiştirmez; daha kapsamlı denetlenmiş seçenekler sunarak destekler.
+- **Açıklanabilir Akıl Yürütme:** Model, yaptığı sorguların, başvurduğu kaynakların ve sonuca ulaşmak için izlediği akıl yürütme adımlarının bir denetim izini sağlayabilir. Azure AI Content Safety ve Azure AI Tracing / GenAIOps gibi araçlar, şeffaflığı korumaya ve riskleri azaltmaya yardımcı olabilir.
+- **Önyargı Kontrolü ve Dengeli Bilgi Getirme:** Geliştiriciler, dengeli ve temsilci veri kaynaklarının dikkate alındığından emin olmak için bilgi getirme stratejilerini ayarlayabilir ve önyargı veya çarpık desenleri tespit etmek için çıktıları düzenli olarak denetleyebilir.
+- **İnsan Gözetimi ve Uyumluluk:** Hassas görevler için insan incelemesi gerekli olmaya devam eder. Agentic RAG, yüksek riskli kararlarda insan yargısının yerini almaz—daha kapsamlı bir şekilde doğrulanmış seçenekler sunarak onu destekler.
 
-Eylemlerin net bir kaydını sağlayan araçlara sahip olmak çok önemlidir. Bunlar olmadan çok adımlı bir sürecin hata ayıklaması çok zor olabilir. Literal AI (Chainlit’in arkasındaki şirket) tarafından sağlanan aşağıdaki Agent çalıştırma örneğine bakınız:
+Eylemlerin net bir kaydını sağlayan araçlara sahip olmak çok önemlidir. Bunlar olmadan, çok adımlı bir süreci hata ayıklamak çok zor olabilir. Chainlit'in arkasındaki Literal AI'den bir Ajan çalıştırma örneğine bakın:
 
 ![AgentRunExample](../../../translated_images/AgentRunExample.471a94bc40cbdc0cd04c1f43c8d8c9b751f10d97918c900e29cb3ba0d6aa4c00.tr.png)
 
@@ -125,35 +123,42 @@ Eylemlerin net bir kaydını sağlayan araçlara sahip olmak çok önemlidir. Bu
 
 ## Sonuç
 
-Agentic RAG, yapay zeka sistemlerinin karmaşık, veri yoğun görevleri ele alışında doğal bir evrimi temsil eder. Döngüsel etkileşim modelini benimseyerek, araçları özerk şekilde seçerek ve yüksek kaliteli sonuç elde edilene kadar sorguları iyileştirerek, sistem statik prompt takip etmenin ötesine geçip daha uyarlanabilir, bağlam farkında bir karar verici haline gelir. İnsan tanımlı altyapılar ve etik kurallarla hâlâ sınırlı olsa da, bu agentic yetenekler işletmeler ve son kullanıcılar için daha zengin, dinamik ve nihayetinde daha faydalı yapay zeka etkileşimleri sağlar.
+Agentic RAG, yapay zeka sistemlerinin karmaşık, veri yoğun görevleri nasıl ele aldığı konusunda doğal bir evrimi temsil eder. Döngüsel bir etkileşim modeli benimseyerek, araçları bağımsız olarak seçerek ve yüksek kaliteli bir sonuca ulaşana kadar sorguları iyileştirerek, sistem statik istem takibinin ötesine geçerek daha uyarlanabilir, bağlama duyarlı bir karar verici haline gelir. Hâlâ insan tanımlı altyapılar ve etik kurallarla sınırlı olsa da, bu agentic yetenekler, hem işletmeler hem de son kullanıcılar için daha zengin, daha dinamik ve nihayetinde daha faydalı yapay zeka etkileşimlerini mümkün kılar.
+
+### Agentic RAG hakkında daha fazla sorunuz mu var?
+
+[Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) sunucusuna katılarak diğer öğrenenlerle tanışabilir, ofis saatlerine katılabilir ve AI Agents ile ilgili sorularınıza yanıt alabilirsiniz.
 
 ## Ek Kaynaklar
 
-- <a href="https://learn.microsoft.com/training/modules/use-own-data-azure-openai" target="_blank">Azure OpenAI Service ile Retrieval Augmented Generation (RAG) Uygulaması: Kendi verilerinizi Azure OpenAI Service ile nasıl kullanacağınızı öğrenin. Bu Microsoft Learn modülü, RAG uygulaması için kapsamlı bir rehber sunar.
-
-- <a href="https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai" target="_blank">Azure AI Foundry ile üretken yapay zeka uygulamalarının değerlendirilmesi: Bu makale, Agentic AI uygulamaları ve RAG mimarileri dahil olmak üzere, kamuya açık veri setleri üzerinde modellerin değerlendirilmesi ve karşılaştırılmasını ele alıyor</a>
-- <a href="https://weaviate.io/blog/what-is-agentic-rag" target="_blank">Agentic RAG nedir | Weaviate</a>
-- <a href="https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/" target="_blank">Agentic RAG: Ajan Tabanlı Retrieval Augmented Generation için Kapsamlı Rehber – Generation RAG Haberleri</a>
-- <a href="https://huggingface.co/learn/cookbook/agent_rag" target="_blank">Agentic RAG: Sorgu yeniden formülasyonu ve kendi kendine sorgulama ile RAG’inizi hızlandırın! Hugging Face Açık Kaynak AI Tarif Kitabı</a>
-- <a href="https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U" target="_blank">RAG’e Agentic Katmanlar Eklemek</a>
+-
+<a href="https://learn.microsoft.com/training/modules/use-own-data-azure-openai" target="_blank">
+Azure OpenAI Hizmeti ile Geri Alım Destekli Üretim (RAG) Uygulaması: Azure OpenAI Hizmeti ile kendi verilerinizi nasıl kullanacağınızı öğrenin. Bu Microsoft Learn modülü, RAG uygulamasını gerçekleştirmek için kapsamlı bir rehber sunar.
+- <a href="https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai" target="_blank">Azure AI Foundry ile üretken yapay zeka uygulamalarının değerlendirilmesi: Bu makale, kamuya açık veri setleri üzerinde modellerin değerlendirilmesi ve karşılaştırılmasını, Agentic AI uygulamaları ve RAG mimarilerini içerir</a>
+- <a href="https://weaviate.io/blog/what-is-agentic-rag" target="_blank">Agentic RAG Nedir | Weaviate</a>
+- <a href="https://ragaboutit.com/agentic-rag-a-complete-guide-to-agent-based-retrieval-augmented-generation/" target="_blank">Agentic RAG: Temsilci Tabanlı Geri Alım Destekli Üretim için Tam Kılavuz – RAG'den haberler</a>
+- <a href="https://huggingface.co/learn/cookbook/agent_rag" target="_blank">Agentic RAG: sorgu yeniden biçimlendirme ve kendi kendine sorgu ile RAG'ınızı hızlandırın! Hugging Face Açık Kaynaklı AI Tarif Kitabı</a>
+- <a href="https://youtu.be/aQ4yQXeB1Ss?si=2HUqBzHoeB5tR04U" target="_blank">RAG'e Agentic Katmanlar Eklemek</a>
 - <a href="https://www.youtube.com/watch?v=zeAyuLc_f3Q&t=244s" target="_blank">Bilgi Asistanlarının Geleceği: Jerry Liu</a>
 - <a href="https://www.youtube.com/watch?v=AOSjiXP1jmQ" target="_blank">Agentic RAG Sistemleri Nasıl Kurulur</a>
-- <a href="https://ignite.microsoft.com/sessions/BRK102?source=sessions" target="_blank">Azure AI Foundry Agent Servisi ile AI ajanlarınızı ölçeklendirmek</a>
+- <a href="https://ignite.microsoft.com/sessions/BRK102?source=sessions" target="_blank">Azure AI Foundry Agent Hizmeti ile AI temsilcilerinizi ölçeklendirme</a>
 
 ### Akademik Makaleler
 
-- <a href="https://arxiv.org/abs/2303.17651" target="_blank">2303.17651 Self-Refine: Kendi Kendine Geri Bildirimle Yinelemeli İyileştirme</a>
-- <a href="https://arxiv.org/abs/2303.11366" target="_blank">2303.11366 Reflexion: Sözlü Pekiştirmeli Öğrenme ile Dil Ajanları</a>
-- <a href="https://arxiv.org/abs/2305.11738" target="_blank">2305.11738 CRITIC: Büyük Dil Modelleri Araç Etkileşimli Eleştiri ile Kendi Kendini Düzeltebilir</a>
-- <a href="https://arxiv.org/abs/2501.09136" target="_blank">2501.09136 Agentic Retrieval-Augmented Generation: Agentic RAG Üzerine Bir Anket</a>
+- <a href="https://arxiv.org/abs/2303.17651" target="_blank">2303.17651 Self-Refine: Kendine Geri Bildirim ile İteratif İyileştirme</a>
+- <a href="https://arxiv.org/abs/2303.11366" target="_blank">2303.11366 Reflexion: Sözel Pekiştirmeli Öğrenme ile Dil Temsilcileri</a>
+- <a href="https://arxiv.org/abs/2305.11738" target="_blank">2305.11738 CRITIC: Büyük Dil Modelleri Araç-İnteraktif Eleştiri ile Kendini Düzeltebilir</a>
+- <a href="https://arxiv.org/abs/2501.09136" target="_blank">2501.09136 Agentic Retrieval-Augmented Generation: Agentic RAG Üzerine Bir Araştırma</a>
 
 ## Önceki Ders
 
-[Tool Use Design Pattern](../04-tool-use/README.md)
+[Araç Kullanımı Tasarım Deseni](../04-tool-use/README.md)
 
 ## Sonraki Ders
 
-[Building Trustworthy AI Agents](../06-building-trustworthy-agents/README.md)
+[Güvenilir AI Temsilcileri Oluşturma](../06-building-trustworthy-agents/README.md)
+
+---
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) adlı yapay zeka çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlıklar içerebileceğini lütfen unutmayın. Belgenin orijinal dili, yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımından kaynaklanan herhangi bir yanlış anlama veya yanlış yorumlama durumunda sorumluluk kabul edilmez.

@@ -1,282 +1,260 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "da3523bf8fa456371e21d8d14c67305d",
-  "translation_date": "2025-07-12T08:59:15+00:00",
+  "original_hash": "a9631d0898fc3c6ecbb3a8a0da7aaba3",
+  "translation_date": "2025-08-29T10:40:30+00:00",
   "source_file": "02-explore-agentic-frameworks/README.md",
   "language_code": "pa"
 }
 -->
-. ਵਿਖਿਆਪਨ ਅਨੁਸਾਰ, ਇੱਕ ਐਕਟਰ _ਸਮਕਾਲੀ ਗਣਨਾ ਦਾ ਮੂਲ ਭਾਗ ਹੈ। ਜਦੋਂ ਇਹ ਕਿਸੇ ਸੁਨੇਹੇ ਨੂੰ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ, ਤਾਂ ਇਹ: ਸਥਾਨਕ ਫੈਸਲੇ ਕਰ ਸਕਦਾ ਹੈ, ਹੋਰ ਐਕਟਰ ਬਣਾਉਂਦਾ ਹੈ, ਹੋਰ ਸੁਨੇਹੇ ਭੇਜਦਾ ਹੈ, ਅਤੇ ਅਗਲੇ ਪ੍ਰਾਪਤ ਹੋਣ ਵਾਲੇ ਸੁਨੇਹੇ ਦਾ ਜਵਾਬ ਕਿਵੇਂ ਦੇਣਾ ਹੈ ਇਹ ਨਿਰਧਾਰਤ ਕਰਦਾ ਹੈ_।
+[![AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਦੀ ਖੋਜ](../../../translated_images/lesson-2-thumbnail.c65f44c93b8558df4d5d407e29970e654629e614f357444a9c27c80feb54c79d.pa.png)](https://youtu.be/ODwF-EZo_O8?si=1xoy_B9RNQfrYdF7)
 
-**ਵਰਤੋਂ ਦੇ ਕੇਸ**: ਕੋਡ ਜਨਰੇਸ਼ਨ ਨੂੰ ਆਟੋਮੇਟ ਕਰਨ, ਡਾਟਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਾਰਜਾਂ ਨੂੰ ਕਰਨ ਅਤੇ ਯੋਜਨਾ ਬਣਾਉਣ ਅਤੇ ਖੋਜ ਕਾਰਜਾਂ ਲਈ ਕਸਟਮ ਏਜੰਟ ਬਣਾਉਣ।
+> _(ਉਪਰ ਦਿੱਤੀ ਤਸਵੀਰ 'ਤੇ ਕਲਿਕ ਕਰਕੇ ਇਸ ਪਾਠ ਦੀ ਵੀਡੀਓ ਵੇਖੋ)_
 
-ਇੱਥੇ AutoGen ਦੇ ਕੁਝ ਮਹੱਤਵਪੂਰਨ ਮੁੱਖ ਸੰਕਲਪ ਹਨ:
+# AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਦੀ ਖੋਜ
 
-- **ਏਜੰਟ**। ਇੱਕ ਏਜੰਟ ਇੱਕ ਸਾਫਟਵੇਅਰ ਇਕਾਈ ਹੈ ਜੋ:
-  - **ਸੁਨੇਹਿਆਂ ਰਾਹੀਂ ਸੰਚਾਰ ਕਰਦਾ ਹੈ**, ਇਹ ਸੁਨੇਹੇ ਸਮਕਾਲੀ ਜਾਂ ਅਸਮਕਾਲੀ ਹੋ ਸਕਦੇ ਹਨ।
-  - **ਆਪਣੀ ਸਥਿਤੀ ਨੂੰ ਬਰਕਰਾਰ ਰੱਖਦਾ ਹੈ**, ਜਿਸ ਨੂੰ ਆਉਣ ਵਾਲੇ ਸੁਨੇਹਿਆਂ ਦੁਆਰਾ ਬਦਲਿਆ ਜਾ ਸਕਦਾ ਹੈ।
-  - **ਪ੍ਰਾਪਤ ਸੁਨੇਹਿਆਂ ਜਾਂ ਆਪਣੀ ਸਥਿਤੀ ਵਿੱਚ ਬਦਲਾਅ ਦੇ ਜਵਾਬ ਵਿੱਚ ਕਾਰਵਾਈ ਕਰਦਾ ਹੈ।** ਇਹ ਕਾਰਵਾਈਆਂ ਏਜੰਟ ਦੀ ਸਥਿਤੀ ਨੂੰ ਬਦਲ ਸਕਦੀਆਂ ਹਨ ਅਤੇ ਬਾਹਰੀ ਪ੍ਰਭਾਵ ਪੈਦਾ ਕਰ ਸਕਦੀਆਂ ਹਨ, ਜਿਵੇਂ ਕਿ ਸੁਨੇਹਾ ਲਾਗਜ਼ ਨੂੰ ਅਪਡੇਟ ਕਰਨਾ, ਨਵੇਂ ਸੁਨੇਹੇ ਭੇਜਣਾ, ਕੋਡ ਚਲਾਉਣਾ ਜਾਂ API ਕਾਲ ਕਰਨਾ।
-    
-  ਇੱਥੇ ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਛੋਟਾ ਕੋਡ ਸਨਿੱਪੇਟ ਹੈ ਜਿਸ ਵਿੱਚ ਤੁਸੀਂ ਚੈਟ ਸਮਰੱਥਾਵਾਂ ਵਾਲਾ ਆਪਣਾ ਏਜੰਟ ਬਣਾਉਂਦੇ ਹੋ:
+AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਉਹ ਸੌਫਟਵੇਅਰ ਪਲੇਟਫਾਰਮ ਹਨ ਜੋ AI ਏਜੰਟਸ ਦੀ ਰਚਨਾ, ਤੈਨਾਤੀ ਅਤੇ ਪ੍ਰਬੰਧਨ ਨੂੰ ਸਧਾਰਨ ਬਣਾਉਣ ਲਈ ਤਿਆਰ ਕੀਤੇ ਗਏ ਹਨ। ਇਹ ਫਰੇਮਵਰਕਸ ਡਿਵੈਲਪਰਾਂ ਨੂੰ ਪੂਰਵ-ਤਿਆਰ ਕੀਤੇ ਗਏ ਕੰਪੋਨੈਂਟਸ, ਐਬਸਟਰੈਕਸ਼ਨ ਅਤੇ ਟੂਲਸ ਪ੍ਰਦਾਨ ਕਰਦੇ ਹਨ ਜੋ ਜਟਿਲ AI ਸਿਸਟਮਾਂ ਦੇ ਵਿਕਾਸ ਨੂੰ ਸਧਾਰਨ ਬਣਾਉਂਦੇ ਹਨ।
 
-    ```python
-    from autogen_agentchat.agents import AssistantAgent
-    from autogen_agentchat.messages import TextMessage
-    from autogen_ext.models.openai import OpenAIChatCompletionClient
+ਇਹ ਫਰੇਮਵਰਕਸ ਡਿਵੈਲਪਰਾਂ ਨੂੰ AI ਏਜੰਟ ਵਿਕਾਸ ਵਿੱਚ ਆਮ ਚੁਣੌਤੀਆਂ ਲਈ ਮਿਆਰੀ ਪਹੁੰਚ ਪ੍ਰਦਾਨ ਕਰਕੇ ਆਪਣੇ ਐਪਲੀਕੇਸ਼ਨ ਦੇ ਵਿਲੱਖਣ ਪੱਖਾਂ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਦੇ ਹਨ। ਇਹ AI ਸਿਸਟਮਾਂ ਦੇ ਨਿਰਮਾਣ ਵਿੱਚ ਸਕੇਲਬਿਲਟੀ, ਪਹੁੰਚਯੋਗਤਾ ਅਤੇ ਕੁਸ਼ਲਤਾ ਨੂੰ ਵਧਾਉਂਦੇ ਹਨ।
 
+## ਪਰਿਚਯ
 
-    class MyAssistant(RoutedAgent):
-        def __init__(self, name: str) -> None:
-            super().__init__(name)
-            model_client = OpenAIChatCompletionClient(model="gpt-4o")
-            self._delegate = AssistantAgent(name, model_client=model_client)
-    
-        @message_handler
-        async def handle_my_message_type(self, message: MyMessageType, ctx: MessageContext) -> None:
-            print(f"{self.id.type} received message: {message.content}")
-            response = await self._delegate.on_messages(
-                [TextMessage(content=message.content, source="user")], ctx.cancellation_token
-            )
-            print(f"{self.id.type} responded: {response.chat_message.content}")
-    ```
-    
-    ਪਿਛਲੇ ਕੋਡ ਵਿੱਚ, `MyAssistant` ਬਣਾਇਆ ਗਿਆ ਹੈ ਅਤੇ `RoutedAgent` ਤੋਂ ਵਿਰਾਸਤ ਵਿੱਚ ਮਿਲਦਾ ਹੈ। ਇਸ ਵਿੱਚ ਇੱਕ ਸੁਨੇਹਾ ਹੈਂਡਲਰ ਹੈ ਜੋ ਸੁਨੇਹੇ ਦੀ ਸਮੱਗਰੀ ਪ੍ਰਿੰਟ ਕਰਦਾ ਹੈ ਅਤੇ ਫਿਰ `AssistantAgent` ਡੈਲੀਗੇਟ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਜਵਾਬ ਭੇਜਦਾ ਹੈ। ਖਾਸ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਅਸੀਂ `self._delegate` ਨੂੰ `AssistantAgent` ਦਾ ਇੱਕ ਉਦਾਹਰਨ ਸੌਂਪਦੇ ਹਾਂ ਜੋ ਇੱਕ ਪ੍ਰੀ-ਬਿਲਟ ਏਜੰਟ ਹੈ ਜੋ ਚੈਟ ਪੂਰਨਤਾ ਨੂੰ ਸੰਭਾਲ ਸਕਦਾ ਹੈ।
+ਇਸ ਪਾਠ ਵਿੱਚ ਇਹ ਕਵਰ ਕੀਤਾ ਜਾਵੇਗਾ:
 
-    ਆਓ AutoGen ਨੂੰ ਇਸ ਏਜੰਟ ਕਿਸਮ ਬਾਰੇ ਦੱਸਦੇ ਹਾਂ ਅਤੇ ਅਗਲਾ ਪ੍ਰੋਗਰਾਮ ਸ਼ੁਰੂ ਕਰਦੇ ਹਾਂ:
+- AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਕੀ ਹਨ ਅਤੇ ਇਹ ਡਿਵੈਲਪਰਾਂ ਨੂੰ ਕੀ ਹਾਸਲ ਕਰਨ ਯੋਗ ਬਣਾਉਂਦੇ ਹਨ?
+- ਟੀਮਾਂ ਇਹਨਾਂ ਨੂੰ ਕਿਵੇਂ ਵਰਤ ਸਕਦੀਆਂ ਹਨ ਆਪਣੇ ਏਜੰਟ ਦੀ ਸਮਰੱਥਾ ਨੂੰ ਤੇਜ਼ੀ ਨਾਲ ਪ੍ਰੋਟੋਟਾਈਪ, ਦੁਹਰਾਉਣ ਅਤੇ ਸੁਧਾਰ ਕਰਨ ਲਈ?
+- ਮਾਈਕਰੋਸਾਫਟ ਦੁਆਰਾ ਬਣਾਏ ਗਏ ਫਰੇਮਵਰਕਸ ਅਤੇ ਟੂਲਸ ਵਿੱਚ ਕੀ ਅੰਤਰ ਹਨ?
 
-    ```python
-    
-    # main.py
-    runtime = SingleThreadedAgentRuntime()
-    await MyAgent.register(runtime, "my_agent", lambda: MyAgent())
+## ਸਿੱਖਣ ਦੇ ਲਕਸ਼
 
-    runtime.start()  # Start processing messages in the background.
-    await runtime.send_message(MyMessageType("Hello, World!"), AgentId("my_agent", "default"))
-    ```
+ਇਸ ਪਾਠ ਦੇ ਲਕਸ਼ ਹਨ:
 
-    ਪਿਛਲੇ ਕੋਡ ਵਿੱਚ ਏਜੰਟਾਂ ਨੂੰ ਰਨਟਾਈਮ ਨਾਲ ਰਜਿਸਟਰ ਕੀਤਾ ਗਿਆ ਹੈ ਅਤੇ ਫਿਰ ਏਜੰਟ ਨੂੰ ਇੱਕ ਸੁਨੇਹਾ ਭੇਜਿਆ ਜਾਂਦਾ ਹੈ ਜਿਸ ਦਾ ਨਤੀਜਾ ਹੇਠਾਂ ਦਿੱਤਾ ਗਿਆ ਹੈ:
+- AI ਵਿਕਾਸ ਵਿੱਚ AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਦੀ ਭੂਮਿਕਾ ਨੂੰ ਸਮਝਣਾ।
+- AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਬੁੱਧੀਮਾਨ ਏਜੰਟ ਬਣਾਉਣਾ।
+- AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਦੁਆਰਾ ਯੋਗ ਕੀਤੀਆਂ ਮੁੱਖ ਸਮਰੱਥਾਵਾਂ।
+- AutoGen, Semantic Kernel, ਅਤੇ Azure AI Agent Service ਦੇ ਅੰਤਰ।
 
-    ```text
-    # Output from the console:
-    my_agent received message: Hello, World!
-    my_assistant received message: Hello, World!
-    my_assistant responded: Hello! How can I assist you today?
-    ```
+## AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਕੀ ਹਨ ਅਤੇ ਇਹ ਡਿਵੈਲਪਰਾਂ ਨੂੰ ਕੀ ਕਰਨ ਯੋਗ ਬਣਾਉਂਦੇ ਹਨ?
 
-- **ਮਲਟੀ ਏਜੰਟ**। AutoGen ਕਈ ਏਜੰਟਾਂ ਦੀ ਰਚਨਾ ਦਾ ਸਮਰਥਨ ਕਰਦਾ ਹੈ ਜੋ ਮਿਲ ਕੇ ਕੰਮ ਕਰ ਸਕਦੇ ਹਨ ਤਾਂ ਜੋ ਜਟਿਲ ਕਾਰਜਾਂ ਨੂੰ ਪੂਰਾ ਕੀਤਾ ਜਾ ਸਕੇ। ਏਜੰਟ ਸੰਚਾਰ ਕਰ ਸਕਦੇ ਹਨ, ਜਾਣਕਾਰੀ ਸਾਂਝੀ ਕਰ ਸਕਦੇ ਹਨ, ਅਤੇ ਆਪਣੇ ਕਾਰਜਾਂ ਨੂੰ ਸਹਿਯੋਗ ਨਾਲ ਨਿਭਾ ਸਕਦੇ ਹਨ ਤਾਂ ਜੋ ਸਮੱਸਿਆਵਾਂ ਨੂੰ ਜ਼ਿਆਦਾ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਢੰਗ ਨਾਲ ਹੱਲ ਕੀਤਾ ਜਾ ਸਕੇ। ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮ ਬਣਾਉਣ ਲਈ, ਤੁਸੀਂ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਦੇ ਏਜੰਟ ਪਰਿਭਾਸ਼ਿਤ ਕਰ ਸਕਦੇ ਹੋ ਜਿਨ੍ਹਾਂ ਦੇ ਵਿਸ਼ੇਸ਼ ਕਾਰਜ ਅਤੇ ਭੂਮਿਕਾਵਾਂ ਹੁੰਦੀਆਂ ਹਨ, ਜਿਵੇਂ ਡਾਟਾ ਪ੍ਰਾਪਤੀ, ਵਿਸ਼ਲੇਸ਼ਣ, ਫੈਸਲਾ-ਲੈਣਾ, ਅਤੇ ਉਪਭੋਗਤਾ ਇੰਟਰੈਕਸ਼ਨ। ਆਓ ਵੇਖੀਏ ਕਿ ਇਸ ਤਰ੍ਹਾਂ ਦੀ ਰਚਨਾ ਕਿਵੇਂ ਦਿਸਦੀ ਹੈ:
+ਪਾਰੰਪਰਿਕ AI ਫਰੇਮਵਰਕਸ ਤੁਹਾਨੂੰ ਆਪਣੇ ਐਪਸ ਵਿੱਚ AI ਨੂੰ ਸ਼ਾਮਲ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰ ਸਕਦੇ ਹਨ ਅਤੇ ਇਹ ਐਪਸ ਹੇਠ ਲਿਖੇ ਤਰੀਕਿਆਂ ਵਿੱਚ ਬਿਹਤਰ ਬਣਾਉਂਦੇ ਹਨ:
 
-    ```python
-    editor_description = "Editor for planning and reviewing the content."
+- **ਪ੍ਰਸਨਲਾਈਜ਼ੇਸ਼ਨ**: AI ਯੂਜ਼ਰ ਦੇ ਵਿਹਾਰ ਅਤੇ ਪਸੰਦਾਂ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰਕੇ ਨਿੱਜੀ ਸਿਫਾਰਸ਼ਾਂ, ਸਮੱਗਰੀ ਅਤੇ ਅਨੁਭਵ ਪ੍ਰਦਾਨ ਕਰ ਸਕਦਾ ਹੈ।
+ਉਦਾਹਰਨ: Netflix ਵਰਗੇ ਸਟ੍ਰੀਮਿੰਗ ਸੇਵਾਵਾਂ AI ਦੀ ਵਰਤੋਂ ਕਰਦੀਆਂ ਹਨ ਫਿਲਮਾਂ ਅਤੇ ਸ਼ੋਅਜ਼ ਦੀ ਸਿਫਾਰਸ਼ ਕਰਨ ਲਈ ਜੋ ਦੇਖਣ ਦੇ ਇਤਿਹਾਸ 'ਤੇ ਆਧਾਰਿਤ ਹੁੰਦੇ ਹਨ, ਜਿਸ ਨਾਲ ਯੂਜ਼ਰ ਦੀ ਸਹਿਭਾਗਤਾ ਅਤੇ ਸੰਤੁਸ਼ਟੀ ਵਧਦੀ ਹੈ।
+- **ਆਟੋਮੇਸ਼ਨ ਅਤੇ ਕੁਸ਼ਲਤਾ**: AI ਦੁਹਰਾਏ ਜਾਣ ਵਾਲੇ ਕੰਮਾਂ ਨੂੰ ਆਟੋਮੇਟ ਕਰ ਸਕਦਾ ਹੈ, ਵਰਕਫਲੋਜ਼ ਨੂੰ ਸਧਾਰਨ ਬਣਾ ਸਕਦਾ ਹੈ, ਅਤੇ ਓਪਰੇਸ਼ਨਲ ਕੁਸ਼ਲਤਾ ਵਿੱਚ ਸੁਧਾਰ ਕਰ ਸਕਦਾ ਹੈ।
+ਉਦਾਹਰਨ: ਗਾਹਕ ਸੇਵਾ ਐਪਸ AI-ਚਾਲਤ ਚੈਟਬੋਟਸ ਦੀ ਵਰਤੋਂ ਕਰਦੀਆਂ ਹਨ ਆਮ ਪੁੱਛਗਿੱਛਾਂ ਨੂੰ ਸੰਭਾਲਣ ਲਈ, ਜਵਾਬ ਦੇ ਸਮੇਂ ਨੂੰ ਘਟਾਉਂਦੀਆਂ ਹਨ ਅਤੇ ਜਟਿਲ ਮੁੱਦਿਆਂ ਲਈ ਮਨੁੱਖੀ ਏਜੰਟਾਂ ਨੂੰ ਖਾਲੀ ਕਰਦੀਆਂ ਹਨ।
+- **ਵਧੀਆ ਯੂਜ਼ਰ ਅਨੁਭਵ**: AI ਆਵਾਜ਼ ਪਛਾਣ, ਕੁਦਰਤੀ ਭਾਸ਼ਾ ਪ੍ਰੋਸੈਸਿੰਗ, ਅਤੇ ਪੇਸ਼ਗੀ ਟੈਕਸਟ ਵਰਗੇ ਬੁੱਧੀਮਾਨ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਪ੍ਰਦਾਨ ਕਰਕੇ ਸਮੁੱਚੇ ਯੂਜ਼ਰ ਅਨੁਭਵ ਵਿੱਚ ਸੁਧਾਰ ਕਰ ਸਕਦਾ ਹੈ।
+ਉਦਾਹਰਨ: Siri ਅਤੇ Google Assistant ਵਰਗੇ ਵਰਚੁਅਲ ਸਹਾਇਕ AI ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹਨ ਆਵਾਜ਼ ਕਮਾਂਡਾਂ ਨੂੰ ਸਮਝਣ ਅਤੇ ਜਵਾਬ ਦੇਣ ਲਈ, ਜਿਸ ਨਾਲ ਯੂਜ਼ਰਾਂ ਲਈ ਆਪਣੇ ਡਿਵਾਈਸਾਂ ਨਾਲ ਸੰਚਾਰ ਕਰਨਾ ਆਸਾਨ ਬਣ ਜਾਂਦਾ ਹੈ।
 
-    # Example of declaring an Agent
-    editor_agent_type = await EditorAgent.register(
-    runtime,
-    editor_topic_type,  # Using topic type as the agent type.
-    lambda: EditorAgent(
-        description=editor_description,
-        group_chat_topic_type=group_chat_topic_type,
-        model_client=OpenAIChatCompletionClient(
-            model="gpt-4o-2024-08-06",
-            # api_key="YOUR_API_KEY",
-        ),
-        ),
-    )
+### ਇਹ ਸਭ ਬਹੁਤ ਵਧੀਆ ਲੱਗਦਾ ਹੈ, ਤਾਂ ਫਿਰ ਸਾਨੂੰ AI ਏਜੰਟ ਫਰੇਮਵਰਕ ਦੀ ਜ਼ਰੂਰਤ ਕਿਉਂ ਹੈ?
 
-    # remaining declarations shortened for brevity
+AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਸਿਰਫ AI ਫਰੇਮਵਰਕਸ ਤੋਂ ਵੱਧ ਕੁਝ ਦਰਸਾਉਂਦੇ ਹਨ। ਇਹ ਬੁੱਧੀਮਾਨ ਏਜੰਟਸ ਦੀ ਰਚਨਾ ਯੋਗ ਬਣਾਉਣ ਲਈ ਤਿਆਰ ਕੀਤੇ ਗਏ ਹਨ ਜੋ ਯੂਜ਼ਰਾਂ, ਹੋਰ ਏਜੰਟਸ, ਅਤੇ ਵਾਤਾਵਰਣ ਨਾਲ ਸੰਚਾਰ ਕਰ ਸਕਦੇ ਹਨ ਅਤੇ ਵਿਸ਼ੇਸ਼ ਲਕਸ਼ਾਂ ਨੂੰ ਪ੍ਰਾਪਤ ਕਰ ਸਕਦੇ ਹਨ। ਇਹ ਏਜੰਟਸ ਸਵੈ-ਚਾਲਤ ਵਿਹਾਰ ਦਰਸਾ ਸਕਦੇ ਹਨ, ਫੈਸਲੇ ਲੈ ਸਕਦੇ ਹਨ, ਅਤੇ ਬਦਲਦੇ ਹਾਲਾਤਾਂ ਅਨੁਸਾਰ ਅਨੁਕੂਲ ਹੋ ਸਕਦੇ ਹਨ। ਆਓ ਕੁਝ ਮੁੱਖ ਸਮਰੱਥਾਵਾਂ ਦੇਖੀਏ ਜੋ AI ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਦੁਆਰਾ ਯੋਗ ਕੀਤੀਆਂ ਗਈਆਂ ਹਨ:
 
-    # Group chat
-    group_chat_manager_type = await GroupChatManager.register(
-    runtime,
-    "group_chat_manager",
-    lambda: GroupChatManager(
-        participant_topic_types=[writer_topic_type, illustrator_topic_type, editor_topic_type, user_topic_type],
-        model_client=OpenAIChatCompletionClient(
-            model="gpt-4o-2024-08-06",
-            # api_key="YOUR_API_KEY",
-        ),
-        participant_descriptions=[
-            writer_description, 
-            illustrator_description, 
-            editor_description, 
-            user_description
-        ],
-        ),
-    )
-    ```
+- **ਏਜੰਟ ਸਹਿਯੋਗ ਅਤੇ ਸਮਨਵਯਤਾ**: ਕਈ AI ਏਜੰਟਸ ਦੀ ਰਚਨਾ ਯੋਗ ਬਣਾਉਣਾ ਜੋ ਇਕੱਠੇ ਕੰਮ ਕਰ ਸਕਦੇ ਹਨ, ਸੰਚਾਰ ਕਰ ਸਕਦੇ ਹਨ, ਅਤੇ ਜਟਿਲ ਕੰਮਾਂ ਨੂੰ ਹੱਲ ਕਰਨ ਲਈ ਸਮਨਵਯ ਕਰ ਸਕਦੇ ਹਨ।
+- **ਕੰਮ ਆਟੋਮੇਸ਼ਨ ਅਤੇ ਪ੍ਰਬੰਧਨ**: ਬਹੁ-ਕਦਮ ਵਰਕਫਲੋਜ਼, ਕੰਮ ਸੌਂਪਣ, ਅਤੇ ਏਜੰਟਸ ਵਿੱਚ ਗਤੀਸ਼ੀਲ ਕੰਮ ਪ੍ਰਬੰਧਨ ਲਈ ਮਕੈਨਿਜ਼ਮ ਪ੍ਰਦਾਨ ਕਰਨਾ।
+- **ਸੰਦੇਸ਼ਕ ਅਨੁਭਵ ਅਤੇ ਅਨੁਕੂਲਤਾ**: ਏਜੰਟਸ ਨੂੰ ਸੰਦੇਸ਼ਕ ਸਮਝਣ ਦੀ ਸਮਰੱਥਾ, ਬਦਲਦੇ ਵਾਤਾਵਰਣਾਂ ਅਨੁਸਾਰ ਅਨੁਕੂਲ ਹੋਣ ਦੀ ਸਮਰੱਥਾ, ਅਤੇ ਰੀਅਲ-ਟਾਈਮ ਜਾਣਕਾਰੀ ਦੇ ਆਧਾਰ 'ਤੇ ਫੈਸਲੇ ਲੈਣ ਦੀ ਸਮਰੱਥਾ ਪ੍ਰਦਾਨ ਕਰਨਾ।
 
-    ਪਿਛਲੇ ਕੋਡ ਵਿੱਚ ਸਾਡੇ ਕੋਲ ਇੱਕ `GroupChatManager` ਹੈ ਜੋ ਰਨਟਾਈਮ ਨਾਲ ਰਜਿਸਟਰ ਕੀਤਾ ਗਿਆ ਹੈ। ਇਹ ਮੈਨੇਜਰ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਦੇ ਏਜੰਟਾਂ, ਜਿਵੇਂ ਲੇਖਕਾਂ, ਚਿੱਤਰਕਾਰਾਂ, ਸੰਪਾਦਕਾਂ ਅਤੇ ਉਪਭੋਗਤਾਵਾਂ ਦੇ ਵਿਚਕਾਰ ਇੰਟਰੈਕਸ਼ਨਾਂ ਦਾ ਸਹਿਯੋਗ ਕਰਦਾ ਹੈ।
+ਸਾਰ ਵਿੱਚ, ਏਜੰਟ ਤੁਹਾਨੂੰ ਹੋਰ ਕੁਝ ਕਰਨ ਦੀ ਯੋਗਤਾ ਦਿੰਦੇ ਹਨ, ਆਟੋਮੇਸ਼ਨ ਨੂੰ ਅਗਲੇ ਪੱਧਰ 'ਤੇ ਲੈ ਜਾਂਦੇ ਹਨ, ਅਤੇ ਹੋਰ ਬੁੱਧੀਮਾਨ ਸਿਸਟਮ ਬਣਾਉਂਦੇ ਹਨ ਜੋ ਆਪਣੇ ਵਾਤਾਵਰਣ ਤੋਂ ਸਿੱਖ ਸਕਦੇ ਹਨ ਅਤੇ ਅਨੁਕੂਲ ਹੋ ਸਕਦੇ ਹਨ।
+## ਅਜਿਹੇ ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਫਰੇਮਵਰਕ ਦੇ ਮੁੱਢਲੇ ਪਾਸੇ ਹਨ, ਤਾਂ ਫਿਰ ਏਜੰਟ ਫਰੇਮਵਰਕ ਬਾਰੇ ਕੀ?
 
-- **ਏਜੰਟ ਰਨਟਾਈਮ**। ਫਰੇਮਵਰਕ ਇੱਕ ਰਨਟਾਈਮ ਵਾਤਾਵਰਣ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ, ਜੋ ਏਜੰਟਾਂ ਵਿਚਕਾਰ ਸੰਚਾਰ ਨੂੰ ਯੋਗ ਬਣਾਉਂਦਾ ਹੈ, ਉਨ੍ਹਾਂ ਦੀਆਂ ਪਹਿਚਾਣਾਂ ਅਤੇ ਜੀਵਨਚੱਕਰਾਂ ਦਾ ਪ੍ਰਬੰਧ ਕਰਦਾ ਹੈ, ਅਤੇ ਸੁਰੱਖਿਆ ਅਤੇ ਗੋਪਨੀਯਤਾ ਦੀਆਂ ਸੀਮਾਵਾਂ ਲਾਗੂ ਕਰਦਾ ਹੈ। ਇਸਦਾ ਮਤਲਬ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਏਜੰਟਾਂ ਨੂੰ ਇੱਕ ਸੁਰੱਖਿਅਤ ਅਤੇ ਨਿਯੰਤਰਿਤ ਵਾਤਾਵਰਣ ਵਿੱਚ ਚਲਾ ਸਕਦੇ ਹੋ, ਇਹ ਯਕੀਨੀ ਬਣਾਉਂਦੇ ਹੋਏ ਕਿ ਉਹ ਸੁਰੱਖਿਅਤ ਅਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਢੰਗ ਨਾਲ ਇੰਟਰੈਕਟ ਕਰ ਸਕਦੇ ਹਨ। ਦੋ ਰਨਟਾਈਮ ਹਨ ਜੋ ਦਿਲਚਸਪੀ ਦੇ ਹਨ:
-  - **ਸਟੈਂਡ-ਅਲੋਨ ਰਨਟਾਈਮ**। ਇਹ ਇੱਕ ਵਧੀਆ ਚੋਣ ਹੈ ਇਕ-ਪ੍ਰਕਿਰਿਆ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਜਿੱਥੇ ਸਾਰੇ ਏਜੰਟ ਇੱਕੋ ਪ੍ਰੋਗ੍ਰਾਮਿੰਗ ਭਾਸ਼ਾ ਵਿੱਚ ਲਾਗੂ ਕੀਤੇ ਜਾਂਦੇ ਹਨ ਅਤੇ ਇੱਕੋ ਪ੍ਰਕਿਰਿਆ ਵਿੱਚ ਚਲਦੇ ਹਨ। ਇਹ ਹੈ ਕਿ ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ:  
+## ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ
 
-ਐਪਲੀਕੇਸ਼ਨ ਸਟੈਕ
+ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਇੱਕ ਹਾਲ ਹੀ ਦੀ ਜੋੜ ਹੈ, ਜੋ ਮਾਈਕਰੋਸਾਫਟ ਇਗਨਾਈਟ 2024 'ਤੇ ਪੇਸ਼ ਕੀਤੀ ਗਈ ਸੀ। ਇਹ ਖੁੱਲ੍ਹੇ-ਸਰੋਤ ਵਾਲੇ LLMs ਜਿਵੇਂ ਕਿ Llama 3, Mistral, ਅਤੇ Cohere ਨੂੰ ਸਿੱਧੇ ਕਾਲ ਕਰਨ ਵਰਗੇ ਜ਼ਿਆਦਾ ਲਚਕੀਲੇ ਮਾਡਲਾਂ ਨਾਲ ਏਆਈ ਏਜੰਟਾਂ ਦੇ ਵਿਕਾਸ ਅਤੇ ਤੈਨਾਤੀ ਦੀ ਆਗਿਆ ਦਿੰਦੀ ਹੈ।
 
-    *ਏਜੰਟ ਸੁਨੇਹਿਆਂ ਰਾਹੀਂ ਰਨਟਾਈਮ ਨਾਲ ਸੰਚਾਰ ਕਰਦੇ ਹਨ, ਅਤੇ ਰਨਟਾਈਮ ਏਜੰਟਾਂ ਦੇ ਜੀਵਨਚੱਕਰ ਦਾ ਪ੍ਰਬੰਧ ਕਰਦਾ ਹੈ*
+ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਮਜ਼ਬੂਤ ਕਾਰੋਬਾਰੀ ਸੁਰੱਖਿਆ ਮਕੈਨਿਜ਼ਮ ਅਤੇ ਡਾਟਾ ਸਟੋਰੇਜ ਤਰੀਕਿਆਂ ਨੂੰ ਪ੍ਰਦਾਨ ਕਰਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਇਹ ਕਾਰੋਬਾਰੀ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਉਚਿਤ ਬਣਦੀ ਹੈ।
 
-  - **ਵੰਡਿਆ ਹੋਇਆ ਏਜੰਟ ਰਨਟਾਈਮ**, ਇਹ ਬਹੁ-ਪ੍ਰਕਿਰਿਆ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਉਚਿਤ ਹੈ ਜਿੱਥੇ ਏਜੰਟ ਵੱਖ-ਵੱਖ ਪ੍ਰੋਗ੍ਰਾਮਿੰਗ ਭਾਸ਼ਾਵਾਂ ਵਿੱਚ ਲਾਗੂ ਹੋ ਸਕਦੇ ਹਨ ਅਤੇ ਵੱਖ-ਵੱਖ ਮਸ਼ੀਨਾਂ 'ਤੇ ਚੱਲ ਰਹੇ ਹੋ ਸਕਦੇ ਹਨ। ਇਹ ਹੈ ਕਿ ਇਹ ਕਿਵੇਂ ਕੰਮ ਕਰਦਾ ਹੈ:  
+ਇਹ ਆਉਟ-ਆਫ-ਦ-ਬਾਕਸ ਮਲਟੀ-ਏਜੰਟ ਆਰਕੇਸਟਰੇਸ਼ਨ ਫਰੇਮਵਰਕ ਜਿਵੇਂ ਕਿ AutoGen ਅਤੇ ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਨਾਲ ਕੰਮ ਕਰਦੀ ਹੈ।
 
-## Semantic Kernel + Agent Framework
+ਇਹ ਸਰਵਿਸ ਇਸ ਸਮੇਂ ਪਬਲਿਕ ਪ੍ਰੀਵਿਊ ਵਿੱਚ ਹੈ ਅਤੇ ਏਜੰਟ ਬਣਾਉਣ ਲਈ Python ਅਤੇ C# ਦਾ ਸਮਰਥਨ ਕਰਦੀ ਹੈ।
 
-Semantic Kernel ਇੱਕ ਉਦਯੋਗ-ਤਿਆਰ AI ਓਰਕੇਸਟ੍ਰੇਸ਼ਨ SDK ਹੈ। ਇਹ AI ਅਤੇ ਮੈਮੋਰੀ ਕਨੈਕਟਰਾਂ ਦੇ ਨਾਲ-ਨਾਲ ਇੱਕ ਏਜੰਟ ਫਰੇਮਵਰਕ 'ਤੇ مشتمل ਹੈ।
+ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਪਾਇਥਨ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹੋਏ, ਅਸੀਂ ਇੱਕ ਯੂਜ਼ਰ-ਡਿਫਾਈਨਡ ਪਲੱਗਇਨ ਨਾਲ ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਬਣਾ ਸਕਦੇ ਹਾਂ:
 
-ਆਓ ਪਹਿਲਾਂ ਕੁਝ ਮੁੱਖ ਭਾਗਾਂ ਨੂੰ ਕਵਰ ਕਰੀਏ:
+```python
+import asyncio
+from typing import Annotated
 
-- **AI ਕਨੈਕਟਰ**: ਇਹ ਬਾਹਰੀ AI ਸੇਵਾਵਾਂ ਅਤੇ ਡਾਟਾ ਸਰੋਤਾਂ ਨਾਲ ਇੰਟਰਫੇਸ ਹੈ ਜੋ Python ਅਤੇ C# ਦੋਹਾਂ ਵਿੱਚ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ।
+from azure.identity.aio import DefaultAzureCredential
 
-  ```python
-  # Semantic Kernel Python
-  from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
-  from semantic_kernel.kernel import Kernel
-
-  kernel = Kernel()
-  kernel.add_service(
-    AzureChatCompletion(
-        deployment_name="your-deployment-name",
-        api_key="your-api-key",
-        endpoint="your-endpoint",
-    )
-  )
-  ```  
-
-    ```csharp
-    // Semantic Kernel C#
-    using Microsoft.SemanticKernel;
-
-    // Create kernel
-    var builder = Kernel.CreateBuilder();
-    
-    // Add a chat completion service:
-    builder.Services.AddAzureOpenAIChatCompletion(
-        "your-resource-name",
-        "your-endpoint",
-        "your-resource-key",
-        "deployment-model");
-    var kernel = builder.Build();
-    ```
-
-    ਇੱਥੇ ਤੁਹਾਡੇ ਕੋਲ ਇੱਕ ਸਧਾਰਣ ਉਦਾਹਰਨ ਹੈ ਕਿ ਤੁਸੀਂ ਕਿਵੇਂ ਇੱਕ kernel ਬਣਾਉਂਦੇ ਹੋ ਅਤੇ ਚੈਟ ਪੂਰਨਤਾ ਸੇਵਾ ਜੋੜਦੇ ਹੋ। Semantic Kernel ਇੱਕ ਬਾਹਰੀ AI ਸੇਵਾ ਨਾਲ ਕਨੈਕਸ਼ਨ ਬਣਾਉਂਦਾ ਹੈ, ਇਸ ਮਾਮਲੇ ਵਿੱਚ Azure OpenAI Chat Completion।
-
-- **ਪਲੱਗਇਨ**: ਇਹ ਉਹ ਫੰਕਸ਼ਨਾਂ ਨੂੰ ਸਮੇਟਦੇ ਹਨ ਜੋ ਇੱਕ ਐਪਲੀਕੇਸ਼ਨ ਵਰਤ ਸਕਦੀ ਹੈ। ਤਿਆਰ-ਮੁਕੰਮਲ ਪਲੱਗਇਨ ਅਤੇ ਕਸਟਮ ਬਣਾਏ ਜਾ ਸਕਦੇ ਹਨ। ਇੱਕ ਸੰਬੰਧਿਤ ਸੰਕਲਪ "prompt functions" ਹੈ। ਕੁਦਰਤੀ ਭਾਸ਼ਾ ਦੇ ਇਸ਼ਾਰਿਆਂ ਦੀ ਬਜਾਏ, ਤੁਸੀਂ ਕੁਝ ਫੰਕਸ਼ਨਾਂ ਨੂੰ ਮਾਡਲ ਨੂੰ ਪ੍ਰਸਾਰਿਤ ਕਰਦੇ ਹੋ। ਮੌਜੂਦਾ ਚੈਟ ਸੰਦਰਭ ਦੇ ਆਧਾਰ 'ਤੇ, ਮਾਡਲ ਇਹਨਾਂ ਵਿੱਚੋਂ ਕਿਸੇ ਇੱਕ ਫੰਕਸ਼ਨ ਨੂੰ ਕਾਲ ਕਰ ਸਕਦਾ ਹੈ ਤਾਂ ਜੋ ਬੇਨਤੀ ਜਾਂ ਪੁੱਛਗਿੱਛ ਪੂਰੀ ਕੀਤੀ ਜਾ ਸਕੇ। ਇੱਥੇ ਇੱਕ ਉਦਾਹਰਨ ਹੈ:
-
-  ```python
-  from semantic_kernel.connectors.ai.open_ai.services.azure_chat_completion import AzureChatCompletion
+from semantic_kernel.agents import AzureAIAgent, AzureAIAgentSettings, AzureAIAgentThread
+from semantic_kernel.contents import ChatMessageContent
+from semantic_kernel.contents import AuthorRole
+from semantic_kernel.functions import kernel_function
 
 
-  async def main():
-      from semantic_kernel.functions import KernelFunctionFromPrompt
-      from semantic_kernel.kernel import Kernel
+# Define a sample plugin for the sample
+class MenuPlugin:
+    """A sample Menu Plugin used for the concept sample."""
 
-      kernel = Kernel()
-      kernel.add_service(AzureChatCompletion())
+    @kernel_function(description="Provides a list of specials from the menu.")
+    def get_specials(self) -> Annotated[str, "Returns the specials from the menu."]:
+        return """
+        Special Soup: Clam Chowder
+        Special Salad: Cobb Salad
+        Special Drink: Chai Tea
+        """
 
-      user_input = input("User Input:> ")
-
-      kernel_function = KernelFunctionFromPrompt(
-          function_name="SummarizeText",
-          prompt="""
-          Summarize the provided unstructured text in a sentence that is easy to understand.
-          Text to summarize: {{$user_input}}
-          """,
-      )
-
-      response = await kernel_function.invoke(kernel=kernel, user_input=user_input)
-      print(f"Model Response: {response}")
-
-      """
-      Sample Console Output:
-
-      User Input:> I like dogs
-      Model Response: The text expresses a preference for dogs.
-      """
+    @kernel_function(description="Provides the price of the requested menu item.")
+    def get_item_price(
+        self, menu_item: Annotated[str, "The name of the menu item."]
+    ) -> Annotated[str, "Returns the price of the menu item."]:
+        return "$9.99"
 
 
-  if __name__ == "__main__":
-    import asyncio
+async def main() -> None:
+    ai_agent_settings = AzureAIAgentSettings.create()
+
+    async with (
+        DefaultAzureCredential() as creds,
+        AzureAIAgent.create_client(
+            credential=creds,
+            conn_str=ai_agent_settings.project_connection_string.get_secret_value(),
+        ) as client,
+    ):
+        # Create agent definition
+        agent_definition = await client.agents.create_agent(
+            model=ai_agent_settings.model_deployment_name,
+            name="Host",
+            instructions="Answer questions about the menu.",
+        )
+
+        # Create the AzureAI Agent using the defined client and agent definition
+        agent = AzureAIAgent(
+            client=client,
+            definition=agent_definition,
+            plugins=[MenuPlugin()],
+        )
+
+        # Create a thread to hold the conversation
+        # If no thread is provided, a new thread will be
+        # created and returned with the initial response
+        thread: AzureAIAgentThread | None = None
+
+        user_inputs = [
+            "Hello",
+            "What is the special soup?",
+            "How much does that cost?",
+            "Thank you",
+        ]
+
+        try:
+            for user_input in user_inputs:
+                print(f"# User: '{user_input}'")
+                # Invoke the agent for the specified thread
+                response = await agent.get_response(
+                    messages=user_input,
+                    thread_id=thread,
+                )
+                print(f"# {response.name}: {response.content}")
+                thread = response.thread
+        finally:
+            await thread.delete() if thread else None
+            await client.agents.delete_agent(agent.id)
+
+
+if __name__ == "__main__":
     asyncio.run(main())
-  ```
+```
 
-    ```csharp
-    var userInput = Console.ReadLine();
+### ਮੁੱਖ ਧਾਰਨਾਵਾਂ
 
-    // Define semantic function inline.
-    string skPrompt = @"Summarize the provided unstructured text in a sentence that is easy to understand.
-                        Text to summarize: {{$userInput}}";
-    
-    // create the function from the prompt
-    KernelFunction summarizeFunc = kernel.CreateFunctionFromPrompt(
-        promptTemplate: skPrompt,
-        functionName: "SummarizeText"
-    );
+ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਵਿੱਚ ਹੇਠ ਲਿਖੀਆਂ ਮੁੱਖ ਧਾਰਨਾਵਾਂ ਹਨ:
 
-    //then import into the current kernel
-    kernel.ImportPluginFromFunctions("SemanticFunctions", [summarizeFunc]);
+- **ਏਜੰਟ**। ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਐਜ਼ਰ ਏਆਈ ਫਾਊਂਡਰੀ ਨਾਲ ਇੰਟਿਗ੍ਰੇਟ ਕਰਦੀ ਹੈ। ਏਆਈ ਫਾਊਂਡਰੀ ਦੇ ਅੰਦਰ, ਇੱਕ ਏਆਈ ਏਜੰਟ ਇੱਕ "ਸਮਾਰਟ" ਮਾਈਕਰੋਸਰਵਿਸ ਵਜੋਂ ਕੰਮ ਕਰਦਾ ਹੈ ਜੋ ਪ੍ਰਸ਼ਨਾਂ ਦੇ ਜਵਾਬ ਦੇਣ (RAG), ਕਾਰਵਾਈ ਕਰਨ ਜਾਂ ਵਰਕਫਲੋਜ਼ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਆਟੋਮੇਟ ਕਰਨ ਲਈ ਵਰਤਿਆ ਜਾ ਸਕਦਾ ਹੈ। ਇਹ ਜਨਰੇਟਿਵ ਏਆਈ ਮਾਡਲਾਂ ਦੀ ਤਾਕਤ ਨੂੰ ਉਹਨਾਂ ਟੂਲਾਂ ਨਾਲ ਜੋੜ ਕੇ ਹਾਸਲ ਕਰਦਾ ਹੈ ਜੋ ਇਸਨੂੰ ਅਸਲ-ਦੁਨੀਆ ਦੇ ਡਾਟਾ ਸਰੋਤਾਂ ਤੱਕ ਪਹੁੰਚ ਅਤੇ ਸੰਚਾਰ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦੇ ਹਨ। ਇਹ ਰਹੀ ਇੱਕ ਏਜੰਟ ਦੀ ਉਦਾਹਰਨ:
 
+    ```python
+    agent = project_client.agents.create_agent(
+        model="gpt-4o-mini",
+        name="my-agent",
+        instructions="You are helpful agent",
+        tools=code_interpreter.definitions,
+        tool_resources=code_interpreter.resources,
+    )
     ```
 
-    ਇੱਥੇ, ਤੁਹਾਡੇ ਕੋਲ ਪਹਿਲਾਂ ਇੱਕ ਟੈਮਪਲੇਟ ਪ੍ਰਾਂਪਟ `skPrompt` ਹੈ ਜੋ ਉਪਭੋਗਤਾ ਲਈ ਟੈਕਸਟ ਇਨਪੁੱਟ `$userInput` ਲਈ ਜਗ੍ਹਾ ਛੱਡਦਾ ਹੈ। ਫਿਰ ਤੁਸੀਂ kernel ਫੰਕਸ਼ਨ `SummarizeText` ਬਣਾਉਂਦੇ ਹੋ ਅਤੇ ਇਸਨੂੰ `SemanticFunctions` ਨਾਮ ਦੇ ਪਲੱਗਇਨ ਨਾਲ kernel ਵਿੱਚ ਆਯਾਤ ਕਰਦੇ ਹੋ। ਫੰਕਸ਼ਨ ਦੇ ਨਾਮ 'ਤੇ ਧਿਆਨ ਦਿਓ ਜੋ Semantic Kernel ਨੂੰ ਸਮਝਣ ਵਿੱਚ ਮਦਦ ਕਰਦਾ ਹੈ ਕਿ ਫੰਕਸ਼ਨ ਕੀ ਕਰਦਾ ਹੈ ਅਤੇ ਕਦੋਂ ਕਾਲ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ।
+    ਇਸ ਉਦਾਹਰਨ ਵਿੱਚ, ਇੱਕ ਏਜੰਟ `gpt-4o-mini` ਮਾਡਲ, `my-agent` ਨਾਮ, ਅਤੇ `You are helpful agent` ਹਦਾਇਤਾਂ ਨਾਲ ਬਣਾਇਆ ਗਿਆ ਹੈ। ਇਹ ਏਜੰਟ ਕੋਡ ਵਿਆਖਿਆ ਕਾਰਜਾਂ ਨੂੰ ਕਰਨ ਲਈ ਟੂਲਾਂ ਅਤੇ ਸਰੋਤਾਂ ਨਾਲ ਸਜਜਿਤ ਹੈ।
 
-- **ਦੇਸੀ ਫੰਕਸ਼ਨ**: ਫਰੇਮਵਰਕ ਕੋਲ ਐਸੇ ਦੇਸੀ ਫੰਕਸ਼ਨ ਵੀ ਹਨ ਜੋ ਸਿੱਧਾ ਕਾਰਜ ਕਰਨ ਲਈ ਕਾਲ ਕੀਤੇ ਜਾ ਸਕਦੇ ਹਨ। ਇੱਥੇ ਇੱਕ ਉਦਾਹਰਨ ਹੈ ਜੋ ਫਾਇਲ ਤੋਂ ਸਮੱਗਰੀ ਪ੍ਰਾਪਤ ਕਰਦਾ ਹੈ:
+- **ਥ੍ਰੈਡ ਅਤੇ ਸੁਨੇਹੇ**। ਥ੍ਰੈਡ ਇੱਕ ਹੋਰ ਮਹੱਤਵਪੂਰਨ ਧਾਰਨਾ ਹੈ। ਇਹ ਇੱਕ ਏਜੰਟ ਅਤੇ ਯੂਜ਼ਰ ਦੇ ਵਿਚਕਾਰ ਗੱਲਬਾਤ ਜਾਂ ਸੰਚਾਰ ਨੂੰ ਦਰਸਾਉਂਦਾ ਹੈ। ਥ੍ਰੈਡ ਗੱਲਬਾਤ ਦੀ ਪ੍ਰਗਤੀ ਨੂੰ ਟ੍ਰੈਕ ਕਰਨ, ਸੰਦਰਭ ਜਾਣਕਾਰੀ ਸਟੋਰ ਕਰਨ, ਅਤੇ ਸੰਚਾਰ ਦੀ ਸਥਿਤੀ ਦਾ ਪ੍ਰਬੰਧ ਕਰਨ ਲਈ ਵਰਤੇ ਜਾ ਸਕਦੇ ਹਨ। ਇਹ ਰਹੀ ਥ੍ਰੈਡ ਦੀ ਇੱਕ ਉਦਾਹਰਨ:
 
-    ```csharp
-    public class NativeFunctions {
-
-        [SKFunction, Description("Retrieve content from local file")]
-        public async Task<string> RetrieveLocalFile(string fileName, int maxSize = 5000)
-        {
-            string content = await File.ReadAllTextAsync(fileName);
-            if (content.Length <= maxSize) return content;
-            return content.Substring(0, maxSize);
-        }
-    }
+    ```python
+    thread = project_client.agents.create_thread()
+    message = project_client.agents.create_message(
+        thread_id=thread.id,
+        role="user",
+        content="Could you please create a bar chart for the operating profit using the following data and provide the file to me? Company A: $1.2 million, Company B: $2.5 million, Company C: $3.0 million, Company D: $1.8 million",
+    )
     
-    //Import native function
-    string plugInName = "NativeFunction";
-    string functionName = "RetrieveLocalFile";
-
-   //To add the functions to a kernel use the following function
-    kernel.ImportPluginFromType<NativeFunctions>();
-
+    # Ask the agent to perform work on the thread
+    run = project_client.agents.create_and_process_run(thread_id=thread.id, agent_id=agent.id)
+    
+    # Fetch and log all messages to see the agent's response
+    messages = project_client.agents.list_messages(thread_id=thread.id)
+    print(f"Messages: {messages}")
     ```
 
-- **ਮੈਮੋਰੀ**: AI ਐਪਸ ਲਈ ਸੰਦਰਭ ਪ੍ਰਬੰਧਨ ਨੂੰ ਸਰਲ ਅਤੇ ਅਸਾਨ ਬਣਾਉਂਦਾ ਹੈ। ਮੈਮੋਰੀ ਦਾ ਮਤਲਬ ਹੈ ਕਿ ਇਹ ਕੁਝ ਐਸਾ ਹੈ ਜੋ LLM ਨੂੰ ਜਾਣਨਾ ਚਾਹੀਦਾ ਹੈ। ਤੁਸੀਂ ਇਸ ਜਾਣਕਾਰੀ ਨੂੰ ਇੱਕ ਵੈਕਟਰ ਸਟੋਰ ਵਿੱਚ ਸਟੋਰ ਕਰ ਸਕਦੇ ਹੋ ਜੋ ਆਮ ਤੌਰ 'ਤੇ ਇੱਕ ਇਨ-ਮੈਮੋਰੀ ਡੇਟਾਬੇਸ ਜਾਂ ਵੈਕਟਰ ਡੇਟਾਬੇਸ ਜਾਂ ਇਸਦੇ ਸਮਾਨ ਹੁੰਦਾ ਹੈ। ਇੱਥੇ ਇੱਕ ਬਹੁਤ ਹੀ ਸਧਾਰਣ ਉਦਾਹਰਨ ਹੈ ਜਿੱਥੇ *ਤੱਥ* ਮੈਮੋਰੀ ਵਿੱਚ ਜੋੜੇ ਜਾਂਦੇ ਹਨ:
+    ਪਿਛਲੇ ਕੋਡ ਵਿੱਚ, ਇੱਕ ਥ੍ਰੈਡ ਬਣਾਇਆ ਗਿਆ ਹੈ। ਇਸ ਤੋਂ ਬਾਅਦ, ਥ੍ਰੈਡ ਨੂੰ ਇੱਕ ਸੁਨੇਹਾ ਭੇਜਿਆ ਜਾਂਦਾ ਹੈ। `create_and_process_run` ਨੂੰ ਕਾਲ ਕਰਕੇ, ਏਜੰਟ ਨੂੰ ਥ੍ਰੈਡ 'ਤੇ ਕੰਮ ਕਰਨ ਲਈ ਕਿਹਾ ਜਾਂਦਾ ਹੈ। ਆਖਰਕਾਰ, ਸੁਨੇਹੇ ਪ੍ਰਾਪਤ ਕੀਤੇ ਜਾਂਦੇ ਹਨ ਅਤੇ ਏਜੰਟ ਦੇ ਜਵਾਬ ਨੂੰ ਵੇਖਣ ਲਈ ਲੌਗ ਕੀਤੇ ਜਾਂਦੇ ਹਨ। ਸੁਨੇਹੇ ਯੂਜ਼ਰ ਅਤੇ ਏਜੰਟ ਦੇ ਵਿਚਕਾਰ ਗੱਲਬਾਤ ਦੀ ਪ੍ਰਗਤੀ ਨੂੰ ਦਰਸਾਉਂਦੇ ਹਨ। ਇਹ ਵੀ ਮਹੱਤਵਪੂਰਨ ਹੈ ਕਿ ਸੁਨੇਹੇ ਵੱਖ-ਵੱਖ ਕਿਸਮਾਂ ਦੇ ਹੋ ਸਕਦੇ ਹਨ ਜਿਵੇਂ ਕਿ ਟੈਕਸਟ, ਚਿੱਤਰ ਜਾਂ ਫਾਈਲ, ਜਿਹੜਾ ਕਿ ਏਜੰਟ ਦੇ ਕੰਮ ਦਾ ਨਤੀਜਾ ਹੋ ਸਕਦਾ ਹੈ। ਇੱਕ ਡਿਵੈਲਪਰ ਵਜੋਂ, ਤੁਸੀਂ ਇਸ ਜਾਣਕਾਰੀ ਨੂੰ ਜਵਾਬ ਨੂੰ ਹੋਰ ਪ੍ਰਕਿਰਿਆ ਕਰਨ ਜਾਂ ਯੂਜ਼ਰ ਨੂੰ ਪੇਸ਼ ਕਰਨ ਲਈ ਵਰਤ ਸਕਦੇ ਹੋ।
 
-    ```csharp
-    var facts = new Dictionary<string,string>();
-    facts.Add(
-        "Azure Machine Learning; https://learn.microsoft.com/azure/machine-learning/",
-        @"Azure Machine Learning is a cloud service for accelerating and
-        managing the machine learning project lifecycle. Machine learning professionals,
-        data scientists, and engineers can use it in their day-to-day workflows"
-    );
-    
-    facts.Add(
-        "Azure SQL Service; https://learn.microsoft.com/azure/azure-sql/",
-        @"Azure SQL is a family of managed, secure, and intelligent products
-        that use the SQL Server database engine in the Azure cloud."
-    );
-    
-    string memoryCollectionName = "SummarizedAzureDocs";
-    
-    foreach (var fact in facts) {
-        await memoryBuilder.SaveReferenceAsync(
-            collection: memoryCollectionName,
-            description: fact.Key.Split(";")[1].Trim(),
-            text: fact.Value,
-            externalId: fact.Key.Split(";")[2].Trim(),
-            externalSourceName: "Azure Documentation"
-        );
-    }
-    ```
+- **ਹੋਰ ਏਆਈ ਫਰੇਮਵਰਕਸ ਨਾਲ ਇੰਟਿਗ੍ਰੇਟ ਕਰਦਾ ਹੈ**। ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਹੋਰ ਫਰੇਮਵਰਕਸ ਜਿਵੇਂ ਕਿ AutoGen ਅਤੇ ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਨਾਲ ਸੰਚਾਰ ਕਰ ਸਕਦੀ ਹੈ, ਜਿਸਦਾ ਮਤਲਬ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਐਪ ਦਾ ਕੁਝ ਹਿੱਸਾ ਇਨ੍ਹਾਂ ਫਰੇਮਵਰਕਸ ਵਿੱਚ ਬਣਾਉਣ ਅਤੇ ਉਦਾਹਰਨ ਵਜੋਂ ਏਜੰਟ ਸਰਵਿਸ ਨੂੰ ਇੱਕ ਆਰਕੇਸਟਰੇਟਰ ਵਜੋਂ ਵਰਤ ਸਕਦੇ ਹੋ ਜਾਂ ਤੁਸੀਂ ਸਾਰਾ ਕੁਝ ਏਜੰਟ ਸਰਵਿਸ ਵਿੱਚ ਬਣਾਉਣਗੇ।
 
-    ਇਹ ਤੱਥ ਫਿਰ ਮੈਮੋਰੀ ਕਲੈਕਸ਼ਨ `SummarizedAzureDocs` ਵਿੱਚ ਸਟੋਰ ਕੀਤੇ ਜਾਂਦੇ ਹਨ। ਇਹ ਬਹੁਤ ਹੀ ਸਧਾਰਣ ਉਦਾਹਰਨ ਹੈ, ਪਰ ਤੁਸੀਂ ਦੇਖ ਸਕਦੇ ਹੋ ਕਿ ਤੁਸੀਂ ਕਿਵੇਂ ਜਾਣਕਾਰੀ ਨੂੰ ਮੈਮੋਰੀ ਵਿੱਚ ਸਟੋਰ ਕਰ ਸਕਦੇ ਹੋ ਤਾਂ ਜੋ LLM ਇਸਦਾ ਉਪਯੋਗ ਕਰ ਸਕੇ।
+**ਵਰਤੋਂ ਦੇ ਕੇਸ**: ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਕਾਰੋਬਾਰੀ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਡਿਜ਼ਾਈਨ ਕੀਤੀ ਗਈ ਹੈ ਜਿਹਨਾਂ ਨੂੰ ਸੁਰੱਖਿਅਤ, ਸਕੇਲਬਲ ਅਤੇ ਲਚਕੀਲੇ ਏਆਈ ਏਜੰਟ ਤੈਨਾਤੀ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ।
+
+## ਇਹਨਾਂ ਫਰੇਮਵਰਕਸ ਵਿੱਚ ਕੀ ਫਰਕ ਹੈ?
+
+ਇਹ ਲੱਗਦਾ ਹੈ ਕਿ ਇਹਨਾਂ ਫਰੇਮਵਰਕਸ ਵਿੱਚ ਕਾਫ਼ੀ ਓਵਰਲੈਪ ਹੈ, ਪਰ ਉਨ੍ਹਾਂ ਦੇ ਡਿਜ਼ਾਈਨ, ਸਮਰੱਥਾਵਾਂ ਅਤੇ ਟਾਰਗੇਟ ਵਰਤੋਂ ਦੇ ਕੇਸਾਂ ਦੇ ਹਿਸਾਬ ਨਾਲ ਕੁਝ ਮੁੱਖ ਫਰਕ ਹਨ:
+
+- **AutoGen**: ਇਹ ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮਾਂ 'ਤੇ ਅਗੇਤਨ ਖੋਜ ਲਈ ਇੱਕ ਪ੍ਰਯੋਗਾਤਮਕ ਫਰੇਮਵਰਕ ਹੈ। ਇਹ ਜਟਿਲ ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮਾਂ ਨੂੰ ਪ੍ਰੋਟੋਟਾਈਪ ਕਰਨ ਅਤੇ ਪ੍ਰਯੋਗ ਕਰਨ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਥਾਂ ਹੈ।
+- **ਸੈਮਾਂਟਿਕ ਕਰਨਲ**: ਇਹ ਕਾਰੋਬਾਰੀ ਏਜੰਟਿਕ ਐਪਲੀਕੇਸ਼ਨਾਂ ਨੂੰ ਬਣਾਉਣ ਲਈ ਇੱਕ ਪ੍ਰੋਡਕਸ਼ਨ-ਤਿਆਰ ਏਜੰਟ ਲਾਇਬ੍ਰੇਰੀ ਹੈ। ਇਹ ਘਟਨਾ-ਚਲਿਤ, ਵੰਡੇ ਹੋਏ ਏਜੰਟਿਕ ਐਪਲੀਕੇਸ਼ਨਾਂ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰਦਾ ਹੈ, ਜੋ ਕਈ LLMs ਅਤੇ SLMs, ਟੂਲਾਂ, ਅਤੇ ਸਿੰਗਲ/ਮਲਟੀ-ਏਜੰਟ ਡਿਜ਼ਾਈਨ ਪੈਟਰਨਾਂ ਨੂੰ ਯੋਗ ਬਣਾਉਂਦਾ ਹੈ।
+- **ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ**: ਇਹ ਐਜ਼ਰ ਫਾਊਂਡਰੀ ਵਿੱਚ ਏਜੰਟਾਂ ਲਈ ਇੱਕ ਪਲੇਟਫਾਰਮ ਅਤੇ ਤੈਨਾਤੀ ਸਰਵਿਸ ਹੈ। ਇਹ ਐਜ਼ਰ ਫਾਊਂਡ ਦੁਆਰਾ ਸਮਰਥਿਤ ਸੇਵਾਵਾਂ ਨਾਲ ਕਨੈਕਟਿਵਿਟੀ ਬਣਾਉਣ ਦੀ ਪੇਸ਼ਕਸ਼ ਕਰਦਾ ਹੈ ਜਿਵੇਂ ਕਿ ਐਜ਼ਰ ਓਪਨਏਆਈ, ਐਜ਼ਰ ਏਆਈ ਸਰਚ, ਬਿੰਗ ਸਰਚ ਅਤੇ ਕੋਡ ਐਗਜ਼ਿਕਿਊਸ਼ਨ।
+
+## ਵਰਤੋਂ ਦੇ ਕੇਸ
+
+ਆਓ ਕੁਝ ਆਮ ਵਰਤੋਂ ਦੇ ਕੇਸਾਂ ਰਾਹੀਂ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰੀਏ:
+
+> ਪ੍ਰ: ਮੈਂ ਪ੍ਰਯੋਗ ਕਰ ਰਿਹਾ ਹਾਂ, ਸਿੱਖ ਰਿਹਾ ਹਾਂ ਅਤੇ ਪ੍ਰੂਫ-ਆਫ-ਕੰਸੈਪਟ ਏਜੰਟ ਐਪਲੀਕੇਸ਼ਨਾਂ ਨੂੰ ਬਣਾਉਣ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਰਿਹਾ ਹਾਂ, ਅਤੇ ਮੈਂ ਤੇਜ਼ੀ ਨਾਲ ਬਣਾਉਣ ਅਤੇ ਪ੍ਰਯੋਗ ਕਰਨ ਦੀ ਇੱਛਾ ਰੱਖਦਾ ਹਾਂ।
+>
+> ਉ: ਇਸ ਸਥਿਤੀ ਲਈ AutoGen ਇੱਕ ਵਧੀਆ ਚੋਣ ਹੋਵੇਗੀ, ਕਿਉਂਕਿ ਇਹ ਘਟਨਾ-ਚਲਿਤ, ਵੰਡੇ ਹੋਏ ਏਜੰਟਿਕ ਐਪਲੀਕੇਸ਼ਨਾਂ 'ਤੇ ਧਿਆਨ ਕੇਂਦਰਿਤ ਕਰਦਾ ਹੈ ਅਤੇ ਉੱਚਤਮ ਮਲਟੀ-ਏਜੰਟ ਡਿਜ਼ਾਈਨ ਪੈਟਰਨਾਂ ਦਾ ਸਮਰਥਨ ਕਰਦਾ ਹੈ।
+
+> ਪ੍ਰ: ਇਸ ਵਰਤੋਂ ਦੇ ਕੇਸ ਲਈ AutoGen ਨੂੰ ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਅਤੇ ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਤੋਂ ਵਧੀਆ ਚੋਣ ਕਿਉਂ ਬਣਾਉਂਦਾ ਹੈ?
+>
+> ਉ: AutoGen ਖਾਸ ਤੌਰ 'ਤੇ ਘਟਨਾ-ਚਲਿਤ, ਵੰਡੇ ਹੋਏ ਏਜੰਟਿਕ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਡਿਜ਼ਾਈਨ ਕੀਤਾ ਗਿਆ ਹੈ, ਜਿਸ ਨਾਲ ਇਹ ਕੋਡ ਜਨਰੇਸ਼ਨ ਅਤੇ ਡਾਟਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਾਰਜਾਂ ਨੂੰ ਆਟੋਮੇਟ ਕਰਨ ਲਈ ਬਹੁਤ ਹੀ ਉਚਿਤ ਬਣਦਾ ਹੈ। ਇਹ ਜਟਿਲ ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮਾਂ ਨੂੰ ਕੁਸ਼ਲਤਾਪੂਰਵਕ ਬਣਾਉਣ ਲਈ ਜ਼ਰੂਰੀ ਟੂਲ ਅਤੇ ਸਮਰੱਥਾਵਾਂ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ।
+
+> ਪ੍ਰ: ਲੱਗਦਾ ਹੈ ਕਿ ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਇੱਥੇ ਵੀ ਕੰਮ ਕਰ ਸਕਦੀ ਹੈ, ਇਸ ਵਿੱਚ ਕੋਡ ਜਨਰੇਸ਼ਨ ਅਤੇ ਹੋਰ ਲਈ ਟੂਲ ਹਨ?
+>
+> ਉ: ਹਾਂ, ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਏਜੰਟਾਂ ਲਈ ਇੱਕ ਪਲੇਟਫਾਰਮ ਸਰਵਿਸ ਹੈ ਅਤੇ ਕਈ ਮਾਡਲਾਂ, ਐਜ਼ਰ ਏਆਈ ਸਰਚ, ਬਿੰਗ ਸਰਚ ਅਤੇ ਐਜ਼ਰ ਫੰਕਸ਼ਨਜ਼ ਲਈ ਬਣਾਈ ਗਈ ਸਮਰੱਥਾਵਾਂ ਸ਼ਾਮਲ ਕਰਦੀ ਹੈ। ਇਹ ਤੁਹਾਡੇ ਏਜੰਟਾਂ ਨੂੰ Foundry ਪੋਰਟਲ ਵਿੱਚ ਬਣਾਉਣ ਅਤੇ ਵੱਡੇ ਪੱਧਰ 'ਤੇ ਤੈਨਾਤ ਕਰਨ ਨੂੰ ਆਸਾਨ ਬਣਾਉਂਦੀ ਹੈ।
+
+> ਪ੍ਰ: ਮੈਂ ਅਜੇ ਵੀ ਉਲਝਣ ਵਿੱਚ ਹਾਂ, ਮੈਨੂੰ ਸਿਰਫ ਇੱਕ ਵਿਕਲਪ ਦਿਓ।
+>
+> ਉ: ਇੱਕ ਵਧੀਆ ਚੋਣ ਹੈ ਕਿ ਪਹਿਲਾਂ ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਵਿੱਚ ਆਪਣੀ ਐਪਲੀਕੇਸ਼ਨ ਬਣਾਓ ਅਤੇ ਫਿਰ ਆਪਣੇ ਏਜੰਟ ਨੂੰ ਤੈਨਾਤ ਕਰਨ ਲਈ ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਦੀ ਵਰਤੋਂ ਕਰੋ। ਇਹ ਪਹੁੰਚ ਤੁਹਾਨੂੰ ਆਪਣੇ ਏਜੰਟਾਂ ਨੂੰ ਆਸਾਨੀ ਨਾਲ ਸਥਿਰ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦੀ ਹੈ ਜਦੋਂ ਕਿ ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਵਿੱਚ ਮਲਟੀ-ਏਜੰਟ ਸਿਸਟਮਾਂ ਨੂੰ ਬਣਾਉਣ ਦੀ ਤਾਕਤ ਲੈ ਕੇ। ਇਸ ਤੋਂ ਇਲਾਵਾ, ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਵਿੱਚ AutoGen ਵਿੱਚ ਇੱਕ ਕਨੈਕਟਰ ਹੈ, ਜਿਸ ਨਾਲ ਦੋਵੇਂ ਫਰੇਮਵਰਕਸ ਨੂੰ ਇਕੱਠੇ ਵਰਤਣਾ ਆਸਾਨ ਬਣ ਜਾਂਦਾ ਹੈ।
+
+ਆਓ ਇੱਕ ਟੇਬਲ ਵਿੱਚ ਮੁੱਖ ਫਰਕਾਂ ਦਾ ਸਾਰ ਲਿਖੀਏ:
+
+| ਫਰੇਮਵਰਕ | ਧਿਆਨ | ਮੁੱਖ ਧਾਰਨਾਵਾਂ | ਵਰਤੋਂ ਦੇ ਕੇਸ |
+| --- | --- | --- | --- |
+| AutoGen | ਘਟਨਾ-ਚਲਿਤ, ਵੰਡੇ ਹੋਏ ਏਜੰਟਿਕ ਐਪਲੀਕੇਸ਼ਨਾਂ | ਏਜੰਟ, ਪੇਰਸੋਨਾਸ, ਫੰਕਸ਼ਨਜ਼, ਡਾਟਾ | ਕੋਡ ਜਨਰੇਸ਼ਨ, ਡਾਟਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕਾਰਜ |
+| ਸੈਮਾਂਟਿਕ ਕਰਨਲ | ਮਨੁੱਖੀ-ਜਿਵੇਂ ਟੈਕਸਟ ਸਮਝਣਾ ਅਤੇ ਜਨਰੇਟ ਕਰਨਾ | ਏਜੰਟ, ਮੋਡਿਊਲਰ ਕੰਪੋਨੈਂਟਸ, ਸਹਿਯੋਗ | ਪ੍ਰਾਕ੍ਰਿਤਿਕ ਭਾਸ਼ਾ ਸਮਝਣਾ, ਸਮੱਗਰੀ ਜਨਰੇਸ਼ਨ |
+| ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ | ਲਚਕੀਲੇ ਮਾਡਲ, ਕਾਰੋਬਾਰੀ ਸੁਰੱਖਿਆ, ਕੋਡ ਜਨਰੇਸ਼ਨ, ਟੂਲ ਕਾਲਿੰਗ | ਮੋਡਿਊਲਰਿਟੀ, ਸਹਿਯੋਗ, ਪ੍ਰਕਿਰਿਆ ਆਰਕੇਸਟਰੇਸ਼ਨ | ਸੁਰੱਖਿਅਤ, ਸਕੇਲਬਲ, ਅਤੇ ਲਚਕੀਲੇ ਏਆਈ ਏਜੰਟ ਤੈਨਾਤੀ |
+
+## ਕੀ ਮੈਂ ਆਪਣੇ ਮੌਜੂਦਾ ਐਜ਼ਰ ਇਕੋਸਿਸਟਮ ਟੂਲਾਂ ਨੂੰ ਸਿੱਧੇ ਤੌਰ 'ਤੇ ਇੰਟਿਗ੍ਰੇਟ ਕਰ ਸਕਦਾ ਹਾਂ ਜਾਂ ਮੈਨੂੰ ਸਟੈਂਡਅਲੋਨ ਹੱਲਾਂ ਦੀ ਲੋੜ ਹੈ?
+
+ਜਵਾਬ ਹੈ ਹਾਂ, ਤੁਸੀਂ ਆਪਣੇ ਮੌਜੂਦਾ ਐਜ਼ਰ ਇਕੋਸਿਸਟਮ ਟੂਲਾਂ ਨੂੰ ਸਿੱਧੇ ਤੌਰ 'ਤੇ ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਨਾਲ ਇੰਟਿਗ੍ਰੇਟ ਕਰ ਸਕਦੇ ਹੋ, ਖਾਸ ਕਰਕੇ ਇਸ ਲਈ ਕਿਉਂਕਿ ਇਹ ਹੋਰ ਐਜ਼ਰ ਸੇਵਾਵਾਂ ਨਾਲ ਬਿਨਾ ਰੁਕਾਵਟ ਕੰਮ ਕਰਨ ਲਈ ਬਣਾਈ ਗਈ ਹੈ। ਤੁਸੀਂ ਉਦਾਹਰਨ ਵਜੋਂ ਬਿੰਗ, ਐਜ਼ਰ ਏਆਈ ਸਰਚ, ਅਤੇ ਐਜ਼ਰ ਫੰਕਸ਼ਨਜ਼ ਨੂੰ ਇੰਟਿਗ੍ਰੇਟ ਕਰ ਸਕਦੇ ਹੋ। ਐਜ਼ਰ ਏਆਈ ਫਾਊਂਡਰੀ ਨਾਲ ਵੀ ਡੂੰਘੀ ਇੰਟਿਗ੍ਰੇਸ਼ਨ ਹੈ।
+
+AutoGen ਅਤੇ ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਲਈ, ਤੁਸੀਂ ਐਜ਼ਰ ਸੇਵਾਵਾਂ ਨਾਲ ਇੰਟਿਗ੍ਰੇਟ ਕਰ ਸਕਦੇ ਹੋ, ਪਰ ਇਹ ਤੁਹਾਡੇ ਕੋਡ ਤੋਂ ਐਜ਼ਰ ਸੇਵਾਵਾਂ ਨੂੰ ਕਾਲ ਕਰਨ ਦੀ ਲੋੜ ਹੋ ਸਕਦੀ ਹੈ। ਇੱਕ ਹੋਰ ਤਰੀਕਾ ਇਹ ਹੈ ਕਿ ਐਜ਼ਰ SDKs ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਆਪਣੇ ਏਜੰਟਾਂ ਤੋਂ ਐਜ਼ਰ ਸੇਵਾਵਾਂ ਨਾਲ ਸੰਚਾਰ ਕਰੋ। ਇਸ ਤੋਂ ਇਲਾਵਾ, ਜਿਵੇਂ ਕਿ ਦੱਸਿਆ ਗਿਆ ਸੀ, ਤੁਸੀਂ AutoGen ਜਾਂ ਸੈਮਾਂਟਿਕ ਕਰਨਲ ਵਿੱਚ ਬਣੇ ਆਪਣੇ ਏਜੰਟਾਂ ਲਈ ਆਰਕੇਸਟਰੇਟਰ ਵਜੋਂ ਐਜ਼ਰ ਏਆਈ ਏਜੰਟ ਸਰਵਿਸ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ, ਜਿਸ ਨਾਲ ਐਜ਼ਰ ਇਕੋਸਿਸਟਮ ਤੱਕ ਆਸਾਨ ਪਹੁੰਚ ਮਿਲਦੀ ਹੈ।
+
+### ਕੀ ਤੁਹਾਡੇ ਕੋਲ ਏਆਈ ਏਜੰਟ ਫਰੇਮਵਰਕਸ ਬਾਰੇ ਹੋਰ ਸਵਾਲ ਹਨ?
+
+[ਐਜ਼ਰ ਏਆਈ ਫਾਊਂਡਰੀ ਡਿਸਕੋਰਡ](https://aka.ms/ai-agents/discord) ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ ਤਾਂ ਜੋ ਹੋਰ ਸਿੱਖਣ ਵਾਲਿਆਂ ਨਾਲ ਮਿਲ ਸਕੋ, ਦਫ਼ਤਰ ਦੇ ਘੰਟਿਆਂ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋ ਸਕੋ ਅਤੇ ਆਪਣੇ ਏਆਈ ਏਜੰਟਾਂ ਦੇ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਪ੍ਰਾਪਤ ਕਰ ਸਕੋ।
+
+## ਹਵਾਲੇ
+
+- 
+
 ## ਪਿਛਲਾ ਪਾਠ
 
-[AI ਏਜੰਟਸ ਅਤੇ ਏਜੰਟ ਵਰਤੋਂ ਦੇ ਕੇਸਾਂ ਦਾ ਪਰਚਿਆ](../01-intro-to-ai-agents/README.md)
+[ਏਆਈ ਏਜੰਟਾਂ ਅਤੇ ਵਰਤੋਂ ਦੇ ਕੇਸਾਂ ਦਾ ਪਰਿਚਯ](../01-intro-to-ai-agents/README.md)
 
 ## ਅਗਲਾ ਪਾਠ
 
 [ਏਜੰਟਿਕ ਡਿਜ਼ਾਈਨ ਪੈਟਰਨਾਂ ਨੂੰ ਸਮਝਣਾ](../03-agentic-design-patterns/README.md)
 
-**ਅਸਵੀਕਾਰੋਪਣ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+---
+
+**ਅਸਵੀਕਰਤੀ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀ ਹੋਣ ਦਾ ਯਤਨ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਦਿਓ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸੁੱਚੀਤਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਇਸ ਦੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਮੌਜੂਦ ਮੂਲ ਦਸਤਾਵੇਜ਼ ਨੂੰ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੇ ਪ੍ਰਯੋਗ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੇ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।  
