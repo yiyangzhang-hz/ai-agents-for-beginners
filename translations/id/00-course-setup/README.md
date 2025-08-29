@@ -1,25 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8693a24942b670e3cb8def77f92513f9",
-  "translation_date": "2025-08-21T13:32:17+00:00",
+  "original_hash": "c55b973b1562abf5aadf6a4028265ac5",
+  "translation_date": "2025-08-29T18:04:35+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "id"
 }
 -->
 # Persiapan Kursus
 
-## Pengantar
+## Pendahuluan
 
 Pelajaran ini akan membahas cara menjalankan contoh kode dari kursus ini.
 
-## Clone atau Fork Repo ini
+## Bergabung dengan Peserta Lain dan Dapatkan Bantuan
 
-Untuk memulai, silakan clone atau fork Repository GitHub. Ini akan membuat versi Anda sendiri dari materi kursus sehingga Anda dapat menjalankan, menguji, dan menyesuaikan kode!
+Sebelum Anda mulai mengkloning repositori, bergabunglah dengan [AI Agents For Beginners Discord channel](https://aka.ms/ai-agents/discord) untuk mendapatkan bantuan terkait pengaturan, pertanyaan tentang kursus, atau untuk terhubung dengan peserta lainnya.
 
-Ini dapat dilakukan dengan mengklik tautan ke
+## Kloning atau Fork Repositori Ini
 
-Anda sekarang memiliki versi forked dari kursus ini di tautan berikut:
+Untuk memulai, silakan kloning atau fork repositori GitHub. Ini akan membuat versi Anda sendiri dari materi kursus sehingga Anda dapat menjalankan, menguji, dan menyesuaikan kode!
+
+Ini dapat dilakukan dengan mengklik tautan berikut:
 
 ![Forked Repo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.id.png)
 
@@ -27,7 +29,7 @@ Anda sekarang memiliki versi forked dari kursus ini di tautan berikut:
 
 Kursus ini menawarkan serangkaian Jupyter Notebooks yang dapat Anda jalankan untuk mendapatkan pengalaman langsung dalam membangun AI Agents.
 
-Contoh kode menggunakan salah satu dari:
+Contoh kode menggunakan:
 
 **Memerlukan Akun GitHub - Gratis**:
 
@@ -39,19 +41,19 @@ Contoh kode menggunakan salah satu dari:
 
 Kami mendorong Anda untuk mencoba ketiga jenis contoh ini untuk melihat mana yang paling cocok untuk Anda.
 
-Pilihan mana pun yang Anda pilih akan menentukan langkah-langkah pengaturan yang perlu Anda ikuti di bawah ini:
+Pilihan yang Anda pilih akan menentukan langkah-langkah pengaturan yang perlu Anda ikuti di bawah ini:
 
 ## Persyaratan
 
 - Python 3.12+
-  - **NOTE**: Jika Anda belum menginstal Python3.12, pastikan Anda menginstalnya. Kemudian buat venv Anda menggunakan python3.12 untuk memastikan versi yang benar diinstal dari file requirements.txt.
+  - **NOTE**: Jika Anda belum menginstal Python3.12, pastikan untuk menginstalnya. Kemudian buat venv menggunakan python3.12 untuk memastikan versi yang benar diinstal dari file requirements.txt.
 - Akun GitHub - Untuk akses ke GitHub Models Marketplace
 - Langganan Azure - Untuk akses ke Azure AI Foundry
 - Akun Azure AI Foundry - Untuk akses ke Azure AI Agent Service
 
-Kami telah menyertakan file `requirements.txt` di root repository ini yang berisi semua paket Python yang diperlukan untuk menjalankan contoh kode.
+Kami telah menyertakan file `requirements.txt` di root repositori ini yang berisi semua paket Python yang diperlukan untuk menjalankan contoh kode.
 
-Anda dapat menginstalnya dengan menjalankan perintah berikut di terminal Anda di root repository:
+Anda dapat menginstalnya dengan menjalankan perintah berikut di terminal Anda di root repositori:
 
 ```bash
 pip install -r requirements.txt
@@ -63,7 +65,7 @@ Pastikan Anda menggunakan versi Python yang benar di VSCode.
 
 ![image](https://github.com/user-attachments/assets/a85e776c-2edb-4331-ae5b-6bfdfb98ee0e)
 
-## Pengaturan untuk Contoh menggunakan GitHub Models 
+## Pengaturan untuk Contoh Menggunakan GitHub Models 
 
 ### Langkah 1: Dapatkan GitHub Personal Access Token (PAT) Anda
 
@@ -71,11 +73,11 @@ Kursus ini memanfaatkan GitHub Models Marketplace, yang menyediakan akses gratis
 
 Untuk menggunakan GitHub Models, Anda perlu membuat [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
-Ini dapat dilakukan dengan pergi ke akun GitHub Anda.
+Ini dapat dilakukan dengan masuk ke akun GitHub Anda.
 
-Silakan ikuti [Prinsip Privilege Minimum](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) saat membuat token Anda. Ini berarti Anda hanya harus memberikan token izin yang diperlukan untuk menjalankan contoh kode dalam kursus ini.
+Harap ikuti [Prinsip Privilege Minimum](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely) saat membuat token Anda. Artinya, Anda hanya perlu memberikan token izin yang diperlukan untuk menjalankan contoh kode dalam kursus ini.
 
-1. Pilih opsi `Fine-grained tokens` di sisi kiri layar Anda dengan menuju ke **Developer settings**
+1. Pilih opsi `Fine-grained tokens` di sisi kiri layar Anda dengan masuk ke **Developer settings**
    ![](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.id.png)
 
     Kemudian pilih `Generate new token`.
@@ -87,17 +89,17 @@ Silakan ikuti [Prinsip Privilege Minimum](https://docs.github.com/en/get-started
 
     🔐 Rekomendasi Durasi Token
 
-    Durasi yang direkomendasikan: 30 hari
+    Rekomendasi durasi: 30 hari
     Untuk keamanan yang lebih baik, Anda dapat memilih periode yang lebih pendek—seperti 7 hari 🛡️
-    Ini adalah cara yang bagus untuk menetapkan target pribadi dan menyelesaikan kursus sambil momentum belajar Anda tinggi 🚀.
+    Ini adalah cara yang bagus untuk menetapkan target pribadi dan menyelesaikan kursus sambil menjaga momentum belajar Anda tetap tinggi 🚀.
 
     ![Token Name and Expiration](../../../translated_images/token-name-expiry-date.a095fb0de63868640a4c82d6b1bbc92b482930a663917a5983a3c7cd1ef86b77.id.png)
 
-3. Batasi cakupan token ke fork repository ini.
+3. Batasi cakupan token ke fork repositori ini.
 
     ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.id.png)
 
-4. Batasi izin token: Di bawah **Permissions**, klik tab **Account**, dan klik tombol "+ Add permissions". Dropdown akan muncul. Silakan cari **Models** dan centang kotaknya.
+4. Batasi izin token: Di bawah **Permissions**, klik tab **Account**, dan klik tombol "+ Add permissions". Dropdown akan muncul. Cari **Models** dan centang kotaknya.
     ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.id.png)
 
 5. Verifikasi izin yang diperlukan sebelum membuat token. ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.id.png)
@@ -109,45 +111,45 @@ Salin token baru yang baru saja Anda buat. Anda sekarang akan menambahkan ini ke
 
 ### Langkah 2: Buat File `.env` Anda
 
-Untuk membuat file `.env` Anda, jalankan perintah berikut di terminal Anda.
+Untuk membuat file `.env`, jalankan perintah berikut di terminal Anda.
 
 ```bash
 cp .env.example .env
 ```
 
-Ini akan menyalin file contoh dan membuat `.env` di direktori Anda di mana Anda mengisi nilai untuk variabel lingkungan.
+Ini akan menyalin file contoh dan membuat `.env` di direktori Anda, di mana Anda mengisi nilai untuk variabel lingkungan.
 
-Dengan token Anda disalin, buka file `.env` di editor teks favorit Anda dan tempelkan token Anda ke bidang `GITHUB_TOKEN`.
+Dengan token Anda yang telah disalin, buka file `.env` di editor teks favorit Anda dan tempelkan token Anda ke bidang `GITHUB_TOKEN`.
 ![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.id.png)
 
 
 Anda sekarang seharusnya dapat menjalankan contoh kode dari kursus ini.
 
-## Pengaturan untuk Contoh menggunakan Azure AI Foundry dan Azure AI Agent Service
+## Pengaturan untuk Contoh Menggunakan Azure AI Foundry dan Azure AI Agent Service
 
 ### Langkah 1: Dapatkan Endpoint Proyek Azure Anda
 
 
-Ikuti langkah-langkah untuk membuat hub dan proyek di Azure AI Foundry yang ditemukan di sini: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+Ikuti langkah-langkah untuk membuat hub dan proyek di Azure AI Foundry yang dapat ditemukan di sini: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
 
 Setelah Anda membuat proyek Anda, Anda perlu mendapatkan string koneksi untuk proyek Anda.
 
-Ini dapat dilakukan dengan pergi ke halaman **Overview** dari proyek Anda di portal Azure AI Foundry.
+Ini dapat dilakukan dengan masuk ke halaman **Overview** proyek Anda di portal Azure AI Foundry.
 
 ![Project Connection String](../../../translated_images/project-endpoint.8cf04c9975bbfbf18f6447a599550edb052e52264fb7124d04a12e6175e330a5.id.png)
 
 ### Langkah 2: Buat File `.env` Anda
 
-Untuk membuat file `.env` Anda, jalankan perintah berikut di terminal Anda.
+Untuk membuat file `.env`, jalankan perintah berikut di terminal Anda.
 
 ```bash
 cp .env.example .env
 ```
 
-Ini akan menyalin file contoh dan membuat `.env` di direktori Anda di mana Anda mengisi nilai untuk variabel lingkungan.
+Ini akan menyalin file contoh dan membuat `.env` di direktori Anda, di mana Anda mengisi nilai untuk variabel lingkungan.
 
-Dengan token Anda disalin, buka file `.env` di editor teks favorit Anda dan tempelkan token Anda ke bidang `PROJECT_ENDPOINT`.
+Dengan token Anda yang telah disalin, buka file `.env` di editor teks favorit Anda dan tempelkan token Anda ke bidang `PROJECT_ENDPOINT`.
 
 ### Langkah 3: Masuk ke Azure
 
@@ -160,7 +162,7 @@ Setelah Anda masuk, pilih langganan Anda di terminal.
 
 ## Variabel Lingkungan Tambahan - Azure Search dan Azure OpenAI 
 
-Untuk Pelajaran Agentic RAG - Pelajaran 5 - ada contoh yang menggunakan Azure Search dan Azure OpenAI.
+Untuk pelajaran Agentic RAG - Pelajaran 5 - terdapat contoh yang menggunakan Azure Search dan Azure OpenAI.
 
 Jika Anda ingin menjalankan contoh ini, Anda perlu menambahkan variabel lingkungan berikut ke file `.env` Anda:
 
@@ -174,7 +176,7 @@ Jika Anda ingin menjalankan contoh ini, Anda perlu menambahkan variabel lingkung
 
 ### Management Center
 
-- `AZURE_OPENAI_RESOURCE_GROUP` - Pergi ke **Project properties** di halaman **Overview** dari **Management Center**.
+- `AZURE_OPENAI_RESOURCE_GROUP` - Pergi ke **Project properties** di halaman **Overview** di **Management Center**.
 
 - `GLOBAL_LLM_SERVICE` - Di bawah **Connected resources**, temukan nama koneksi **Azure AI Services**. Jika tidak terdaftar, periksa **Azure portal** di bawah grup sumber daya Anda untuk nama sumber daya AI Services.
 
@@ -186,11 +188,11 @@ Jika Anda ingin menjalankan contoh ini, Anda perlu menambahkan variabel lingkung
 
 ### Azure Portal
 
-- `AZURE_OPENAI_ENDPOINT` - Cari **Azure AI services**, klik di atasnya, lalu pergi ke **Resource Management**, **Keys and Endpoint**, gulir ke bawah ke "Azure OpenAI endpoints", dan salin yang mengatakan "Language APIs".
+- `AZURE_OPENAI_ENDPOINT` - Cari **Azure AI services**, klik, lalu pergi ke **Resource Management**, **Keys and Endpoint**, gulir ke bawah ke "Azure OpenAI endpoints", dan salin yang bertuliskan "Language APIs".
 
 - `AZURE_OPENAI_API_KEY` - Dari layar yang sama, salin KEY 1 atau KEY 2.
 
-- `AZURE_SEARCH_SERVICE_ENDPOINT` - Temukan sumber daya **Azure AI Search** Anda, klik di atasnya, dan lihat **Overview**.
+- `AZURE_SEARCH_SERVICE_ENDPOINT` - Temukan sumber daya **Azure AI Search** Anda, klik, dan lihat **Overview**.
 
 - `AZURE_SEARCH_API_KEY` - Kemudian pergi ke **Settings** dan kemudian **Keys** untuk menyalin kunci admin utama atau sekunder.
 
@@ -206,17 +208,17 @@ Daripada menyimpan kredensial Anda secara hardcode, kita akan menggunakan koneks
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 ```
 
-## Mengalami Masalah?
+## Ada Masalah?
 
-Jika Anda mengalami masalah saat menjalankan pengaturan ini, bergabunglah dengan kami di
-
-atau.
+Jika Anda mengalami masalah saat menjalankan pengaturan ini, bergabunglah dengan kami di Discord untuk mendapatkan bantuan.
 
 ## Pelajaran Selanjutnya
 
-Anda sekarang siap untuk menjalankan kode untuk kursus ini. Selamat belajar lebih banyak tentang dunia AI Agents! 
+Anda sekarang siap untuk menjalankan kode dari kursus ini. Selamat belajar lebih banyak tentang dunia AI Agents! 
 
 [Introduction to AI Agents and Agent Use Cases](../01-intro-to-ai-agents/README.md)
 
+---
+
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan hasil yang akurat, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

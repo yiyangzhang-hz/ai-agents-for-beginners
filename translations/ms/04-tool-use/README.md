@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7d24f735b3c326b2e515f049a0330e54",
-  "translation_date": "2025-08-21T13:34:04+00:00",
+  "original_hash": "4a5ccc4ad1dba85fbc2087cf3b986544",
+  "translation_date": "2025-08-29T18:18:20+00:00",
   "source_file": "04-tool-use/README.md",
   "language_code": "ms"
 }
@@ -13,11 +13,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 # Corak Reka Bentuk Penggunaan Alat
 
-Alat menarik kerana ia membolehkan ejen AI mempunyai pelbagai keupayaan. Daripada ejen hanya mempunyai set tindakan terhad yang boleh dilakukan, dengan menambah alat, ejen kini boleh melaksanakan pelbagai tindakan. Dalam bab ini, kita akan melihat Corak Reka Bentuk Penggunaan Alat, yang menerangkan bagaimana ejen AI boleh menggunakan alat tertentu untuk mencapai matlamat mereka.
+Alat menarik kerana ia membolehkan ejen AI mempunyai keupayaan yang lebih luas. Daripada ejen hanya mempunyai set tindakan terhad, dengan menambah alat, ejen kini boleh melaksanakan pelbagai tindakan. Dalam bab ini, kita akan melihat Corak Reka Bentuk Penggunaan Alat, yang menerangkan bagaimana ejen AI boleh menggunakan alat tertentu untuk mencapai matlamat mereka.
 
 ## Pengenalan
 
-Dalam pelajaran ini, kita akan cuba menjawab soalan berikut:
+Dalam pelajaran ini, kita akan cuba menjawab soalan-soalan berikut:
 
 - Apakah corak reka bentuk penggunaan alat?
 - Apakah kes penggunaan yang boleh diterapkan?
@@ -28,14 +28,14 @@ Dalam pelajaran ini, kita akan cuba menjawab soalan berikut:
 
 Selepas menyelesaikan pelajaran ini, anda akan dapat:
 
-- Menentukan Corak Reka Bentuk Penggunaan Alat dan tujuannya.
+- Mentakrifkan Corak Reka Bentuk Penggunaan Alat dan tujuannya.
 - Mengenal pasti kes penggunaan di mana Corak Reka Bentuk Penggunaan Alat boleh diterapkan.
 - Memahami elemen utama yang diperlukan untuk melaksanakan corak reka bentuk ini.
-- Mengenali pertimbangan untuk memastikan kebolehpercayaan ejen AI yang menggunakan corak reka bentuk ini.
+- Mengenali pertimbangan untuk memastikan kebolehpercayaan dalam ejen AI yang menggunakan corak reka bentuk ini.
 
 ## Apakah Corak Reka Bentuk Penggunaan Alat?
 
-**Corak Reka Bentuk Penggunaan Alat** memberi tumpuan kepada memberikan LLM keupayaan untuk berinteraksi dengan alat luaran bagi mencapai matlamat tertentu. Alat adalah kod yang boleh dilaksanakan oleh ejen untuk melaksanakan tindakan. Alat boleh menjadi fungsi mudah seperti kalkulator, atau panggilan API kepada perkhidmatan pihak ketiga seperti carian harga saham atau ramalan cuaca. Dalam konteks ejen AI, alat direka untuk dilaksanakan oleh ejen sebagai tindak balas kepada **panggilan fungsi yang dijana oleh model**.
+**Corak Reka Bentuk Penggunaan Alat** memberi tumpuan kepada memberikan LLM keupayaan untuk berinteraksi dengan alat luaran bagi mencapai matlamat tertentu. Alat adalah kod yang boleh dilaksanakan oleh ejen untuk melaksanakan tindakan. Alat boleh menjadi fungsi mudah seperti kalkulator, atau panggilan API kepada perkhidmatan pihak ketiga seperti carian harga saham atau ramalan cuaca. Dalam konteks ejen AI, alat direka untuk dilaksanakan oleh ejen sebagai tindak balas kepada **panggilan fungsi yang dijana model**.
 
 ## Apakah kes penggunaan yang boleh diterapkan?
 
@@ -43,23 +43,23 @@ Ejen AI boleh memanfaatkan alat untuk menyelesaikan tugas yang kompleks, mendapa
 
 - **Pengambilan Maklumat Dinamik:** Ejen boleh membuat pertanyaan kepada API luaran atau pangkalan data untuk mendapatkan data terkini (contohnya, membuat pertanyaan kepada pangkalan data SQLite untuk analisis data, mendapatkan harga saham atau maklumat cuaca).
 - **Pelaksanaan dan Tafsiran Kod:** Ejen boleh melaksanakan kod atau skrip untuk menyelesaikan masalah matematik, menjana laporan, atau menjalankan simulasi.
-- **Automasi Aliran Kerja:** Mengautomasi aliran kerja berulang atau berbilang langkah dengan mengintegrasikan alat seperti penjadual tugas, perkhidmatan e-mel, atau saluran data.
+- **Automasi Aliran Kerja:** Mengautomasikan aliran kerja berulang atau berbilang langkah dengan mengintegrasikan alat seperti penjadual tugas, perkhidmatan e-mel, atau saluran data.
 - **Sokongan Pelanggan:** Ejen boleh berinteraksi dengan sistem CRM, platform tiket, atau pangkalan pengetahuan untuk menyelesaikan pertanyaan pengguna.
-- **Penjanaan dan Penyuntingan Kandungan:** Ejen boleh memanfaatkan alat seperti pemeriksa tatabahasa, penyusun teks, atau penilai keselamatan kandungan untuk membantu tugas penciptaan kandungan.
+- **Penjanaan dan Penyuntingan Kandungan:** Ejen boleh memanfaatkan alat seperti pemeriksa tatabahasa, penyusun ringkasan teks, atau penilai keselamatan kandungan untuk membantu tugas penciptaan kandungan.
 
 ## Apakah elemen/blok binaan yang diperlukan untuk melaksanakan corak reka bentuk penggunaan alat?
 
 Blok binaan ini membolehkan ejen AI melaksanakan pelbagai tugas. Mari kita lihat elemen utama yang diperlukan untuk melaksanakan Corak Reka Bentuk Penggunaan Alat:
 
-- **Skema Fungsi/Alat**: Definisi terperinci alat yang tersedia, termasuk nama fungsi, tujuan, parameter yang diperlukan, dan output yang dijangka. Skema ini membolehkan LLM memahami alat yang tersedia dan cara membina permintaan yang sah.
-
-- **Logik Pelaksanaan Fungsi**: Mengawal cara dan bila alat digunakan berdasarkan niat pengguna dan konteks perbualan. Ini mungkin termasuk modul perancang, mekanisme penghalaan, atau aliran bersyarat yang menentukan penggunaan alat secara dinamik.
+- **Skema Fungsi/Alat**: Definisi terperinci tentang alat yang tersedia, termasuk nama fungsi, tujuan, parameter yang diperlukan, dan output yang dijangka. Skema ini membolehkan LLM memahami alat yang tersedia dan cara membina permintaan yang sah.
+  
+- **Logik Pelaksanaan Fungsi**: Mengawal bagaimana dan bila alat dipanggil berdasarkan niat pengguna dan konteks perbualan. Ini mungkin termasuk modul perancang, mekanisme penghalaan, atau aliran bersyarat yang menentukan penggunaan alat secara dinamik.
 
 - **Sistem Pengendalian Mesej**: Komponen yang menguruskan aliran perbualan antara input pengguna, respons LLM, panggilan alat, dan output alat.
 
-- **Kerangka Integrasi Alat**: Infrastruktur yang menghubungkan ejen kepada pelbagai alat, sama ada fungsi mudah atau perkhidmatan luaran yang kompleks.
+- **Rangka Kerja Integrasi Alat**: Infrastruktur yang menghubungkan ejen kepada pelbagai alat, sama ada fungsi mudah atau perkhidmatan luaran yang kompleks.
 
-- **Pengendalian Ralat & Pengesahan**: Mekanisme untuk menangani kegagalan dalam pelaksanaan alat, mengesahkan parameter, dan menguruskan respons yang tidak dijangka.
+- **Pengendalian Ralat & Pengesahan**: Mekanisme untuk menangani kegagalan dalam pelaksanaan alat, mengesahkan parameter, dan mengurus respons yang tidak dijangka.
 
 - **Pengurusan Keadaan**: Menjejaki konteks perbualan, interaksi alat sebelumnya, dan data berterusan untuk memastikan konsistensi dalam interaksi berbilang giliran.
 
@@ -67,7 +67,7 @@ Seterusnya, mari kita lihat Panggilan Fungsi/Alat dengan lebih terperinci.
 
 ### Panggilan Fungsi/Alat
 
-Panggilan fungsi adalah cara utama untuk membolehkan Model Bahasa Besar (LLM) berinteraksi dengan alat. Anda sering melihat 'Fungsi' dan 'Alat' digunakan secara bergantian kerana 'fungsi' (blok kod yang boleh digunakan semula) adalah 'alat' yang digunakan oleh ejen untuk melaksanakan tugas. Untuk kod fungsi dilaksanakan, LLM mesti membandingkan permintaan pengguna dengan penerangan fungsi. Untuk melakukan ini, skema yang mengandungi penerangan semua fungsi yang tersedia dihantar kepada LLM. LLM kemudian memilih fungsi yang paling sesuai untuk tugas tersebut dan mengembalikan nama dan argumennya. Fungsi yang dipilih dilaksanakan, responsnya dihantar kembali kepada LLM, yang menggunakan maklumat tersebut untuk menjawab permintaan pengguna.
+Panggilan fungsi adalah cara utama untuk membolehkan Model Bahasa Besar (LLM) berinteraksi dengan alat. Anda sering melihat 'Fungsi' dan 'Alat' digunakan secara bergantian kerana 'fungsi' (blok kod yang boleh digunakan semula) adalah 'alat' yang digunakan oleh ejen untuk melaksanakan tugas. Untuk kod fungsi dilaksanakan, LLM mesti membandingkan permintaan pengguna dengan penerangan fungsi. Untuk melakukannya, skema yang mengandungi penerangan semua fungsi yang tersedia dihantar kepada LLM. LLM kemudian memilih fungsi yang paling sesuai untuk tugas tersebut dan mengembalikan nama dan argumennya. Fungsi yang dipilih dilaksanakan, responsnya dihantar kembali kepada LLM, yang menggunakan maklumat tersebut untuk menjawab permintaan pengguna.
 
 Untuk pembangun melaksanakan panggilan fungsi untuk ejen, anda memerlukan:
 
@@ -75,7 +75,7 @@ Untuk pembangun melaksanakan panggilan fungsi untuk ejen, anda memerlukan:
 2. Skema yang mengandungi penerangan fungsi
 3. Kod untuk setiap fungsi yang diterangkan
 
-Mari kita gunakan contoh mendapatkan masa semasa di sebuah bandar untuk ilustrasi:
+Mari kita gunakan contoh mendapatkan waktu semasa di sebuah bandar untuk ilustrasi:
 
 1. **Inisialisasi LLM yang menyokong panggilan fungsi:**
 
@@ -90,10 +90,10 @@ Mari kita gunakan contoh mendapatkan masa semasa di sebuah bandar untuk ilustras
     )
     ```
 
-1. **Buat Skema Fungsi**:
+1. **Cipta Skema Fungsi**:
 
-    Seterusnya kita akan menentukan skema JSON yang mengandungi nama fungsi, penerangan tentang apa yang dilakukan oleh fungsi, dan nama serta penerangan parameter fungsi.
-    Kita kemudian akan mengambil skema ini dan menghantarnya kepada klien yang dibuat sebelum ini, bersama dengan permintaan pengguna untuk mencari masa di San Francisco. Apa yang penting untuk diperhatikan ialah **panggilan alat** adalah apa yang dikembalikan, **bukan** jawapan akhir kepada soalan. Seperti yang disebutkan sebelum ini, LLM mengembalikan nama fungsi yang dipilih untuk tugas tersebut, dan argumen yang akan dihantar kepadanya.
+    Seterusnya, kita akan mentakrifkan skema JSON yang mengandungi nama fungsi, penerangan tentang apa yang dilakukan oleh fungsi, dan nama serta penerangan parameter fungsi. 
+    Kita kemudian akan mengambil skema ini dan menghantarnya kepada klien yang telah dibuat sebelum ini, bersama dengan permintaan pengguna untuk mencari waktu di San Francisco. Perkara penting yang perlu diperhatikan ialah **panggilan alat** yang dikembalikan, **bukan** jawapan akhir kepada soalan. Seperti yang dinyatakan sebelum ini, LLM mengembalikan nama fungsi yang dipilih untuk tugas tersebut, dan argumen yang akan dihantar kepadanya.
 
     ```python
     # Function description for the model to read
@@ -148,8 +148,8 @@ Mari kita gunakan contoh mendapatkan masa semasa di sebuah bandar untuk ilustras
   
 1. **Kod fungsi yang diperlukan untuk melaksanakan tugas:**
 
-    Sekarang LLM telah memilih fungsi yang perlu dijalankan, kod yang melaksanakan tugas tersebut perlu dilaksanakan.
-    Kita boleh melaksanakan kod untuk mendapatkan masa semasa dalam Python. Kita juga perlu menulis kod untuk mengekstrak nama dan argumen daripada response_message untuk mendapatkan hasil akhir.
+    Setelah LLM memilih fungsi yang perlu dijalankan, kod yang melaksanakan tugas tersebut perlu dilaksanakan. 
+    Kita boleh melaksanakan kod untuk mendapatkan waktu semasa dalam Python. Kita juga perlu menulis kod untuk mengekstrak nama dan argumen daripada `response_message` untuk mendapatkan hasil akhir.
 
     ```python
       def get_current_time(location):
@@ -206,22 +206,22 @@ Mari kita gunakan contoh mendapatkan masa semasa di sebuah bandar untuk ilustras
       The current time in San Francisco is 09:24 AM.
      ```
 
-Panggilan Fungsi adalah teras kepada kebanyakan, jika tidak semua reka bentuk penggunaan alat ejen, namun melaksanakannya dari awal kadangkala boleh menjadi mencabar.
-Seperti yang kita pelajari dalam [Pelajaran 2](../../../02-explore-agentic-frameworks) kerangka kerja ejen menyediakan kita dengan blok binaan yang telah dibina untuk melaksanakan penggunaan alat.
+Panggilan Fungsi adalah teras kepada kebanyakan, jika tidak semua, reka bentuk penggunaan alat ejen, namun melaksanakannya dari awal kadangkala boleh mencabar. 
+Seperti yang kita pelajari dalam [Pelajaran 2](../../../02-explore-agentic-frameworks), rangka kerja ejen menyediakan kita dengan blok binaan yang telah sedia ada untuk melaksanakan penggunaan alat.
 
-## Contoh Penggunaan Alat dengan Kerangka Kerja Ejen
+## Contoh Penggunaan Alat dengan Rangka Kerja Ejen
 
-Berikut adalah beberapa contoh bagaimana anda boleh melaksanakan Corak Reka Bentuk Penggunaan Alat menggunakan pelbagai kerangka kerja ejen:
+Berikut adalah beberapa contoh bagaimana anda boleh melaksanakan Corak Reka Bentuk Penggunaan Alat menggunakan pelbagai rangka kerja ejen:
 
 ### Semantic Kernel
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a> adalah kerangka kerja AI sumber terbuka untuk pembangun .NET, Python, dan Java yang bekerja dengan Model Bahasa Besar (LLM). Ia mempermudah proses penggunaan panggilan fungsi dengan secara automatik menerangkan fungsi anda dan parameternya kepada model melalui proses yang dipanggil <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">serializing</a>. Ia juga menguruskan komunikasi antara model dan kod anda. Satu lagi kelebihan menggunakan kerangka kerja ejen seperti Semantic Kernel ialah ia membolehkan anda mengakses alat yang telah dibina seperti <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">File Search</a> dan <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Code Interpreter</a>.
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a> adalah rangka kerja AI sumber terbuka untuk pembangun .NET, Python, dan Java yang bekerja dengan Model Bahasa Besar (LLM). Ia memudahkan proses penggunaan panggilan fungsi dengan secara automatik menerangkan fungsi anda dan parameternya kepada model melalui proses yang dipanggil <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">serializing</a>. Ia juga menguruskan komunikasi antara model dan kod anda. Satu lagi kelebihan menggunakan rangka kerja ejen seperti Semantic Kernel ialah ia membolehkan anda mengakses alat yang telah sedia ada seperti <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">Carian Fail</a> dan <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Jurubahasa Kod</a>.
 
 Rajah berikut menggambarkan proses panggilan fungsi dengan Semantic Kernel:
 
 ![panggilan fungsi](../../../translated_images/functioncalling-diagram.a84006fc287f60140cc0a484ff399acd25f69553ea05186981ac4d5155f9c2f6.ms.png)
 
-Dalam Semantic Kernel fungsi/alat dipanggil <a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">Plugins</a>. Kita boleh menukar fungsi `get_current_time` yang kita lihat sebelum ini menjadi plugin dengan menjadikannya kelas dengan fungsi di dalamnya. Kita juga boleh mengimport pengubah `kernel_function`, yang mengambil penerangan fungsi. Apabila anda kemudian mencipta kernel dengan GetCurrentTimePlugin, kernel akan secara automatik mensasarkan fungsi dan parameternya, mencipta skema untuk dihantar kepada LLM dalam proses tersebut.
+Dalam Semantic Kernel, fungsi/alat dipanggil <a href="https://learn.microsoft.com/semantic-kernel/concepts/plugins/?pivots=programming-language-python" target="_blank">Plugin</a>. Kita boleh menukar fungsi `get_current_time` yang kita lihat sebelum ini menjadi plugin dengan menjadikannya kelas dengan fungsi di dalamnya. Kita juga boleh mengimport dekorator `kernel_function`, yang mengambil penerangan fungsi. Apabila anda kemudian mencipta kernel dengan `GetCurrentTimePlugin`, kernel akan secara automatik mensasarkan fungsi dan parameternya, mencipta skema untuk dihantar kepada LLM dalam proses tersebut.
 
 ```python
 from semantic_kernel.functions import kernel_function
@@ -253,36 +253,36 @@ kernel.add_plugin(get_current_time_plugin)
   
 ### Azure AI Agent Service
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> adalah kerangka kerja ejen yang lebih baru yang direka untuk memperkasakan pembangun untuk membina, menyebarkan, dan menskalakan ejen AI yang berkualiti tinggi dan boleh diperluaskan dengan selamat tanpa perlu menguruskan sumber pengkomputeran dan penyimpanan yang mendasari. Ia sangat berguna untuk aplikasi perusahaan kerana ia adalah perkhidmatan yang diurus sepenuhnya dengan keselamatan gred perusahaan.
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Azure AI Agent Service</a> adalah rangka kerja ejen yang lebih baru yang direka untuk memperkasakan pembangun untuk membina, menyebarkan, dan menskalakan ejen AI berkualiti tinggi dan boleh diperluaskan dengan selamat tanpa perlu menguruskan sumber pengkomputeran dan storan asas. Ia amat berguna untuk aplikasi perusahaan kerana ia adalah perkhidmatan yang diurus sepenuhnya dengan keselamatan gred perusahaan.
 
-Apabila dibandingkan dengan pembangunan menggunakan API LLM secara langsung, Azure AI Agent Service menyediakan beberapa kelebihan, termasuk:
+Berbanding dengan pembangunan menggunakan API LLM secara langsung, Azure AI Agent Service menyediakan beberapa kelebihan, termasuk:
 
-- Panggilan alat automatik – tidak perlu menganalisis panggilan alat, melaksanakan alat, dan menguruskan respons; semua ini kini dilakukan di sisi pelayan
-- Pengurusan data yang selamat – daripada menguruskan keadaan perbualan anda sendiri, anda boleh bergantung pada threads untuk menyimpan semua maklumat yang anda perlukan
-- Alat yang tersedia secara langsung – Alat yang boleh anda gunakan untuk berinteraksi dengan sumber data anda, seperti Bing, Azure AI Search, dan Azure Functions.
+- Panggilan alat automatik – tidak perlu menganalisis panggilan alat, melaksanakan alat, dan mengendalikan respons; semua ini kini dilakukan di sisi pelayan
+- Pengurusan data yang selamat – daripada menguruskan keadaan perbualan anda sendiri, anda boleh bergantung pada `threads` untuk menyimpan semua maklumat yang anda perlukan
+- Alat sedia ada – Alat yang boleh anda gunakan untuk berinteraksi dengan sumber data anda, seperti Bing, Azure AI Search, dan Azure Functions.
 
 Alat yang tersedia dalam Azure AI Agent Service boleh dibahagikan kepada dua kategori:
 
 1. Alat Pengetahuan:
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/bing-grounding?tabs=python&pivots=overview" target="_blank">Grounding dengan Bing Search</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">File Search</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/file-search?tabs=python&pivots=overview" target="_blank">Carian Fail</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-ai-search?tabs=azurecli%2Cpython&pivots=overview-azure-ai-search" target="_blank">Azure AI Search</a>
 
 2. Alat Tindakan:
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">Function Calling</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">Code Interpreter</a>
-    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">Alat yang ditakrifkan oleh OpenAI</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/function-calling?tabs=python&pivots=overview" target="_blank">Panggilan Fungsi</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/code-interpreter?tabs=python&pivots=overview" target="_blank">Jurubahasa Kod</a>
+    - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">Alat yang ditakrifkan OpenAI</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview" target="_blank">Azure Functions</a>
 
-Agent Service membolehkan kita menggunakan alat ini bersama sebagai `toolset`. Ia juga menggunakan `threads` yang menjejaki sejarah mesej daripada perbualan tertentu.
+Agent Service membolehkan kita menggunakan alat ini bersama-sama sebagai `toolset`. Ia juga menggunakan `threads` yang menjejaki sejarah mesej daripada perbualan tertentu.
 
-Bayangkan anda adalah ejen jualan di sebuah syarikat bernama Contoso. Anda ingin membangunkan ejen perbualan yang boleh menjawab soalan tentang data jualan anda.
+Bayangkan anda seorang ejen jualan di sebuah syarikat bernama Contoso. Anda ingin membangunkan ejen perbualan yang boleh menjawab soalan tentang data jualan anda.
 
 Imej berikut menggambarkan bagaimana anda boleh menggunakan Azure AI Agent Service untuk menganalisis data jualan anda:
 
 ![Agentic Service Dalam Tindakan](../../../translated_images/agent-service-in-action.34fb465c9a84659edd3003f8cb62d6b366b310a09b37c44e32535021fbb5c93f.ms.jpg)
 
-Untuk menggunakan mana-mana alat ini dengan perkhidmatan, kita boleh mencipta klien dan menentukan alat atau toolset. Untuk melaksanakannya secara praktikal, kita boleh menggunakan kod Python berikut. LLM akan dapat melihat toolset dan memutuskan sama ada untuk menggunakan fungsi yang dicipta oleh pengguna, `fetch_sales_data_using_sqlite_query`, atau Code Interpreter yang telah dibina bergantung pada permintaan pengguna.
+Untuk menggunakan mana-mana alat ini dengan perkhidmatan, kita boleh mencipta klien dan mentakrifkan alat atau `toolset`. Untuk melaksanakannya secara praktikal, kita boleh menggunakan kod Python berikut. LLM akan dapat melihat `toolset` dan memutuskan sama ada untuk menggunakan fungsi yang dicipta pengguna, `fetch_sales_data_using_sqlite_query`, atau Jurubahasa Kod sedia ada bergantung pada permintaan pengguna.
 
 ```python 
 import os
@@ -314,27 +314,24 @@ agent = project_client.agents.create_agent(
 
 ## Apakah pertimbangan khas untuk menggunakan Corak Reka Bentuk Penggunaan Alat bagi membina ejen AI yang boleh dipercayai?
 
-Kebimbangan biasa dengan SQL yang dijana secara dinamik oleh LLM adalah keselamatan, terutamanya risiko suntikan SQL atau tindakan berniat jahat, seperti menjatuhkan atau mengubah pangkalan data. Walaupun kebimbangan ini sah, ia boleh dikurangkan dengan berkesan dengan mengkonfigurasi kebenaran akses pangkalan data dengan betul. Untuk kebanyakan pangkalan data, ini melibatkan mengkonfigurasi pangkalan data sebagai hanya baca. Untuk perkhidmatan pangkalan data seperti PostgreSQL atau Azure SQL, aplikasi harus diberikan peranan hanya baca (SELECT).
+Kebimbangan biasa dengan SQL yang dijana secara dinamik oleh LLM adalah keselamatan, terutamanya risiko suntikan SQL atau tindakan berniat jahat, seperti memadam atau mengubah pangkalan data. Walaupun kebimbangan ini sah, ia boleh dikurangkan dengan berkesan dengan mengkonfigurasi kebenaran akses pangkalan data dengan betul. Untuk kebanyakan pangkalan data, ini melibatkan mengkonfigurasi pangkalan data sebagai hanya baca. Untuk perkhidmatan pangkalan data seperti PostgreSQL atau Azure SQL, aplikasi harus diberikan peranan hanya baca (SELECT).
 
-Menjalankan aplikasi dalam persekitaran yang selamat meningkatkan lagi perlindungan. Dalam senario perusahaan, data biasanya diekstrak dan diubah daripada sistem operasi ke dalam pangkalan data hanya baca atau gudang data dengan skema mesra pengguna. Pendekatan ini memastikan bahawa data adalah selamat, dioptimumkan untuk prestasi dan kebolehaksesan, dan bahawa aplikasi mempunyai akses terhad, hanya baca.
+Menjalankan aplikasi dalam persekitaran yang selamat meningkatkan lagi perlindungan. Dalam senario perusahaan, data biasanya diekstrak dan diubah daripada sistem operasi ke dalam pangkalan data hanya baca atau gudang data dengan skema mesra pengguna. Pendekatan ini memastikan bahawa data adalah selamat, dioptimumkan untuk prestasi dan kebolehcapaian, dan aplikasi mempunyai akses terhad, hanya baca.
+
+### Ada Lagi Soalan tentang Corak Reka Bentuk Penggunaan Alat?
+Sertai [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) untuk berhubung dengan pelajar lain, menghadiri sesi soal jawab, dan mendapatkan jawapan kepada soalan anda tentang AI Agents.
 
 ## Sumber Tambahan
 
--
-<a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">
-Azure AI Agents Service Workshop</a>
-- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Bengkel Multi-Ejen Contoso Creative Writer</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">Tutorial Pemanggilan Fungsi Semantic Kernel</a>
-- <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Semantic Kernel Code Interpreter</a>
-- <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Alat Autogen</a>
-
 ## Pelajaran Sebelumnya
 
-[Memahami Corak Reka Bentuk Ejen](../03-agentic-design-patterns/README.md)
+[Memahami Corak Reka Bentuk Agentic](../03-agentic-design-patterns/README.md)
 
 ## Pelajaran Seterusnya
 
 [Agentic RAG](../05-agentic-rag/README.md)
 
+---
+
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk memastikan ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang berwibawa. Untuk maklumat yang kritikal, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
