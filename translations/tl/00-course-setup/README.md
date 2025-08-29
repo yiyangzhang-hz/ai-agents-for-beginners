@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8693a24942b670e3cb8def77f92513f9",
-  "translation_date": "2025-08-21T13:37:25+00:00",
+  "original_hash": "c55b973b1562abf5aadf6a4028265ac5",
+  "translation_date": "2025-08-29T09:47:34+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "tl"
 }
@@ -13,19 +13,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 Tatalakayin sa araling ito kung paano patakbuhin ang mga halimbawa ng code para sa kursong ito.
 
+## Sumali sa Iba Pang Mga Mag-aaral at Humingi ng Tulong
+
+Bago mo simulan ang pag-clone ng iyong repo, sumali sa [AI Agents For Beginners Discord channel](https://aka.ms/ai-agents/discord) upang makakuha ng tulong sa setup, magtanong tungkol sa kurso, o makipag-ugnayan sa iba pang mga mag-aaral.
+
 ## I-clone o I-fork ang Repo na Ito
 
-Upang magsimula, mangyaring i-clone o i-fork ang GitHub Repository. Sa ganitong paraan, magkakaroon ka ng sariling bersyon ng mga materyales ng kurso upang maipatupad, masubukan, at mabago ang code!
+Upang magsimula, i-clone o i-fork ang GitHub Repository. Sa ganitong paraan, magkakaroon ka ng sariling bersyon ng mga materyales ng kurso upang maipatupad, masubukan, at mabago ang code!
 
-Magagawa ito sa pamamagitan ng pag-click sa link na ito:
+Magagawa ito sa pamamagitan ng pag-click sa link upang magkaroon ka ng sariling forked na bersyon ng kursong ito sa sumusunod na link:
 
 ![Forked Repo](../../../translated_images/forked-repo.33f27ca1901baa6a5e13ec3eb1f0ddd3a44d936d91cc8cfb19bfdb9688bd2c3d.tl.png)
 
 ## Pagpapatakbo ng Code
 
-Nag-aalok ang kursong ito ng serye ng mga Jupyter Notebooks na maaari mong gamitin upang magkaroon ng praktikal na karanasan sa paggawa ng mga AI Agents.
+Nag-aalok ang kursong ito ng serye ng mga Jupyter Notebooks na maaari mong gamitin upang magkaroon ng praktikal na karanasan sa paggawa ng AI Agents.
 
-Ang mga halimbawa ng code ay gumagamit ng alinman sa mga sumusunod:
+Ang mga halimbawa ng code ay gumagamit ng alinman sa:
 
 **Kailangan ng GitHub Account - Libre**:
 
@@ -35,9 +39,9 @@ Ang mga halimbawa ng code ay gumagamit ng alinman sa mga sumusunod:
 **Kailangan ng Azure Subscription**:  
 3) Azure AI Foundry + Azure AI Agent Service. Tinatawag na (azureaiagent.ipynb)
 
-Hinihikayat ka naming subukan ang lahat ng tatlong uri ng mga halimbawa upang malaman kung alin ang pinakaangkop para sa iyo.
+Hinihikayat ka naming subukan ang lahat ng tatlong uri ng mga halimbawa upang makita kung alin ang pinakaangkop para sa iyo.
 
-Anuman ang iyong pipiliin, ito ang magtatakda kung aling mga hakbang sa setup ang kailangang sundin sa ibaba:
+Anuman ang iyong piliin, ito ang magtatakda kung aling mga hakbang sa setup ang kailangang sundin sa ibaba:
 
 ## Mga Kinakailangan
 
@@ -49,7 +53,7 @@ Anuman ang iyong pipiliin, ito ang magtatakda kung aling mga hakbang sa setup an
 
 Kasama sa repositoryong ito ang isang `requirements.txt` file na naglalaman ng lahat ng kinakailangang Python packages upang patakbuhin ang mga halimbawa ng code.
 
-Maaari mong i-install ang mga ito sa pamamagitan ng pagpapatakbo ng sumusunod na command sa iyong terminal sa root ng repository:
+Maaari mong i-install ang mga ito sa pamamagitan ng pagtakbo ng sumusunod na command sa iyong terminal sa root ng repository:
 
 ```bash
 pip install -r requirements.txt
@@ -67,7 +71,7 @@ Siguraduhing ginagamit mo ang tamang bersyon ng Python sa VSCode.
 
 ### Hakbang 1: Kunin ang Iyong GitHub Personal Access Token (PAT)
 
-Gumagamit ang kursong ito ng GitHub Models Marketplace, na nagbibigay ng libreng access sa Large Language Models (LLMs) na gagamitin mo upang gumawa ng mga AI Agents.
+Gumagamit ang kursong ito ng GitHub Models Marketplace, na nagbibigay ng libreng access sa Large Language Models (LLMs) na gagamitin mo upang gumawa ng AI Agents.
 
 Upang magamit ang GitHub Models, kailangan mong gumawa ng [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
@@ -96,14 +100,16 @@ Mangyaring sundin ang [Principle of Least Privilege](https://docs.github.com/en/
 
    ![Limit scope to fork repository](../../../translated_images/token_repository_limit.924ade5e11d9d8bb6cd21293987e4579dea860e2ba66d607fb46e49524d53644.tl.png)
 
-4. Higpitan ang mga pahintulot ng token: Sa ilalim ng **Permissions**, i-click ang **Account** tab, at i-click ang "+ Add permissions" na button. Lalabas ang isang dropdown. Mangyaring hanapin ang **Models** at lagyan ng check ang kahon para dito.  
+4. Higpitan ang mga pahintulot ng token: Sa ilalim ng **Permissions**, i-click ang tab na **Account**, at i-click ang "+ Add permissions" na button. Lalabas ang isang dropdown. Mangyaring hanapin ang **Models** at lagyan ng check ang kahon para dito.  
    ![Add Models Permission](../../../translated_images/add_models_permissions.c0c44ed8b40fc143dc87792da9097d715b7de938354e8f771d65416ecc7816b8.tl.png)
 
-5. Suriin ang mga kinakailangang pahintulot bago gumawa ng token. ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.tl.png)
+5. I-verify ang mga kinakailangang pahintulot bago gumawa ng token.  
+   ![Verify Permissions](../../../translated_images/verify_permissions.06bd9e43987a8b219f171bbcf519e45ababae35b844f5e9757e10afcb619b936.tl.png)
 
-6. Bago gumawa ng token, tiyaking handa kang itago ang token sa isang ligtas na lugar tulad ng password manager vault, dahil hindi na ito ipapakita muli pagkatapos mong likhain ito. ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.tl.png)
+6. Bago gumawa ng token, tiyaking handa kang itago ang token sa isang ligtas na lugar tulad ng password manager vault, dahil hindi na ito ipapakita muli pagkatapos mong likhain ito.  
+   ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.tl.png)
 
-Kopyahin ang bagong token na iyong ginawa. Idadagdag mo ito ngayon sa iyong `.env` file na kasama sa kursong ito.
+Kopyahin ang iyong bagong token na kakagawa mo lang. Idadagdag mo ito ngayon sa iyong `.env` file na kasama sa kursong ito.
 
 ### Hakbang 2: Gumawa ng Iyong `.env` File
 
@@ -118,13 +124,13 @@ Ito ay kokopya ng example file at gagawa ng `.env` sa iyong direktoryo kung saan
 Kapag nakopya mo na ang iyong token, buksan ang `.env` file sa iyong paboritong text editor at i-paste ang iyong token sa `GITHUB_TOKEN` field.  
 ![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.tl.png)
 
-Dapat mo nang magamit ang mga halimbawa ng code sa kursong ito.
+Ngayon ay dapat mo nang mapatakbo ang mga halimbawa ng code sa kursong ito.
 
 ## Setup para sa Mga Halimbawa gamit ang Azure AI Foundry at Azure AI Agent Service
 
 ### Hakbang 1: Kunin ang Iyong Azure Project Endpoint
 
-Sundin ang mga hakbang sa paggawa ng hub at proyekto sa Azure AI Foundry na matatagpuan dito: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+Sundin ang mga hakbang sa paggawa ng hub at proyekto sa Azure AI Foundry na makikita dito: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
 Kapag nagawa mo na ang iyong proyekto, kakailanganin mong kunin ang connection string para sa iyong proyekto.
 
@@ -161,13 +167,13 @@ Kung nais mong patakbuhin ang mga halimbawang ito, kakailanganin mong idagdag an
 ### Overview Page (Project)
 
 - `AZURE_SUBSCRIPTION_ID` - Tingnan ang **Project details** sa **Overview** page ng iyong proyekto.  
-- `AZURE_AI_PROJECT_NAME` - Tingnan ang itaas ng **Overview** page para sa pangalan ng iyong proyekto.  
+- `AZURE_AI_PROJECT_NAME` - Tingnan ang itaas ng **Overview** page para sa iyong proyekto.  
 - `AZURE_OPENAI_SERVICE` - Hanapin ito sa **Included capabilities** tab para sa **Azure OpenAI Service** sa **Overview** page.
 
 ### Management Center
 
 - `AZURE_OPENAI_RESOURCE_GROUP` - Pumunta sa **Project properties** sa **Overview** page ng **Management Center**.  
-- `GLOBAL_LLM_SERVICE` - Sa ilalim ng **Connected resources**, hanapin ang pangalan ng koneksyon ng **Azure AI Services**. Kung hindi nakalista, tingnan ang **Azure portal** sa ilalim ng iyong resource group para sa pangalan ng AI Services resource.
+- `GLOBAL_LLM_SERVICE` - Sa ilalim ng **Connected resources**, hanapin ang **Azure AI Services** connection name. Kung hindi nakalista, tingnan ang **Azure portal** sa ilalim ng iyong resource group para sa AI Services resource name.
 
 ### Models + Endpoints Page
 
@@ -179,7 +185,7 @@ Kung nais mong patakbuhin ang mga halimbawang ito, kakailanganin mong idagdag an
 - `AZURE_OPENAI_ENDPOINT` - Hanapin ang **Azure AI services**, i-click ito, pagkatapos ay pumunta sa **Resource Management**, **Keys and Endpoint**, mag-scroll pababa sa "Azure OpenAI endpoints", at kopyahin ang isa na nagsasabing "Language APIs".  
 - `AZURE_OPENAI_API_KEY` - Mula sa parehong screen, kopyahin ang KEY 1 o KEY 2.  
 - `AZURE_SEARCH_SERVICE_ENDPOINT` - Hanapin ang iyong **Azure AI Search** resource, i-click ito, at tingnan ang **Overview**.  
-- `AZURE_SEARCH_API_KEY` - Pagkatapos pumunta sa **Settings** at pagkatapos ay **Keys** upang kopyahin ang pangunahing o pangalawang admin key.
+- `AZURE_SEARCH_API_KEY` - Pagkatapos pumunta sa **Settings** at pagkatapos ay **Keys** upang kopyahin ang primary o secondary admin key.
 
 ### External Webpage
 
@@ -195,7 +201,7 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 ## Nahihirapan?
 
-Kung mayroon kang anumang isyu sa pagpapatakbo ng setup na ito, sumali sa aming
+Kung mayroon kang anumang isyu sa pagpapatakbo ng setup na ito, sumali sa aming [AI Agents For Beginners Discord channel](https://aka.ms/ai-agents/discord) upang humingi ng tulong.
 
 ## Susunod na Aralin
 
@@ -203,5 +209,7 @@ Handa ka nang patakbuhin ang code para sa kursong ito. Masayang pag-aaral tungko
 
 [Introduction to AI Agents and Agent Use Cases](../01-intro-to-ai-agents/README.md)
 
+---
+
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, pakitandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
