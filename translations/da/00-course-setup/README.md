@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8693a24942b670e3cb8def77f92513f9",
-  "translation_date": "2025-08-21T13:16:34+00:00",
+  "original_hash": "c55b973b1562abf5aadf6a4028265ac5",
+  "translation_date": "2025-08-29T15:39:35+00:00",
   "source_file": "00-course-setup/README.md",
   "language_code": "da"
 }
@@ -13,9 +13,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Denne lektion dækker, hvordan du kan køre kodeeksemplerne fra dette kursus.
 
+## Deltag med andre kursister og få hjælp
+
+Før du begynder at klone dit repo, skal du tilmelde dig [AI Agents For Beginners Discord-kanalen](https://aka.ms/ai-agents/discord) for at få hjælp til opsætning, stille spørgsmål om kurset eller komme i kontakt med andre kursister.
+
 ## Klon eller fork dette repo
 
-For at komme i gang skal du klone eller forke GitHub-repositoriet. Dette vil give dig din egen version af kursusmaterialet, så du kan køre, teste og tilpasse koden!
+For at komme i gang skal du klone eller fork GitHub-repositoriet. Dette vil give dig din egen version af kursusmaterialet, så du kan køre, teste og tilpasse koden!
 
 Dette kan gøres ved at klikke på linket til
 
@@ -31,11 +35,11 @@ Kodeeksemplerne bruger enten:
 
 **Kræver GitHub-konto - Gratis**:
 
-1) Semantic Kernel Agent Framework + GitHub Models Marketplace. Mærket som (semantic-kernel.ipynb)
-2) AutoGen Framework + GitHub Models Marketplace. Mærket som (autogen.ipynb)
+1) Semantic Kernel Agent Framework + GitHub Models Marketplace. Markeret som (semantic-kernel.ipynb)
+2) AutoGen Framework + GitHub Models Marketplace. Markeret som (autogen.ipynb)
 
 **Kræver Azure-abonnement**:
-3) Azure AI Foundry + Azure AI Agent Service. Mærket som (azureaiagent.ipynb)
+3) Azure AI Foundry + Azure AI Agent Service. Markeret som (azureaiagent.ipynb)
 
 Vi opfordrer dig til at prøve alle tre typer eksempler for at se, hvilken der fungerer bedst for dig.
 
@@ -67,7 +71,7 @@ Sørg for, at du bruger den korrekte version af Python i VSCode.
 
 ### Trin 1: Hent din GitHub Personal Access Token (PAT)
 
-Dette kursus bruger GitHub Models Marketplace, som giver gratis adgang til Large Language Models (LLMs), som du vil bruge til at bygge AI-agenter.
+Dette kursus benytter GitHub Models Marketplace, som giver gratis adgang til Large Language Models (LLMs), som du vil bruge til at bygge AI-agenter.
 
 For at bruge GitHub-modellerne skal du oprette en [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
 
@@ -75,14 +79,14 @@ Dette kan gøres ved at gå til din GitHub-konto.
 
 Følg venligst [Principle of Least Privilege](https://docs.github.com/en/get-started/learning-to-code/storing-your-secrets-safely), når du opretter din token. Det betyder, at du kun skal give token de tilladelser, der er nødvendige for at køre kodeeksemplerne i dette kursus.
 
-1. Vælg `Fine-grained tokens`-muligheden på venstre side af skærmen ved at navigere til **Developer settings**.
+1. Vælg `Fine-grained tokens`-muligheden i venstre side af skærmen ved at navigere til **Developer settings**.
    ![](../../../translated_images/profile_developer_settings.410a859fe749c755c859d414294c5908e307222b2c61819c3203bbeed4470e25.da.png)
 
     Vælg derefter `Generate new token`.
 
     ![Generate Token](../../../translated_images/fga_new_token.1c1a234afe202ab37483944a291ee80c1868e1e78082fd6bd4180fea5d5a15b4.da.png)
 
-2. Indtast et beskrivende navn til din token, der afspejler dens formål, så det er nemt at identificere senere.
+2. Indtast et beskrivende navn til din token, der afspejler dens formål, så den er nem at identificere senere.
 
     🔐 Anbefaling for token-varighed
 
@@ -103,7 +107,7 @@ Følg venligst [Principle of Least Privilege](https://docs.github.com/en/get-sta
 
 6. Før du genererer token, skal du sørge for at gemme den på et sikkert sted som en password manager, da den ikke vil blive vist igen efter oprettelsen. ![Store Token Securely](../../../translated_images/store_token_securely.08ee2274c6ad6caf3482f1cd1bad7ca3fdca1ce737bc485bfa6499c84297c789.da.png)
 
-Kopiér din nye token, som du lige har oprettet. Du vil nu tilføje denne til din `.env`-fil, der er inkluderet i dette kursus.
+Kopiér din nye token, som du lige har oprettet. Du skal nu tilføje denne til din `.env`-fil, der er inkluderet i dette kursus.
 
 ### Trin 2: Opret din `.env`-fil
 
@@ -113,9 +117,9 @@ For at oprette din `.env`-fil skal du køre følgende kommando i din terminal.
 cp .env.example .env
 ```
 
-Dette vil kopiere eksempel-filen og oprette en `.env` i din mappe, hvor du udfylder værdierne for miljøvariablerne.
+Dette vil kopiere eksempel-filen og oprette en `.env` i din mappe, hvor du kan udfylde værdierne for miljøvariablerne.
 
-Med din token kopieret, åbn `.env`-filen i din foretrukne teksteditor og indsæt din token i `GITHUB_TOKEN`-feltet.  
+Med din token kopieret, skal du åbne `.env`-filen i din foretrukne teksteditor og indsætte din token i `GITHUB_TOKEN`-feltet.  
 ![GitHub Token Field](../../../translated_images/github_token_field.20491ed3224b5f4ab24d10ced7a68c4aba2948fe8999cfc8675edaa16f5e5681.da.png)
 
 Du bør nu kunne køre kodeeksemplerne fra dette kursus.
@@ -124,7 +128,7 @@ Du bør nu kunne køre kodeeksemplerne fra dette kursus.
 
 ### Trin 1: Hent din Azure-projekt-endpoint
 
-Følg trinnene for at oprette en hub og et projekt i Azure AI Foundry, som du kan finde her: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
+Følg trinnene til at oprette en hub og et projekt i Azure AI Foundry, som beskrevet her: [Hub resources overview](https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/ai-resources)
 
 Når du har oprettet dit projekt, skal du hente forbindelsesstrengen for dit projekt.
 
@@ -140,13 +144,13 @@ For at oprette din `.env`-fil skal du køre følgende kommando i din terminal.
 cp .env.example .env
 ```
 
-Dette vil kopiere eksempel-filen og oprette en `.env` i din mappe, hvor du udfylder værdierne for miljøvariablerne.
+Dette vil kopiere eksempel-filen og oprette en `.env` i din mappe, hvor du kan udfylde værdierne for miljøvariablerne.
 
-Med din token kopieret, åbn `.env`-filen i din foretrukne teksteditor og indsæt din token i `PROJECT_ENDPOINT`-feltet.
+Med din token kopieret, skal du åbne `.env`-filen i din foretrukne teksteditor og indsætte din token i `PROJECT_ENDPOINT`-feltet.
 
 ### Trin 3: Log ind på Azure
 
-Som en sikkerhedsmæssig bedste praksis vil vi bruge [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) til at autentificere til Azure OpenAI med Microsoft Entra ID.
+Som en sikkerhedsforanstaltning vil vi bruge [keyless authentication](https://learn.microsoft.com/azure/developer/ai/keyless-connections?tabs=csharp%2Cazure-cli?WT.mc_id=academic-105485-koreyst) til at autentificere til Azure OpenAI med Microsoft Entra ID.
 
 Åbn derefter en terminal og kør `az login --use-device-code` for at logge ind på din Azure-konto.
 
@@ -170,9 +174,9 @@ Hvis du vil køre disse eksempler, skal du tilføje følgende miljøvariabler ti
 
 - `AZURE_OPENAI_RESOURCE_GROUP` - Gå til **Project properties** på **Overview**-siden for **Management Center**.
 
-- `GLOBAL_LLM_SERVICE` - Under **Connected resources**, find **Azure AI Services**-forbindelsesnavnet. Hvis det ikke er angivet, tjek **Azure portal** under din ressourcegruppe for AI Services-ressourcenavnet.
+- `GLOBAL_LLM_SERVICE` - Under **Connected resources**, find navnet på **Azure AI Services**-forbindelsen. Hvis det ikke er angivet, skal du tjekke **Azure portal** under din ressourcegruppe for navnet på AI Services-ressourcen.
 
-### Models + Endpoints Page
+### Models + Endpoints-side
 
 - `AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME` - Vælg din embedding-model (f.eks. `text-embedding-ada-002`) og noter **Deployment name** fra modeldetaljerne.
 
@@ -190,11 +194,11 @@ Hvis du vil køre disse eksempler, skal du tilføje følgende miljøvariabler ti
 
 ### Ekstern webside
 
-- `AZURE_OPENAI_API_VERSION` - Besøg [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release)-siden under **Latest GA API release**.
+- `AZURE_OPENAI_API_VERSION` - Besøg siden [API version lifecycle](https://learn.microsoft.com/en-us/azure/ai-services/openai/api-version-deprecation#latest-ga-api-release) under **Latest GA API release**.
 
 ### Opsætning af keyless authentication
 
-I stedet for at hardkode dine legitimationsoplysninger, vil vi bruge en keyless-forbindelse med Azure OpenAI. For at gøre dette vil vi importere `DefaultAzureCredential` og senere kalde `DefaultAzureCredential`-funktionen for at få legitimationsoplysningerne.
+I stedet for at hardkode dine legitimationsoplysninger, vil vi bruge en keyless-forbindelse med Azure OpenAI. For at gøre dette vil vi importere `DefaultAzureCredential` og senere kalde funktionen `DefaultAzureCredential` for at få legitimationsoplysningerne.
 
 ```python
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
@@ -208,7 +212,9 @@ Hvis du har problemer med at køre denne opsætning, så hop ind i vores
 
 Du er nu klar til at køre koden for dette kursus. God fornøjelse med at lære mere om AI-agenter!  
 
-[Introduktion til AI-agenter og deres anvendelsesmuligheder](../01-intro-to-ai-agents/README.md)
+[Introduktion til AI-agenter og agentanvendelser](../01-intro-to-ai-agents/README.md)
+
+---
 
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
