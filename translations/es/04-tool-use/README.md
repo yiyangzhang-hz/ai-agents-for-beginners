@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7d24f735b3c326b2e515f049a0330e54",
-  "translation_date": "2025-08-21T12:04:17+00:00",
+  "original_hash": "4a5ccc4ad1dba85fbc2087cf3b986544",
+  "translation_date": "2025-08-30T13:13:28+00:00",
   "source_file": "04-tool-use/README.md",
   "language_code": "es"
 }
 -->
-[![Cómo Diseñar Buenos Agentes de IA](../../../translated_images/lesson-4-thumbnail.546162853cb3daffd64edd92014f274103f76360dfb39fc6e6ee399494da38fd.es.png)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
+[![Cómo Diseñar Agentes de IA Eficaces](../../../translated_images/lesson-4-thumbnail.546162853cb3daffd64edd92014f274103f76360dfb39fc6e6ee399494da38fd.es.png)](https://youtu.be/vieRiPRx-gI?si=cEZ8ApnT6Sus9rhn)
 
 > _(Haz clic en la imagen de arriba para ver el video de esta lección)_
 
@@ -21,7 +21,7 @@ En esta lección, buscamos responder las siguientes preguntas:
 
 - ¿Qué es el patrón de diseño para el uso de herramientas?
 - ¿Cuáles son los casos de uso a los que se puede aplicar?
-- ¿Cuáles son los elementos/bloques de construcción necesarios para implementar el patrón de diseño?
+- ¿Cuáles son los elementos o bloques de construcción necesarios para implementar este patrón de diseño?
 - ¿Cuáles son las consideraciones especiales para usar el Patrón de Diseño para el Uso de Herramientas para construir agentes de IA confiables?
 
 ## Objetivos de Aprendizaje
@@ -29,13 +29,13 @@ En esta lección, buscamos responder las siguientes preguntas:
 Al completar esta lección, serás capaz de:
 
 - Definir el Patrón de Diseño para el Uso de Herramientas y su propósito.
-- Identificar casos de uso donde el Patrón de Diseño para el Uso de Herramientas es aplicable.
+- Identificar casos de uso donde este patrón de diseño es aplicable.
 - Comprender los elementos clave necesarios para implementar el patrón de diseño.
-- Reconocer consideraciones para garantizar la confiabilidad en agentes de IA que utilizan este patrón de diseño.
+- Reconocer consideraciones para garantizar la confiabilidad en agentes de IA que utilicen este patrón de diseño.
 
 ## ¿Qué es el Patrón de Diseño para el Uso de Herramientas?
 
-El **Patrón de Diseño para el Uso de Herramientas** se centra en dar a los LLMs la capacidad de interactuar con herramientas externas para alcanzar objetivos específicos. Las herramientas son códigos que pueden ser ejecutados por un agente para realizar acciones. Una herramienta puede ser una función simple como una calculadora, o una llamada a una API de un servicio externo, como la consulta de precios de acciones o el pronóstico del clima. En el contexto de los agentes de IA, las herramientas están diseñadas para ser ejecutadas por los agentes en respuesta a **llamadas a funciones generadas por el modelo**.
+El **Patrón de Diseño para el Uso de Herramientas** se centra en dar a los LLMs la capacidad de interactuar con herramientas externas para alcanzar objetivos específicos. Las herramientas son fragmentos de código que pueden ser ejecutados por un agente para realizar acciones. Una herramienta puede ser una función simple como una calculadora, o una llamada a una API de un servicio externo, como una consulta de precios de acciones o un pronóstico del clima. En el contexto de los agentes de IA, las herramientas están diseñadas para ser ejecutadas por los agentes en respuesta a **llamadas a funciones generadas por el modelo**.
 
 ## ¿Cuáles son los casos de uso a los que se puede aplicar?
 
@@ -45,13 +45,13 @@ Los agentes de IA pueden aprovechar las herramientas para completar tareas compl
 - **Ejecución e Interpretación de Código:** Los agentes pueden ejecutar código o scripts para resolver problemas matemáticos, generar informes o realizar simulaciones.
 - **Automatización de Flujos de Trabajo:** Automatizar flujos de trabajo repetitivos o de múltiples pasos integrando herramientas como planificadores de tareas, servicios de correo electrónico o pipelines de datos.
 - **Soporte al Cliente:** Los agentes pueden interactuar con sistemas CRM, plataformas de tickets o bases de conocimiento para resolver consultas de usuarios.
-- **Generación y Edición de Contenido:** Los agentes pueden aprovechar herramientas como correctores gramaticales, resumidores de texto o evaluadores de seguridad de contenido para asistir en tareas de creación de contenido.
+- **Generación y Edición de Contenido:** Los agentes pueden utilizar herramientas como correctores gramaticales, resumidores de texto o evaluadores de seguridad de contenido para asistir en tareas de creación de contenido.
 
-## ¿Cuáles son los elementos/bloques de construcción necesarios para implementar el patrón de diseño para el uso de herramientas?
+## ¿Cuáles son los elementos o bloques de construcción necesarios para implementar el patrón de diseño para el uso de herramientas?
 
 Estos bloques de construcción permiten que el agente de IA realice una amplia gama de tareas. Veamos los elementos clave necesarios para implementar el Patrón de Diseño para el Uso de Herramientas:
 
-- **Esquemas de Funciones/Herramientas:** Definiciones detalladas de las herramientas disponibles, incluyendo el nombre de la función, propósito, parámetros requeridos y salidas esperadas. Estos esquemas permiten que el LLM entienda qué herramientas están disponibles y cómo construir solicitudes válidas.
+- **Esquemas de Funciones/Herramientas:** Definiciones detalladas de las herramientas disponibles, incluyendo el nombre de la función, propósito, parámetros requeridos y salidas esperadas. Estos esquemas permiten que el LLM comprenda qué herramientas están disponibles y cómo construir solicitudes válidas.
 
 - **Lógica de Ejecución de Funciones:** Regula cómo y cuándo se invocan las herramientas en función de la intención del usuario y el contexto de la conversación. Esto puede incluir módulos de planificación, mecanismos de enrutamiento o flujos condicionales que determinan el uso de herramientas de manera dinámica.
 
@@ -63,11 +63,11 @@ Estos bloques de construcción permiten que el agente de IA realice una amplia g
 
 - **Gestión de Estado:** Rastrea el contexto de la conversación, interacciones previas con herramientas y datos persistentes para garantizar consistencia en interacciones de múltiples turnos.
 
-A continuación, veamos en detalle las Llamadas a Funciones/Herramientas.
+A continuación, profundicemos en el tema de las Llamadas a Funciones/Herramientas.
 
 ### Llamadas a Funciones/Herramientas
 
-Las llamadas a funciones son la forma principal en que habilitamos a los Modelos de Lenguaje Extenso (LLMs) para interactuar con herramientas. A menudo verás que 'Función' y 'Herramienta' se usan de manera intercambiable porque las 'funciones' (bloques de código reutilizable) son las 'herramientas' que los agentes utilizan para llevar a cabo tareas. Para que el código de una función sea invocado, un LLM debe comparar la solicitud del usuario con la descripción de la función. Para ello, se envía al LLM un esquema que contiene las descripciones de todas las funciones disponibles. El LLM selecciona la función más adecuada para la tarea y devuelve su nombre y argumentos. La función seleccionada se invoca, su respuesta se envía de vuelta al LLM, que utiliza la información para responder a la solicitud del usuario.
+Las llamadas a funciones son la forma principal en que habilitamos a los Modelos de Lenguaje Extenso (LLMs) para interactuar con herramientas. A menudo verás que los términos 'Función' y 'Herramienta' se usan de manera intercambiable porque las 'funciones' (bloques de código reutilizable) son las 'herramientas' que los agentes utilizan para llevar a cabo tareas. Para que el código de una función sea invocado, un LLM debe comparar la solicitud del usuario con la descripción de la función. Para ello, se envía al LLM un esquema que contiene las descripciones de todas las funciones disponibles. El LLM selecciona la función más adecuada para la tarea y devuelve su nombre y argumentos. La función seleccionada se invoca, su respuesta se envía de vuelta al LLM, que utiliza la información para responder a la solicitud del usuario.
 
 Para que los desarrolladores implementen llamadas a funciones para agentes, necesitarás:
 
@@ -75,7 +75,7 @@ Para que los desarrolladores implementen llamadas a funciones para agentes, nece
 2. Un esquema que contenga descripciones de funciones.
 3. El código para cada función descrita.
 
-Usemos el ejemplo de obtener la hora actual en una ciudad para ilustrar:
+Usemos el ejemplo de obtener la hora actual en una ciudad para ilustrarlo:
 
 1. **Inicializar un LLM que soporte llamadas a funciones:**
 
@@ -145,7 +145,7 @@ Usemos el ejemplo de obtener la hora actual en una ciudad para ilustrar:
     ChatCompletionMessage(content=None, role='assistant', function_call=None, tool_calls=[ChatCompletionMessageToolCall(id='call_pOsKdUlqvdyttYB67MOj434b', function=Function(arguments='{"location":"San Francisco"}', name='get_current_time'), type='function')])
     ```
   
-1. **El código de la función necesario para llevar a cabo la tarea:**
+1. **El código de la función necesario para realizar la tarea:**
 
     Ahora que el LLM ha elegido qué función necesita ejecutarse, el código que realiza la tarea debe ser implementado y ejecutado. Podemos implementar el código para obtener la hora actual en Python. También necesitaremos escribir el código para extraer el nombre y los argumentos de `response_message` para obtener el resultado final.
 
@@ -204,7 +204,7 @@ Usemos el ejemplo de obtener la hora actual en una ciudad para ilustrar:
       The current time in San Francisco is 09:24 AM.
      ```
 
-Las Llamadas a Funciones son el núcleo de la mayoría, si no de todos, los diseños de uso de herramientas para agentes; sin embargo, implementarlas desde cero puede ser un desafío. Como aprendimos en [Lección 2](../../../02-explore-agentic-frameworks), los marcos agentivos nos proporcionan bloques de construcción predefinidos para implementar el uso de herramientas.
+Las llamadas a funciones son el núcleo de la mayoría, si no de todos, los diseños de uso de herramientas para agentes; sin embargo, implementarlas desde cero puede ser un desafío. Como aprendimos en [Lección 2](../../../02-explore-agentic-frameworks), los marcos agentivos nos proporcionan bloques de construcción predefinidos para implementar el uso de herramientas.
 
 ## Ejemplos de Uso de Herramientas con Marcos Agentivos
 
@@ -212,7 +212,7 @@ Aquí hay algunos ejemplos de cómo puedes implementar el Patrón de Diseño par
 
 ### Semantic Kernel
 
-<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a> es un marco de IA de código abierto para desarrolladores de .NET, Python y Java que trabajan con Modelos de Lenguaje Extenso (LLMs). Simplifica el proceso de uso de llamadas a funciones al describir automáticamente tus funciones y sus parámetros al modelo a través de un proceso llamado <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">serialización</a>. También maneja la comunicación entre el modelo y tu código. Otra ventaja de usar un marco agentivo como Semantic Kernel es que te permite acceder a herramientas predefinidas como <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">Búsqueda de Archivos</a> y <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Intérprete de Código</a>.
+<a href="https://learn.microsoft.com/azure/ai-services/agents/overview" target="_blank">Semantic Kernel</a> es un marco de IA de código abierto para desarrolladores de .NET, Python y Java que trabajan con Modelos de Lenguaje Extenso (LLMs). Simplifica el proceso de uso de llamadas a funciones al describir automáticamente tus funciones y sus parámetros al modelo a través de un proceso llamado <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">serialización</a>. También maneja la comunicación entre el modelo y tu código. Otra ventaja de usar un marco agentivo como Semantic Kernel es que te permite acceder a herramientas predefinidas como <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step4_assistant_tool_file_search.py" target="_blank">Búsqueda de Archivos</a> e <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Intérprete de Código</a>.
 
 El siguiente diagrama ilustra el proceso de llamadas a funciones con Semantic Kernel:
 
@@ -271,7 +271,7 @@ Las herramientas disponibles en Azure AI Agent Service se dividen en dos categor
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/openapi-spec?tabs=python&pivots=overview" target="_blank">Herramientas definidas por OpenAI</a>
     - <a href="https://learn.microsoft.com/azure/ai-services/agents/how-to/tools/azure-functions?pivots=overview" target="_blank">Azure Functions</a>
 
-El Agent Service nos permite usar estas herramientas juntas como un `toolset`. También utiliza `threads`, que mantienen un registro del historial de mensajes de una conversación en particular.
+El Agent Service nos permite usar estas herramientas juntas como un `toolset`. También utiliza `threads`, que mantienen un historial de los mensajes de una conversación en particular.
 
 Imagina que eres un agente de ventas en una empresa llamada Contoso. Quieres desarrollar un agente conversacional que pueda responder preguntas sobre tus datos de ventas.
 
@@ -279,7 +279,7 @@ La siguiente imagen ilustra cómo podrías usar Azure AI Agent Service para anal
 
 ![Servicio Agentic en Acción](../../../translated_images/agent-service-in-action.34fb465c9a84659edd3003f8cb62d6b366b310a09b37c44e32535021fbb5c93f.es.jpg)
 
-Para usar cualquiera de estas herramientas con el servicio, podemos crear un cliente y definir una herramienta o conjunto de herramientas. Para implementarlo de manera práctica, podemos usar el siguiente código en Python. El LLM podrá mirar el conjunto de herramientas y decidir si usar la función creada por el usuario, `fetch_sales_data_using_sqlite_query`, o el Intérprete de Código predefinido dependiendo de la solicitud del usuario.
+Para usar cualquiera de estas herramientas con el servicio, podemos crear un cliente y definir una herramienta o conjunto de herramientas. Para implementarlo de manera práctica, podemos usar el siguiente código en Python. El LLM podrá examinar el conjunto de herramientas y decidir si usar la función creada por el usuario, `fetch_sales_data_using_sqlite_query`, o el Intérprete de Código predefinido, dependiendo de la solicitud del usuario.
 
 ```python 
 import os
@@ -311,27 +311,24 @@ agent = project_client.agents.create_agent(
 
 ## ¿Cuáles son las consideraciones especiales para usar el Patrón de Diseño para el Uso de Herramientas para construir agentes de IA confiables?
 
-Una preocupación común con el SQL generado dinámicamente por LLMs es la seguridad, particularmente el riesgo de inyección de SQL o acciones maliciosas, como eliminar o alterar la base de datos. Aunque estas preocupaciones son válidas, pueden mitigarse eficazmente configurando adecuadamente los permisos de acceso a la base de datos. Para la mayoría de las bases de datos, esto implica configurarlas como de solo lectura. Para servicios de bases de datos como PostgreSQL o Azure SQL, la aplicación debe ser asignada a un rol de solo lectura (SELECT).
+Una preocupación común con el SQL generado dinámicamente por LLMs es la seguridad, particularmente el riesgo de inyección de SQL o acciones maliciosas, como eliminar o alterar la base de datos. Aunque estas preocupaciones son válidas, pueden mitigarse de manera efectiva configurando adecuadamente los permisos de acceso a la base de datos. Para la mayoría de las bases de datos, esto implica configurarlas como de solo lectura. Para servicios de bases de datos como PostgreSQL o Azure SQL, la aplicación debe ser asignada a un rol de solo lectura (SELECT).
 
-Ejecutar la aplicación en un entorno seguro mejora aún más la protección. En escenarios empresariales, los datos generalmente se extraen y transforman de sistemas operativos a una base de datos de solo lectura o un almacén de datos con un esquema fácil de usar. Este enfoque asegura que los datos sean seguros, optimizados para el rendimiento y la accesibilidad, y que la aplicación tenga acceso restringido y de solo lectura.
+Ejecutar la aplicación en un entorno seguro mejora aún más la protección. En escenarios empresariales, los datos generalmente se extraen y transforman desde sistemas operativos hacia una base de datos de solo lectura o un almacén de datos con un esquema fácil de usar. Este enfoque asegura que los datos sean seguros, optimizados para el rendimiento y la accesibilidad, y que la aplicación tenga acceso restringido y de solo lectura.
+
+### ¿Tienes más preguntas sobre el Patrón de Diseño para el Uso de Herramientas?
+Únete al [Discord de Azure AI Foundry](https://aka.ms/ai-agents/discord) para conectarte con otros estudiantes, asistir a horas de oficina y resolver tus dudas sobre AI Agents.
 
 ## Recursos Adicionales
 
--
-<a href="https://microsoft.github.io/build-your-first-agent-with-azure-ai-agent-service-workshop/" target="_blank">
-Azure AI Agents Service Workshop</a>
-- <a href="https://github.com/Azure-Samples/contoso-creative-writer/tree/main/docs/workshop" target="_blank">Taller de Contoso Creative Writer Multi-Agente</a>
-- <a href="https://learn.microsoft.com/semantic-kernel/concepts/ai-services/chat-completion/function-calling/?pivots=programming-language-python#1-serializing-the-functions" target="_blank">Tutorial de Llamadas a Funciones en Semantic Kernel</a>
-- <a href="https://github.com/microsoft/semantic-kernel/blob/main/python/samples/getting_started_with_agents/openai_assistant/step3_assistant_tool_code_interpreter.py" target="_blank">Intérprete de Código de Semantic Kernel</a>
-- <a href="https://microsoft.github.io/autogen/dev/user-guide/core-user-guide/components/tools.html" target="_blank">Herramientas de Autogen</a>
-
 ## Lección Anterior
 
-[Entendiendo los Patrones de Diseño Agente](../03-agentic-design-patterns/README.md)
+[Entendiendo los Patrones de Diseño Agéntico](../03-agentic-design-patterns/README.md)
 
 ## Próxima Lección
 
 [Agentic RAG](../05-agentic-rag/README.md)
 
+---
+
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
