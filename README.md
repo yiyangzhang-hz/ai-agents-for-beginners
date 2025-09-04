@@ -2,7 +2,7 @@
 
 ![Generative AI For Beginners](./images/repo-thumbnailv2.png)
 
-## 11 Lessons teaching everything you need to know to start building AI Agents
+## A courese teaching everything you need to know to start building AI Agents
 
 [![GitHub license](https://img.shields.io/github/license/microsoft/ai-agents-for-beginners.svg)](https://github.com/microsoft/ai-agents-for-beginners/blob/master/LICENSE?WT.mc_id=academic-105485-koreyst)
 [![GitHub contributors](https://img.shields.io/github/contributors/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/graphs/contributors/?WT.mc_id=academic-105485-koreyst)
@@ -27,7 +27,7 @@
 
 ## 🌱 Getting Started
 
-This course has 11 lessons covering the fundamentals of building AI Agents. Each lesson covers its own topic so start wherever you like!
+This course has lessons covering the fundamentals of building AI Agents. Each lesson covers its own topic so start wherever you like!
 
 There is multi-language support for this course. Go to our [available languages here](#-multi-language-support). 
 
