@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f6600bebb86f72f3f62a9163fcce9566",
-  "translation_date": "2025-08-29T18:23:56+00:00",
+  "original_hash": "5c05bcdfb163dfa2493db39dfb45ad9a",
+  "translation_date": "2025-09-04T08:44:05+00:00",
   "source_file": "11-agentic-protocols/README.md",
   "language_code": "nl"
 }
@@ -17,25 +17,25 @@ Naarmate het gebruik van AI-agenten toeneemt, groeit ook de behoefte aan protoco
 
 In deze les behandelen we:
 
-• Hoe **MCP** AI-agenten in staat stelt om externe tools en data te gebruiken om taken voor gebruikers uit te voeren.
+• Hoe **MCP** AI-agenten in staat stelt externe tools en gegevens te gebruiken om taken voor gebruikers uit te voeren.
 
 • Hoe **A2A** communicatie en samenwerking tussen verschillende AI-agenten mogelijk maakt.
 
-• Hoe **NLWeb** natuurlijke taalinterfaces naar elke website brengt, waardoor AI-agenten de inhoud kunnen ontdekken en ermee kunnen interageren.
+• Hoe **NLWeb** natuurlijke taalinterfaces naar elke website brengt, waardoor AI-agenten de inhoud kunnen ontdekken en ermee kunnen interacteren.
 
 ## Leerdoelen
 
 • **Identificeer** het kerngebruik en de voordelen van MCP, A2A en NLWeb in de context van AI-agenten.
 
-• **Leg uit** hoe elk protocol communicatie en interactie tussen LLMs, tools en andere agenten faciliteert.
+• **Leg uit** hoe elk protocol communicatie en interactie tussen LLM's, tools en andere agenten faciliteert.
 
 • **Herken** de unieke rollen die elk protocol speelt bij het bouwen van complexe agentische systemen.
 
 ## Model Context Protocol
 
-Het **Model Context Protocol (MCP)** is een open standaard die een gestandaardiseerde manier biedt voor applicaties om context en tools aan LLMs te leveren. Dit maakt een "universele adapter" mogelijk voor verschillende databronnen en tools waarmee AI-agenten op een consistente manier verbinding kunnen maken.
+Het **Model Context Protocol (MCP)** is een open standaard die een gestandaardiseerde manier biedt voor applicaties om context en tools aan LLM's te leveren. Dit maakt een "universele adapter" mogelijk voor verschillende gegevensbronnen en tools waarmee AI-agenten op een consistente manier verbinding kunnen maken.
 
-Laten we kijken naar de componenten van MCP, de voordelen ten opzichte van directe API-gebruik, en een voorbeeld van hoe AI-agenten een MCP-server kunnen gebruiken.
+Laten we kijken naar de componenten van MCP, de voordelen ten opzichte van direct API-gebruik en een voorbeeld van hoe AI-agenten een MCP-server kunnen gebruiken.
 
 ### MCP Kerncomponenten
 
@@ -49,9 +49,9 @@ MCP werkt op een **client-serverarchitectuur** en de kerncomponenten zijn:
 
 Het protocol bevat drie kernprimitieven die de mogelijkheden van een MCP-server vormen:
 
-• **Tools**: Dit zijn afzonderlijke acties of functies die een AI-agent kan aanroepen om een actie uit te voeren. Bijvoorbeeld, een weerservice kan een "get weather"-tool aanbieden, of een e-commerceserver kan een "purchase product"-tool aanbieden. MCP-servers adverteren de naam, beschrijving en input/output-schema van elke tool in hun capaciteitenlijst.
+• **Tools**: Dit zijn afzonderlijke acties of functies die een AI-agent kan aanroepen om een actie uit te voeren. Bijvoorbeeld, een weerservice kan een "haal weer op"-tool aanbieden, of een e-commerceserver kan een "product kopen"-tool aanbieden. MCP-servers adverteren de naam, beschrijving en input/output-schema van elke tool in hun capaciteitenlijst.
 
-• **Resources**: Dit zijn alleen-lezen data-items of documenten die een MCP-server kan leveren, en clients kunnen ze op aanvraag ophalen. Voorbeelden zijn bestandsinhoud, databasegegevens of logbestanden. Resources kunnen tekst (zoals code of JSON) of binair (zoals afbeeldingen of PDF's) zijn.
+• **Resources**: Dit zijn alleen-lezen gegevensitems of documenten die een MCP-server kan leveren en die clients op aanvraag kunnen ophalen. Voorbeelden zijn bestandsinhoud, databasegegevens of logbestanden. Resources kunnen tekst zijn (zoals code of JSON) of binair (zoals afbeeldingen of PDF's).
 
 • **Prompts**: Dit zijn vooraf gedefinieerde sjablonen die voorgestelde prompts bieden, waardoor complexere workflows mogelijk worden.
 
@@ -59,9 +59,9 @@ Het protocol bevat drie kernprimitieven die de mogelijkheden van een MCP-server 
 
 MCP biedt aanzienlijke voordelen voor AI-agenten:
 
-• **Dynamische Toolontdekking**: Agenten kunnen dynamisch een lijst met beschikbare tools van een server ontvangen, samen met beschrijvingen van wat ze doen. Dit verschilt van traditionele API's, die vaak statische codering voor integraties vereisen, wat betekent dat elke API-wijziging code-updates vereist. MCP biedt een "eenmalig integreren"-benadering, wat leidt tot meer flexibiliteit.
+• **Dynamische Toolontdekking**: Agenten kunnen dynamisch een lijst met beschikbare tools van een server ontvangen, samen met beschrijvingen van wat ze doen. Dit in tegenstelling tot traditionele API's, die vaak statische codering voor integraties vereisen, wat betekent dat elke API-wijziging code-updates vereist. MCP biedt een "eenmalig integreren"-benadering, wat leidt tot meer flexibiliteit.
 
-• **Interoperabiliteit tussen LLMs**: MCP werkt met verschillende LLMs, wat flexibiliteit biedt om kernmodellen te wisselen en te evalueren voor betere prestaties.
+• **Interoperabiliteit tussen LLM's**: MCP werkt met verschillende LLM's, waardoor flexibiliteit ontstaat om kernmodellen te wisselen en te evalueren voor betere prestaties.
 
 • **Gestandaardiseerde Beveiliging**: MCP bevat een standaard authenticatiemethode, wat de schaalbaarheid verbetert bij het toevoegen van toegang tot extra MCP-servers. Dit is eenvoudiger dan het beheren van verschillende sleutels en authenticatietypen voor diverse traditionele API's.
 
@@ -73,17 +73,17 @@ Stel je voor dat een gebruiker een vlucht wil boeken met behulp van een AI-assis
 
 1. **Verbinding**: De AI-assistent (de MCP-client) maakt verbinding met een MCP-server van een luchtvaartmaatschappij.
 
-2. **Toolontdekking**: De client vraagt de MCP-server van de luchtvaartmaatschappij: "Welke tools zijn beschikbaar?" De server reageert met tools zoals "search flights" en "book flights".
+2. **Toolontdekking**: De client vraagt de MCP-server van de luchtvaartmaatschappij: "Welke tools zijn beschikbaar?" De server reageert met tools zoals "vluchten zoeken" en "vluchten boeken".
 
-3. **Toolaanroep**: Je vraagt de AI-assistent: "Zoek een vlucht van Portland naar Honolulu." De AI-assistent, met behulp van zijn LLM, identificeert dat hij de "search flights"-tool moet aanroepen en geeft de relevante parameters (vertrekpunt, bestemming) door aan de MCP-server.
+3. **Toolaanroep**: Je vraagt de AI-assistent: "Zoek een vlucht van Portland naar Honolulu." De AI-assistent, met behulp van zijn LLM, identificeert dat hij de tool "vluchten zoeken" moet aanroepen en geeft de relevante parameters (vertrekpunt, bestemming) door aan de MCP-server.
 
-4. **Uitvoering en Reactie**: De MCP-server, die fungeert als een wrapper, voert de daadwerkelijke oproep uit naar de interne boekings-API van de luchtvaartmaatschappij. Vervolgens ontvangt het de vluchtinformatie (bijvoorbeeld JSON-data) en stuurt deze terug naar de AI-assistent.
+4. **Uitvoering en Reactie**: De MCP-server, die fungeert als een wrapper, maakt de daadwerkelijke oproep naar de interne boekings-API van de luchtvaartmaatschappij. Vervolgens ontvangt het de vluchtinformatie (bijvoorbeeld JSON-gegevens) en stuurt deze terug naar de AI-assistent.
 
-5. **Verdere Interactie**: De AI-assistent presenteert de vluchtopties. Zodra je een vlucht selecteert, kan de assistent de "book flight"-tool op dezelfde MCP-server aanroepen om de boeking te voltooien.
+5. **Verdere Interactie**: De AI-assistent presenteert de vluchtopties. Zodra je een vlucht selecteert, kan de assistent de tool "vlucht boeken" op dezelfde MCP-server aanroepen om de boeking te voltooien.
 
 ## Agent-to-Agent Protocol (A2A)
 
-Terwijl MCP zich richt op het verbinden van LLMs met tools, gaat het **Agent-to-Agent (A2A) protocol** een stap verder door communicatie en samenwerking tussen verschillende AI-agenten mogelijk te maken. A2A verbindt AI-agenten van verschillende organisaties, omgevingen en technologieën om een gedeelde taak te voltooien.
+Terwijl MCP zich richt op het verbinden van LLM's met tools, gaat het **Agent-to-Agent (A2A) protocol** een stap verder door communicatie en samenwerking tussen verschillende AI-agenten mogelijk te maken. A2A verbindt AI-agenten van verschillende organisaties, omgevingen en technologieën om een gedeelde taak te voltooien.
 
 We zullen de componenten en voordelen van A2A onderzoeken, samen met een voorbeeld van hoe het kan worden toegepast in onze reisapplicatie.
 
@@ -94,15 +94,15 @@ A2A richt zich op het mogelijk maken van communicatie tussen agenten en hen late
 #### Agentkaart
 
 Net zoals een MCP-server een lijst met tools deelt, bevat een Agentkaart:
-    ◦ De naam van de agent.  
-    ◦ Een **beschrijving van de algemene taken** die hij uitvoert.  
-    ◦ Een **lijst van specifieke vaardigheden** met beschrijvingen om andere agenten (of zelfs menselijke gebruikers) te helpen begrijpen wanneer en waarom ze die agent zouden willen oproepen.  
-    ◦ De **huidige Endpoint-URL** van de agent.  
-    ◦ De **versie** en **mogelijkheden** van de agent, zoals streamingreacties en pushmeldingen.  
+- De naam van de agent.
+- Een **beschrijving van de algemene taken** die hij uitvoert.
+- Een **lijst van specifieke vaardigheden** met beschrijvingen om andere agenten (of zelfs menselijke gebruikers) te helpen begrijpen wanneer en waarom ze deze agent zouden willen oproepen.
+- De **huidige Endpoint-URL** van de agent.
+- De **versie** en **mogelijkheden** van de agent, zoals streamingreacties en pushmeldingen.
 
 #### Agentuitvoerder
 
-De Agentuitvoerder is verantwoordelijk voor **het doorgeven van de context van de gebruikerschat aan de externe agent**, zodat de externe agent begrijpt welke taak moet worden uitgevoerd. In een A2A-server gebruikt een agent zijn eigen Large Language Model (LLM) om binnenkomende verzoeken te verwerken en taken uit te voeren met zijn eigen interne tools.
+De Agentuitvoerder is verantwoordelijk voor **het doorgeven van de context van de gebruikerschat aan de externe agent**, zodat de externe agent begrijpt welke taak moet worden uitgevoerd. In een A2A-server gebruikt een agent zijn eigen Large Language Model (LLM) om binnenkomende verzoeken te analyseren en taken uit te voeren met zijn eigen interne tools.
 
 #### Artefact
 
@@ -114,11 +114,11 @@ Deze component wordt gebruikt voor **het afhandelen van updates en het doorgeven
 
 ### Voordelen van A2A
 
-• **Verbeterde Samenwerking**: Het stelt agenten van verschillende leveranciers en platforms in staat om te interageren, context te delen en samen te werken, wat naadloze automatisering mogelijk maakt tussen traditioneel gescheiden systemen.
+• **Verbeterde Samenwerking**: Het stelt agenten van verschillende leveranciers en platforms in staat om te interacteren, context te delen en samen te werken, wat naadloze automatisering mogelijk maakt tussen traditioneel gescheiden systemen.
 
-• **Flexibiliteit in Modelselectie**: Elke A2A-agent kan beslissen welk LLM hij gebruikt om zijn verzoeken te verwerken, wat geoptimaliseerde of fijn afgestemde modellen per agent mogelijk maakt, in tegenstelling tot een enkele LLM-verbinding in sommige MCP-scenario's.
+• **Flexibiliteit in Modelselectie**: Elke A2A-agent kan beslissen welk LLM hij gebruikt om zijn verzoeken te verwerken, waardoor geoptimaliseerde of fijn afgestemde modellen per agent mogelijk zijn, in tegenstelling tot een enkele LLM-verbinding in sommige MCP-scenario's.
 
-• **Ingebouwde Authenticatie**: Authenticatie is direct geïntegreerd in het A2A-protocol, wat een robuust beveiligingskader biedt voor agentinteracties.
+• **Ingebouwde Authenticatie**: Authenticatie is direct geïntegreerd in het A2A-protocol, wat een robuust beveiligingskader biedt voor interacties tussen agenten.
 
 ### A2A Voorbeeld
 
@@ -126,29 +126,29 @@ Deze component wordt gebruikt voor **het afhandelen van updates en het doorgeven
 
 Laten we ons reisscenario uitbreiden, maar deze keer met behulp van A2A.
 
-1. **Gebruikersverzoek aan Multi-Agent**: Een gebruiker communiceert met een "Reisagent" A2A-client/agent, bijvoorbeeld door te zeggen: "Boek een volledige reis naar Honolulu voor volgende week, inclusief vluchten, een hotel en een huurauto."
+1. **Gebruikersverzoek aan Multi-Agent**: Een gebruiker interageert met een "Reisagent" A2A-client/agent, bijvoorbeeld door te zeggen: "Boek een volledige reis naar Honolulu voor volgende week, inclusief vluchten, een hotel en een huurauto."
 
-2. **Orchestratie door Reisagent**: De Reisagent ontvangt dit complexe verzoek. Hij gebruikt zijn LLM om na te denken over de taak en bepaalt dat hij moet communiceren met andere gespecialiseerde agenten.
+2. **Orchestratie door Reisagent**: De Reisagent ontvangt dit complexe verzoek. Hij gebruikt zijn LLM om na te denken over de taak en bepaalt dat hij moet interageren met andere gespecialiseerde agenten.
 
-3. **Inter-Agent Communicatie**: De Reisagent gebruikt vervolgens het A2A-protocol om verbinding te maken met downstream-agenten, zoals een "Luchtvaartmaatschappijagent," een "Hotelagent," en een "Autoverhuuragent" die door verschillende bedrijven zijn gemaakt.
+3. **Inter-agentcommunicatie**: De Reisagent gebruikt vervolgens het A2A-protocol om verbinding te maken met downstream-agenten, zoals een "Luchtvaartmaatschappijagent," een "Hotelagent," en een "Autoverhuuragent" die door verschillende bedrijven zijn gemaakt.
 
-4. **Uitvoering van Gedelegeerde Taken**: De Reisagent stuurt specifieke taken naar deze gespecialiseerde agenten (bijvoorbeeld "Zoek vluchten naar Honolulu," "Boek een hotel," "Huur een auto"). Elk van deze gespecialiseerde agenten, die hun eigen LLMs draaien en hun eigen tools gebruiken (die zelf MCP-servers kunnen zijn), voert zijn specifieke deel van de boeking uit.
+4. **Uitvoering van Gedelegeerde Taken**: De Reisagent stuurt specifieke taken naar deze gespecialiseerde agenten (bijvoorbeeld "Zoek vluchten naar Honolulu," "Boek een hotel," "Huur een auto"). Elk van deze gespecialiseerde agenten, die hun eigen LLM's draaien en hun eigen tools gebruiken (die zelf MCP-servers kunnen zijn), voert zijn specifieke deel van de boeking uit.
 
-5. **Geconsolideerde Reactie**: Zodra alle downstream-agenten hun taken hebben voltooid, stelt de Reisagent de resultaten samen (vluchtdetails, hotelbevestiging, autoverhuurboeking) en stuurt een uitgebreide, chatstijlreactie terug naar de gebruiker.
+5. **Geconsolideerde Reactie**: Zodra alle downstream-agenten hun taken hebben voltooid, stelt de Reisagent de resultaten samen (vluchtgegevens, hotelbevestiging, autoverhuurboeking) en stuurt een uitgebreide, chatstijlreactie terug naar de gebruiker.
 
 ## Natural Language Web (NLWeb)
 
-Websites zijn al lang de primaire manier voor gebruikers om informatie en data op internet te benaderen.
+Websites zijn al lange tijd de primaire manier voor gebruikers om informatie en gegevens op internet te benaderen.
 
 Laten we kijken naar de verschillende componenten van NLWeb, de voordelen van NLWeb en een voorbeeld van hoe NLWeb werkt door te kijken naar onze reisapplicatie.
 
 ### Componenten van NLWeb
 
-- **NLWeb Applicatie (Kernservicecode)**: Het systeem dat natuurlijke taalvragen verwerkt. Het verbindt de verschillende delen van het platform om antwoorden te creëren. Je kunt het zien als de **motor die de natuurlijke taalfunctionaliteiten** van een website aandrijft.
+- **NLWeb Applicatie (Kernservicecode)**: Het systeem dat natuurlijke taalvragen verwerkt. Het verbindt de verschillende delen van het platform om antwoorden te genereren. Je kunt het zien als de **motor die de natuurlijke taalfunctionaliteiten** van een website aandrijft.
 
-- **NLWeb Protocol**: Dit is een **basisset van regels voor natuurlijke taalinteractie** met een website. Het stuurt antwoorden terug in JSON-formaat (vaak met Schema.org). Het doel is om een eenvoudige basis te creëren voor het "AI-web," op dezelfde manier waarop HTML het mogelijk maakte om documenten online te delen.
+- **NLWeb Protocol**: Dit is een **basisset regels voor natuurlijke taalinteractie** met een website. Het stuurt antwoorden terug in JSON-formaat (vaak met Schema.org). Het doel is om een eenvoudige basis te creëren voor het "AI-web," op dezelfde manier waarop HTML het mogelijk maakte om documenten online te delen.
 
-- **MCP Server (Model Context Protocol Endpoint)**: Elke NLWeb-setup werkt ook als een **MCP-server**. Dit betekent dat het **tools (zoals een "ask"-methode) en data** kan delen met andere AI-systemen. In de praktijk maakt dit de inhoud en mogelijkheden van de website bruikbaar voor AI-agenten, waardoor de site deel uitmaakt van het bredere "agentecosysteem."
+- **MCP Server (Model Context Protocol Endpoint)**: Elke NLWeb-installatie werkt ook als een **MCP-server**. Dit betekent dat het **tools (zoals een "vraag"-methode) en gegevens** kan delen met andere AI-systemen. In de praktijk maakt dit de inhoud en mogelijkheden van de website bruikbaar voor AI-agenten, waardoor de site deel uitmaakt van het bredere "agentecosysteem."
 
 - **Embeddingmodellen**: Deze modellen worden gebruikt om **website-inhoud om te zetten in numerieke representaties, zogenaamde vectoren** (embeddings). Deze vectoren vangen betekenis op een manier die computers kunnen vergelijken en doorzoeken. Ze worden opgeslagen in een speciale database, en gebruikers kunnen kiezen welk embeddingmodel ze willen gebruiken.
 
@@ -160,28 +160,28 @@ Laten we kijken naar de verschillende componenten van NLWeb, de voordelen van NL
 
 Laten we onze reisboekingswebsite opnieuw bekijken, maar deze keer aangedreven door NLWeb.
 
-1. **Data-Inname**: De bestaande productcatalogi van de reiswebsite (bijvoorbeeld vluchtlijsten, hotelbeschrijvingen, reisarrangementen) worden geformatteerd met Schema.org of geladen via RSS-feeds. De tools van NLWeb nemen deze gestructureerde data op, creëren embeddings en slaan ze op in een lokale of externe vectordatabase.
+1. **Gegevensinvoer**: De bestaande productcatalogi van de reiswebsite (bijvoorbeeld vluchtlijsten, hotelbeschrijvingen, reisarrangementen) worden geformatteerd met Schema.org of geladen via RSS-feeds. De tools van NLWeb nemen deze gestructureerde gegevens op, maken embeddings en slaan ze op in een lokale of externe vectordatabase.
 
 2. **Natuurlijke Taalvraag (Mens)**: Een gebruiker bezoekt de website en typt in plaats van menu's te navigeren in een chatinterface: "Vind een gezinsvriendelijk hotel in Honolulu met een zwembad voor volgende week."
 
 3. **NLWeb Verwerking**: De NLWeb-applicatie ontvangt deze vraag. Het stuurt de vraag naar een LLM voor interpretatie en zoekt tegelijkertijd in zijn vectordatabase naar relevante hotelvermeldingen.
 
-4. **Nauwkeurige Resultaten**: De LLM helpt de zoekresultaten uit de database te interpreteren, de beste matches te identificeren op basis van "gezinsvriendelijk," "zwembad," en "Honolulu"-criteria, en formatteert vervolgens een antwoord in natuurlijke taal. Cruciaal is dat het antwoord verwijst naar daadwerkelijke hotels uit de catalogus van de website, waardoor verzonnen informatie wordt vermeden.
+4. **Nauwkeurige Resultaten**: De LLM helpt de zoekresultaten uit de database te interpreteren, de beste overeenkomsten te identificeren op basis van "gezinsvriendelijk," "zwembad," en "Honolulu"-criteria, en formatteert vervolgens een antwoord in natuurlijke taal. Cruciaal is dat het antwoord verwijst naar daadwerkelijke hotels uit de catalogus van de website, waardoor verzonnen informatie wordt vermeden.
 
-5. **AI-Agent Interactie**: Omdat NLWeb fungeert als een MCP-server, kan een externe AI-reisagent ook verbinding maken met de NLWeb-instantie van deze website. De AI-agent kan vervolgens de `ask` MCP-methode gebruiken om de website direct te bevragen: `ask("Zijn er veganistische restaurants in de omgeving van Honolulu aanbevolen door het hotel?")`. De NLWeb-instantie zou dit verwerken, gebruikmakend van zijn database met restaurantinformatie (indien geladen), en een gestructureerd JSON-antwoord teruggeven.
+5. **Interactie met AI-agent**: Omdat NLWeb fungeert als een MCP-server, kan een externe AI-reisagent ook verbinding maken met de NLWeb-instantie van deze website. De AI-agent kan vervolgens de `vraag`-MCP-methode gebruiken om de website direct te bevragen: `vraag("Zijn er veganistische restaurants in de omgeving van Honolulu aanbevolen door het hotel?")`. De NLWeb-instantie zou dit verwerken, gebruikmakend van zijn database met restaurantinformatie (indien geladen), en een gestructureerd JSON-antwoord terugsturen.
 
 ### Meer Vragen over MCP/A2A/NLWeb?
 
-Word lid van de [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) om andere leerlingen te ontmoeten, kantooruren bij te wonen en je vragen over AI-agenten beantwoord te krijgen.
+Word lid van de [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) om andere leerlingen te ontmoeten, spreekuren bij te wonen en je vragen over AI-agenten beantwoord te krijgen.
 
 ## Bronnen
 
 - [MCP voor Beginners](https://aka.ms/mcp-for-beginners)  
-- [MCP Documentatie](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)  
-- [NLWeb Repo](https://github.com/nlweb-ai/NLWeb)  
-- [Semantic Kernel Gidsen](https://learn.microsoft.com/semantic-kernel/)  
+- [MCP Documentatie](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)
+- [NLWeb Repo](https://github.com/nlweb-ai/NLWeb)
+- [Semantic Kernel Gidsen](https://learn.microsoft.com/semantic-kernel/)
 
 ---
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u zich ervan bewust te zijn dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in zijn oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, willen we u erop wijzen dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

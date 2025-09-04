@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f6600bebb86f72f3f62a9163fcce9566",
-  "translation_date": "2025-08-30T14:38:00+00:00",
+  "original_hash": "5c05bcdfb163dfa2493db39dfb45ad9a",
+  "translation_date": "2025-09-04T07:24:49+00:00",
   "source_file": "11-agentic-protocols/README.md",
   "language_code": "es"
 }
@@ -75,9 +75,9 @@ Imagina que un usuario quiere reservar un vuelo utilizando un asistente de IA im
 
 2. **Descubrimiento de Herramientas**: El cliente pregunta al servidor MCP de la aerolínea: "¿Qué herramientas tienes disponibles?" El servidor responde con herramientas como "buscar vuelos" y "reservar vuelos".
 
-3. **Invocación de Herramientas**: Luego le pides al asistente de IA: "Por favor, busca un vuelo de Portland a Honolulu". El asistente de IA, utilizando su LLM, identifica que necesita llamar a la herramienta "buscar vuelos" y pasa los parámetros relevantes (origen, destino) al servidor MCP.
+3. **Invocación de Herramientas**: Luego, le pides al asistente de IA: "Por favor, busca un vuelo de Portland a Honolulu". El asistente de IA, utilizando su LLM, identifica que necesita llamar a la herramienta "buscar vuelos" y pasa los parámetros relevantes (origen, destino) al servidor MCP.
 
-4. **Ejecución y Respuesta**: El servidor MCP, actuando como un envoltorio, realiza la llamada real a la API interna de reservas de la aerolínea. Luego recibe la información del vuelo (por ejemplo, datos JSON) y la envía de vuelta al asistente de IA.
+4. **Ejecución y Respuesta**: El servidor MCP, actuando como un envoltorio, realiza la llamada real a la API interna de reservas de la aerolínea. Luego recibe la información del vuelo (por ejemplo, datos en formato JSON) y la envía de vuelta al asistente de IA.
 
 5. **Interacción Adicional**: El asistente de IA presenta las opciones de vuelo. Una vez que seleccionas un vuelo, el asistente podría invocar la herramienta "reservar vuelo" en el mismo servidor MCP, completando la reserva.
 
@@ -89,20 +89,20 @@ Examinaremos los componentes y beneficios de A2A, junto con un ejemplo de cómo 
 
 ### Componentes Principales de A2A
 
-A2A se centra en habilitar la comunicación entre agentes y que trabajen juntos para completar una subtarea del usuario. Cada componente del protocolo contribuye a esto:
+A2A se centra en habilitar la comunicación entre agentes y hacer que trabajen juntos para completar una subtarea del usuario. Cada componente del protocolo contribuye a esto:
 
 #### Tarjeta de Agente
 
 Similar a cómo un servidor MCP comparte una lista de herramientas, una Tarjeta de Agente incluye:
-    ◦ El nombre del agente.  
-    ◦ Una **descripción de las tareas generales** que realiza.  
-    ◦ Una **lista de habilidades específicas** con descripciones para ayudar a otros agentes (o incluso usuarios humanos) a entender cuándo y por qué querrían llamar a ese agente.  
-    ◦ La **URL de endpoint actual** del agente.  
-    ◦ La **versión** y **capacidades** del agente, como respuestas en streaming y notificaciones push.
+- El nombre del agente.
+- Una **descripción de las tareas generales** que realiza.
+- Una **lista de habilidades específicas** con descripciones para ayudar a otros agentes (o incluso usuarios humanos) a entender cuándo y por qué querrían llamar a ese agente.
+- La **URL de endpoint actual** del agente.
+- La **versión** y **capacidades** del agente, como respuestas en streaming y notificaciones push.
 
 #### Ejecutor de Agente
 
-El Ejecutor de Agente es responsable de **pasar el contexto del chat del usuario al agente remoto**, el agente remoto necesita esto para entender la tarea que debe completarse. En un servidor A2A, un agente utiliza su propio Modelo de Lenguaje Extenso (LLM) para analizar solicitudes entrantes y ejecutar tareas utilizando sus propias herramientas internas.
+El Ejecutor de Agente es responsable de **pasar el contexto del chat del usuario al agente remoto**, ya que el agente remoto necesita esto para entender la tarea que debe completarse. En un servidor A2A, un agente utiliza su propio LLM para analizar las solicitudes entrantes y ejecutar tareas utilizando sus propias herramientas internas.
 
 #### Artefacto
 
@@ -126,15 +126,15 @@ Este componente se utiliza para **manejar actualizaciones y pasar mensajes**. Es
 
 Ampliemos nuestro escenario de reserva de viajes, pero esta vez utilizando A2A.
 
-1. **Solicitud del Usuario a Multi-Agente**: Un usuario interactúa con un cliente/agente A2A "Agente de Viajes", tal vez diciendo: "Por favor, reserva un viaje completo a Honolulu para la próxima semana, incluyendo vuelos, un hotel y un coche de alquiler".
+1. **Solicitud del Usuario a Multi-Agente**: Un usuario interactúa con un "Agente de Viajes" cliente/agente A2A, tal vez diciendo: "Por favor, reserva un viaje completo a Honolulu para la próxima semana, incluyendo vuelos, un hotel y un coche de alquiler".
 
 2. **Orquestación por el Agente de Viajes**: El Agente de Viajes recibe esta solicitud compleja. Utiliza su LLM para razonar sobre la tarea y determinar que necesita interactuar con otros agentes especializados.
 
-3. **Comunicación entre Agentes**: El Agente de Viajes utiliza el protocolo A2A para conectarse con agentes descendentes, como un "Agente de Aerolíneas", un "Agente de Hoteles" y un "Agente de Alquiler de Coches" creados por diferentes empresas.
+3. **Comunicación entre Agentes**: El Agente de Viajes utiliza el protocolo A2A para conectarse con agentes especializados, como un "Agente de Aerolíneas", un "Agente de Hoteles" y un "Agente de Alquiler de Coches" creados por diferentes empresas.
 
 4. **Ejecución de Tareas Delegadas**: El Agente de Viajes envía tareas específicas a estos agentes especializados (por ejemplo, "Buscar vuelos a Honolulu", "Reservar un hotel", "Alquilar un coche"). Cada uno de estos agentes especializados, ejecutando sus propios LLMs y utilizando sus propias herramientas (que podrían ser servidores MCP), realiza su parte específica de la reserva.
 
-5. **Respuesta Consolidada**: Una vez que todos los agentes descendentes completan sus tareas, el Agente de Viajes compila los resultados (detalles del vuelo, confirmación del hotel, reserva del coche) y envía una respuesta integral, estilo chat, al usuario.
+5. **Respuesta Consolidada**: Una vez que todos los agentes especializados completan sus tareas, el Agente de Viajes compila los resultados (detalles del vuelo, confirmación del hotel, reserva del coche) y envía una respuesta integral, estilo chat, al usuario.
 
 ## Web de Lenguaje Natural (NLWeb)
 
@@ -144,31 +144,31 @@ Veamos los diferentes componentes de NLWeb, los beneficios de NLWeb y un ejemplo
 
 ### Componentes de NLWeb
 
-- **Aplicación NLWeb (Código de Servicio Principal)**: El sistema que procesa preguntas en lenguaje natural. Conecta las diferentes partes de la plataforma para crear respuestas. Puedes pensar en él como el **motor que impulsa las características de lenguaje natural** de un sitio web.
+- **Aplicación NLWeb (Código de Servicio Central)**: El sistema que procesa preguntas en lenguaje natural. Conecta las diferentes partes de la plataforma para crear respuestas. Puedes pensar en él como el **motor que impulsa las características de lenguaje natural** de un sitio web.
 
 - **Protocolo NLWeb**: Este es un **conjunto básico de reglas para la interacción en lenguaje natural** con un sitio web. Devuelve respuestas en formato JSON (a menudo utilizando Schema.org). Su propósito es crear una base simple para la "Web de IA", de la misma manera que HTML hizo posible compartir documentos en línea.
 
 - **Servidor MCP (Punto de Conexión del Protocolo de Contexto de Modelo)**: Cada configuración de NLWeb también funciona como un **servidor MCP**. Esto significa que puede **compartir herramientas (como un método "preguntar") y datos** con otros sistemas de IA. En la práctica, esto hace que el contenido y las capacidades del sitio web sean utilizables por agentes de IA, permitiendo que el sitio se convierta en parte del ecosistema agéntico más amplio.
 
-- **Modelos de Embedding**: Estos modelos se utilizan para **convertir el contenido del sitio web en representaciones numéricas llamadas vectores** (embeddings). Estos vectores capturan el significado de una manera que las computadoras pueden comparar y buscar. Se almacenan en una base de datos especial, y los usuarios pueden elegir qué modelo de embedding desean usar.
+- **Modelos de Embedding**: Estos modelos se utilizan para **convertir el contenido del sitio web en representaciones numéricas llamadas vectores** (embeddings). Estos vectores capturan el significado de una manera que las computadoras pueden comparar y buscar. Se almacenan en una base de datos especial, y los usuarios pueden elegir qué modelo de embedding quieren usar.
 
-- **Base de Datos de Vectores (Mecanismo de Recuperación)**: Esta base de datos **almacena los embeddings del contenido del sitio web**. Cuando alguien hace una pregunta, NLWeb consulta la base de datos de vectores para encontrar rápidamente la información más relevante. Proporciona una lista rápida de posibles respuestas, clasificadas por similitud. NLWeb funciona con diferentes sistemas de almacenamiento de vectores como Qdrant, Snowflake, Milvus, Azure AI Search y Elasticsearch.
+- **Base de Datos de Vectores (Mecanismo de Recuperación)**: Esta base de datos **almacena los embeddings del contenido del sitio web**. Cuando alguien hace una pregunta, NLWeb consulta la base de datos de vectores para encontrar rápidamente la información más relevante. Ofrece una lista rápida de posibles respuestas, clasificadas por similitud. NLWeb funciona con diferentes sistemas de almacenamiento de vectores como Qdrant, Snowflake, Milvus, Azure AI Search y Elasticsearch.
 
 ### NLWeb por Ejemplo
 
 ![NLWeb](../../../translated_images/nlweb-diagram.c1e2390b310e5fe4b245b86690ac6c49c26e355da5ab124128c8675d58cc9b07.es.png)
 
-Consideremos nuevamente nuestro sitio web de reservas de viajes, pero esta vez, está impulsado por NLWeb.
+Consideremos nuevamente nuestro sitio web de reservas de viajes, pero esta vez impulsado por NLWeb.
 
 1. **Ingesta de Datos**: Los catálogos de productos existentes del sitio web de viajes (por ejemplo, listados de vuelos, descripciones de hoteles, paquetes turísticos) se formatean utilizando Schema.org o se cargan mediante feeds RSS. Las herramientas de NLWeb ingieren estos datos estructurados, crean embeddings y los almacenan en una base de datos de vectores local o remota.
 
 2. **Consulta en Lenguaje Natural (Humano)**: Un usuario visita el sitio web y, en lugar de navegar por menús, escribe en una interfaz de chat: "Encuéntrame un hotel familiar en Honolulu con piscina para la próxima semana".
 
-3. **Procesamiento de NLWeb**: La aplicación NLWeb recibe esta consulta. Envía la consulta a un LLM para su comprensión y, al mismo tiempo, busca en su base de datos de vectores listados de hoteles relevantes.
+3. **Procesamiento de NLWeb**: La aplicación NLWeb recibe esta consulta. Envía la consulta a un LLM para su comprensión y, al mismo tiempo, busca en su base de datos de vectores los listados de hoteles relevantes.
 
 4. **Resultados Precisos**: El LLM ayuda a interpretar los resultados de búsqueda de la base de datos, identifica las mejores coincidencias según los criterios de "familiar", "piscina" y "Honolulu", y luego formatea una respuesta en lenguaje natural. Es importante destacar que la respuesta se refiere a hoteles reales del catálogo del sitio web, evitando información inventada.
 
-5. **Interacción con Agentes de IA**: Debido a que NLWeb funciona como un servidor MCP, un agente de viajes externo de IA también podría conectarse a la instancia NLWeb de este sitio web. El agente de IA podría usar el método `ask` de MCP para consultar directamente al sitio web: `ask("¿Hay restaurantes veganos recomendados por el hotel en el área de Honolulu?")`. La instancia NLWeb procesaría esto, aprovechando su base de datos de información de restaurantes (si está cargada), y devolvería una respuesta estructurada en JSON.
+5. **Interacción con Agentes de IA**: Debido a que NLWeb funciona como un servidor MCP, un agente de viajes externo de IA también podría conectarse a la instancia NLWeb de este sitio web. El agente de IA podría usar el método `preguntar` de MCP para consultar directamente al sitio web: `preguntar("¿Hay restaurantes veganos recomendados por el hotel en la zona de Honolulu?")`. La instancia NLWeb procesaría esto, aprovechando su base de datos de información sobre restaurantes (si está cargada), y devolvería una respuesta estructurada en JSON.
 
 ### ¿Tienes Más Preguntas sobre MCP/A2A/NLWeb?
 
@@ -177,9 +177,9 @@ Consideremos nuevamente nuestro sitio web de reservas de viajes, pero esta vez, 
 ## Recursos
 
 - [MCP para Principiantes](https://aka.ms/mcp-for-beginners)  
-- [Documentación de MCP](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)  
-- [Repositorio de NLWeb](https://github.com/nlweb-ai/NLWeb)  
-- [Guías de Semantic Kernel](https://learn.microsoft.com/semantic-kernel/)  
+- [Documentación de MCP](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)
+- [Repositorio de NLWeb](https://github.com/nlweb-ai/NLWeb)
+- [Guías de Semantic Kernel](https://learn.microsoft.com/semantic-kernel/)
 
 ---
 
