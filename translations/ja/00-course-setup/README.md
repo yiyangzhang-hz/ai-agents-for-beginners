@@ -204,7 +204,13 @@ from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
 
 ## どこかでつまずいた場合
 
-セットアップを実行する際に問題が発生した場合は、私たちの
+セットアップを実行する際に問題が発生した場合は、<a href="https://discord.gg/kzRShWzttr" target="_blank">Azure AI Community Discord</a> に参加するか、<a href="https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst" target="_blank">問題を作成してください。</a>
+
+## 次のレッスン
+
+これで、このコースのコードを実行する準備が整いました。AI エージェントの世界について、さらに詳しく学んでいきましょう！
+
+[AIエージェントとその活用事例の紹介](../01-intro-to-ai-agents/README.md)
 
 ---
 
