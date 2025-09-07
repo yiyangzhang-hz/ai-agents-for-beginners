@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "525a30a46e4451e243da0bb866d0f5f0",
-  "translation_date": "2025-09-04T08:32:17+00:00",
+  "original_hash": "9cb9bf18040a36fb1d822b10e92e7c04",
+  "translation_date": "2025-09-07T07:56:47+00:00",
   "source_file": "README.md",
   "language_code": "sv"
 }
@@ -25,7 +25,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Den här kursen innehåller lektioner som täcker grunderna i att bygga AI-agenter. Varje lektion fokuserar på ett specifikt ämne, så du kan börja var du vill!
 
-Det finns stöd för flera språk i kursen. Gå till våra [tillgängliga språk här](../..).
+Det finns stöd för flera språk i den här kursen. Gå till våra [tillgängliga språk här](../..).
 
 Om det är första gången du bygger med generativa AI-modeller, kolla in vår [Generativ AI för nybörjare](https://aka.ms/genai-beginners)-kurs, som innehåller 21 lektioner om att bygga med GenAI.
 
@@ -37,7 +37,7 @@ Om du fastnar eller har frågor om att bygga AI-agenter, gå med i vår dedikera
 
 ### Vad du behöver
 
-Varje lektion i kursen innehåller kodexempel, som finns i mappen code_samples. Du kan [forka detta repo](https://github.com/microsoft/ai-agents-for-beginners/fork) för att skapa din egen kopia.
+Varje lektion i den här kursen innehåller kodexempel, som finns i mappen code_samples. Du kan [forka detta repo](https://github.com/microsoft/ai-agents-for-beginners/fork) för att skapa din egen kopia.
 
 Kodexemplen i dessa övningar använder Azure AI Foundry och GitHub Model Catalogs för att interagera med språkmodeller:
 
@@ -50,7 +50,7 @@ Den här kursen använder också följande AI-agentramverk och tjänster från M
 - [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
 - [AutoGen](https://aka.ms/ai-agents/autogen)
 
-För mer information om att köra koden för denna kurs, gå till [Kursinställningar](./00-course-setup/README.md).
+För mer information om att köra koden för den här kursen, gå till [Kursinställningar](./00-course-setup/README.md).
 
 ## 🙏 Vill du hjälpa till?
 
@@ -58,7 +58,7 @@ Har du förslag eller hittat stavfel eller kodfel? [Skapa ett ärende](https://g
 
 ## 📂 Varje lektion innehåller
 
-- En skriftlig lektion i README och en kort video
+- En skriftlig lektion som finns i README och en kort video
 - Python-kodexempel som stöder Azure AI Foundry och Github Models (Gratis)
 - Länkar till extra resurser för att fortsätta din inlärning
 
@@ -68,9 +68,9 @@ Har du förslag eller hittat stavfel eller kodfel? [Skapa ett ärende](https://g
 |----------------------------------------------|--------------------------------------------------|------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | Introduktion till AI-agenter och användningsområden | [Länk](./01-intro-to-ai-agents/README.md)         | [Video](https://youtu.be/3zgm60bXmQk?si=z8QygFvYQv-9WtO1)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Utforska AI-agentramverk                     | [Länk](./02-explore-agentic-frameworks/README.md) | [Video](https://youtu.be/ODwF-EZo_O8?si=Vawth4hzVaHv-u0H)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
-| Förstå AI-agentdesignmönster                 | [Länk](./03-agentic-design-patterns/README.md)    | [Video](https://youtu.be/m9lM8qqoOEA?si=BIzHwzstTPL8o9GF)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Förstå AI-agentiska designmönster            | [Länk](./03-agentic-design-patterns/README.md)    | [Video](https://youtu.be/m9lM8qqoOEA?si=BIzHwzstTPL8o9GF)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Verktygsanvändningsdesignmönster             | [Länk](./04-tool-use/README.md)                   | [Video](https://youtu.be/vieRiPRx-gI?si=2z6O2Xu2cu_Jz46N)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
-| Agentic RAG                                  | [Länk](./05-agentic-rag/README.md)                | [Video](https://youtu.be/WcjAARvdL7I?si=gKPWsQpKiIlDH9A3)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Agentisk RAG                                 | [Länk](./05-agentic-rag/README.md)                | [Video](https://youtu.be/WcjAARvdL7I?si=gKPWsQpKiIlDH9A3)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Bygga pålitliga AI-agenter                   | [Länk](./06-building-trustworthy-agents/README.md)| [Video](https://youtu.be/iZKkMEGBCUQ?si=jZjpiMnGFOE9L8OK)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Planeringsdesignmönster                      | [Länk](./07-planning-design/README.md)            | [Video](https://youtu.be/kPfJ2BrBCMY?si=6SC_iv_E5-mzucnC)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Multi-agentdesignmönster                     | [Länk](./08-multi-agent/README.md)                | [Video](https://youtu.be/V6HpE9hZEx0?si=rMgDhEu7wXo2uo6g)  | [Länk](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
@@ -89,17 +89,17 @@ Har du förslag eller hittat stavfel eller kodfel? [Skapa ett ärende](https://g
 
 Vårt team producerar andra kurser! Kolla in:
 
-- [**NY** Model Context Protocol (MCP) För Nybörjare](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generativ AI för Nybörjare med .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
-- [Generativ AI för Nybörjare](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generativ AI för Nybörjare med Java](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
-- [ML för Nybörjare](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [Data Science för Nybörjare](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
-- [AI för Nybörjare](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
-- [Cybersäkerhet för Nybörjare](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
-- [Webbutveckling för Nybörjare](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
-- [IoT för Nybörjare](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
-- [XR-utveckling för Nybörjare](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [**NY** Modellkontextprotokoll (MCP) för nybörjare](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generativ AI för nybörjare med .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generativ AI för nybörjare](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
+- [Generativ AI för nybörjare med Java](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+- [ML för nybörjare](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
+- [Data Science för nybörjare](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [AI för nybörjare](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
+- [Cybersäkerhet för nybörjare](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
+- [Webbutveckling för nybörjare](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
+- [IoT för nybörjare](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
+- [XR-utveckling för nybörjare](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [Bemästra GitHub Copilot för AI-parprogrammering](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
 - [Bemästra GitHub Copilot för C#/.NET-utvecklare](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Välj ditt eget Copilot-äventyr](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
@@ -110,7 +110,7 @@ Tack till [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) för att ha bi
 
 ## Bidra
 
-Detta projekt välkomnar bidrag och förslag. De flesta bidrag kräver att du godkänner ett 
+Det här projektet välkomnar bidrag och förslag. De flesta bidrag kräver att du godkänner ett 
 Contributor License Agreement (CLA) som deklarerar att du har rätt att, och faktiskt gör, ge oss 
 rättigheterna att använda ditt bidrag. För mer information, besök 
 <https://cla.opensource.microsoft.com>.
@@ -119,13 +119,13 @@ När du skickar in en pull request kommer en CLA-bot automatiskt att avgöra om 
 en CLA och dekorera PR:n på lämpligt sätt (t.ex. statuskontroll, kommentar). Följ bara instruktionerna 
 som tillhandahålls av boten. Du behöver bara göra detta en gång för alla repos som använder vår CLA.
 
-Detta projekt har antagit [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Det här projektet har antagit [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 För mer information, se [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) eller 
 kontakta [opencode@microsoft.com](mailto:opencode@microsoft.com) med eventuella ytterligare frågor eller kommentarer.
 
 ## Varumärken
 
-Detta projekt kan innehålla varumärken eller logotyper för projekt, produkter eller tjänster. Auktoriserad användning av Microsofts 
+Det här projektet kan innehålla varumärken eller logotyper för projekt, produkter eller tjänster. Auktoriserad användning av Microsofts 
 varumärken eller logotyper är föremål för och måste följa 
 [Microsofts riktlinjer för varumärken och varumärkesprofil](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
 Användning av Microsofts varumärken eller logotyper i modifierade versioner av detta projekt får inte orsaka förvirring eller antyda Microsoft-sponsring.
@@ -134,4 +134,4 @@ All användning av tredje parts varumärken eller logotyper är föremål för d
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som kan uppstå vid användning av denna översättning.

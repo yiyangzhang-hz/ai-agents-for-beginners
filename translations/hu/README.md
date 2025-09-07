@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "525a30a46e4451e243da0bb866d0f5f0",
-  "translation_date": "2025-09-04T09:02:03+00:00",
+  "original_hash": "9cb9bf18040a36fb1d822b10e92e7c04",
+  "translation_date": "2025-09-07T08:04:21+00:00",
   "source_file": "README.md",
   "language_code": "hu"
 }
@@ -39,17 +39,17 @@ Ez a tanfolyam az AI ügynökök építésének alapjait tárgyalja. Minden leck
 
 A tanfolyam többnyelvű támogatással rendelkezik. Nézd meg az [elérhető nyelveket itt](../..). 
 
-Ha ez az első alkalom, hogy Generatív AI modellekkel dolgozol, nézd meg a [Generative AI For Beginners](https://aka.ms/genai-beginners) tanfolyamot, amely 21 leckét tartalmaz a GenAI használatáról.
+Ha először dolgozol Generatív AI modellekkel, nézd meg a [Generative AI For Beginners](https://aka.ms/genai-beginners) tanfolyamot, amely 21 leckét tartalmaz a GenAI használatáról.
 
 Ne felejtsd el [csillagozni (🌟) ezt a repót](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) és [forkolni ezt a repót](https://github.com/microsoft/ai-agents-for-beginners/fork), hogy futtathasd a kódot.
 
-### Találkozz más tanulókkal, kapj válaszokat kérdéseidre
+### Találkozz más tanulókkal, kapj választ kérdéseidre
 
-Ha elakadnál, vagy kérdéseid vannak az AI ügynökök építésével kapcsolatban, csatlakozz a dedikált Discord csatornánkhoz az [Azure AI Foundry Community Discord](https://aka.ms/ai-agents/discord) oldalon.
+Ha elakadsz, vagy kérdésed van az AI ügynökök építésével kapcsolatban, csatlakozz a dedikált Discord csatornánkhoz az [Azure AI Foundry Community Discord](https://aka.ms/ai-agents/discord) oldalon.
 
 ### Mire van szükséged
 
-A tanfolyam minden leckéje tartalmaz kódpéldákat, amelyek a code_samples mappában találhatók. [Forkold ezt a repót](https://github.com/microsoft/ai-agents-for-beginners/fork), hogy létrehozd saját másolatodat.  
+Minden lecke tartalmaz kódpéldákat, amelyeket a code_samples mappában találhatsz. [Forkold ezt a repót](https://github.com/microsoft/ai-agents-for-beginners/fork), hogy létrehozd saját másolatodat.  
 
 A gyakorlatokban szereplő kódpéldák az Azure AI Foundry-t és a GitHub Model Catalogs-t használják a nyelvi modellekkel való interakcióhoz:
 
@@ -66,12 +66,12 @@ További információért a tanfolyam kódjának futtatásáról, látogass el a
 
 ## 🙏 Szeretnél segíteni?
 
-Van javaslatod, vagy találtál helyesírási vagy kódhibát? [Nyiss egy hibajelentést](https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst) vagy [Hozz létre egy pull requestet](https://github.com/microsoft/ai-agents-for-beginners/pulls?WT.mc_id=academic-105485-koreyst).
+Van javaslatod, vagy találtál helyesírási vagy kódhibát? [Nyiss egy hibajegyet](https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst) vagy [Hozz létre egy pull requestet](https://github.com/microsoft/ai-agents-for-beginners/pulls?WT.mc_id=academic-105485-koreyst).
 
 ## 📂 Minden lecke tartalmaz
 
 - Írott leckét a README-ben és egy rövid videót
-- Python kódpéldákat, amelyek támogatják az Azure AI Foundry-t és a Github Model-eket (Ingyenes)
+- Python kódpéldákat, amelyek támogatják az Azure AI Foundry-t és a Github Modelleket (Ingyenes)
 - Linkeket további tanulási forrásokhoz
 
 ## 🗃️ Leckék
@@ -124,10 +124,10 @@ Köszönet [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) számára, ho
 
 Ez a projekt szívesen fogad hozzájárulásokat és javaslatokat. A legtöbb hozzájárulás megköveteli, hogy elfogadj egy
 Hozzájárulói Licencszerződést (CLA), amely kijelenti, hogy jogod van, és ténylegesen megadod nekünk
-a jogokat a hozzájárulásod felhasználására. Részletekért látogass el ide: 
+a jogokat a hozzájárulásod felhasználására. További részletekért látogass el ide: 
 <https://cla.opensource.microsoft.com>.
 
-Amikor benyújtasz egy pull requestet, egy CLA bot automatikusan meghatározza, hogy szükséges-e CLA-t biztosítanod, és megfelelően megjelöli a PR-t (pl. státuszellenőrzés, megjegyzés). Egyszerűen kövesd a bot által adott utasításokat. Ezt csak egyszer kell megtenned az összes CLA-t használó repó esetében.
+Amikor benyújtasz egy pull requestet, egy CLA bot automatikusan meghatározza, hogy szükséges-e CLA-t biztosítanod, és megfelelően megjelöli a PR-t (pl. állapotellenőrzés, megjegyzés). Egyszerűen kövesd a bot által adott utasításokat. Ezt csak egyszer kell megtenned az összes CLA-t használó repó esetében.
 
 Ez a projekt elfogadta a [Microsoft Nyílt Forráskódú Magatartási Kódexét](https://opensource.microsoft.com/codeofconduct/).
 További információért lásd a [Magatartási Kódex GYIK](https://opensource.microsoft.com/codeofconduct/faq/) oldalt, vagy
@@ -136,11 +136,11 @@ lépj kapcsolatba az [opencode@microsoft.com](mailto:opencode@microsoft.com) cí
 ## Védjegyek
 
 Ez a projekt tartalmazhat védjegyeket vagy logókat projektekhez, termékekhez vagy szolgáltatásokhoz. A Microsoft
-védjegyek vagy logók engedélyezett használata a [Microsoft Védjegy és Márka Irányelveinek](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) betartásával történhet.
+védjegyek vagy logók engedélyezett használata a [Microsoft Védjegy és Márka Irányelveinek](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) megfelelően történhet.
 A Microsoft védjegyek vagy logók módosított verzióinak használata nem okozhat zavart vagy nem utalhat a Microsoft támogatására.
-Harmadik fél védjegyek vagy logók használata az adott harmadik fél irányelveinek hatálya alá tartozik.
+Harmadik fél védjegyek vagy logók használata az adott harmadik felek irányelveinek hatálya alá tartozik.
 
 ---
 
 **Felelősségkizárás**:  
-Ez a dokumentum az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítási szolgáltatás segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt a professzionális, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ezt a dokumentumot az [Co-op Translator](https://github.com/Azure/co-op-translator) AI fordítószolgáltatás segítségével fordítottuk le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az eredeti nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt professzionális, emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
