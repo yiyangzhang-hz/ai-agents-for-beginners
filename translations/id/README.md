@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4177db6b3602dfa8c609d78df1f0f21b",
-  "translation_date": "2025-08-29T17:58:21+00:00",
+  "original_hash": "525a30a46e4451e243da0bb866d0f5f0",
+  "translation_date": "2025-09-04T08:50:53+00:00",
   "source_file": "README.md",
   "language_code": "id"
 }
@@ -11,7 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ![Generative AI Untuk Pemula](../../translated_images/repo-thumbnailv2.06f4a48036fde647f6ba4eb19f5651babe59bb30e972748afb349e47725d7601.id.png)
 
-## 11 Pelajaran yang mengajarkan semua yang perlu Anda ketahui untuk mulai membangun AI Agents
+## Sebuah kursus yang mengajarkan semua yang perlu Anda ketahui untuk mulai membangun AI Agents
+
+[![GitHub license](https://img.shields.io/github/license/microsoft/ai-agents-for-beginners.svg)](https://github.com/microsoft/ai-agents-for-beginners/blob/master/LICENSE?WT.mc_id=academic-105485-koreyst)
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/graphs/contributors/?WT.mc_id=academic-105485-koreyst)
+[![GitHub issues](https://img.shields.io/github/issues/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/issues/?WT.mc_id=academic-105485-koreyst)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/pulls/?WT.mc_id=academic-105485-koreyst)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=academic-105485-koreyst)
 
 ### 🌐 Dukungan Multi-Bahasa
 
@@ -19,13 +25,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 [French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) | [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](./README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md) | [Ukrainian](../uk/README.md) | [Burmese (Myanmar)](../my/README.md)
 
-**Jika Anda ingin menambahkan dukungan bahasa lain, daftar bahasa yang didukung tersedia [di sini](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+**Jika Anda ingin menambahkan bahasa terjemahan lainnya, bahasa yang didukung tercantum [di sini](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
+
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/ai-agents-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/ai-agents-for-beginners/watchers/?WT.mc_id=academic-105485-koreyst)
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/ai-agents-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/ai-agents-for-beginners/network/?WT.mc_id=academic-105485-koreyst)
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/ai-agents-for-beginners.svg?style=social&label=Star)](https://GitHub.com/microsoft/ai-agents-for-beginners/stargazers/?WT.mc_id=academic-105485-koreyst)
+
+[![Azure AI Discord](https://dcbadge.limes.pink/api/server/kzRShWzttr)](https://discord.gg/kzRShWzttr)
 
 ## 🌱 Memulai
 
-Kursus ini memiliki 11 pelajaran yang mencakup dasar-dasar membangun AI Agents. Setiap pelajaran memiliki topik tersendiri, jadi Anda bisa mulai dari mana saja!
+Kursus ini memiliki pelajaran yang mencakup dasar-dasar membangun AI Agents. Setiap pelajaran mencakup topiknya sendiri, jadi mulailah dari mana pun Anda suka!
 
-Ada dukungan multi-bahasa untuk kursus ini. Lihat [bahasa yang tersedia di sini](../..).
+Ada dukungan multi-bahasa untuk kursus ini. Kunjungi [bahasa yang tersedia di sini](../..).
 
 Jika ini adalah pertama kalinya Anda membangun dengan model Generative AI, lihat kursus kami [Generative AI Untuk Pemula](https://aka.ms/genai-beginners), yang mencakup 21 pelajaran tentang membangun dengan GenAI.
 
@@ -33,13 +45,13 @@ Jangan lupa untuk [beri bintang (🌟) pada repo ini](https://docs.github.com/en
 
 ### Temui Pelajar Lain, Dapatkan Jawaban atas Pertanyaan Anda
 
-Jika Anda mengalami kesulitan atau memiliki pertanyaan tentang membangun AI Agents, bergabunglah dengan saluran Discord khusus kami di [Azure AI Foundry Community Discord](https://aka.ms/ai-agents/discord).
+Jika Anda mengalami kesulitan atau memiliki pertanyaan tentang membangun AI Agents, bergabunglah dengan Saluran Discord khusus kami di [Azure AI Foundry Community Discord](https://aka.ms/ai-agents/discord).
 
 ### Apa yang Anda Butuhkan
 
 Setiap pelajaran dalam kursus ini mencakup contoh kode, yang dapat ditemukan di folder code_samples. Anda dapat [fork repo ini](https://github.com/microsoft/ai-agents-for-beginners/fork) untuk membuat salinan Anda sendiri.
 
-Contoh kode dalam latihan ini menggunakan Azure AI Foundry dan GitHub Model Catalogs untuk berinteraksi dengan Language Models:
+Contoh kode dalam latihan ini menggunakan Azure AI Foundry dan GitHub Model Catalogs untuk berinteraksi dengan Model Bahasa:
 
 - [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Gratis / Terbatas
 - [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Membutuhkan Akun Azure
@@ -50,7 +62,7 @@ Kursus ini juga menggunakan kerangka kerja dan layanan AI Agent berikut dari Mic
 - [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
 - [AutoGen](https://aka.ms/ai-agents/autogen)
 
-Untuk informasi lebih lanjut tentang menjalankan kode untuk kursus ini, kunjungi [Course Setup](./00-course-setup/README.md).
+Untuk informasi lebih lanjut tentang menjalankan kode untuk kursus ini, kunjungi [Pengaturan Kursus](./00-course-setup/README.md).
 
 ## 🙏 Ingin membantu?
 
@@ -58,13 +70,13 @@ Apakah Anda memiliki saran atau menemukan kesalahan ejaan atau kode? [Ajukan mas
 
 ## 📂 Setiap pelajaran mencakup
 
-- Pelajaran tertulis yang terdapat di README dan video pendek
+- Pelajaran tertulis yang terletak di README dan video pendek
 - Contoh kode Python yang mendukung Azure AI Foundry dan Github Models (Gratis)
 - Tautan ke sumber daya tambahan untuk melanjutkan pembelajaran Anda
 
 ## 🗃️ Pelajaran
 
-| **Pelajaran**                                | **Teks & Kode**                                   | **Video**                                                  | **Pembelajaran Tambahan**                                                             |
+| **Pelajaran**                                | **Teks & Kode**                                  | **Video**                                                  | **Pembelajaran Tambahan**                                                             |
 |----------------------------------------------|--------------------------------------------------|------------------------------------------------------------|---------------------------------------------------------------------------------------|
 | Pengantar AI Agents dan Kasus Penggunaan     | [Link](./01-intro-to-ai-agents/README.md)        | [Video](https://youtu.be/3zgm60bXmQk?si=z8QygFvYQv-9WtO1)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Menjelajahi Kerangka AI Agentic              | [Link](./02-explore-agentic-frameworks/README.md)| [Video](https://youtu.be/ODwF-EZo_O8?si=Vawth4hzVaHv-u0H)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
@@ -77,13 +89,13 @@ Apakah Anda memiliki saran atau menemukan kesalahan ejaan atau kode? [Ajukan mas
 | Pola Desain Metakognisi                      | [Link](./09-metacognition/README.md)             | [Video](https://youtu.be/His9R6gw6Ec?si=8gck6vvdSNCt6OcF)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | AI Agents dalam Produksi                     | [Link](./10-ai-agents-production/README.md)      | [Video](https://youtu.be/l4TP6IyJxmQ?si=31dnhexRo6yLRJDl)  | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Menggunakan Protokol Agentic (MCP, A2A dan NLWeb)| [Link](./11-agentic-protocols/README.md)         | [Video](https://youtu.be/X-Dh9R3Opn8)                      | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
-| Rekayasa Konteks untuk AI Agents             | Coming - September 3rd                           |                                                            |                                                                                       |
-| Mengelola Memori Agenik                      | Akan Datang - 10 September                          |                                                            |                                                                                        |
-| Mengevaluasi Agen AI                         | Akan Datang - 17 September                          |                                                            |                                                                                        |
-| Membangun Agen Penggunaan Komputer (CUA)     | Akan Datang - 24 September                          |                                                            |                                                                                        |
-| Menerapkan Agen yang Dapat Diskalakan        | Akan Datang - 25 September                          |                                                            |                                                                                        |
-| Membuat Agen AI Lokal                        | Akan Datang - 2 Oktober                             |                                                            |                                                                                        |
-| Mengamankan Agen AI                          | Akan Datang - 9 Oktober                             |                                                            |                                                                                        |
+| Rekayasa Konteks untuk Agen AI               | [Link](./12-context-engineering/README.md)         | [Video](https://youtu.be/F5zqRV7gEag)                                 | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Mengelola Memori Agen                        | Akan Datang - 11 September                         |                                                            |                                                                                        |
+| Mengevaluasi Agen AI                         | Akan Datang - 18 September                         |                                                            |                                                                                        |
+| Membangun Agen Penggunaan Komputer (CUA)     | Akan Datang - 25 September                         |                                                            |                                                                                        |
+| Menyebarkan Agen yang Dapat Diskalakan       | Akan Datang - 25 September                         |                                                            |                                                                                        |
+| Membuat Agen AI Lokal                        | Akan Datang - 3 Oktober                            |                                                            |                                                                                        |
+| Mengamankan Agen AI                          | Akan Datang - 10 Oktober                           |                                                            |                                                                                        |
 
 ## 🎒 Kursus Lainnya
 
@@ -106,18 +118,18 @@ Tim kami juga membuat kursus lainnya! Lihat:
 
 ## 🌟 Terima Kasih Komunitas
 
-Terima kasih kepada [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) atas kontribusinya dalam menyediakan contoh kode penting yang mendemonstrasikan Agentic RAG. 
+Terima kasih kepada [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) atas kontribusi contoh kode penting yang menunjukkan Agentic RAG.
 
 ## Berkontribusi
 
 Proyek ini menyambut kontribusi dan saran. Sebagian besar kontribusi mengharuskan Anda menyetujui
-Perjanjian Lisensi Kontributor (CLA) yang menyatakan bahwa Anda memiliki hak, dan benar-benar memberikan kami
-hak untuk menggunakan kontribusi Anda. Untuk detail lebih lanjut, kunjungi 
+Perjanjian Lisensi Kontributor (CLA) yang menyatakan bahwa Anda memiliki hak untuk, dan benar-benar memberikan kami
+hak untuk menggunakan kontribusi Anda. Untuk detailnya, kunjungi 
 <https://cla.opensource.microsoft.com>.
 
-Ketika Anda mengirimkan pull request, bot CLA akan secara otomatis menentukan apakah Anda perlu memberikan
-CLA dan menandai PR dengan tepat (misalnya, status cek, komentar). Cukup ikuti instruksi
-yang diberikan oleh bot. Anda hanya perlu melakukannya sekali untuk semua repositori yang menggunakan CLA kami.
+Saat Anda mengirimkan pull request, bot CLA akan secara otomatis menentukan apakah Anda perlu memberikan
+CLA dan menghias PR dengan tepat (misalnya, pemeriksaan status, komentar). Cukup ikuti instruksi
+yang diberikan oleh bot. Anda hanya perlu melakukannya sekali di semua repositori yang menggunakan CLA kami.
 
 Proyek ini telah mengadopsi [Kode Etik Sumber Terbuka Microsoft](https://opensource.microsoft.com/codeofconduct/).
 Untuk informasi lebih lanjut, lihat [FAQ Kode Etik](https://opensource.microsoft.com/codeofconduct/faq/) atau
@@ -125,12 +137,12 @@ hubungi [opencode@microsoft.com](mailto:opencode@microsoft.com) untuk pertanyaan
 
 ## Merek Dagang
 
-Proyek ini mungkin mengandung merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan merek dagang atau logo Microsoft yang diizinkan harus mematuhi dan mengikuti
+Proyek ini mungkin berisi merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan merek dagang atau logo Microsoft yang diizinkan harus tunduk pada dan mengikuti
 [Pedoman Merek Dagang & Merek Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).
-Penggunaan merek dagang atau logo Microsoft dalam versi modifikasi dari proyek ini tidak boleh menyebabkan kebingungan atau menyiratkan sponsor dari Microsoft.
-Setiap penggunaan merek dagang atau logo pihak ketiga harus mematuhi kebijakan pihak ketiga tersebut.
+Penggunaan merek dagang atau logo Microsoft dalam versi modifikasi proyek ini tidak boleh menyebabkan kebingungan atau menyiratkan sponsor Microsoft.
+Penggunaan merek dagang atau logo pihak ketiga harus tunduk pada kebijakan pihak ketiga tersebut.
 
 ---
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan penerjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk memberikan hasil yang akurat, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang berwenang. Untuk informasi yang bersifat kritis, disarankan menggunakan jasa penerjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

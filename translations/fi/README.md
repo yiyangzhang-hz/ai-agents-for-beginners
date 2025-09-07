@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "4177db6b3602dfa8c609d78df1f0f21b",
-  "translation_date": "2025-08-29T17:03:48+00:00",
+  "original_hash": "525a30a46e4451e243da0bb866d0f5f0",
+  "translation_date": "2025-09-04T08:40:25+00:00",
   "source_file": "README.md",
   "language_code": "fi"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ![Generative AI For Beginners](../../translated_images/repo-thumbnailv2.06f4a48036fde647f6ba4eb19f5651babe59bb30e972748afb349e47725d7601.fi.png)
 
-## 11 oppituntia, jotka opettavat kaiken tarvittavan AI-agenttien rakentamisen aloittamiseen
+## Kurssi, joka opettaa kaiken tarvittavan AI-agenttien rakentamisen aloittamiseen
 
-[![GitHub license](https://img.shields.io/github/license/microsoft/ai-agents-for-beginners.svg)](https://github.com/microsoft/ai-agents-for-beginners/blob/master/LICENSE?WT.mc_id=academic-105485-koreyst)
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/graphs/contributors/?WT.mc_id=academic-105485-koreyst)
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/issues/?WT.mc_id=academic-105485-koreyst)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/pulls/?WT.mc_id=academic-105485-koreyst)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=academic-105485-koreyst)
+[![GitHub license](https://img.shields.io/github/license/microsoft/ai-agents-for-beginners.svg)](https://github.com/microsoft/ai-agents-for-beginners/blob/master/LICENSE?WT.mc_id=academic-105485-koreyst)  
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/graphs/contributors/?WT.mc_id=academic-105485-koreyst)  
+[![GitHub issues](https://img.shields.io/github/issues/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/issues/?WT.mc_id=academic-105485-koreyst)  
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/ai-agents-for-beginners.svg)](https://GitHub.com/microsoft/ai-agents-for-beginners/pulls/?WT.mc_id=academic-105485-koreyst)  
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=academic-105485-koreyst)  
 
 ### 🌐 Monikielinen tuki
 
@@ -27,40 +27,40 @@ CO_OP_TRANSLATOR_METADATA:
 
 **Jos haluat lisätä uusia kieliä, tuetut kielet löytyvät [täältä](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/ai-agents-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/ai-agents-for-beginners/watchers/?WT.mc_id=academic-105485-koreyst)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/ai-agents-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/ai-agents-for-beginners/network/?WT.mc_id=academic-105485-koreyst)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/ai-agents-for-beginners.svg?style=social&label=Star)](https://GitHub.com/microsoft/ai-agents-for-beginners/stargazers/?WT.mc_id=academic-105485-koreyst)
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/ai-agents-for-beginners.svg?style=social&label=Watch)](https://GitHub.com/microsoft/ai-agents-for-beginners/watchers/?WT.mc_id=academic-105485-koreyst)  
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/ai-agents-for-beginners.svg?style=social&label=Fork)](https://GitHub.com/microsoft/ai-agents-for-beginners/network/?WT.mc_id=academic-105485-koreyst)  
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/ai-agents-for-beginners.svg?style=social&label=Star)](https://GitHub.com/microsoft/ai-agents-for-beginners/stargazers/?WT.mc_id=academic-105485-koreyst)  
 
 [![Azure AI Discord](https://dcbadge.limes.pink/api/server/kzRShWzttr)](https://discord.gg/kzRShWzttr)
 
 ## 🌱 Aloittaminen
 
-Tämä kurssi sisältää 11 oppituntia, jotka käsittelevät AI-agenttien rakentamisen perusteita. Jokainen oppitunti keskittyy omaan aiheeseensa, joten voit aloittaa mistä tahansa!
+Tämä kurssi sisältää oppitunteja, jotka käsittelevät AI-agenttien rakentamisen perusteita. Jokainen oppitunti keskittyy omaan aiheeseensa, joten voit aloittaa mistä tahansa!
 
-Kurssilla on monikielinen tuki. Katso [saatavilla olevat kielet täältä](../..). 
+Kurssilla on monikielinen tuki. Katso [saatavilla olevat kielet täältä](../..).  
 
-Jos rakennat Generatiivisia AI-malleja ensimmäistä kertaa, tutustu [Generative AI For Beginners](https://aka.ms/genai-beginners) -kurssiin, joka sisältää 21 oppituntia GenAI:n käytöstä.
+Jos rakennat Generatiivisten AI-mallien kanssa ensimmäistä kertaa, tutustu [Generative AI For Beginners](https://aka.ms/genai-beginners) -kurssiin, joka sisältää 21 oppituntia GenAI:n käytöstä.
 
-Älä unohda [tähdittää (🌟) tätä repositoriota](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) ja [forkata tämä repositorio](https://github.com/microsoft/ai-agents-for-beginners/fork) koodin suorittamista varten.
+Älä unohda [merkitä tämä repo suosikiksi (🌟)](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) ja [forkata tämä repo](https://github.com/microsoft/ai-agents-for-beginners/fork) koodin suorittamista varten.
 
-### Tapaa muita oppijoita, kysy kysymyksiä
+### Tapaa muita oppijoita, kysy kysymyksiäsi
 
 Jos jäät jumiin tai sinulla on kysymyksiä AI-agenttien rakentamisesta, liity omistettuun Discord-kanavaamme [Azure AI Foundry Community Discordissa](https://aka.ms/ai-agents/discord).
 
 ### Mitä tarvitset
 
-Jokainen oppitunti sisältää koodiesimerkkejä, jotka löytyvät code_samples-kansiosta. Voit [forkata tämän repositorion](https://github.com/microsoft/ai-agents-for-beginners/fork) luodaksesi oman kopion.  
+Jokainen kurssin oppitunti sisältää koodiesimerkkejä, jotka löytyvät code_samples-kansiosta. Voit [forkata tämän repo](https://github.com/microsoft/ai-agents-for-beginners/fork) luodaksesi oman kopion.  
 
-Näiden harjoitusten koodiesimerkit käyttävät Azure AI Foundryä ja GitHub Model Catalogia vuorovaikutuksessa kielimallien kanssa:
+Näiden harjoitusten koodiesimerkit käyttävät Azure AI Foundryä ja GitHub Model Catalogia vuorovaikutukseen kielimallien kanssa:
 
-- [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Ilmainen / Rajoitettu
-- [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Vaatii Azure-tilin
+- [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Ilmainen / Rajoitettu  
+- [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Vaatii Azure-tilin  
 
 Tämä kurssi käyttää myös seuraavia Microsoftin AI-agenttikehyksiä ja palveluita:
 
-- [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)
-- [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
-- [AutoGen](https://aka.ms/ai-agents/autogen)
+- [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)  
+- [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)  
+- [AutoGen](https://aka.ms/ai-agents/autogen)  
 
 Lisätietoja kurssin koodin suorittamisesta löytyy [Kurssin asennus](./00-course-setup/README.md) -osiosta.
 
@@ -70,73 +70,71 @@ Onko sinulla ehdotuksia tai löysitkö kirjoitus- tai koodivirheitä? [Luo issue
 
 ## 📂 Jokainen oppitunti sisältää
 
-- Kirjallisen oppitunnin README-tiedostossa ja lyhyen videon
-- Python-koodiesimerkkejä, jotka tukevat Azure AI Foundryä ja Github-malleja (ilmainen)
-- Linkkejä lisäresursseihin oppimisen jatkamiseen
+- Kirjallisen oppitunnin README-tiedostossa ja lyhyen videon  
+- Python-koodiesimerkkejä, jotka tukevat Azure AI Foundryä ja Github-malleja (ilmainen)  
+- Linkkejä lisäresursseihin oppimisen jatkamiseen  
 
 ## 🗃️ Oppitunnit
 
-| **Oppitunti**                                | **Teksti & Koodi**                                | **Video**                                                  | **Lisäoppiminen**                                                                     |
-|----------------------------------------------|--------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| **Oppitunti**                                | **Teksti & Koodi**                                | **Video**                                                  | **Lisäoppiminen**                                                                 |
+|----------------------------------------------|--------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------------------|
 | Johdanto AI-agentteihin ja agenttien käyttötapauksiin | [Linkki](./01-intro-to-ai-agents/README.md)      | [Video](https://youtu.be/3zgm60bXmQk?si=z8QygFvYQv-9WtO1)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | AI-agenttikehysten tutkiminen                | [Linkki](./02-explore-agentic-frameworks/README.md) | [Video](https://youtu.be/ODwF-EZo_O8?si=Vawth4hzVaHv-u0H)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
-| AI-agenttien suunnittelumallien ymmärtäminen | [Linkki](./03-agentic-design-patterns/README.md) | [Video](https://youtu.be/m9lM8qqoOEA?si=BIzHwzstTPL8o9GF)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| AI-agenttien suunnittelumallit               | [Linkki](./03-agentic-design-patterns/README.md) | [Video](https://youtu.be/m9lM8qqoOEA?si=BIzHwzstTPL8o9GF)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Työkalujen käyttö -suunnittelumalli          | [Linkki](./04-tool-use/README.md)                | [Video](https://youtu.be/vieRiPRx-gI?si=2z6O2Xu2cu_Jz46N)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Agenttien RAG                                | [Linkki](./05-agentic-rag/README.md)             | [Video](https://youtu.be/WcjAARvdL7I?si=gKPWsQpKiIlDH9A3)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
-| Luotettavien AI-agenttien rakentaminen       | [Linkki](./06-building-trustworthy-agents/README.md) | [Video](https://youtu.be/iZKkMEGBCUQ?si=jZjpiMnGFOE9L8OK ) | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Luotettavien AI-agenttien rakentaminen       | [Linkki](./06-building-trustworthy-agents/README.md) | [Video](https://youtu.be/iZKkMEGBCUQ?si=jZjpiMnGFOE9L8OK)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Suunnittelumallin suunnittelu                | [Linkki](./07-planning-design/README.md)         | [Video](https://youtu.be/kPfJ2BrBCMY?si=6SC_iv_E5-mzucnC)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Moniagenttisuunnittelumalli                  | [Linkki](./08-multi-agent/README.md)             | [Video](https://youtu.be/V6HpE9hZEx0?si=rMgDhEu7wXo2uo6g)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Metakognition suunnittelumalli               | [Linkki](./09-metacognition/README.md)           | [Video](https://youtu.be/His9R6gw6Ec?si=8gck6vvdSNCt6OcF)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | AI-agentit tuotannossa                       | [Linkki](./10-ai-agents-production/README.md)    | [Video](https://youtu.be/l4TP6IyJxmQ?si=31dnhexRo6yLRJDl)  | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
-| Agenttien protokollien käyttö (MCP, A2A ja NLWeb) | [Linkki](./11-agentic-protocols/README.md)       | [Video](https://youtu.be/X-Dh9R3Opn8)                                 | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
-| Kontekstin suunnittelu AI-agenteille         | Tulossa - 3. syyskuuta                           |                                                            |                                                                                        |
-| Agenttisen muistin hallinta                | Tulossa - 10. syyskuuta                          |                                                            |                                                                                        |
-| AI-agenttien arviointi                     | Tulossa - 17. syyskuuta                          |                                                            |                                                                                        |
-| Tietokonekäyttöagenttien (CUA) rakentaminen | Tulossa - 24. syyskuuta                          |                                                            |                                                                                        |
-| Skaalautuvien agenttien käyttöönotto       | Tulossa - 25. syyskuuta                          |                                                            |                                                                                        |
-| Paikallisten AI-agenttien luominen         | Tulossa - 2. lokakuuta                           |                                                            |                                                                                        |
-| AI-agenttien suojaaminen                   | Tulossa - 9. lokakuuta                           |                                                            |                                                                                        |
+| Agenttien protokollien käyttö (MCP, A2A ja NLWeb) | [Linkki](./11-agentic-protocols/README.md)       | [Video](https://youtu.be/X-Dh9R3Opn8)                      | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Kontekstin suunnittelu AI-agentteja varten | [Linkki](./12-context-engineering/README.md)         | [Video](https://youtu.be/F5zqRV7gEag)                                 | [Linkki](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Agenttimuistin hallinta                     | Tulossa - 11. syyskuuta                              |                                                            |                                                                                        |
+| AI-agenttien arviointi                      | Tulossa - 18. syyskuuta                              |                                                            |                                                                                        |
+| Tietokoneen käyttöagenttien (CUA) rakentaminen | Tulossa - 25. syyskuuta                              |                                                            |                                                                                        |
+| Skaalautuvien agenttien käyttöönotto        | Tulossa - 25. syyskuuta                              |                                                            |                                                                                        |
+| Paikallisten AI-agenttien luominen          | Tulossa - 3. lokakuuta                               |                                                            |                                                                                        |
+| AI-agenttien suojaaminen                    | Tulossa - 10. lokakuuta                              |                                                            |                                                                                        |
 
 ## 🎒 Muut kurssit
 
-Tiimimme tuottaa myös muita kursseja! Tutustu näihin:
+Tiimimme tuottaa myös muita kursseja! Tutustu:
 
 - [**UUSI** Model Context Protocol (MCP) aloittelijoille](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generatiivinen AI aloittelijoille käyttäen .NETiä](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
+- [Generatiivinen AI aloittelijoille .NET:llä](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
 - [Generatiivinen AI aloittelijoille](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [Generatiivinen AI aloittelijoille käyttäen Javaa](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
+- [Generatiivinen AI aloittelijoille Java:lla](https://github.com/microsoft/generative-ai-for-beginners-java?WT.mc_id=academic-105485-koreyst)
 - [ML aloittelijoille](https://aka.ms/ml-beginners?WT.mc_id=academic-105485-koreyst)
-- [Data-analytiikka aloittelijoille](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
+- [Data Science aloittelijoille](https://aka.ms/datascience-beginners?WT.mc_id=academic-105485-koreyst)
 - [AI aloittelijoille](https://aka.ms/ai-beginners?WT.mc_id=academic-105485-koreyst)
 - [Kyberturvallisuus aloittelijoille](https://github.com/microsoft/Security-101??WT.mc_id=academic-96948-sayoung)
 - [Web-kehitys aloittelijoille](https://aka.ms/webdev-beginners?WT.mc_id=academic-105485-koreyst)
 - [IoT aloittelijoille](https://aka.ms/iot-beginners?WT.mc_id=academic-105485-koreyst)
 - [XR-kehitys aloittelijoille](https://github.com/microsoft/xr-development-for-beginners?WT.mc_id=academic-105485-koreyst)
-- [GitHub Copilotin hallitseminen AI-pariohjelmointiin](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
-- [GitHub Copilotin hallitseminen C#/.NET-kehittäjille](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
+- [GitHub Copilotin hallinta AI-pariohjelmointiin](https://aka.ms/GitHubCopilotAI?WT.mc_id=academic-105485-koreyst)
+- [GitHub Copilotin hallinta C#/.NET-kehittäjille](https://github.com/microsoft/mastering-github-copilot-for-dotnet-csharp-developers?WT.mc_id=academic-105485-koreyst)
 - [Valitse oma Copilot-seikkailusi](https://github.com/microsoft/CopilotAdventures?WT.mc_id=academic-105485-koreyst)
 
 ## 🌟 Yhteisön kiitokset
 
-Kiitokset [Shivam Goyalille](https://www.linkedin.com/in/shivam2003/) tärkeiden Agentic RAG -koodiesimerkkien tarjoamisesta.
+Kiitokset [Shivam Goyalille](https://www.linkedin.com/in/shivam2003/) tärkeiden koodiesimerkkien tarjoamisesta, jotka havainnollistavat Agentic RAG:ia.
 
 ## Osallistuminen
 
-Tämä projekti toivottaa tervetulleeksi osallistumiset ja ehdotukset. Useimmat osallistumiset edellyttävät, että hyväksyt 
-Contributor License Agreementin (CLA), jossa vahvistat, että sinulla on oikeus antaa meille oikeudet käyttää panostasi. Lisätietoja löydät osoitteesta 
+Tämä projekti toivottaa tervetulleeksi osallistumisen ja ehdotukset. Useimmat osallistumiset edellyttävät, että hyväksyt Contributor License Agreementin (CLA), jossa vakuutat, että sinulla on oikeus antaa meille oikeudet käyttää panostasi. Lisätietoja löydät osoitteesta 
 <https://cla.opensource.microsoft.com>.
 
-Kun lähetät pull requestin, CLA-botti määrittää automaattisesti, tarvitsetko CLA:n, ja merkitsee PR:n asianmukaisesti (esim. tilatarkistus, kommentti). Seuraa yksinkertaisesti botin antamia ohjeita. Tämä tarvitsee tehdä vain kerran kaikissa CLA:ta käyttävissä repositorioissa.
+Kun lähetät pull requestin, CLA-botti määrittää automaattisesti, tarvitsetko CLA:n ja merkitsee PR:n asianmukaisesti (esim. tilatarkistus, kommentti). Seuraa yksinkertaisesti botin antamia ohjeita. Sinun tarvitsee tehdä tämä vain kerran kaikissa CLA:ta käyttävissä repositorioissa.
 
-Tämä projekti on omaksunut [Microsoftin avoimen lähdekoodin käytännesäännöt](https://opensource.microsoft.com/codeofconduct/).
-Lisätietoja löydät [käytännesääntöjen UKK:sta](https://opensource.microsoft.com/codeofconduct/faq/) tai ottamalla yhteyttä [opencode@microsoft.com](mailto:opencode@microsoft.com), jos sinulla on lisäkysymyksiä tai kommentteja.
+Tämä projekti on omaksunut [Microsoft Open Source Code of Conductin](https://opensource.microsoft.com/codeofconduct/).
+Lisätietoja löydät [Code of Conduct FAQ:sta](https://opensource.microsoft.com/codeofconduct/faq/) tai ota yhteyttä [opencode@microsoft.com](mailto:opencode@microsoft.com), jos sinulla on lisäkysymyksiä tai kommentteja.
 
 ## Tavaramerkit
 
-Tämä projekti saattaa sisältää tavaramerkkejä tai logoja projekteille, tuotteille tai palveluille. Microsoftin 
-tavaramerkkien tai logojen valtuutettu käyttö on Microsoftin [tavaramerkki- ja brändiohjeiden](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) mukaista. 
-Microsoftin tavaramerkkien tai logojen käyttö muokatuissa projektiversioissa ei saa aiheuttaa sekaannusta tai vihjata Microsoftin sponsorointia. 
-Kolmansien osapuolten tavaramerkkien tai logojen käyttö on kyseisten osapuolten käytäntöjen alaista.
+Tämä projekti saattaa sisältää tavaramerkkejä tai logoja projekteille, tuotteille tai palveluille. Microsoftin tavaramerkkien tai logojen käyttö on sallittua vain [Microsoftin tavaramerkki- ja brändiohjeiden](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) mukaisesti.
+Microsoftin tavaramerkkien tai logojen käyttö muokatuissa projektiversioissa ei saa aiheuttaa sekaannusta tai antaa ymmärtää, että Microsoft sponsoroi projektia.
+Kolmannen osapuolen tavaramerkkien tai logojen käyttö on kyseisten osapuolten käytäntöjen alaista.
 
 ---
 

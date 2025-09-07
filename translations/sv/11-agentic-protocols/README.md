@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f6600bebb86f72f3f62a9163fcce9566",
-  "translation_date": "2025-08-29T16:01:04+00:00",
+  "original_hash": "5c05bcdfb163dfa2493db39dfb45ad9a",
+  "translation_date": "2025-09-04T08:33:00+00:00",
   "source_file": "11-agentic-protocols/README.md",
   "language_code": "sv"
 }
@@ -15,7 +15,7 @@ När användningen av AI-agenter ökar, växer också behovet av protokoll som s
 
 ## Introduktion
 
-I denna lektion kommer vi att täcka:
+I denna lektion kommer vi att gå igenom:
 
 • Hur **MCP** gör det möjligt för AI-agenter att få tillgång till externa verktyg och data för att utföra användaruppgifter.
 
@@ -25,7 +25,7 @@ I denna lektion kommer vi att täcka:
 
 ## Lärandemål
 
-• **Identifiera** huvudsyftet och fördelarna med MCP, A2A och NLWeb i kontexten av AI-agenter.
+• **Identifiera** huvudsyftet och fördelarna med MCP, A2A och NLWeb i samband med AI-agenter.
 
 • **Förklara** hur varje protokoll underlättar kommunikation och interaktion mellan LLM:er, verktyg och andra agenter.
 
@@ -49,11 +49,11 @@ MCP använder en **klient-server-arkitektur** och kärnkomponenterna är:
 
 Protokollet inkluderar tre kärnprimitiver som är MCP-serverns kapaciteter:
 
-• **Tools**: Dessa är separata åtgärder eller funktioner som en AI-agent kan kalla för att utföra en uppgift. Till exempel kan en vädertjänst exponera ett "hämta väder"-verktyg, eller en e-handelsserver kan exponera ett "köp produkt"-verktyg. MCP-servrar annonserar varje verktygs namn, beskrivning och in-/utdata-schema i sin kapacitetslista.
+• **Verktyg**: Dessa är separata åtgärder eller funktioner som en AI-agent kan kalla för att utföra en uppgift. Till exempel kan en vädertjänst exponera ett "hämta väder"-verktyg, eller en e-handelsserver kan exponera ett "köp produkt"-verktyg. MCP-servrar annonserar varje verktygs namn, beskrivning och in-/utdata-schema i sin kapacitetslista.
 
-• **Resources**: Dessa är skrivskyddade dataobjekt eller dokument som en MCP-server kan tillhandahålla, och klienter kan hämta dem vid behov. Exempel inkluderar filinnehåll, databasposter eller loggfiler. Resurser kan vara text (som kod eller JSON) eller binära (som bilder eller PDF:er).
+• **Resurser**: Dessa är skrivskyddade dataobjekt eller dokument som en MCP-server kan tillhandahålla, och klienter kan hämta dem vid behov. Exempel inkluderar filinnehåll, databasposter eller loggfiler. Resurser kan vara text (som kod eller JSON) eller binära (som bilder eller PDF:er).
 
-• **Prompts**: Dessa är fördefinierade mallar som ger föreslagna uppmaningar, vilket möjliggör mer komplexa arbetsflöden.
+• **Prompter**: Dessa är fördefinierade mallar som ger föreslagna prompter, vilket möjliggör mer komplexa arbetsflöden.
 
 ### Fördelar med MCP
 
@@ -79,7 +79,7 @@ Föreställ dig att en användare vill boka en flygresa med hjälp av en AI-assi
 
 4. **Utförande och Svar**: MCP-servern, som fungerar som en wrapper, gör det faktiska anropet till flygbolagets interna boknings-API. Den tar emot flyginformationen (t.ex. JSON-data) och skickar tillbaka den till AI-assistenten.
 
-5. **Fortsatt Interaktion**: AI-assistenten presenterar flygalternativen. När du väljer ett flyg kan assistenten anropa "boka flyg"-verktyget på samma MCP-server och slutföra bokningen.
+5. **Fortsatt Interaktion**: AI-assistenten presenterar flygalternativen. När du väljer ett flyg kan assistenten kalla "boka flyg"-verktyget på samma MCP-server och slutföra bokningen.
 
 ## Agent-to-Agent Protocol (A2A)
 
@@ -94,11 +94,11 @@ A2A fokuserar på att möjliggöra kommunikation mellan agenter och få dem att 
 #### Agentkort
 
 Precis som en MCP-server delar en lista över verktyg, har ett Agentkort:
-    ◦ Agentens namn.  
-    ◦ En **beskrivning av de allmänna uppgifter** den utför.  
-    ◦ En **lista över specifika färdigheter** med beskrivningar för att hjälpa andra agenter (eller till och med mänskliga användare) att förstå när och varför de skulle vilja kalla på den agenten.  
-    ◦ Den **aktuella Endpoint-URL** för agenten.  
-    ◦ **Versionen** och **kapaciteterna** för agenten, såsom strömmande svar och push-notiser.  
+- Agentens namn.
+- En **beskrivning av de allmänna uppgifter** den utför.
+- En **lista över specifika färdigheter** med beskrivningar för att hjälpa andra agenter (eller till och med mänskliga användare) att förstå när och varför de skulle vilja kalla den agenten.
+- Den **aktuella Endpoint-URL** för agenten.
+- **Versionen** och **kapaciteterna** för agenten, såsom strömmande svar och push-notiser.
 
 #### Agentutförare
 
@@ -110,15 +110,15 @@ När en fjärragent har slutfört den begärda uppgiften skapas dess arbetsprodu
 
 #### Händelsekö
 
-Denna komponent används för att **hantera uppdateringar och skicka meddelanden**. Den är särskilt viktig i produktion för agentiska system för att förhindra att anslutningen mellan agenter stängs innan en uppgift är slutförd, särskilt när uppgiftens slutförande kan ta längre tid.
+Denna komponent används för att **hantera uppdateringar och skicka meddelanden**. Den är särskilt viktig i produktion för agentiska system för att förhindra att anslutningen mellan agenter stängs innan en uppgift är slutförd, särskilt när uppgiftens slutförandetid kan ta längre tid.
 
 ### Fördelar med A2A
 
-• **Förbättrat Samarbete**: Det möjliggör interaktion mellan agenter från olika leverantörer och plattformar, dela kontext och arbeta tillsammans, vilket underlättar sömlös automatisering över traditionellt separerade system.
+• **Förbättrat Samarbete**: Det möjliggör att agenter från olika leverantörer och plattformar interagerar, delar kontext och arbetar tillsammans, vilket underlättar sömlös automatisering över traditionellt fristående system.
 
 • **Flexibilitet i Modellval**: Varje A2A-agent kan bestämma vilken LLM den använder för att hantera sina förfrågningar, vilket möjliggör optimerade eller finjusterade modeller per agent, till skillnad från en enda LLM-anslutning i vissa MCP-scenarier.
 
-• **Inbyggd Autentisering**: Autentisering är direkt integrerad i A2A-protokollet, vilket ger en robust säkerhetsram för interaktioner mellan agenter.
+• **Inbyggd Autentisering**: Autentisering är direkt integrerad i A2A-protokollet, vilket ger en robust säkerhetsram för agentinteraktioner.
 
 ### A2A Exempel
 
@@ -134,7 +134,7 @@ Låt oss utveckla vårt resebokningsscenario, men denna gång med A2A.
 
 4. **Delegerad Uppgiftsutförande**: Reseagenten skickar specifika uppgifter till dessa specialiserade agenter (t.ex. "Hitta flyg till Honolulu," "Boka ett hotell," "Hyra en bil"). Var och en av dessa specialiserade agenter, som kör sina egna LLM:er och använder sina egna verktyg (som kan vara MCP-servrar själva), utför sin specifika del av bokningen.
 
-5. **Sammanställd Svar**: När alla nedströmsagenter slutför sina uppgifter sammanställer reseagenten resultaten (flygdetaljer, hotellbekräftelse, biluthyrningsbokning) och skickar ett omfattande, chattformat svar tillbaka till användaren.
+5. **Sammanställd Svar**: När alla nedströmsagenter slutför sina uppgifter, sammanställer reseagenten resultaten (flygdetaljer, hotellbekräftelse, biluthyrningsbokning) och skickar ett omfattande, chattformat svar tillbaka till användaren.
 
 ## Natural Language Web (NLWeb)
 
@@ -162,13 +162,13 @@ Tänk på vår resebokningswebbplats igen, men denna gång drivs den av NLWeb.
 
 1. **Dataingestion**: Resewebbplatsens befintliga produktkataloger (t.ex. flyglistor, hotellbeskrivningar, resepaket) formateras med Schema.org eller laddas via RSS-flöden. NLWeb:s verktyg tar in denna strukturerade data, skapar inbäddningar och lagrar dem i en lokal eller fjärransluten vektordatabas.
 
-2. **Naturligt Språkfråga (Människa)**: En användare besöker webbplatsen och, istället för att navigera i menyer, skriver i ett chattgränssnitt: "Hitta ett familjevänligt hotell i Honolulu med pool för nästa vecka."
+2. **Naturlig språkfråga (Människa)**: En användare besöker webbplatsen och, istället för att navigera i menyer, skriver i ett chattgränssnitt: "Hitta ett familjevänligt hotell i Honolulu med pool för nästa vecka."
 
-3. **NLWeb Bearbetning**: NLWeb-applikationen tar emot denna fråga. Den skickar frågan till en LLM för förståelse och söker samtidigt i sin vektordatabas efter relevanta hotelllistor.
+3. **NLWeb-bearbetning**: NLWeb-applikationen tar emot denna fråga. Den skickar frågan till en LLM för förståelse och söker samtidigt i sin vektordatabas efter relevanta hotelllistor.
 
-4. **Exakta Resultat**: LLM hjälper till att tolka sökresultaten från databasen, identifiera de bästa matchningarna baserat på "familjevänligt," "pool," och "Honolulu"-kriterier, och formaterar sedan ett svar i naturligt språk. Viktigt är att svaret hänvisar till faktiska hotell från webbplatsens katalog, och undviker påhittad information.
+4. **Exakta Resultat**: LLM hjälper till att tolka sökresultaten från databasen, identifiera de bästa matchningarna baserat på kriterierna "familjevänligt," "pool," och "Honolulu," och formaterar sedan ett svar i naturligt språk. Viktigt är att svaret hänvisar till faktiska hotell från webbplatsens katalog, och undviker påhittad information.
 
-5. **Interaktion med AI-agent**: Eftersom NLWeb fungerar som en MCP-server kan en extern AI-reseagent också ansluta till denna webbplats NLWeb-instans. AI-agenten kan då använda `ask` MCP-metoden för att direkt fråga webbplatsen: `ask("Finns det några veganska restauranger i Honolulu-området som rekommenderas av hotellet?")`. NLWeb-instansen skulle bearbeta detta, utnyttja sin databas med restauranginformation (om laddad), och returnera ett strukturerat JSON-svar.
+5. **AI-agentinteraktion**: Eftersom NLWeb fungerar som en MCP-server kan en extern AI-reseagent också ansluta till webbplatsens NLWeb-instans. AI-agenten kan då använda `ask` MCP-metoden för att direkt fråga webbplatsen: `ask("Finns det några veganska restauranger i Honolulu-området som rekommenderas av hotellet?")`. NLWeb-instansen skulle bearbeta detta, utnyttja sin databas med restauranginformation (om laddad), och returnera ett strukturerat JSON-svar.
 
 ### Har du fler frågor om MCP/A2A/NLWeb?
 
@@ -177,11 +177,11 @@ Gå med i [Azure AI Foundry Discord](https://aka.ms/ai-agents/discord) för att 
 ## Resurser
 
 - [MCP för Nybörjare](https://aka.ms/mcp-for-beginners)  
-- [MCP Dokumentation](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)  
-- [NLWeb Repo](https://github.com/nlweb-ai/NLWeb)  
-- [Semantic Kernel Guides](https://learn.microsoft.com/semantic-kernel/)  
+- [MCP Dokumentation](https://github.com/microsoft/semantic-kernel/tree/main/python/semantic-kernel/semantic_kernel/connectors/mcp)
+- [NLWeb Repo](https://github.com/nlweb-ai/NLWeb)
+- [Semantic Kernel Guides](https://learn.microsoft.com/semantic-kernel/)
 
 ---
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, bör det noteras att automatiserade översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som kan uppstå vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen notera att automatiska översättningar kan innehålla fel eller felaktigheter. Det ursprungliga dokumentet på sitt originalspråk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
