@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "525a30a46e4451e243da0bb866d0f5f0",
-  "translation_date": "2025-09-04T07:24:05+00:00",
+  "original_hash": "9cb9bf18040a36fb1d822b10e92e7c04",
+  "translation_date": "2025-09-07T07:40:07+00:00",
   "source_file": "README.md",
   "language_code": "es"
 }
@@ -11,19 +11,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 ![Generative AI For Beginners](../../translated_images/repo-thumbnailv2.06f4a48036fde647f6ba4eb19f5651babe59bb30e972748afb349e47725d7601.es.png)
 
-## Un curso que enseña todo lo que necesitas saber para empezar a construir agentes de IA
+## Un curso que enseña todo lo que necesitas saber para empezar a construir Agentes de IA
 
 ### 🌐 Soporte Multilingüe
 
 #### Disponible a través de GitHub Action (Automatizado y Siempre Actualizado)
 
-[Francés](../fr/README.md) | [Español](./README.md) | [Alemán](../de/README.md) | [Ruso](../ru/README.md) | [Árabe](../ar/README.md) | [Persa (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chino (Simplificado)](../zh/README.md) | [Chino (Tradicional, Macao)](../mo/README.md) | [Chino (Tradicional, Hong Kong)](../hk/README.md) | [Chino (Tradicional, Taiwán)](../tw/README.md) | [Japonés](../ja/README.md) | [Coreano](../ko/README.md) | [Hindi](../hi/README.md) | [Bengalí](../bn/README.md) | [Maratí](../mr/README.md) | [Nepalí](../ne/README.md) | [Panyabí (Gurmukhi)](../pa/README.md) | [Portugués (Portugal)](../pt/README.md) | [Portugués (Brasil)](../br/README.md) | [Italiano](../it/README.md) | [Polaco](../pl/README.md) | [Turco](../tr/README.md) | [Griego](../el/README.md) | [Tailandés](../th/README.md) | [Sueco](../sv/README.md) | [Danés](../da/README.md) | [Noruego](../no/README.md) | [Finlandés](../fi/README.md) | [Holandés](../nl/README.md) | [Hebreo](../he/README.md) | [Vietnamita](../vi/README.md) | [Indonesio](../id/README.md) | [Malayo](../ms/README.md) | [Tagalo (Filipino)](../tl/README.md) | [Suajili](../sw/README.md) | [Húngaro](../hu/README.md) | [Checo](../cs/README.md) | [Eslovaco](../sk/README.md) | [Rumano](../ro/README.md) | [Búlgaro](../bg/README.md) | [Serbio (Cirílico)](../sr/README.md) | [Croata](../hr/README.md) | [Esloveno](../sl/README.md) | [Ucraniano](../uk/README.md) | [Birmano (Myanmar)](../my/README.md)
+[Francés](../fr/README.md) | [Español](./README.md) | [Alemán](../de/README.md) | [Ruso](../ru/README.md) | [Árabe](../ar/README.md) | [Persa (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chino (Simplificado)](../zh/README.md) | [Chino (Tradicional, Macao)](../mo/README.md) | [Chino (Tradicional, Hong Kong)](../hk/README.md) | [Chino (Tradicional, Taiwán)](../tw/README.md) | [Japonés](../ja/README.md) | [Coreano](../ko/README.md) | [Hindi](../hi/README.md) | [Bengalí](../bn/README.md) | [Maratí](../mr/README.md) | [Nepalí](../ne/README.md) | [Punyabí (Gurmukhi)](../pa/README.md) | [Portugués (Portugal)](../pt/README.md) | [Portugués (Brasil)](../br/README.md) | [Italiano](../it/README.md) | [Polaco](../pl/README.md) | [Turco](../tr/README.md) | [Griego](../el/README.md) | [Tailandés](../th/README.md) | [Sueco](../sv/README.md) | [Danés](../da/README.md) | [Noruego](../no/README.md) | [Finlandés](../fi/README.md) | [Holandés](../nl/README.md) | [Hebreo](../he/README.md) | [Vietnamita](../vi/README.md) | [Indonesio](../id/README.md) | [Malayo](../ms/README.md) | [Tagalo (Filipino)](../tl/README.md) | [Suajili](../sw/README.md) | [Húngaro](../hu/README.md) | [Checo](../cs/README.md) | [Eslovaco](../sk/README.md) | [Rumano](../ro/README.md) | [Búlgaro](../bg/README.md) | [Serbio (Cirílico)](../sr/README.md) | [Croata](../hr/README.md) | [Esloveno](../sl/README.md) | [Ucraniano](../uk/README.md) | [Birmano (Myanmar)](../my/README.md)
 
 **Si deseas que se admitan idiomas adicionales, consulta la lista [aquí](https://github.com/Azure/co-op-translator/blob/main/getting_started/supported-languages.md)**
 
 ## 🌱 Comenzando
 
-Este curso incluye lecciones que cubren los fundamentos para construir agentes de IA. Cada lección aborda un tema específico, ¡así que comienza donde prefieras!
+Este curso incluye lecciones que cubren los fundamentos para construir Agentes de IA. Cada lección aborda un tema específico, ¡así que comienza donde prefieras!
 
 Hay soporte multilingüe para este curso. Consulta los [idiomas disponibles aquí](../..).
 
@@ -31,11 +31,11 @@ Si es tu primera vez trabajando con modelos de IA generativa, revisa nuestro cur
 
 No olvides [darle una estrella (🌟) a este repositorio](https://docs.github.com/en/get-started/exploring-projects-on-github/saving-repositories-with-stars?WT.mc_id=academic-105485-koreyst) y [hacer un fork de este repositorio](https://github.com/microsoft/ai-agents-for-beginners/fork) para ejecutar el código.
 
-### Conoce a otros estudiantes, resuelve tus dudas
+### Conoce a Otros Estudiantes, Resuelve tus Dudas
 
-Si te quedas atascado o tienes preguntas sobre cómo construir agentes de IA, únete a nuestro canal dedicado en Discord dentro de la [Comunidad Azure AI Foundry en Discord](https://aka.ms/ai-agents/discord).
+Si te quedas atascado o tienes preguntas sobre cómo construir Agentes de IA, únete a nuestro canal dedicado en Discord dentro de la [Comunidad Azure AI Foundry en Discord](https://aka.ms/ai-agents/discord).
 
-### Lo que necesitas
+### Lo que Necesitas
 
 Cada lección de este curso incluye ejemplos de código, que se encuentran en la carpeta code_samples. Puedes [hacer un fork de este repositorio](https://github.com/microsoft/ai-agents-for-beginners/fork) para crear tu propia copia.
 
@@ -44,7 +44,7 @@ Los ejemplos de código en estos ejercicios utilizan Azure AI Foundry y los cat�
 - [Github Models](https://aka.ms/ai-agents-beginners/github-models) - Gratis / Limitado
 - [Azure AI Foundry](https://aka.ms/ai-agents-beginners/ai-foundry) - Requiere cuenta de Azure
 
-Este curso también utiliza los siguientes marcos y servicios de agentes de IA de Microsoft:
+Este curso también utiliza los siguientes marcos y servicios de Agentes de IA de Microsoft:
 
 - [Azure AI Agent Service](https://aka.ms/ai-agents-beginners/ai-agent-service)
 - [Semantic Kernel](https://aka.ms/ai-agents-beginners/semantic-kernel)
@@ -54,13 +54,13 @@ Para más información sobre cómo ejecutar el código de este curso, consulta l
 
 ## 🙏 ¿Quieres ayudar?
 
-¿Tienes sugerencias o encontraste errores ortográficos o de código? [Abre un issue](https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst) o [Crea un pull request](https://github.com/microsoft/ai-agents-for-beginners/pulls?WT.mc_id=academic-105485-koreyst).
+¿Tienes sugerencias o encontraste errores de ortografía o código? [Abre un issue](https://github.com/microsoft/ai-agents-for-beginners/issues?WT.mc_id=academic-105485-koreyst) o [Crea un pull request](https://github.com/microsoft/ai-agents-for-beginners/pulls?WT.mc_id=academic-105485-koreyst).
 
 ## 📂 Cada lección incluye
 
 - Una lección escrita ubicada en el README y un video corto
-- Ejemplos de código en Python que soportan Azure AI Foundry y Github Models (Gratis)
-- Enlaces a recursos adicionales para continuar aprendiendo
+- Ejemplos de código en Python compatibles con Azure AI Foundry y Github Models (Gratis)
+- Enlaces a recursos adicionales para continuar tu aprendizaje
 
 ## 🗃️ Lecciones
 
@@ -76,7 +76,7 @@ Para más información sobre cómo ejecutar el código de este curso, consulta l
 | Patrón de Diseño Multi-Agente                  | [Enlace](./08-multi-agent/README.md)             | [Video](https://youtu.be/V6HpE9hZEx0?si=rMgDhEu7wXo2uo6g)  | [Enlace](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Patrón de Diseño de Metacognición              | [Enlace](./09-metacognition/README.md)           | [Video](https://youtu.be/His9R6gw6Ec?si=8gck6vvdSNCt6OcF)  | [Enlace](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Agentes de IA en Producción                    | [Enlace](./10-ai-agents-production/README.md)    | [Video](https://youtu.be/l4TP6IyJxmQ?si=31dnhexRo6yLRJDl)  | [Enlace](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
-| Uso de Protocolos Agénticos (MCP, A2A y NLWeb) | [Enlace](./11-agentic-protocols/README.md)       | [Video](https://youtu.be/X-Dh9R3Opn8)                      | [Enlace](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
+| Usando Protocolos Agénticos (MCP, A2A y NLWeb) | [Enlace](./11-agentic-protocols/README.md)       | [Video](https://youtu.be/X-Dh9R3Opn8)                      | [Enlace](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Ingeniería de Contexto para Agentes de IA    | [Link](./12-context-engineering/README.md)         | [Video](https://youtu.be/F5zqRV7gEag)                                 | [Link](https://aka.ms/ai-agents-beginners/collection?WT.mc_id=academic-105485-koreyst) |
 | Gestión de Memoria Agente                    | Próximamente - 11 de septiembre                    |                                                            |                                                                                        |
 | Evaluación de Agentes de IA                  | Próximamente - 18 de septiembre                    |                                                            |                                                                                        |
@@ -87,7 +87,7 @@ Para más información sobre cómo ejecutar el código de este curso, consulta l
 
 ## 🎒 Otros Cursos
 
-¡Nuestro equipo produce otros cursos! Revisa:
+¡Nuestro equipo produce otros cursos! Échales un vistazo:
 
 - [**NUEVO** Protocolo de Contexto de Modelos (MCP) para Principiantes](https://github.com/microsoft/mcp-for-beginners?WT.mc_id=academic-105485-koreyst)
 - [IA Generativa para Principiantes usando .NET](https://github.com/microsoft/Generative-AI-for-beginners-dotnet?WT.mc_id=academic-105485-koreyst)
@@ -106,7 +106,7 @@ Para más información sobre cómo ejecutar el código de este curso, consulta l
 
 ## 🌟 Agradecimientos a la Comunidad
 
-Gracias a [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) por contribuir con importantes ejemplos de código que demuestran Agentic RAG.
+Gracias a [Shivam Goyal](https://www.linkedin.com/in/shivam2003/) por contribuir con importantes ejemplos de código que demuestran Agentic RAG. 
 
 ## Contribuciones
 
@@ -133,4 +133,4 @@ Cualquier uso de marcas registradas o logotipos de terceros está sujeto a las p
 ---
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
