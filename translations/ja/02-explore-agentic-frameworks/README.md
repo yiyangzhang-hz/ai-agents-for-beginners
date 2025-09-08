@@ -328,7 +328,7 @@ AutoGenの重要なコアコンセプトをいくつか紹介します：
 
   　次に、このエージェントタイプをAutoGenに知らせ、プログラムを開始します：
 
-    ```python
+  ```python
     
     # main.py
     runtime = SingleThreadedAgentRuntime()
@@ -336,16 +336,16 @@ AutoGenの重要なコアコンセプトをいくつか紹介します：
 
     runtime.start()  # Start processing messages in the background.
     await runtime.send_message(MyMessageType("Hello, World!"), AgentId("my_agent", "default"))
-    ```
+  ```
 
   　上記のコードでは、エージェントがランタイムに登録され、その後エージェントにメッセージが送信され、以下のような出力が得られます：
 
-    ```text
+  ```text
     # Output from the console:
     my_agent received message: Hello, World!
     my_assistant received message: Hello, World!
     my_assistant responded: Hello! How can I assist you today?
-    ```
+  ```
 
 - **マルチエージェント**: AutoGenは、複数のエージェントを作成し、それらが協力して複雑なタスクを達成することをサポートします。エージェントは情報を共有し、行動を調整して問題をより効率的に解決することができます。マルチエージェントシステムを作成するには、データ取得、分析、意思決定、ユーザーインタラクションなどの特定の機能と役割を持つ異なるタイプのエージェントを定義できます。以下はその作成例です：
 
