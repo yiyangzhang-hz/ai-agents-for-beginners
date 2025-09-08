@@ -303,7 +303,7 @@ AutoGenの重要なコアコンセプトをいくつか紹介します：
 
 以下は、チャット機能を持つ独自のエージェントを作成する短いコードスニペットです：
 
-    ```python
+  ```python
     from autogen_agentchat.agents import AssistantAgent
     from autogen_agentchat.messages import TextMessage
     from autogen_ext.models.openai import OpenAIChatCompletionClient
@@ -322,11 +322,11 @@ AutoGenの重要なコアコンセプトをいくつか紹介します：
                 [TextMessage(content=message.content, source="user")], ctx.cancellation_token
             )
             print(f"{self.id.type} responded: {response.chat_message.content}")
-    ```
+   ```
+    
+  　上記のコードでは、`MyAssistant`が作成され、`RoutedAgent`を継承しています。このエージェントには、メッセージの内容を出力し、その後`AssistantAgent`デリゲートを使用して応答を送信するメッセージハンドラーがあります。特に、`self._delegate`に`AssistantAgent`のインスタンスを割り当てる点に注目してください。このエージェントは、チャット補完を処理できる事前構築されたエージェントです。
 
-    上記のコードでは、`MyAssistant`が作成され、`RoutedAgent`を継承しています。このエージェントには、メッセージの内容を出力し、その後`AssistantAgent`デリゲートを使用して応答を送信するメッセージハンドラーがあります。特に、`self._delegate`に`AssistantAgent`のインスタンスを割り当てる点に注目してください。このエージェントは、チャット補完を処理できる事前構築されたエージェントです。
-
-    次に、このエージェントタイプをAutoGenに知らせ、プログラムを開始します：
+  　次に、このエージェントタイプをAutoGenに知らせ、プログラムを開始します：
 
     ```python
     
@@ -338,7 +338,7 @@ AutoGenの重要なコアコンセプトをいくつか紹介します：
     await runtime.send_message(MyMessageType("Hello, World!"), AgentId("my_agent", "default"))
     ```
 
-    上記のコードでは、エージェントがランタイムに登録され、その後エージェントにメッセージが送信され、以下のような出力が得られます：
+  　上記のコードでは、エージェントがランタイムに登録され、その後エージェントにメッセージが送信され、以下のような出力が得られます：
 
     ```text
     # Output from the console:
