@@ -101,6 +101,10 @@ AIエージェントシステムを構築する方法は数多くあります。
 
 ## 追加リソース
 
+- <a href="https://openai.com" target="_blank">Practices for Governing Agentic AI Systems | OpenAI</a>
+- <a href="https://microsoft.com" target="_blank">The HAX Toolkit Project - Microsoft Research</a>
+- <a href="https://responsibleaitoolbox.ai" target="_blank">Responsible AI Toolbox</a>
+
 ## 前のレッスン
 
 [エージェントフレームワークの探求](../02-explore-agentic-frameworks/README.md)
